@@ -1,0 +1,73 @@
+Bottom: f1fc5080e5925af2bb62f71327f5ace5706115a6
+Top:    d1e958665485fc9a198eb8b04d85405c69f036af
+Author: scott snyder <sss@karma>
+Date:   2020-02-01 17:35:40 -0500
+
+Refresh of warn
+
+---
+
+diff --git a/detector/calorimeter/SEcal06_Helpers.cpp b/detector/calorimeter/SEcal06_Helpers.cpp
+index 4d479e4..3988d08 100644
+--- a/detector/calorimeter/SEcal06_Helpers.cpp
++++ b/detector/calorimeter/SEcal06_Helpers.cpp
+@@ -473,7 +473,7 @@ void SEcal06_Helpers::makeModule( dd4hep::Volume & mod_vol,  // the volume we'll
+ 	    multi_refSlices.push_back( keyVal0 );
+       multi_refSlices.push_back( keyVal1 );
+       
+-    } catch( std::runtime_error) {
++    } catch( const std::runtime_error&) {
+       throw lcgeo::GeometryException(  "SEcal06_Helper: Error: MultiSegmentation specified but no "
+                                        " <subsegmentation key="" value0="" value1=""/> element defined for detector ! " ) ;
+     }
+diff --git a/detector/calorimeter/SHcalSc04_Barrel_v04.cpp b/detector/calorimeter/SHcalSc04_Barrel_v04.cpp
+index d9e86f4..df11404 100644
+--- a/detector/calorimeter/SHcalSc04_Barrel_v04.cpp
++++ b/detector/calorimeter/SHcalSc04_Barrel_v04.cpp
+@@ -229,7 +229,7 @@ static Ref_t create_detector(Detector& theDetector, xml_h element, SensitiveDete
+       }
+ 
+ 
+-    } catch( std::runtime_error) {
++    } catch( const std::runtime_error&) {
+       throw lcgeo::GeometryException(  "SHcalSc04_Barrel: Error: MultiSegmentation specified but no "
+                                        " <subsegmentation key="" value=""/> element defined for detector ! " ) ;
+     }
+diff --git a/detector/calorimeter/SHcalSc04_EndcapRing_v01.cpp b/detector/calorimeter/SHcalSc04_EndcapRing_v01.cpp
+index faf7e96..faea0e4 100644
+--- a/detector/calorimeter/SHcalSc04_EndcapRing_v01.cpp
++++ b/detector/calorimeter/SHcalSc04_EndcapRing_v01.cpp
+@@ -140,7 +140,7 @@ static Ref_t create_detector(Detector& theDetector, xml_h element, SensitiveDete
+       }
+ 
+       
+-    } catch( std::runtime_error) {
++    } catch( const std::runtime_error&) {
+       throw lcgeo::GeometryException(  "SHcalSc04_Endcaps_v01: Error: MultiSegmentation specified but no "
+ 				       " <subsegmentation key="" value=""/> element defined for detector ! " ) ;
+     }
+diff --git a/detector/calorimeter/SHcalSc04_Endcaps_v01.cpp b/detector/calorimeter/SHcalSc04_Endcaps_v01.cpp
+index 3355a3e..0383152 100644
+--- a/detector/calorimeter/SHcalSc04_Endcaps_v01.cpp
++++ b/detector/calorimeter/SHcalSc04_Endcaps_v01.cpp
+@@ -157,7 +157,7 @@ static Ref_t create_detector(Detector& theDetector, xml_h element, SensitiveDete
+ 	sensitive_slice_number = keyVal ;
+       }
+ 
+-    } catch( std::runtime_error) {
++    } catch( const std::runtime_error&) {
+       throw lcgeo::GeometryException(  "SHcalSc04_Endcaps_v01: Error: MultiSegmentation specified but no "
+ 				       " <subsegmentation key="" value=""/> element defined for detector ! " ) ;
+     }
+diff --git a/detector/tracker/ZPlanarTracker_geo.cpp b/detector/tracker/ZPlanarTracker_geo.cpp
+index 5213cc6..db3c708 100644
+--- a/detector/tracker/ZPlanarTracker_geo.cpp
++++ b/detector/tracker/ZPlanarTracker_geo.cpp
+@@ -79,7 +79,7 @@ static Ref_t create_element(Detector& theDetector, xml_h e, SensitiveDetector se
+   try {
+     isStripDetector = x_det.attr<bool>( _Unicode(isStripDetector) ) ;
+ 
+-  } catch(std::runtime_error ){}
++  } catch(const std::runtime_error& ){}
+ 
+   //=========  loop over layer elements in xml  ======================================
