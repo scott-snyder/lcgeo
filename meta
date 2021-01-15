@@ -1,8 +1,9 @@
 Version: 1
-Previous: 233ee4afded5db86705f8b597fff5b5aab8af45c
-Head: 4139ebabcf13b0c27284ef2a4d476c1872199dc7
+Previous: 426997269ca0c53a135868c4ec4280193e2fd158
+Head: c6c5c0a11b543ca97613c5522bbe3b71e2d172e1
 Applied:
   warn: 3127cf6146680cea7c359c817abbf4412701d873
   gitignore: 4139ebabcf13b0c27284ef2a4d476c1872199dc7
+  xmlcomment.lcgeo: c6c5c0a11b543ca97613c5522bbe3b71e2d172e1
 Unapplied:
 Hidden:
