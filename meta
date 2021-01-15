@@ -1,9 +1,9 @@
 Version: 1
-Previous: c8845e7af9d3612f642bfb688f09addcca923003
-Head: 2923325626244d0f3bc2b984e5c6f7df5a8bd121
+Previous: fa375fd60489a9c5f9b9c5302ea8918dc435d200
+Head: d36cfc4b4725153671f971e0fff5eadf3041b654
 Applied:
-  warn: 3127cf6146680cea7c359c817abbf4412701d873
-  gitignore: 4139ebabcf13b0c27284ef2a4d476c1872199dc7
-  xmlcomment.lcgeo: 2923325626244d0f3bc2b984e5c6f7df5a8bd121
+  warn: 0a5ae48763d4faaa5c6ebe51587be62dc85bd623
+  gitignore: fb10acfa78bee14ac573827fdc499a56891a1576
+  xmlcomment.lcgeo: d36cfc4b4725153671f971e0fff5eadf3041b654
 Unapplied:
 Hidden:

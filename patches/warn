@@ -4,3 +4,5 @@ Author: scott snyder <sss@karma>
 Date:   2020-02-01 17:35:35 -0500
 
 Fix compilation warnings.
+
+Catch polymorphic exception objects by const reference, not by value.
