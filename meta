@@ -1,7 +1,8 @@
 Version: 1
-Previous: 489fa20a7f4a0639926936d0abf3a998d7eca5f6
-Head: 2ea60fbba00c1fc40e0f76763bc6bad0c9487909
+Previous: ecf15eebda224a951a34ac042f26a43ba48cf644
+Head: b17584295e0154d57ae9b05617e08c89af3ea719
 Applied:
   warn: 2ea60fbba00c1fc40e0f76763bc6bad0c9487909
+  gitignore: b17584295e0154d57ae9b05617e08c89af3ea719
 Unapplied:
 Hidden:
