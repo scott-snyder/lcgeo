@@ -1,8 +1,0 @@
-Bottom: 680083e1d8b9001bc37f7e4abaefde25f9a82533
-Top:    680083e1d8b9001bc37f7e4abaefde25f9a82533
-Author: scott snyder <sss@karma>
-Date:   2020-02-01 17:35:35 -0500
-
-Fix compilation warnings.
-
-Catch polymorphic exception objects by const reference, not by value.
