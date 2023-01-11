@@ -1,8 +1,0 @@
-Bottom: 680083e1d8b9001bc37f7e4abaefde25f9a82533
-Top:    680083e1d8b9001bc37f7e4abaefde25f9a82533
-Author: scott snyder <sss@karma>
-Date:   2021-01-15 14:34:13 -0500
-
-Fix XML comment syntax in some SiD files.
-
-A double-hyphen -- is not allowed in XML comments.
