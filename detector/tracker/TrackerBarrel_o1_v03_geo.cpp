@@ -12,6 +12,7 @@
 #include "DD4hep/Printout.h"
 #include "XML/Utilities.h"
 #include "DDRec/DetectorData.h"
+#include "DDRec/ISurface.h"
 
 #include <UTIL/BitField64.h>
 #include <UTIL/BitSet32.h>
@@ -182,7 +183,7 @@ static Ref_t create_detector(Detector& theDetector, xml_h e, SensitiveDetector s
 		encoder[lcio::LCTrackerCellID::module()] = module_idx;
 		encoder[lcio::LCTrackerCellID::sensor()] = sensor_idx;
 
-		dd4hep::long64 cellID = encoder.lowWord(); // 32 bits
+		dd4hep::rec::long64 cellID = encoder.lowWord(); // 32 bits
 
 		//compute neighbours 
 
