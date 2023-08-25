@@ -234,7 +234,7 @@ static Ref_t create_detector(Detector& theDetector, xml_h e, SensitiveDetector s
 
 		//encoding
 
-		dd4hep::rec::long64 cellID_reflect;
+		dd4hep::rec::long64 cellID_reflect = 0;
 		if (reflect) {
 		  encoder[lcio::LCTrackerCellID::side()] = lcio::ILDDetID::bwd;
 		  encoder[lcio::LCTrackerCellID::layer()] = l_id;
