@@ -182,7 +182,7 @@ static Ref_t create_element(Detector& theDetector, xml_h e, SensitiveDetector se
         m.sensor_thickness = xml_comp_t(c_sensor).thickness();
         xml_coll_t c_component = xml_coll_t(c_sensor,_U(component));
 
-        int iSensitive, iPassive = 0;
+        int iSensitive = 0, iPassive = 0;
         for(c_component.reset(); c_component; ++c_component){
             xml_comp_t component = c_component;
             m.sensor_sensitives.push_back(component.isSensitive());
