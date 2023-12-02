@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "c1dae550ba899b5517c68e0e1a86adfbcae0e908",
-  "head": "41a89e1d152a36ad07d03e7c62524d34429ee9f8",
+  "prev": "ef906108a322b31771a7e7e9578aedffa507b89d",
+  "head": "35d2a01a00a23bde15510611ad90a4374b0500ae",
   "applied": [
     "warn",
-    "warn2"
+    "warn2",
+    "uninit"
   ],
   "unapplied": [],
   "hidden": [],
@@ -14,6 +15,9 @@
     },
     "warn2": {
       "oid": "41a89e1d152a36ad07d03e7c62524d34429ee9f8"
+    },
+    "uninit": {
+      "oid": "35d2a01a00a23bde15510611ad90a4374b0500ae"
     }
   }
 }
