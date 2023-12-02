@@ -1,6 +1,0 @@
-Bottom: 7c1b38689bad67b722812e78a19181ff85694d8c
-Top:    7c1b38689bad67b722812e78a19181ff85694d8c
-Author: scott snyder <sss@karma>
-Date:   2023-08-10 10:57:43 -0400
-
-Update for long64 change in DD4hep.
