@@ -452,7 +452,8 @@ std::array<double, 2> tubeEtaExtremes(uint64_t aVolumeId) {
   // check if it is a cylinder centred at z=0
   dd4hep::VolumeManager volMgr = dd4hep::Detector::getInstance().volumeManager();
   auto detelement = volMgr.lookupDetElement(aVolumeId);
-  const auto& transformMatrix = detelement.nominal().worldTransformation();
+  auto detelementNom = detelement.nominal();
+  const auto& transformMatrix = detelementNom.worldTransformation();
   double outGlobal[3];
   double inLocal[] = {0, 0, 0};  // to get middle of the volume
   transformMatrix.LocalToMaster(inLocal, outGlobal);
@@ -477,7 +478,8 @@ std::array<double, 2> tubeEtaExtremes(uint64_t aVolumeId) {
 std::array<double, 2> envelopeEtaExtremes (uint64_t aVolumeId) {
   dd4hep::VolumeManager volMgr = dd4hep::Detector::getInstance().volumeManager();
   auto detelement = volMgr.lookupDetElement(aVolumeId);
-  const auto& transformMatrix = detelement.nominal().worldTransformation();
+  auto detelementNom = detelement.nominal();
+  const auto& transformMatrix = detelementNom.worldTransformation();
   // calculate values of eta in all possible corners of the envelope
   auto dim = envelopeDimensions(aVolumeId);
   double minEta = 0;
