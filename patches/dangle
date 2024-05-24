@@ -1,0 +1,6 @@
+Bottom: 40c91a82cd30aebab53d9c239b22d5628c87f33b
+Top:    40c91a82cd30aebab53d9c239b22d5628c87f33b
+Author: scott snyder <sss@karma>
+Date:   2024-05-24 15:28:48 -0400
+
+Avoid potential use of dangling temporary objects.

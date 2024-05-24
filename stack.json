@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "d3025a66359ac16ce6e3bed4415dfac9ccd3efaf",
-  "head": "c9697b7bd34c30404ad7d56c060b7052da999b31",
+  "prev": "e8071da97a42460a455e1bdd61a37c2ebc5f4882",
+  "head": "3cb4269c6e8394601a5501a8d0b55af8e0b9a6d5",
   "applied": [
     "warn",
     "warn2",
-    "uninit"
+    "uninit",
+    "dangle"
   ],
   "unapplied": [],
   "hidden": [],
@@ -18,6 +19,9 @@
     },
     "uninit": {
       "oid": "c9697b7bd34c30404ad7d56c060b7052da999b31"
+    },
+    "dangle": {
+      "oid": "3cb4269c6e8394601a5501a8d0b55af8e0b9a6d5"
     }
   }
 }
