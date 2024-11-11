@@ -1,9 +1,0 @@
-Bottom: 49e79b78a7c1043c965a97c800e890c02d3745a2
-Top:    49e79b78a7c1043c965a97c800e890c02d3745a2
-Author: scott snyder <sss@karma>
-Date:   2024-11-10 23:09:13 -0500
-
-Fix warings:
-
- - Signed/unsigned comparison.
- - Unused variables (that shadow in inner scope).

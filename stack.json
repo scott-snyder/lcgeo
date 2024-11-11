@@ -1,23 +1,19 @@
 {
   "version": 5,
-  "prev": "711f6ede975d41f62af86b1cdbf5afa925bcd6e3",
-  "head": "317352d79ad2803803bcf5361040250f812ef4b7",
+  "prev": "91e5c070179b0aff5f647f90d94a861c60382aea",
+  "head": "c7886f7ab0aeee55f97ff4cf4396b945d6232560",
   "applied": [
     "warn",
-    "warn2",
     "dangle"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
     "dangle": {
-      "oid": "317352d79ad2803803bcf5361040250f812ef4b7"
+      "oid": "c7886f7ab0aeee55f97ff4cf4396b945d6232560"
     },
     "warn": {
       "oid": "235c86c36faf702a37edab9521db841f05e0c98a"
-    },
-    "warn2": {
-      "oid": "7ec2b4e882a5dfdb1fa15d6cbc015677fe1fc402"
     }
   }
 }
