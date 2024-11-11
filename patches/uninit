@@ -1,6 +1,0 @@
-Bottom: 49e79b78a7c1043c965a97c800e890c02d3745a2
-Top:    ff222a2d0bdb6d62e00877322e86f6c04e466ab6
-Author: scott snyder <sss@karma>
-Date:   2024-11-10 23:09:57 -0500
-
-Fix uses of uninitialized variables.
