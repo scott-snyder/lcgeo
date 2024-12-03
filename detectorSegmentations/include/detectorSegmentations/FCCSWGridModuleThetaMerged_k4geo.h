@@ -33,7 +33,7 @@ public:
    *   @param[in] aCellId ID of a cell.
    *   return Position (relative to R, phi of Geant4 volume it belongs to, scaled for R=1).
    */
-  virtual Vector3D position(const CellID& aCellID) const;
+  virtual Vector3D position(const CellID& aCellID) const override;
   /**  Determine the cell ID based on the position.
    *   @param[in] aLocalPosition (not used).
    *   @param[in] aGlobalPosition
@@ -41,7 +41,7 @@ public:
    *   return Cell ID.
    */
   virtual CellID cellID(const Vector3D& aLocalPosition, const Vector3D& aGlobalPosition,
-                        const VolumeID& aVolumeID) const;
+                        const VolumeID& aVolumeID) const override;
   /**  Determine the azimuthal angle (relative to the G4 volume) based on the cell ID.
    *   @param[in] aCellId ID of a cell.
    *   return Phi.
@@ -94,6 +94,20 @@ public:
    */
   inline const std::string& fieldNameModule() const { return m_moduleID; }
 
+  /// Extract the layer index fom a cell ID.
+  int layer (const CellID& aCellID) const;
+
+  /// Determine the volume ID from the full cell ID by removing all local fields
+  virtual VolumeID volumeID(const CellID& cellID) const override;
+
+  /// Return true if this segmentation can have cells that span multiple
+  /// volumes.  That is, points from multiple distinct volumes may
+  /// be assigned to the same cell.
+  virtual bool cellsSpanVolumes() const override
+  {
+    return true;
+  }
+
 protected:
   /// the field name used for layer
   std::string m_layerID;
@@ -110,6 +124,21 @@ protected:
   /// number of layers (from the geometry)
   int m_nLayers;
   
+private:
+  /// This is added as an extension to the DetElement for a layer.
+  /// It holds the cylindrical radius of the layer as well as the
+  /// local x and z components needed for the proper phi offset.
+  struct LayerInfo {
+    LayerInfo(double the_rho, double the_xloc, double the_zloc)
+      : rho(the_rho), xloc(the_xloc), zloc(the_zloc)
+    {}
+    double rho;
+    double xloc;
+    double zloc;
+  };
+
+  /// Return the per-layer information corresponding to a volume.
+  const LayerInfo& getLayerInfo(const VolumeID vID) const;
 };
 }
 }
