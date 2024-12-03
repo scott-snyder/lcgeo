@@ -1,12 +1,11 @@
 {
   "version": 5,
-  "prev": "e48743819d34fd90caebaff1233413174fbc8cf1",
-  "head": "14ed3e325d26bf7055c3f8b9f46fc6389475db44",
+  "prev": "b709b5db1d4554674e5b77d642eab7a8d5254eff",
+  "head": "9ca7b752741b6560a411dfed93c8ce2936720924",
   "applied": [
     "warn",
     "dangle",
-    "egamSeg",
-    "refresh-temp"
+    "egamSeg"
   ],
   "unapplied": [],
   "hidden": [],
@@ -15,10 +14,7 @@
       "oid": "c7886f7ab0aeee55f97ff4cf4396b945d6232560"
     },
     "egamSeg": {
-      "oid": "f7b0f3ebef6327179ea317050162b435e5810047"
-    },
-    "refresh-temp": {
-      "oid": "14ed3e325d26bf7055c3f8b9f46fc6389475db44"
+      "oid": "9ca7b752741b6560a411dfed93c8ce2936720924"
     },
     "warn": {
       "oid": "235c86c36faf702a37edab9521db841f05e0c98a"
