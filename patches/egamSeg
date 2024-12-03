@@ -1,0 +1,9 @@
+Bottom: d91832abba925a0a5ac1795c5474db9bedd4c945
+Top:    d91832abba925a0a5ac1795c5474db9bedd4c945
+Author: sss <sss@karma>
+Date:   2024-12-03 17:16:28 -0500
+
+Fix segmentation position calculation for Allegro ECal.
+
+Fix the calculation of cell position for
+FCCSWGridModuleThetaMerged_k4geo.
