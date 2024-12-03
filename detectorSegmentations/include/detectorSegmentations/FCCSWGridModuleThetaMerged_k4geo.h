@@ -3,6 +3,7 @@
 
 // FCCSW
 #include "detectorSegmentations/GridTheta_k4geo.h"
+#include <atomic>
 
 /** FCCSWGridModuleThetaMerged_k4geo Detector/DetSegmentation/DetSegmentation/FCCSWGridModuleThetaMerged_k4geo.h FCCSWGridModuleThetaMerged_k4geo.h
  *
@@ -21,7 +22,7 @@ public:
   FCCSWGridModuleThetaMerged_k4geo(const BitFieldCoder* decoder);
 
   /// destructor
-  virtual ~FCCSWGridModuleThetaMerged_k4geo() = default;
+  virtual ~FCCSWGridModuleThetaMerged_k4geo();
 
   /// read n(modules) from detector metadata
   void GetNModulesFromGeom();
@@ -33,7 +34,7 @@ public:
    *   @param[in] aCellId ID of a cell.
    *   return Position (relative to R, phi of Geant4 volume it belongs to, scaled for R=1).
    */
-  virtual Vector3D position(const CellID& aCellID) const;
+  virtual Vector3D position(const CellID& aCellID) const override;
   /**  Determine the cell ID based on the position.
    *   @param[in] aLocalPosition (not used).
    *   @param[in] aGlobalPosition
@@ -41,7 +42,7 @@ public:
    *   return Cell ID.
    */
   virtual CellID cellID(const Vector3D& aLocalPosition, const Vector3D& aGlobalPosition,
-                        const VolumeID& aVolumeID) const;
+                        const VolumeID& aVolumeID) const override;
   /**  Determine the azimuthal angle (relative to the G4 volume) based on the cell ID.
    *   @param[in] aCellId ID of a cell.
    *   return Phi.
@@ -94,6 +95,20 @@ public:
    */
   inline const std::string& fieldNameModule() const { return m_moduleID; }
 
+  /// Extract the layer index fom a cell ID.
+  int layer(const CellID& aCellID) const;
+
+  /// Determine the volume ID from the full cell ID by removing all local fields
+  virtual VolumeID volumeID(const CellID& cellID) const override;
+
+  /// Return true if this segmentation can have cells that span multiple
+  /// volumes.  That is, points from multiple distinct volumes may
+  /// be assigned to the same cell.
+  virtual bool cellsSpanVolumes() const override
+  {
+    return true;
+  }
+
 protected:
   /// the field name used for layer
   std::string m_layerID;
@@ -110,6 +125,24 @@ protected:
   /// number of layers (from the geometry)
   int m_nLayers;
   
+private:
+  /// Tabulate the cylindrical radii of all layers, as well as the
+  /// local x and z components needed for the proper phi offset.
+  struct LayerInfo {
+    LayerInfo(double the_rho, double the_xloc, double the_zloc)
+      : rho(the_rho), xloc(the_xloc), zloc(the_zloc)
+    {}
+    double rho;
+    double xloc;
+    double zloc;
+  };
+  std::vector<LayerInfo> initLayerInfo(const CellID& cID) const;
+
+  // The vector of tabulated values, indexed by layer number.
+  // We can't build this in the constructor --- the volumes won't have
+  // been created yet.  Instead, build it lazily the first time it's needed.
+  // Since that's in a const method, make it thread-safe.
+  mutable std::atomic<const std::vector<LayerInfo>*> m_layerInfo = nullptr;
 };
 }
 }
