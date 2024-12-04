@@ -95,6 +95,9 @@ public:
    */
   inline const std::string& fieldNameModule() const { return m_moduleID; }
 
+  /// Extract the layer index fom a cell ID.
+  int layer (const CellID& aCellID) const;
+
   /// Determine the volume ID from the full cell ID by removing all local fields
   virtual VolumeID volumeID(const CellID& cellID) const override;
 

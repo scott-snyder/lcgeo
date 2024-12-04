@@ -142,7 +142,7 @@ Vector3D FCCSWGridModuleThetaMerged_k4geo::position(const CellID& cID) const {
 
   VolumeID vID = cID;
   _decoder->set(vID, m_thetaID, 0);
-  int layer = _decoder->get(vID, m_layerID);
+  int layer = this->layer (vID);
 
   // debug
   // std::cout << "cellID: " << cID << std::endl;
@@ -164,7 +164,7 @@ CellID FCCSWGridModuleThetaMerged_k4geo::cellID(const Vector3D& /* localPosition
   CellID cID = vID;
 
   // retrieve layer (since merging depends on layer)
-  int layer = _decoder->get(vID, m_layerID);
+  int layer = this->layer (vID);
 
   // retrieve theta
   double lTheta = thetaFromXYZ(globalPosition);
@@ -201,7 +201,7 @@ CellID FCCSWGridModuleThetaMerged_k4geo::cellID(const Vector3D& /* localPosition
 double FCCSWGridModuleThetaMerged_k4geo::phi(const CellID& cID) const {
 
   // retrieve layer
-  int layer = _decoder->get(cID, m_layerID);
+  int layer = this->layer (cID);
 
   // calculate phi offset due to merging
   // assume that m_mergedModules[layer]>=1
@@ -220,7 +220,7 @@ double FCCSWGridModuleThetaMerged_k4geo::phi(const CellID& cID) const {
 double FCCSWGridModuleThetaMerged_k4geo::theta(const CellID& cID) const {
 
   // retrieve layer
-  int layer = _decoder->get(cID, m_layerID);
+  int layer = this->layer (cID);
 
   // retrieve theta bin from cellID and determine theta position
   CellID thetaValue = _decoder->get(cID, m_thetaID);
@@ -241,6 +241,12 @@ double FCCSWGridModuleThetaMerged_k4geo::theta(const CellID& cID) const {
   return _theta;
 }
 
+/// Extract the layer index fom a cell ID.
+int FCCSWGridModuleThetaMerged_k4geo::layer(const CellID& cID) const {
+  return _decoder->get(cID, m_layerID);
+}
+
+/// Determine the volume ID from the full cell ID by removing all local fields
 VolumeID FCCSWGridModuleThetaMerged_k4geo::volumeID(const CellID& cID) const {
   VolumeID vID = cID;
   _decoder->set(vID, m_thetaID, 0);
