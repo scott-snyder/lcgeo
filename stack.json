@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "4381b0e48a04e7aa6f9e9dd8fcbca71cfaf224de",
-  "head": "9ca7b752741b6560a411dfed93c8ce2936720924",
+  "prev": "0713bdb84aaabba27dcc3e261cf1546bee1d8318",
+  "head": "1ffbe36316fbb98029d51da3565366e3997ca427",
   "applied": [
     "warn",
     "dangle",
-    "egamSeg"
+    "egamSeg",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
@@ -15,6 +16,9 @@
     },
     "egamSeg": {
       "oid": "9ca7b752741b6560a411dfed93c8ce2936720924"
+    },
+    "refresh-temp": {
+      "oid": "1ffbe36316fbb98029d51da3565366e3997ca427"
     },
     "warn": {
       "oid": "235c86c36faf702a37edab9521db841f05e0c98a"
