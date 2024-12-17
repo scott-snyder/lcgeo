@@ -1,13 +1,14 @@
 {
   "version": 5,
-  "prev": "ac42ce647d7ab1ae1d20f2a329b76814936dc9f7",
-  "head": "35ff76c684ed4eb389b5bd24193cbe5b71acf6ac",
+  "prev": "61d7ca9be9039051c93e3795ae9eee4c7541e553",
+  "head": "c7886f7ab0aeee55f97ff4cf4396b945d6232560",
   "applied": [
     "warn",
-    "dangle",
+    "dangle"
+  ],
+  "unapplied": [
     "egamSeg"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "dangle": {
