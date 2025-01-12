@@ -1,6 +1,0 @@
-Bottom: f02a0ade90f9c0e2bc1103d8f12c720fb58c7a93
-Top:    49e79b78a7c1043c965a97c800e890c02d3745a2
-Author: scott snyder <sss@karma>
-Date:   2024-11-10 23:09:13 -0500
-
-Avoid (false-positive) warnings about possibly uninitialized variables.
