@@ -1,6 +1,18 @@
 Bottom: 1547717d8d483ed64352e943dd9a1d0574bd5c4b
 Top:    65c617f8719b672c08252832ec07562ce81609c5
 Author: scott snyder <sss@karma>
-Date:   2025-01-12 18:26:57 -0500
+Date:   2025-01-12 18:32:46 -0500
 
 Avoid potential use of dangling temporary objects.
+
+In something like
+
+```
+  const auto& transformMatrix = detelement.nominal().worldTransformation();
+```
+nominal() returns a temporary Alignment object by value, and
+worldTransformation() returns a reference within that Alignment object.
+So we should make a copy.
+(The C++ rules for extending the lifetime of a temporary bound to a reference
+don't help here because the object bound to a reference is different
+from the object whose lifetime needs to be extended.)

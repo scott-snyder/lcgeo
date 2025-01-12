@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "117d6dae42a6d28b30a903578f20dd4e210ae31f",
-  "head": "81a747fb23d95b11433dedda1a0101610b42bc0e",
+  "prev": "8d46be1ca0e1aeed019fc724f995cfc0527f783b",
+  "head": "6c1ab9c7133b150d72d4b79b3e0599e9a4dd26c0",
   "applied": [
     "egamSeg",
     "dangle"
@@ -10,7 +10,7 @@
   "hidden": [],
   "patches": {
     "dangle": {
-      "oid": "81a747fb23d95b11433dedda1a0101610b42bc0e"
+      "oid": "6c1ab9c7133b150d72d4b79b3e0599e9a4dd26c0"
     },
     "egamSeg": {
       "oid": "1820c58868e59db5d302d22f3bdb8b2122bce6e3"
