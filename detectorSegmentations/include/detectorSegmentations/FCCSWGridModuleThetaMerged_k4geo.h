@@ -101,9 +101,10 @@ public:
   /// Determine the volume ID from the full cell ID by removing all local fields
   virtual VolumeID volumeID(const CellID& cellID) const override;
 
-  /// Return true if this segmentation can gang together regions
-  /// from multiple volumes.
-  virtual bool isGanged() const override
+  /// Return true if this segmentation can have cells that span multiple
+  /// volumes.  That is, points from multiple distinct volumes may
+  /// be assigned to the same cell.
+  virtual bool cellsSpanVolumes() const override
   {
     return true;
   }
