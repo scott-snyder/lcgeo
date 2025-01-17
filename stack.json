@@ -1,9 +1,9 @@
 {
   "version": 5,
-  "prev": "e2fea6cffd5376b34ebe9411be8dfac016d6adb0",
+  "prev": "5cc2e72d2d2c7a93fd636158594bb38e4109de36",
   "head": "83679bdffeb2ba8f7c38b900bad92a070ac8b23d",
   "applied": [
-    "egamSeg",
+    "ecalSeg",
     "dangle"
   ],
   "unapplied": [],
@@ -12,7 +12,7 @@
     "dangle": {
       "oid": "83679bdffeb2ba8f7c38b900bad92a070ac8b23d"
     },
-    "egamSeg": {
+    "ecalSeg": {
       "oid": "7a6cf79c1c5bed633810b2300e9147d2b4b94477"
     }
   }
