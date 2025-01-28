@@ -129,14 +129,8 @@ private:
   /// It holds the cylindrical radius of the layer as well as the
   /// local x and z components needed for the proper phi offset.
   struct LayerInfo {
-    // Needed in order to be used as an extension.
-    LayerInfo (const LayerInfo& li) = default;
-    template <class T>
-    LayerInfo (const LayerInfo& li, T)
-      : LayerInfo (li) {}
-
-    LayerInfo (double the_rho, double the_xloc, double the_zloc)
-      : rho (the_rho), xloc (the_xloc), zloc (the_zloc)
+    LayerInfo(double the_rho, double the_xloc, double the_zloc)
+      : rho(the_rho), xloc(the_xloc), zloc(the_zloc)
     {}
     double rho;
     double xloc;
@@ -144,7 +138,7 @@ private:
   };
 
   /// Return the per-layer information corresponding to a volume.
-  const LayerInfo& getLayerInfo (const VolumeID vID) const;
+  const LayerInfo& getLayerInfo(const VolumeID vID) const;
 };
 }
 }

@@ -3,6 +3,7 @@
 #include <iostream>
 #include "DD4hep/Detector.h"
 #include "DD4hep/VolumeManager.h"
+#include "DDRec/DetectorData.h"
 
 namespace dd4hep {
 namespace DDSegmentation {
@@ -64,12 +65,14 @@ void FCCSWGridModuleThetaMerged_k4geo::GetNLayersFromGeom() {
 const FCCSWGridModuleThetaMerged_k4geo::LayerInfo&
 FCCSWGridModuleThetaMerged_k4geo::getLayerInfo(VolumeID vID) const
 {
+  using LayerInfoData = dd4hep::rec::StructExtension<LayerInfo>;
+
   // Look up the DetElement for this volume and see if we've already
   // added the per-layer information.
   dd4hep::Detector* dd4hepgeo = &(dd4hep::Detector::getInstance());
   VolumeManager vman = VolumeManager::getVolumeManager(*dd4hepgeo);
   DetElement de = vman.lookupDetElement(vID);
-  const LayerInfo* li = de.extension<LayerInfo>(false);
+  const LayerInfo* li = de.extension<LayerInfoData>(false);
 
   if (!li) {
     // Not there.  We need to make it.
@@ -111,7 +114,7 @@ FCCSWGridModuleThetaMerged_k4geo::getLayerInfo(VolumeID vID) const
     }
 
     // Remember this by adding it to the DE as an extension.
-    li = de.addExtension<LayerInfo>(new LayerInfo(rho, xloc, zloc));
+    li = de.addExtension<LayerInfoData>(new LayerInfoData(LayerInfo(rho, xloc, zloc)));
   }
 
   return *li;
