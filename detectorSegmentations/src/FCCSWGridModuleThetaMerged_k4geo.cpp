@@ -1,7 +1,6 @@
 #include "detectorSegmentations/FCCSWGridModuleThetaMerged_k4geo.h"
 
 #include <iostream>
-#include <chrono>
 #include "DD4hep/Detector.h"
 #include "DD4hep/VolumeManager.h"
 
@@ -145,7 +144,7 @@ CellID FCCSWGridModuleThetaMerged_k4geo::cellID(const Vector3D& /* localPosition
   CellID cID = vID;
 
   // retrieve layer (since merging depends on layer)
-  int layer = this->layer (vID);
+  int layer = this->layer(vID);
 
   // retrieve theta
   double lTheta = thetaFromXYZ(globalPosition);
@@ -182,7 +181,7 @@ CellID FCCSWGridModuleThetaMerged_k4geo::cellID(const Vector3D& /* localPosition
 double FCCSWGridModuleThetaMerged_k4geo::phi(const CellID& cID) const {
 
   // retrieve layer
-  int layer = this->layer (cID);
+  int layer = this->layer(cID);
 
   // calculate phi offset due to merging
   // assume that m_mergedModules[layer]>=1
@@ -201,7 +200,7 @@ double FCCSWGridModuleThetaMerged_k4geo::phi(const CellID& cID) const {
 double FCCSWGridModuleThetaMerged_k4geo::theta(const CellID& cID) const {
 
   // retrieve layer
-  int layer = this->layer (cID);
+  int layer = this->layer(cID);
 
   // retrieve theta bin from cellID and determine theta position
   CellID thetaValue = _decoder->get(cID, m_thetaID);
