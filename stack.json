@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "482a882604266e022d18fcddfa5e33d2e156a076",
-  "head": "344ed0b011d5781c395c136366d1102f4a4d0ccf",
+  "prev": "9b741d2bf8eedc37e37a0f4a359546cc53b57504",
+  "head": "fbabd78e82f5eb230c7b924a027609936306f66f",
   "applied": [
     "dangle",
     "timeout",
-    "ecalSeg"
+    "ecalSeg",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
@@ -15,6 +16,9 @@
     },
     "ecalSeg": {
       "oid": "344ed0b011d5781c395c136366d1102f4a4d0ccf"
+    },
+    "refresh-temp": {
+      "oid": "fbabd78e82f5eb230c7b924a027609936306f66f"
     },
     "timeout": {
       "oid": "bc79feee5310a87f2ca48d9889935691d552b942"
