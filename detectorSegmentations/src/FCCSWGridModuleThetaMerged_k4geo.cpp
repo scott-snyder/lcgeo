@@ -1,6 +1,7 @@
 #include "detectorSegmentations/FCCSWGridModuleThetaMerged_k4geo.h"
 
 #include <iostream>
+#include <chrono>
 #include "DD4hep/Detector.h"
 #include "DD4hep/VolumeManager.h"
 
@@ -36,12 +37,6 @@ FCCSWGridModuleThetaMerged_k4geo::FCCSWGridModuleThetaMerged_k4geo(const BitFiel
   GetNLayersFromGeom();
 }
 
-FCCSWGridModuleThetaMerged_k4geo::~FCCSWGridModuleThetaMerged_k4geo()
-{
-  delete m_layerInfo;
-}
-
-
 void FCCSWGridModuleThetaMerged_k4geo::GetNModulesFromGeom() {
   dd4hep::Detector* dd4hepgeo = &(dd4hep::Detector::getInstance());
   try {
@@ -66,26 +61,24 @@ void FCCSWGridModuleThetaMerged_k4geo::GetNLayersFromGeom() {
   std::cout << "Number of layers read from detector metadata and used in readout class: " << m_nLayers << std::endl;
 }
 
-/// Tabulate the cylindrical radii of all layers, as well as the
-/// local x and z components needed for the proper phi offset.
-std::vector<FCCSWGridModuleThetaMerged_k4geo::LayerInfo>
-FCCSWGridModuleThetaMerged_k4geo::initLayerInfo (const CellID& cID) const
+/// Return the per-layer information corresponding to a volume.
+const FCCSWGridModuleThetaMerged_k4geo::LayerInfo&
+FCCSWGridModuleThetaMerged_k4geo::getLayerInfo(VolumeID vID) const
 {
+  // Look up the DetElement for this volume and see if we've already
+  // added the per-layer information.
   dd4hep::Detector* dd4hepgeo = &(dd4hep::Detector::getInstance());
   VolumeManager vman = VolumeManager::getVolumeManager(*dd4hepgeo);
+  DetElement de = vman.lookupDetElement(vID);
+  const LayerInfo* li = de.extension<LayerInfo>(false);
 
-  std::vector<LayerInfo> out;
-  out.reserve (m_nLayers);
-  VolumeID vID = cID;
-  _decoder->set(vID, m_thetaID, 0);
-  for (int l = 0; l < m_nLayers; l++) {
-
-    // Look up a volume in layer l in the volume manager, and find its radius
+  if (!li) {
+    // Not there.  We need to make it.
+    // Look up this volume in the volume manager, and find its radius
     // by transforming the origin in the local coordinate system to global
     // coordinates.
-    _decoder->set(vID, m_layerID, l);
     VolumeManagerContext* vc = vman.lookupContext(vID);
-    Position wpos = vc->localToWorld ({0,0,0});
+    Position wpos = vc->localToWorld({0,0,0});
     double rho = wpos.Rho();
 
     // If different modules are ganged together, we want to put hits
@@ -96,7 +89,7 @@ FCCSWGridModuleThetaMerged_k4geo::initLayerInfo (const CellID& cID) const
     // for different layers (even with identical ganging).
     double xloc = 0;
     double zloc = 0;
-    double phioff = phi (vID);
+    double phioff = phi(vID);
     if (phioff > 0) {
       // We need to apply a phi offset.  Calculate it by rotating
       // the global position in phi and converting back to local
@@ -112,37 +105,26 @@ FCCSWGridModuleThetaMerged_k4geo::initLayerInfo (const CellID& cID) const
       // but we prefer to do the calculation via explicit rotations because
       // it's easier to see that that was is correct, and it also avoids
       // the explicit dependencies on the geometry parameters.
-      Position wpos2 = RotateZ (wpos, phioff);
-      Position lpos2 = vc->worldToLocal (wpos2);
+      Position wpos2 = RotateZ(wpos, phioff);
+      Position lpos2 = vc->worldToLocal(wpos2);
       xloc = lpos2.X();
       zloc = lpos2.Z();
     }
 
-    out.emplace_back (rho, xloc, zloc);
+    // Remember this by adding it to the DE as an extension.
+    li = de.addExtension<LayerInfo>(new LayerInfo(rho, xloc, zloc));
   }
-  return out;
+
+  return *li;
 }
 
 
 /// determine the local position based on the cell ID
 Vector3D FCCSWGridModuleThetaMerged_k4geo::position(const CellID& cID) const {
 
-  // Get the vector of layer info.  If it hasn't been made yet,
-  // calculate it now.
-  const std::vector<LayerInfo>* liv = m_layerInfo.load();
-  if (!liv) {
-    auto liv_new = new std::vector<LayerInfo> (initLayerInfo(cID));
-    if (m_layerInfo.compare_exchange_strong (liv, liv_new)) {
-      liv = liv_new;
-    }
-    else {
-      delete liv_new;
-    }
-  }
-
   VolumeID vID = cID;
   _decoder->set(vID, m_thetaID, 0);
-  int layer = this->layer (vID);
+  const LayerInfo& li = this->getLayerInfo(vID);
 
   // debug
   // std::cout << "cellID: " << cID << std::endl;
@@ -152,7 +134,6 @@ Vector3D FCCSWGridModuleThetaMerged_k4geo::position(const CellID& cID) const {
   // it extends the length of the calorimeter along the y-axis.
   // We set the y-coordinate based on the theta bin, and x and z
   // based on the phi offset required for this layer.
-  const LayerInfo& li = liv->at(layer);
   return Vector3D(li.xloc,
                   -li.rho / tan(theta(cID)),
                   li.zloc);

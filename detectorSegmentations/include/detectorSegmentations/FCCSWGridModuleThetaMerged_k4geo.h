@@ -3,7 +3,6 @@
 
 // FCCSW
 #include "detectorSegmentations/GridTheta_k4geo.h"
-#include <atomic>
 
 /** FCCSWGridModuleThetaMerged_k4geo Detector/DetSegmentation/DetSegmentation/FCCSWGridModuleThetaMerged_k4geo.h FCCSWGridModuleThetaMerged_k4geo.h
  *
@@ -22,7 +21,7 @@ public:
   FCCSWGridModuleThetaMerged_k4geo(const BitFieldCoder* decoder);
 
   /// destructor
-  virtual ~FCCSWGridModuleThetaMerged_k4geo();
+  virtual ~FCCSWGridModuleThetaMerged_k4geo() = default;
 
   /// read n(modules) from detector metadata
   void GetNModulesFromGeom();
@@ -126,9 +125,16 @@ protected:
   int m_nLayers;
   
 private:
-  /// Tabulate the cylindrical radii of all layers, as well as the
+  /// This is added as an extension to the DetElement for a layer.
+  /// It holds the cylindrical radius of the layer as well as the
   /// local x and z components needed for the proper phi offset.
   struct LayerInfo {
+    // Needed in order to be used as an extension.
+    LayerInfo (const LayerInfo& li) = default;
+    template <class T>
+    LayerInfo (const LayerInfo& li, T)
+      : LayerInfo (li) {}
+
     LayerInfo (double the_rho, double the_xloc, double the_zloc)
       : rho (the_rho), xloc (the_xloc), zloc (the_zloc)
     {}
@@ -136,13 +142,9 @@ private:
     double xloc;
     double zloc;
   };
-  std::vector<LayerInfo> initLayerInfo (const CellID& cID) const;
 
-  // The vector of tabulated values, indexed by layer number.
-  // We can't build this in the constructor --- the volumes won't have
-  // been created yet.  Instead, build it lazily the first time it's needed.
-  // Since that's in a const method, make it thread-safe.
-  mutable std::atomic<const std::vector<LayerInfo>*> m_layerInfo = nullptr;
+  /// Return the per-layer information corresponding to a volume.
+  const LayerInfo& getLayerInfo (const VolumeID vID) const;
 };
 }
 }
