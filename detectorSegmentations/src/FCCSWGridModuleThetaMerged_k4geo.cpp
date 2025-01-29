@@ -69,13 +69,13 @@ void FCCSWGridModuleThetaMerged_k4geo::GetNLayersFromGeom() {
 /// Tabulate the cylindrical radii of all layers, as well as the
 /// local x and z components needed for the proper phi offset.
 std::vector<FCCSWGridModuleThetaMerged_k4geo::LayerInfo>
-FCCSWGridModuleThetaMerged_k4geo::initLayerInfo (const CellID& cID) const
+FCCSWGridModuleThetaMerged_k4geo::initLayerInfo(const CellID& cID) const
 {
   dd4hep::Detector* dd4hepgeo = &(dd4hep::Detector::getInstance());
   VolumeManager vman = VolumeManager::getVolumeManager(*dd4hepgeo);
 
   std::vector<LayerInfo> out;
-  out.reserve (m_nLayers);
+  out.reserve(m_nLayers);
   VolumeID vID = cID;
   _decoder->set(vID, m_thetaID, 0);
   for (int l = 0; l < m_nLayers; l++) {
@@ -85,7 +85,7 @@ FCCSWGridModuleThetaMerged_k4geo::initLayerInfo (const CellID& cID) const
     // coordinates.
     _decoder->set(vID, m_layerID, l);
     VolumeManagerContext* vc = vman.lookupContext(vID);
-    Position wpos = vc->localToWorld ({0,0,0});
+    Position wpos = vc->localToWorld({0,0,0});
     double rho = wpos.Rho();
 
     // If different modules are ganged together, we want to put hits
@@ -96,7 +96,7 @@ FCCSWGridModuleThetaMerged_k4geo::initLayerInfo (const CellID& cID) const
     // for different layers (even with identical ganging).
     double xloc = 0;
     double zloc = 0;
-    double phioff = phi (vID);
+    double phioff = phi(vID);
     if (phioff > 0) {
       // We need to apply a phi offset.  Calculate it by rotating
       // the global position in phi and converting back to local
@@ -112,13 +112,13 @@ FCCSWGridModuleThetaMerged_k4geo::initLayerInfo (const CellID& cID) const
       // but we prefer to do the calculation via explicit rotations because
       // it's easier to see that that was is correct, and it also avoids
       // the explicit dependencies on the geometry parameters.
-      Position wpos2 = RotateZ (wpos, phioff);
+      Position wpos2 = RotateZ(wpos, phioff);
       Position lpos2 = vc->worldToLocal (wpos2);
       xloc = lpos2.X();
       zloc = lpos2.Z();
     }
 
-    out.emplace_back (rho, xloc, zloc);
+    out.emplace_back(rho, xloc, zloc);
   }
   return out;
 }
@@ -131,8 +131,8 @@ Vector3D FCCSWGridModuleThetaMerged_k4geo::position(const CellID& cID) const {
   // calculate it now.
   const std::vector<LayerInfo>* liv = m_layerInfo.load();
   if (!liv) {
-    auto liv_new = new std::vector<LayerInfo> (initLayerInfo(cID));
-    if (m_layerInfo.compare_exchange_strong (liv, liv_new)) {
+    auto liv_new = new std::vector<LayerInfo>(initLayerInfo(cID));
+    if (m_layerInfo.compare_exchange_strong(liv, liv_new)) {
       liv = liv_new;
     }
     else {
@@ -142,7 +142,7 @@ Vector3D FCCSWGridModuleThetaMerged_k4geo::position(const CellID& cID) const {
 
   VolumeID vID = cID;
   _decoder->set(vID, m_thetaID, 0);
-  int layer = this->layer (vID);
+  int layer = this->layer(vID);
 
   // debug
   // std::cout << "cellID: " << cID << std::endl;
@@ -164,7 +164,7 @@ CellID FCCSWGridModuleThetaMerged_k4geo::cellID(const Vector3D& /* localPosition
   CellID cID = vID;
 
   // retrieve layer (since merging depends on layer)
-  int layer = this->layer (vID);
+  int layer = this->layer(vID);
 
   // retrieve theta
   double lTheta = thetaFromXYZ(globalPosition);
@@ -201,7 +201,7 @@ CellID FCCSWGridModuleThetaMerged_k4geo::cellID(const Vector3D& /* localPosition
 double FCCSWGridModuleThetaMerged_k4geo::phi(const CellID& cID) const {
 
   // retrieve layer
-  int layer = this->layer (cID);
+  int layer = this->layer(cID);
 
   // calculate phi offset due to merging
   // assume that m_mergedModules[layer]>=1
@@ -220,7 +220,7 @@ double FCCSWGridModuleThetaMerged_k4geo::phi(const CellID& cID) const {
 double FCCSWGridModuleThetaMerged_k4geo::theta(const CellID& cID) const {
 
   // retrieve layer
-  int layer = this->layer (cID);
+  int layer = this->layer(cID);
 
   // retrieve theta bin from cellID and determine theta position
   CellID thetaValue = _decoder->get(cID, m_thetaID);
