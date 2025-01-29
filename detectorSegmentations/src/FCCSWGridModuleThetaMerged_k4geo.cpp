@@ -113,7 +113,7 @@ FCCSWGridModuleThetaMerged_k4geo::initLayerInfo(const CellID& cID) const
       // it's easier to see that that was is correct, and it also avoids
       // the explicit dependencies on the geometry parameters.
       Position wpos2 = RotateZ(wpos, phioff);
-      Position lpos2 = vc->worldToLocal (wpos2);
+      Position lpos2 = vc->worldToLocal(wpos2);
       xloc = lpos2.X();
       zloc = lpos2.Z();
     }
