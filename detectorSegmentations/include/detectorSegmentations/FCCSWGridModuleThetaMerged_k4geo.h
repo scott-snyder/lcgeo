@@ -129,7 +129,7 @@ private:
   /// Tabulate the cylindrical radii of all layers, as well as the
   /// local x and z components needed for the proper phi offset.
   struct LayerInfo {
-    LayerInfo the_rho, double the_xloc, double the_zloc)
+    LayerInfo(double the_rho, double the_xloc, double the_zloc)
       : rho(the_rho), xloc(the_xloc), zloc(the_zloc)
     {}
     double rho;
