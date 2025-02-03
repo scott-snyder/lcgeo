@@ -1,13 +1,12 @@
 {
   "version": 5,
-  "prev": "518fc4d0fbda0a49f167d625f0805e23476057eb",
-  "head": "16b460f46d41e6870e2b8a970377b1c039a08d47",
+  "prev": "34d73d1567f597242e57c13e266913943f2e987a",
+  "head": "a59a9fd52ea5f3f37812f330f87cea658253a5c1",
   "applied": [
     "dangle",
     "timeout",
     "ecalSeg",
-    "override",
-    "refresh-temp"
+    "override"
   ],
   "unapplied": [
     "ecalSeg-ext"
@@ -24,10 +23,7 @@
       "oid": "ca8cf73772f0dc7ec85721551f8aa0f1bff4cf6c"
     },
     "override": {
-      "oid": "76e9eec2cdc69cf8b32e72ac865bb69fabe7ea3c"
-    },
-    "refresh-temp": {
-      "oid": "16b460f46d41e6870e2b8a970377b1c039a08d47"
+      "oid": "a59a9fd52ea5f3f37812f330f87cea658253a5c1"
     },
     "timeout": {
       "oid": "bc79feee5310a87f2ca48d9889935691d552b942"
