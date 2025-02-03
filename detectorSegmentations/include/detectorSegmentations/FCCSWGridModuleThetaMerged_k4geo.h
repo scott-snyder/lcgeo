@@ -34,7 +34,7 @@ public:
    *   @param[in] aCellId ID of a cell.
    *   return Position (relative to R, phi of Geant4 volume it belongs to, scaled for R=1).
    */
-  virtual Vector3D position(const CellID& aCellID) const override;
+  virtual Vector3D position(const CellID& aCellID) const;
   /**  Determine the cell ID based on the position.
    *   @param[in] aLocalPosition (not used).
    *   @param[in] aGlobalPosition
@@ -42,7 +42,7 @@ public:
    *   return Cell ID.
    */
   virtual CellID cellID(const Vector3D& aLocalPosition, const Vector3D& aGlobalPosition,
-                        const VolumeID& aVolumeID) const override;
+                        const VolumeID& aVolumeID) const;
   /**  Determine the azimuthal angle (relative to the G4 volume) based on the cell ID.
    *   @param[in] aCellId ID of a cell.
    *   return Phi.
@@ -99,12 +99,12 @@ public:
   int layer(const CellID& aCellID) const;
 
   /// Determine the volume ID from the full cell ID by removing all local fields
-  virtual VolumeID volumeID(const CellID& cellID) const override;
+  virtual VolumeID volumeID(const CellID& cellID) const;
 
   /// Return true if this segmentation can have cells that span multiple
   /// volumes.  That is, points from multiple distinct volumes may
   /// be assigned to the same cell.
-  virtual bool cellsSpanVolumes() const override
+  virtual bool cellsSpanVolumes() const
   {
     return true;
   }
