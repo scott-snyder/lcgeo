@@ -1,31 +1,9 @@
 {
   "version": 5,
-  "prev": "8e4b5c6d92c8ced6971bfbaed87dd70a4d4a0048",
-  "head": "a67a4d2fd9f249e9bc146301556ca90b0a1dc589",
-  "applied": [
-    "dangle",
-    "timeout",
-    "ecalSeg",
-    "override",
-    "ecalSeg-ext"
-  ],
+  "prev": "e5bd4f613a49467d57a4b688dd5499289f17405b",
+  "head": "a59a9fd52ea5f3f37812f330f87cea658253a5c1",
+  "applied": [],
   "unapplied": [],
   "hidden": [],
-  "patches": {
-    "dangle": {
-      "oid": "8c922c404a3bbdf3d0b3f9924bb6127546afd4e0"
-    },
-    "ecalSeg": {
-      "oid": "4cf66544a3ebaa77f50ce1d4520c6533f8ecdbf3"
-    },
-    "ecalSeg-ext": {
-      "oid": "a67a4d2fd9f249e9bc146301556ca90b0a1dc589"
-    },
-    "override": {
-      "oid": "56d928088505a62bc5d78390ae40fc0dc0d2b88d"
-    },
-    "timeout": {
-      "oid": "0b40cd0a1fc6739e6c1c3cc8b99a9a129149ff01"
-    }
-  }
+  "patches": {}
 }
