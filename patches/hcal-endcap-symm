@@ -1,10 +1,10 @@
 Bottom: 4647e579542cc7fceb3d5a3233e82373b3de2554
 Top:    126b932d67c747bf7006e0f0448ba0d58c4a390d
 Author: sss <sss@karma>
-Date:   2025-03-27 11:08:49 -0400
+Date:   2025-03-27 11:20:34 -0400
 
 Make endcap symmetric between positive and negative halves.
 
 The cell layout of the endcaps was not symmetric between the positive
 and negative halves.  Fixed so that is actually symmetric.
-See issue ... for details.
+See issue #455 (https://github.com/key4hep/k4geo/issues/455) for details.
