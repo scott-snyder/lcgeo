@@ -1,15 +1,19 @@
 {
   "version": 5,
-  "prev": "c373ab8c68444cd3cbbdcaa79c201060c450241a",
-  "head": "bae034dba474b1f1fdc26d2950655a21cfb8f3cf",
+  "prev": "bf7cc51f09b0ea6aa76d5b917839eaf7ce104f1b",
+  "head": "9d22dd3f43016c19350c9455458391f90648245d",
   "applied": [
-    "hcal-endcap-symm"
+    "hcal-endcap-symm",
+    "typo"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
     "hcal-endcap-symm": {
       "oid": "bae034dba474b1f1fdc26d2950655a21cfb8f3cf"
+    },
+    "typo": {
+      "oid": "9d22dd3f43016c19350c9455458391f90648245d"
     }
   }
 }
