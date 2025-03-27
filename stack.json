@@ -1,9 +1,15 @@
 {
   "version": 5,
-  "prev": "e5bd4f613a49467d57a4b688dd5499289f17405b",
-  "head": "a59a9fd52ea5f3f37812f330f87cea658253a5c1",
-  "applied": [],
+  "prev": "1074bea92a754bb208d9c83d8dedfd01b3b91db8",
+  "head": "26bc8048b21f6c71bf761687064d49db3bfdc2c7",
+  "applied": [
+    "hcal-endcap-symm"
+  ],
   "unapplied": [],
   "hidden": [],
-  "patches": {}
+  "patches": {
+    "hcal-endcap-symm": {
+      "oid": "26bc8048b21f6c71bf761687064d49db3bfdc2c7"
+    }
+  }
 }

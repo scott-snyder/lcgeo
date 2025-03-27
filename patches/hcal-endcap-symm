@@ -1,0 +1,10 @@
+Bottom: 4647e579542cc7fceb3d5a3233e82373b3de2554
+Top:    4647e579542cc7fceb3d5a3233e82373b3de2554
+Author: sss <sss@karma>
+Date:   2025-03-27 11:08:11 -0400
+
+Make endcap symmetric between positive and negative halves.
+
+The cell layout of the endcaps was not symmetric between the positive
+and negative halves.  Fixed so that is actually symmetric.
+See issue ... for details.
