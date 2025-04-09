@@ -83,6 +83,13 @@ namespace DDSegmentation {
      */
     inline double offsetPhi() const { return m_offsetPhi; }
 
+    /**  Get the vector of theta bins (cells) in a given layer.
+     */
+    inline const std::vector<int>& thetaBins(const uint layer) const {
+      const LayerInfo& li = getLayerInfo(layer);
+      return li.thetaBins;
+    }
+
     /**  Get the coordinate offset in z-axis.
      *   Offset is the middle position of the Barrel or each section of the Endcap.
      *   For the Barrel, the vector size is 1, while for the Endcap - number of section.
