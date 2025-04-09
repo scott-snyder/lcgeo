@@ -1,12 +1,11 @@
 {
   "version": 5,
-  "prev": "86c5cab6fc262569b11c961d376e036b6806e5bf",
-  "head": "38df6407322d104a629b40fe80b17fe158e89161",
+  "prev": "0ff79043ea201cdf1acec7294a09b04e3ea68c8f",
+  "head": "d7b23972d8daf1055b68f39e7ef2c8df6b2447e5",
   "applied": [
     "hcal-endcap-symm",
     "typo",
-    "hcal-seg-wip",
-    "refresh-temp"
+    "hcal-seg-wip"
   ],
   "unapplied": [],
   "hidden": [],
@@ -15,10 +14,7 @@
       "oid": "9b1257195bdb4ec991f88bcd7b74e512956dc0fd"
     },
     "hcal-seg-wip": {
-      "oid": "241152ad8bd11adc38ec0aa39c26a5566a90c5cc"
-    },
-    "refresh-temp": {
-      "oid": "38df6407322d104a629b40fe80b17fe158e89161"
+      "oid": "d7b23972d8daf1055b68f39e7ef2c8df6b2447e5"
     },
     "typo": {
       "oid": "b82049682f78d76b59020de4807c7a5a19631a4b"
