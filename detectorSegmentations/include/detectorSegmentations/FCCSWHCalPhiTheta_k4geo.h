@@ -77,7 +77,7 @@ namespace DDSegmentation {
 
     /**  Get the vector of theta bins (cells) in a given layer.
      */
-    inline std::vector<int> thetaBins(const uint layer) const {
+    inline const std::vector<int>& thetaBins(const uint layer) const {
       const LayerInfo& li = getLayerInfo(layer);
       return li.thetaBins;
     }
@@ -129,6 +129,8 @@ namespace DDSegmentation {
      *   return Theta.
      */
     std::array<double, 2> cellTheta(const CellID cID) const;
+
+    VolumeID volumeID(const CellID& cID) const;
 
     /**  Get the min and max layer indexes of each HCal part.
      * For Endcap, returns the three elements vector, while for Barrel - single element vector.
@@ -187,6 +189,13 @@ namespace DDSegmentation {
      */
     inline std::vector<double> cellDimensions(const CellID /* id */) const { return {gridSizePhi(), gridSizeTheta()}; }
 
+
+    virtual bool cellsSpanVolumes() const override
+    {
+      return true;
+    }
+
+
   private:
     /// determine the azimuthal angle phi based on the current cell ID
     double phi() const;
@@ -213,6 +222,8 @@ namespace DDSegmentation {
 
     /// Initialization common to all ctors.
     void commonSetup();
+    /// the field index used for system
+    int m_systemIndex = -1;
     /// the field index used for layer
     int m_layerIndex = -1;
     /// the field index used for row
@@ -241,7 +252,31 @@ namespace DDSegmentation {
       std::vector<int> thetaBins {};
 
       /// z-min and z-max of each cell (theta bin) in each layer
-      std::unordered_map<int, std::pair<double, double> > cellEdges {};
+      using Edges = std::pair<double, double>;
+      int m_ibin1 = 0;
+      int m_ibin2 = 9999999;
+
+      struct CellInfo {
+        CellInfo (double lo, double hi): edges(lo, hi) {}
+        Edges edges {0, 0};
+        VolumeID volumeID {0};
+        double volumeZ {0};
+      };
+      std::vector<CellInfo> m_cellInfo1 {};
+      std::vector<CellInfo> m_cellInfo2 {};
+
+      const CellInfo& cellInfo (int ibin) const
+      {
+        if (ibin < m_ibin1) std::abort();
+        if (ibin < m_ibin2) return m_cellInfo1.at(ibin - m_ibin1);
+        return m_cellInfo2.at(ibin - m_ibin2);
+      }
+      CellInfo& cellInfo (int ibin)
+      {
+        if (ibin < m_ibin1) std::abort();
+        if (ibin < m_ibin2) return m_cellInfo1.at(ibin - m_ibin1);
+        return m_cellInfo2.at(ibin - m_ibin2);
+      }
     };
 
     // The vector of tabulated values, indexed by layer number.
@@ -254,14 +289,14 @@ namespace DDSegmentation {
     const LayerInfo& getLayerInfo (const unsigned layer) const;
 
     /**  Construct the derived geometrical information.
-     *xxx
+     *
      * Calculate layer radii and edges in z-axis, then define cell edges in each layer using defineCellEdges().
      *    Following member variables are calculated:
      *      radius
      *      layerEdges
      *      layerDepth
      *      thetaBins (updated through defineCellEdges())
-     *      cellEdges* (updated through defineCellEdges())
+     *      m_cellEdges* (updated through defineCellEdges())
      */
     std::vector<LayerInfo> initLayerInfo() const;
 
@@ -273,6 +308,9 @@ namespace DDSegmentation {
      *   @param[in] layer index
      */
     void defineCellEdges(LayerInfo& li, const unsigned int layer) const;
+
+    void defineVolIDMappings(LayerInfo& li,
+                             const unsigned int layer) const;
 
     // Check consistency of input geometric variables.
     bool checkParameters() const;
