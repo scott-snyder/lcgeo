@@ -63,6 +63,12 @@ namespace DDSegmentation {
     dumpneighbors();
 
     auto pos = positionFromRThetaPhi(li.radius, theta(cID), phi(cID));
+
+    std::cout << "aaa " << m_detLayout << " " << decoder()->get(cID, m_systemIndex)
+              << " " << layer << " " << thetaID << " " <<
+      li.radius << " " << pos.x() << " " << pos.y() << " " << zpos << " "
+              << ci.volumeZ << " " << ci.edge.low << " " << ci.edge.high << "\n";
+
     return Vector3D(pos.x(), pos.y(), zpos);
   }
 
@@ -224,6 +230,9 @@ namespace DDSegmentation {
     VolumeManager vman_glob = VolumeManager::getVolumeManager(*dd4hepgeo);
     VolumeManager vman = vman_glob.subdetector (de.id);
 
+    std::cout << "vvvx " << m_detLayout << " " << de.id << " "
+              << li.zmin << " " << li.zmax << "\n";
+
     // Process a contiguous set of theta bins.
     // zmin is the minimum z-coordinate of the range.
     // layernum is the dd4hep layer number (different from the layer number
@@ -321,6 +330,20 @@ namespace DDSegmentation {
 
       // negative endcap
       scanRows(-li.zmax, -(layer + 1), std::ranges::drop_view(li.thetaBins, li.thetaBins.size() / 2));
+    }
+
+    for (size_t jbin : li.thetaBins) {
+      VolumeID xid = li.cellInfo(jbin).volumeID;
+      double zpos = -999;
+      if (xid > 0) {
+        VolumeManagerContext* vc = vman.lookupContext(li.cellInfo(jbin).volumeID);
+        Position wpos = vc->localToWorld({0,0,0});
+        zpos = wpos.Z();
+      }
+      std::cout << "vvv2   " << layer << " " << jbin << " " << " "
+                << li.cellInfo(jbin).edge.low << " " << li.cellInfo(jbin).edge.high
+                << " 0x" << std::hex << xid << std::dec
+                << " " << decoder()->get(xid, m_rowIndex) << " " << zpos << "\n";
     }
   }
 
