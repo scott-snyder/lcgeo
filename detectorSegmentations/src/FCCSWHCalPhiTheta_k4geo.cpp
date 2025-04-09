@@ -1,3 +1,6 @@
+// still to do:
+//   avoid linear searches
+#pragma GCC optimize "-O0"
 #include "detectorSegmentations/FCCSWHCalPhiTheta_k4geo.h"
 #include "DD4hep/Printout.h"
 #include "DD4hep/Detector.h"
@@ -69,6 +72,12 @@ namespace DDSegmentation {
     dumpneighbors();
 
     auto pos = positionFromRThetaPhi(li.radius, theta(cID), phi(cID));
+
+    std::cout << "aaa " << m_detLayout << " " << decoder()->get(cID, m_systemIndex)
+              << " " << layer << " " << thetaID << " " <<
+      li.radius << " " << pos.x() << " " << pos.y() << " " << zpos << " "
+              << ci.volumeZ << " " << ci.edges.first << " " << ci.edges.second << "\n";
+
     return Vector3D(pos.x(), pos.y(), zpos);
   }
 
@@ -88,7 +97,6 @@ namespace DDSegmentation {
 
     return liv->at (layer);
   }
-
 
   // Initialize derived derived layer information.
   std::vector<FCCSWHCalPhiTheta_k4geo::LayerInfo>
@@ -250,6 +258,9 @@ namespace DDSegmentation {
     VolumeManager vman = VolumeManager::getVolumeManager(*dd4hepgeo);
     const DetElementObject& de = *dd4hepgeo->readout (this->name()).segmentation().detector();
 
+    std::cout << "vvvx " << m_detLayout << " " << de.id << " "
+              << li.zmin << " " << li.zmax << "\n";
+
     // Process a contiguous set of theta bins.
     // zmin is the minimum z-coordinate of the range.
     // layernum is the dd4hep layer number (different from the layer number
@@ -349,6 +360,20 @@ namespace DDSegmentation {
       // negative endcap
       scanRows (-li.zmax, -(layer+1),
                 std::ranges::drop_view (li.thetaBins, li.thetaBins.size()/2));
+    }
+
+    for (size_t jbin : li.thetaBins) {
+      VolumeID xid = li.cellInfo(jbin).volumeID;
+      double zpos = -999;
+      if (xid > 0) {
+        VolumeManagerContext* vc = vman.lookupContext(li.cellInfo(jbin).volumeID);
+        Position wpos = vc->localToWorld({0,0,0});
+        zpos = wpos.Z();
+      }
+      std::cout << "vvv2   " << layer << " " << jbin << " " << " "
+                << li.cellInfo(jbin).edges.first << " " << li.cellInfo(jbin).edges.second
+                << " 0x" << std::hex << xid << std::dec
+                << " " << decoder()->get(xid, m_rowIndex) << " " << zpos << "\n";
     }
   }
 
