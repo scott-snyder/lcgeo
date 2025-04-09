@@ -130,6 +130,8 @@ namespace DDSegmentation {
      */
     std::array<double, 2> cellTheta(const CellID cID) const;
 
+    VolumeID volumeID(const CellID& cID) const;
+
     /**  Get the min and max layer indexes of each HCal part.
      * For Endcap, returns the three elements vector, while for Barrel - single element vector.
      */
@@ -187,6 +189,13 @@ namespace DDSegmentation {
      */
     inline std::vector<double> cellDimensions(const CellID /* id */) const { return {gridSizePhi(), gridSizeTheta()}; }
 
+
+    virtual bool cellsSpanVolumes() const override
+    {
+      return true;
+    }
+
+
   private:
     /// determine the azimuthal angle phi based on the current cell ID
     double phi() const;
@@ -213,6 +222,8 @@ namespace DDSegmentation {
 
     /// Initialization common to all ctors.
     void commonSetup();
+    /// the field index used for system
+    int m_systemIndex = -1;
     /// the field index used for layer
     int m_layerIndex = -1;
     /// the field index used for row
@@ -258,6 +269,8 @@ namespace DDSegmentation {
       struct CellInfo {
         CellInfo (double lo, double hi): edges(lo, hi) {}
         Edges edges {0, 0};
+        VolumeID volumeID {0};
+        double volumeZ {0};
       };
       std::vector<CellInfo> m_cellInfo1 {};
       std::vector<CellInfo> m_cellInfo2 {};
@@ -286,13 +299,14 @@ namespace DDSegmentation {
     const LayerInfo& getLayerInfo (const unsigned layer) const;
 
     /**  Construct the derived geometrical information.
+     *
      * Calculate layer radii and edges in z-axis, then define cell edges in each layer using defineCellEdges().
      *    Following member variables are calculated:
      *      radius
      *      layerEdges
      *      layerDepth
      *      thetaBins (updated through defineCellEdges())
-     *      cellEdges* (updated through defineCellEdges())
+     *      m_cellEdges* (updated through defineCellEdges())
      */
     std::vector<LayerInfo> initLayerInfo() const;
 
@@ -304,6 +318,9 @@ namespace DDSegmentation {
      *   @param[in] layer index
      */
     void defineCellEdges(LayerInfo& li, const unsigned int layer) const;
+
+    void defineVolIDMappings(LayerInfo& li,
+                             const unsigned int layer) const;
 
     // Check consistency of input geometric variables.
     bool checkParameters() const;
