@@ -1,13 +1,13 @@
 {
   "version": 5,
-  "prev": "7233227397acacca3da2e68abcecdbb0d6b51143",
-  "head": "bd781aa8e9a8ade3c2480c3298295788edd648c2",
-  "applied": [
+  "prev": "52e31cd57f37baa21f0ffe5f8d5549d5d3e55149",
+  "head": "a59a9fd52ea5f3f37812f330f87cea658253a5c1",
+  "applied": [],
+  "unapplied": [
     "hcal-endcap-symm",
     "typo",
     "hcal-seg-wip"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "hcal-endcap-symm": {
