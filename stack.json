@@ -1,15 +1,19 @@
 {
   "version": 5,
-  "prev": "3d4ad4a2c7fd42430f55851d1767ab933010e61d",
-  "head": "5bd69abe54cd02f7ceccb8b96763f5027c6ec07c",
+  "prev": "8d95da880e49e65f5bf952b298eba88e9631d84a",
+  "head": "9449355fd4966c415a154aa73c26af8129ed3f19",
   "applied": [
     "hcal-endcap-symm",
     "typo",
-    "hcal-seg-wip"
+    "hcal-seg-wip",
+    "ci"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
+    "ci": {
+      "oid": "9449355fd4966c415a154aa73c26af8129ed3f19"
+    },
     "hcal-endcap-symm": {
       "oid": "9b1257195bdb4ec991f88bcd7b74e512956dc0fd"
     },
