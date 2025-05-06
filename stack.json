@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "be53b7670be849f91c9963dd0216720eddcae1e4",
-  "head": "351ae694b22aab1082f815939d8e1f42035938a6",
-  "applied": [],
+  "prev": "c654035a6e5066adbf24e2d4c488905430707dce",
+  "head": "861eeed35eed05b729fe4da9bd83fd0cad507a91",
+  "applied": [
+    "hcal-endcap-symm"
+  ],
   "unapplied": [
-    "hcal-endcap-symm",
     "typo",
     "hcal-seg-wip",
     "ci"
@@ -15,7 +16,7 @@
       "oid": "c59e87e0695271a87a3db62379c12620051f57ac"
     },
     "hcal-endcap-symm": {
-      "oid": "9b1257195bdb4ec991f88bcd7b74e512956dc0fd"
+      "oid": "861eeed35eed05b729fe4da9bd83fd0cad507a91"
     },
     "hcal-seg-wip": {
       "oid": "5bd69abe54cd02f7ceccb8b96763f5027c6ec07c"
