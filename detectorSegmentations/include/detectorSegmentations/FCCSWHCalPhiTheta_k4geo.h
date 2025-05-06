@@ -62,14 +62,6 @@ namespace DDSegmentation {
      */
     void defineCellsInRZplan() const;
 
-    /**  Define cell edges in z-axis for the given layer.
-     *   Logic:
-     *      1) Find theta bin centers that fit within the given layer;
-     *      2) Define a cell edge in z-axis as the middle of each pair of theta bin centers
-     *   @param[in] layer index
-     */
-    void defineCellEdges(const unsigned int layer) const;
-
     /**  Determine the azimuthal angle of HCal cell based on the cellID.
      *   @param[in] aCellId ID of a cell.
      *   return Phi.
@@ -93,13 +85,9 @@ namespace DDSegmentation {
 
     /**  Get the vector of theta bins (cells) in a given layer.
      */
-    inline std::vector<int> thetaBins(const uint layer) const {
-      if (m_radii.empty())
-        defineCellsInRZplan();
-      if (!m_thetaBins.empty())
-        return m_thetaBins[layer];
-      else
-        return std::vector<int>();
+    inline const std::vector<int>& thetaBins(const uint layer) const {
+      const LayerInfo& li = getLayerInfo(layer);
+      return li.thetaBins;
     }
 
     /**  Get the coordinate offset in z-axis.
@@ -107,26 +95,26 @@ namespace DDSegmentation {
      *   For the Barrel, the vector size is 1, while for the Endcap - number of section.
      *   return The offset in z.
      */
-    inline std::vector<double> offsetZ() const { return m_offsetZ; }
+    inline const std::vector<double>& offsetZ() const { return m_offsetZ; }
 
     /**  Get the z length of the layer.
      *   return the z length.
      */
-    inline std::vector<double> widthZ() const { return m_widthZ; }
+    inline const std::vector<double>& widthZ() const { return m_widthZ; }
 
     /**  Get the coordinate offset in radius.
      *   Offset is the inner radius of the first layer in the Barrel or in each section of the Endcap.
      *   For the Barrel, the vector size is 1, while for the Endcap - number of sections.
      *   return the offset in radius.
      */
-    inline std::vector<double> offsetR() const { return m_offsetR; }
+    inline const std::vector<double>& offsetR() const { return m_offsetR; }
 
     /**  Get the number of layers for each different thickness retrieved with dRlayer().
      *   For the Barrel, the vector size equals to the number of different thicknesses used to form the layers.
      *   For the Endcap, the vector size equals to the number of sections in the Endcap times the number of different
      * thicknesses used to form the layers. return the number of layers.
      */
-    inline std::vector<int> numLayers() const { return m_numLayers; }
+    inline const std::vector<int>& numLayers() const { return m_numLayers; }
 
     /**  Get the dR (thickness) of layers.
      *   The size of the vector equals to the number of different thicknesses used to form the layers.
@@ -149,6 +137,8 @@ namespace DDSegmentation {
      *   return Theta.
      */
     std::array<double, 2> cellTheta(const CellID& cID) const;
+
+    VolumeID volumeID(const CellID& cID) const;
 
     /**  Get the min and max layer indexes of each HCal part.
      * For Endcap, returns the three elements vector, while for Barrel - single element vector.
@@ -207,6 +197,13 @@ namespace DDSegmentation {
      */
     inline std::vector<double> cellDimensions(const CellID& /* id */) const { return {gridSizePhi(), gridSizeTheta()}; }
 
+
+    virtual bool cellsSpanVolumes() const /*override*/
+    {
+      return true;
+    }
+
+
   protected:
     /// determine the azimuthal angle phi based on the current cell ID
     double phi() const;
@@ -230,16 +227,82 @@ namespace DDSegmentation {
     std::vector<int> m_numLayers;
     /// dR of the layer
     std::vector<double> m_dRlayer;
-    /// radius of each layer
-    mutable std::vector<double> m_radii;
-    /// z-min and z-max of each layer
-    mutable std::vector<std::pair<double, double>> m_layerEdges;
-    /// dR of each layer
-    mutable std::vector<double> m_layerDepth;
-    /// theta bins (cells) in each layer
-    mutable std::vector<std::vector<int>> m_thetaBins;
-    /// z-min and z-max of each cell (theta bin) in each layer
-    mutable std::vector<std::unordered_map<int, std::pair<double, double>>> m_cellEdges;
+
+    // Derived geometrical information about each layer.
+    struct LayerInfo
+    {
+      /// Radius of the layer.
+      double radius = 1;
+
+      /// Half the layer depth (dR).
+      double halfDepth = 0;
+
+      /// z-min and z-max of the layer
+      double zmin = 0;
+      double zmax = 0;
+
+      /// theta bins (cells) in the layer
+      std::vector<int> thetaBins {};
+
+      /// z-min and z-max of each cell (theta bin) in each layer
+      using Edges = std::pair<double, double>;
+      int m_ibin1 = 0;
+      int m_ibin2 = 9999999;
+
+      struct CellInfo {
+        CellInfo (double lo, double hi): edges(lo, hi) {}
+        Edges edges {0, 0};
+        VolumeID volumeID {0};
+        double volumeZ {0};
+      };
+      std::vector<CellInfo> m_cellInfo1 {};
+      std::vector<CellInfo> m_cellInfo2 {};
+
+      const CellInfo& cellInfo (int ibin) const
+      {
+        if (ibin < m_ibin1) std::abort();
+        if (ibin < m_ibin2) return m_cellInfo1.at(ibin - m_ibin1);
+        return m_cellInfo2.at(ibin - m_ibin2);
+      }
+      CellInfo& cellInfo (int ibin)
+      {
+        if (ibin < m_ibin1) std::abort();
+        if (ibin < m_ibin2) return m_cellInfo1.at(ibin - m_ibin1);
+        return m_cellInfo2.at(ibin - m_ibin2);
+      }
+    };
+    mutable std::vector<LayerInfo> m_layerInfo;
+
+
+    // Retrieve the derived geometrical information for a given layer.
+    const LayerInfo& getLayerInfo (const unsigned layer) const;
+
+    /**  Construct the derived geometrical information.
+     *
+     * Calculate layer radii and edges in z-axis, then define cell edges in each layer using defineCellEdges().
+     *    Following member variables are calculated:
+     *      radius
+     *      layerEdges
+     *      layerDepth
+     *      thetaBins (updated through defineCellEdges())
+     *      m_cellEdges* (updated through defineCellEdges())
+     */
+    std::vector<LayerInfo> initLayerInfo() const;
+
+    // Check consistency of input geometric variables.
+    bool checkParameters() const;
+
+    /**  Define cell edges in z-axis for the given layer.
+     *   Logic:
+     *      1) Find theta bin centers that fit within the given layer; 
+     *      2) Define a cell edge in z-axis as the middle of each pair of theta bin centers
+     *   @param[in] layer index 
+     */
+    void defineCellEdges(LayerInfo& li,
+                         const unsigned int layer) const;
+
+    void defineVolIDMappings(LayerInfo& li,
+                             const unsigned int layer) const;
   };
 } // namespace DDSegmentation
 } // namespace dd4hep
