@@ -1,10 +1,8 @@
 {
   "version": 5,
-  "prev": "a6a2e7ca3edaa5a7539d5e90e07e8528304d3707",
-  "head": "f1ac84499db0a2672b3fa45b4fdbe884fe036f60",
+  "prev": "6c8ca297a968b406d184dec0d77ba74332eb6e19",
+  "head": "408223e2a5f4a1789fdd9b06986d72db56a6e37c",
   "applied": [
-    "hcal-endcap-symm",
-    "typo",
     "hcal-seg-wip",
     "ci"
   ],
@@ -12,16 +10,10 @@
   "hidden": [],
   "patches": {
     "ci": {
-      "oid": "f1ac84499db0a2672b3fa45b4fdbe884fe036f60"
-    },
-    "hcal-endcap-symm": {
-      "oid": "861eeed35eed05b729fe4da9bd83fd0cad507a91"
+      "oid": "408223e2a5f4a1789fdd9b06986d72db56a6e37c"
     },
     "hcal-seg-wip": {
-      "oid": "b0dd9c6f01747aca2cc5083e36b7ff2d42699285"
-    },
-    "typo": {
-      "oid": "2de78cdaca055816878480bd91eeee7af5225179"
+      "oid": "31c839c4fcfef455bae593886d7b558bc69facc6"
     }
   }
 }
