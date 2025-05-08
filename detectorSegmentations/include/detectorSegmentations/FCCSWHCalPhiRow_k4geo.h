@@ -45,6 +45,7 @@ namespace DDSegmentation {
     virtual CellID cellID(const Vector3D& aLocalPosition, const Vector3D& aGlobalPosition,
                           const VolumeID& aVolumeID) const;
 
+    using Segmentation::neighbours; // XXX clean up interfaces
     /**  Find neighbours of the cell
      *   Definition of neighbours is explained on slide 7:
      * https://indico.cern.ch/event/1475808/contributions/6219554/attachments/2966253/5218774/FCC_FullSim_HCal_slides.pdf
