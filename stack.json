@@ -1,12 +1,11 @@
 {
   "version": 5,
-  "prev": "dd65a64748be7368e5ee402211540537020cba7a",
-  "head": "3ad3c6460e342b17ab80d01fa32f2cae95e74a25",
+  "prev": "8c3f159e94de06775a3dbd7d7c8a3c731b5db633",
+  "head": "34f074556c805ad5ab71419ded20200c0119e365",
   "applied": [
     "hcal-seg-wip",
     "ci",
-    "hidden",
-    "refresh-temp"
+    "hidden"
   ],
   "unapplied": [],
   "hidden": [],
@@ -18,10 +17,7 @@
       "oid": "408223e2a5f4a1789fdd9b06986d72db56a6e37c"
     },
     "hidden": {
-      "oid": "1c9cbd168b00c5f3e78acd9a9cfdb78fc36b2c12"
-    },
-    "refresh-temp": {
-      "oid": "3ad3c6460e342b17ab80d01fa32f2cae95e74a25"
+      "oid": "34f074556c805ad5ab71419ded20200c0119e365"
     }
   }
 }
