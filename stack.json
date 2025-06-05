@@ -1,13 +1,12 @@
 {
   "version": 5,
-  "prev": "e9d131f1604b0424c4ecdba14a3730e9e233b6a3",
-  "head": "59c9b67723731ab0b75cd4f7711baeec9666138a",
+  "prev": "6ef39e5c3340a25c9291a07748d7e3bf6eba2082",
+  "head": "897bd2bec868d8c4e51936e87755eefc788198a5",
   "applied": [
     "hcal-seg-wip",
     "ci",
     "hidden",
-    "except",
-    "refresh-temp"
+    "except"
   ],
   "unapplied": [],
   "hidden": [],
@@ -16,16 +15,13 @@
       "oid": "5e3c13c35acd1bf047dfad37df46367af2a888d5"
     },
     "except": {
-      "oid": "139bf82e7d1a1148a4814dffb2e635858c63bb39"
+      "oid": "897bd2bec868d8c4e51936e87755eefc788198a5"
     },
     "hcal-seg-wip": {
       "oid": "23cb7ee89240dfbcfac926e84f3bfb79fe3f432c"
     },
     "hidden": {
       "oid": "78dba656cda01aa98afe4d2a75d1d424d8c5da4d"
-    },
-    "refresh-temp": {
-      "oid": "59c9b67723731ab0b75cd4f7711baeec9666138a"
     }
   }
 }
