@@ -1,4 +1,3 @@
-#pragma GCC optimize "-O0"
 // $Id: $
 //====================================================================
 //  Simple tracking detector made from planar sensors that are parallel
