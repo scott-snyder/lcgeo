@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 
+cmake_policy(SET CMP0144 NEW)
+cmake_policy(SET CMP0167 NEW)
+
 #---------------------------
 set( PackageName k4geo )
 #---------------------------
