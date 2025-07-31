@@ -117,6 +117,11 @@ namespace DDSegmentation {
       return {(double)mergedModules(aLayer), gridSizeTheta() * mergedThetaCells(aLayer)};
     }
 
+    virtual std::vector<CellID> cellIDs (VolumeID volid,
+                                         double thetaMin,
+                                         double thetaMax) const override;
+
+
   protected:
     /// the field name used for layer
     std::string m_layerID;
