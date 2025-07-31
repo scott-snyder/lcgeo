@@ -244,5 +244,41 @@ namespace DDSegmentation {
     return vID;
   }
 
+  std::vector<CellID> FCCSWGridModuleThetaMerged_k4geo::cellIDs (VolumeID volumeId,
+                                                                 double thetaMin,
+                                                                 double thetaMax) const
+  {
+    std::vector<CellID> cells;
+
+    int ilayer = this->layer(volumeId);
+    unsigned nModules = this->nModules() / this->mergedModules(ilayer);
+
+    // convert to minimum and maximum theta bins
+    double thetaCellSize = this->gridSizeTheta();
+    double thetaOffset = this->offsetTheta();
+    unsigned minThetaID = int(floor((thetaMin + 0.5 * thetaCellSize - thetaOffset) / thetaCellSize));
+    unsigned maxThetaID = int(floor((thetaMax + 0.5 * thetaCellSize - thetaOffset) / thetaCellSize));
+
+    // correct minThetaID and maxThetaID for merging
+    unsigned mergedThetaCells = this->mergedThetaCells(ilayer);
+    minThetaID -= (minThetaID % mergedThetaCells);
+    maxThetaID -= (maxThetaID % mergedThetaCells);
+    unsigned nThetaCells = 1 + (maxThetaID - minThetaID) / mergedThetaCells;
+    return {nModules, nThetaCells, minThetaID};
+
+    std::vector<CellID> cells;
+    cells.reserve (nModules * nThetaCells);
+    for (unsigned int imodule = 0; imodule < nModules; imodule++) {
+      for (unsigned int itheta = 0; itheta < nThetaCells; itheta++) {
+        dd4hep::DDSegmentation::CellID cellId = volumeId;
+        _decoder->set(cellId, m_moduleID, imodule * this->mergedModules(ilayer));
+        _decoder->set(cellId, m_thetaID,
+                      minThetaID + itheta * this->mergedThetaCells(ilayer)); // start from the minimum existing theta cell in this layer
+        cells.push_back(cellId);
+      }
+    }
+  }
+
+
 } // namespace DDSegmentation
 } // namespace dd4hep

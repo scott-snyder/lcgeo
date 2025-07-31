@@ -87,6 +87,14 @@ namespace DDSegmentation {
       return std::sqrt(aposition.X * aposition.X + aposition.Y * aposition.Y);
     }
 
+    virtual std::vector<CellID> cellIDs (VolumeID /*volid*/,
+                                         double /*thetaMin*/,
+                                         double /*thetaMax*/) const
+    {
+      std::vector<CellID> v;
+      return v;
+    }
+
   protected:
     /// determine the theta angle based on the current cell ID
     double theta() const;
