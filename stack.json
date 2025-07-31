@@ -1,13 +1,14 @@
 {
   "version": 5,
-  "prev": "57a5aad504b41875bde9930a46e2b0d83006743f",
-  "head": "8cfb16771346118ebdb8d6eb96dd55fc85d57b0e",
+  "prev": "f37e11e99824da44ca2158a1a017a55fa4ff844b",
+  "head": "a529beece6698848d8c9715bf87844903865f997",
   "applied": [
     "hcal-seg-wip",
     "ci",
     "hidden",
     "except",
-    "cmakewarn"
+    "cmakewarn",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
@@ -26,6 +27,9 @@
     },
     "hidden": {
       "oid": "78dba656cda01aa98afe4d2a75d1d424d8c5da4d"
+    },
+    "refresh-temp": {
+      "oid": "a529beece6698848d8c9715bf87844903865f997"
     }
   }
 }
