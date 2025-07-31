@@ -1,21 +1,20 @@
 {
   "version": 5,
-  "prev": "1fe5391184b8784f3885f953fef75a80e5c3c2cc",
-  "head": "83b5efb61ab8c630997d3d7d9ced7e23223049db",
+  "prev": "1e0c6b92ef62a59deac5cf8fcab7b1c376d7870c",
+  "head": "a976a2bb7aec2436bda9cf8697478876ecae0d01",
   "applied": [
     "hcal-seg-wip",
     "ci",
     "hidden",
     "except",
     "cmakewarn",
-    "cellids-wip",
-    "refresh-temp"
+    "cellids-wip"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
     "cellids-wip": {
-      "oid": "57f9b1c17b6b280cdaf2ac357b4b361653061c22"
+      "oid": "a976a2bb7aec2436bda9cf8697478876ecae0d01"
     },
     "ci": {
       "oid": "5e3c13c35acd1bf047dfad37df46367af2a888d5"
@@ -31,9 +30,6 @@
     },
     "hidden": {
       "oid": "78dba656cda01aa98afe4d2a75d1d424d8c5da4d"
-    },
-    "refresh-temp": {
-      "oid": "83b5efb61ab8c630997d3d7d9ced7e23223049db"
     }
   }
 }
