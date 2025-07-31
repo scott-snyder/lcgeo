@@ -1,18 +1,22 @@
 {
   "version": 5,
-  "prev": "6ef39e5c3340a25c9291a07748d7e3bf6eba2082",
-  "head": "897bd2bec868d8c4e51936e87755eefc788198a5",
+  "prev": "57a5aad504b41875bde9930a46e2b0d83006743f",
+  "head": "8cfb16771346118ebdb8d6eb96dd55fc85d57b0e",
   "applied": [
     "hcal-seg-wip",
     "ci",
     "hidden",
-    "except"
+    "except",
+    "cmakewarn"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
       "oid": "5e3c13c35acd1bf047dfad37df46367af2a888d5"
+    },
+    "cmakewarn": {
+      "oid": "8cfb16771346118ebdb8d6eb96dd55fc85d57b0e"
     },
     "except": {
       "oid": "897bd2bec868d8c4e51936e87755eefc788198a5"
