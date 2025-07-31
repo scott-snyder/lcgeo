@@ -1,17 +1,21 @@
 {
   "version": 5,
-  "prev": "c2aa4428a934c2aa89b7f5701f01ba1380364b3e",
-  "head": "eeabfe3b883ea91f792883cf30417fbd3024be0b",
+  "prev": "cfcc88e7c564543afaaf41ea1eee29221052c6b3",
+  "head": "57f9b1c17b6b280cdaf2ac357b4b361653061c22",
   "applied": [
     "hcal-seg-wip",
     "ci",
     "hidden",
     "except",
-    "cmakewarn"
+    "cmakewarn",
+    "cellids-wip"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
+    "cellids-wip": {
+      "oid": "57f9b1c17b6b280cdaf2ac357b4b361653061c22"
+    },
     "ci": {
       "oid": "5e3c13c35acd1bf047dfad37df46367af2a888d5"
     },
