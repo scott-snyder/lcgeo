@@ -1,16 +1,17 @@
 {
   "version": 5,
-  "prev": "85ee5a64530374fd53741be0cec037c5b850f424",
-  "head": "a976a2bb7aec2436bda9cf8697478876ecae0d01",
+  "prev": "1853a6543b2a31b0363f887c5578500910919b5e",
+  "head": "eeabfe3b883ea91f792883cf30417fbd3024be0b",
   "applied": [
     "hcal-seg-wip",
     "ci",
     "hidden",
     "except",
-    "cmakewarn",
+    "cmakewarn"
+  ],
+  "unapplied": [
     "cellids-wip"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "cellids-wip": {
