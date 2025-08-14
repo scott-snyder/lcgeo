@@ -71,7 +71,8 @@ namespace DDSegmentation {
 
     auto pos = positionFromRThetaPhi(li.radius, theta(cID), phi(cID));
 
-    std::cout << "aaa " << m_detLayout << " " << layer << " " << thetaID << " " <<
+    std::cout << "aaa " << m_detLayout << " " << decoder()->get(cID, "system")
+              << " " << layer << " " << thetaID << " " <<
       li.radius << " " << pos.x() << " " << pos.y() << " " << zpos << " "
               << ci.volumeZ << " " << ci.edges.first << " " << ci.edges.second << "\n";
     
