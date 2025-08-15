@@ -1,15 +1,15 @@
 {
   "version": 5,
-  "prev": "84f796fc24fe58e6af6d38383afccf9d8d7fb072",
-  "head": "af49899f0a839534d5457263ff94c07b496da439",
-  "applied": [
+  "prev": "b35732c231252071a4cb4fc3efff647e6d2c9090",
+  "head": "047779d1d20aa6ad85491475d2533237635bd005",
+  "applied": [],
+  "unapplied": [
     "hcal-seg-wip",
     "ci",
     "hidden",
     "except",
     "cmakewarn"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
