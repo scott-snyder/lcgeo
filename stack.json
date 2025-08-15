@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "3683abbe78d5173fbfc89f9c06906569de9adb4c",
-  "head": "047779d1d20aa6ad85491475d2533237635bd005",
-  "applied": [],
+  "prev": "e43fa190ff8e5d2e7a9f7f0dec2627d19031faf4",
+  "head": "8c515e831abafa3f4bc19d91f4ef9ba942802535",
+  "applied": [
+    "segCleanup1"
+  ],
   "unapplied": [
-    "segCleanup1",
     "hcal-seg-wip",
     "ci",
     "hidden",
