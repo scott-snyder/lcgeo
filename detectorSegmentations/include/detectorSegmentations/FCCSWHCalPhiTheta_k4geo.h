@@ -207,7 +207,7 @@ namespace DDSegmentation {
      */
     inline std::vector<double> cellDimensions(const CellID& /* id */) const { return {gridSizePhi(), gridSizeTheta()}; }
 
-  protected:
+  private:
     /// determine the azimuthal angle phi based on the current cell ID
     double phi() const;
     /// the number of bins in phi
@@ -240,6 +240,19 @@ namespace DDSegmentation {
     mutable std::vector<std::vector<int>> m_thetaBins;
     /// z-min and z-max of each cell (theta bin) in each layer
     mutable std::vector<std::unordered_map<int, std::pair<double, double>>> m_cellEdges;
+
+    /// Initialization common to all ctors.
+    void commonSetup();
+    /// the field index used for layer
+    int m_layerIndex = -1;
+    /// the field index used for row
+    int m_rowIndex = -1;
+    /// the field index used for type
+    int m_typeIndex = -1;
+    /// the field index used for theta
+    int m_thetaIndex = -1;
+    /// the field index used for phi
+    int m_phiIndex = -1;
   };
 } // namespace DDSegmentation
 } // namespace dd4hep

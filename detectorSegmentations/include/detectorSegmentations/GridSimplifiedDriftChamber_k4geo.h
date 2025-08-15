@@ -198,7 +198,7 @@ namespace DDSegmentation {
       return layer;
     }
 
-  protected:
+  private:
     /* *** nalipour *** */
     double phi(const CellID& cID) const;
 
@@ -216,6 +216,13 @@ namespace DDSegmentation {
     mutable double _currentGridSizePhi; // current size Phi
     mutable double _currentRadius;      // current size radius
     mutable double m_epsilon;
+
+    /// Initialization common to all ctors.
+    void commonSetup();
+    /// the field index used for layer
+    int m_layerIndex = -1;
+    /// the field index used for phi
+    int m_phiIndex = -1;
   };
 } // namespace DDSegmentation
 } // namespace dd4hep

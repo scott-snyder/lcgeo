@@ -78,7 +78,7 @@ namespace DDSegmentation {
      */
     inline std::vector<double> cellDimensions(const CellID& /* id */) const { return {gridSizePhi(), gridSizeTheta()}; }
 
-  protected:
+  private:
     /// determine the azimuthal angle phi based on the current cell ID
     double phi() const;
     /// the number of bins in phi
@@ -87,6 +87,13 @@ namespace DDSegmentation {
     double m_offsetPhi;
     /// the field name used for phi
     std::string m_phiID;
+
+    /// Initialization common to all ctors.
+    void commonSetup();
+    /// the field index used for theta
+    int m_thetaIndex = -1;
+    /// the field index used for phi
+    int m_phiIndex = -1;
   };
 } // namespace DDSegmentation
 } // namespace dd4hep

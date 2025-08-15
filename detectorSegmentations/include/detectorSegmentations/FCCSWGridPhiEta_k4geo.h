@@ -73,15 +73,20 @@ namespace DDSegmentation {
      */
     inline void setFieldNamePhi(const std::string& fieldName) { m_phiID = fieldName; }
 
-  protected:
-    /// determine the azimuthal angle phi based on the current cell ID
-    double phi() const;
+  private:
     /// the number of bins in phi
     int m_phiBins;
     /// the coordinate offset in phi
     double m_offsetPhi;
     /// the field name used for phi
     std::string m_phiID;
+
+    /// Initialization common to all ctors.
+    void commonSetup();
+    /// the field index used for eta
+    int m_etaIndex = -1;
+    /// the field index used for phi
+    int m_phiIndex = -1;
   };
 } // namespace DDSegmentation
 } // namespace dd4hep

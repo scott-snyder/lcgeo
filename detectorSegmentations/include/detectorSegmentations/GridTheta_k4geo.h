@@ -87,15 +87,18 @@ namespace DDSegmentation {
       return std::sqrt(aposition.X * aposition.X + aposition.Y * aposition.Y);
     }
 
-  protected:
-    /// determine the theta angle based on the current cell ID
-    double theta() const;
+  private:
     /// the grid size in theta
     double m_gridSizeTheta;
     /// the coordinate offset in theta
     double m_offsetTheta;
     /// the field name used for theta
     std::string m_thetaID;
+
+    /// Initialization common to all ctors.
+    void commonSetup();
+    /// the field index used for theta
+    int m_thetaIndex = -1;
   };
 } // namespace DDSegmentation
 } // namespace dd4hep
