@@ -1,0 +1,12 @@
+Bottom: 8a3c4621cfbd2d8ed8190f771eda06d544f96781
+Top:    8a3c4621cfbd2d8ed8190f771eda06d544f96781
+Author: sss <sss@karma>
+Date:   2025-08-15 14:37:27 -0400
+
+Some segmentation cleanup.
+
+ - Avoid directly using protected members from base classes when there
+   is a public accessor.  Change protected members to private.
+ - Remember field indices, to avoid having to always do string lookups.
+ - Factor out duplicated code between constructors.
+ - Naming convention consistency.
