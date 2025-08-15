@@ -1,9 +1,10 @@
 {
   "version": 5,
-  "prev": "7e55d83bd14a10a14a9acc9f0e44e3025e0ff740",
-  "head": "ef92596b7b2be39095e35b11eaf7c6c1ccc64b98",
+  "prev": "33cbdeacdd5d835d2e74b27311c0e4d227312643",
+  "head": "1266fe64a2bcc1278716ecde804a4097946ea552",
   "applied": [
-    "segCleanup1"
+    "segCleanup1",
+    "refresh-temp"
   ],
   "unapplied": [
     "hcal-seg-wip",
@@ -28,6 +29,9 @@
     },
     "hidden": {
       "oid": "be43fc6061aff6ffe56e58d6bfc5a881e3b0b61a"
+    },
+    "refresh-temp": {
+      "oid": "1266fe64a2bcc1278716ecde804a4097946ea552"
     },
     "segCleanup1": {
       "oid": "ef92596b7b2be39095e35b11eaf7c6c1ccc64b98"
