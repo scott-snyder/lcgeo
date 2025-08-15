@@ -230,6 +230,8 @@ namespace DDSegmentation {
 
     /// Initialization common to all ctors.
     void commonSetup();
+    /// the field index used for system
+    int m_systemIndex = -1;
     /// the field index used for layer
     int m_layerIndex = -1;
     /// the field index used for row

@@ -44,11 +44,12 @@ namespace DDSegmentation {
     registerIdentifier("identifier_phi", "Cell ID identifier for phi", m_phiID, "phi");
     registerIdentifier("identifier_layer", "Cell ID identifier for layer", m_layerID, "layer");
 
-    m_layerIndex = decoder()->index(m_layerID);
-    m_rowIndex   = decoder()->index("row");
-    m_typeIndex  = decoder()->index("type");
-    m_thetaIndex = decoder()->index(fieldNameTheta());
-    m_phiIndex   = decoder()->index(m_phiID);
+    m_systemIndex = decoder()->index("system");
+    m_layerIndex  = decoder()->index(m_layerID);
+    m_rowIndex    = decoder()->index("row");
+    m_typeIndex   = decoder()->index("type");
+    m_thetaIndex  = decoder()->index(fieldNameTheta());
+    m_phiIndex    = decoder()->index(m_phiID);
   }
 
   /** /// determine the global position based on the cell ID
@@ -72,7 +73,7 @@ namespace DDSegmentation {
 
     auto pos = positionFromRThetaPhi(li.radius, theta(cID), phi(cID));
 
-    std::cout << "aaa " << m_detLayout << " " << decoder()->get(cID, "system")
+    std::cout << "aaa " << m_detLayout << " " << decoder()->get(cID, m_systemIndex)
               << " " << layer << " " << thetaID << " " <<
       li.radius << " " << pos.x() << " " << pos.y() << " " << zpos << " "
               << ci.volumeZ << " " << ci.edges.first << " " << ci.edges.second << "\n";
@@ -96,7 +97,7 @@ namespace DDSegmentation {
   {
     std::vector<LayerInfo> out;
     if (!checkParameters()) {
-      out.resize ((*decoder())[m_layerID].maxValue()+1);
+      out.resize ((*decoder())[m_layerIndex].maxValue()+1);
       return out;
     }
 
@@ -247,7 +248,7 @@ namespace DDSegmentation {
       size_t nrows = layer_it->second.children().size();
 
       VolumeID vID = 0;
-      decoder()->set(vID, "system", de.id);
+      decoder()->set(vID, m_systemIndex, de.id);
       for (const auto& [name, val] : layer_it->second.placement().volIDs()) {
         decoder()->set(vID, name, val);
       }
@@ -257,7 +258,7 @@ namespace DDSegmentation {
 
       auto itbin = thetaBins.end();
       for (size_t ir=0; ir < nrows; ir++) {
-        decoder()->set(vID, "row", ir);
+        decoder()->set(vID, m_rowIndex, ir);
         VolumeManagerContext* vc = vman.lookupContext(vID);
         double zpos = vc->localToWorld({0,0,0}).Z();
         if (zpos < edges.first) continue;
@@ -308,7 +309,7 @@ namespace DDSegmentation {
       std::cout << "vvv2   " << layer << " " << jbin << " " << " "
                 << li.cellInfo(jbin).edges.first << " " << li.cellInfo(jbin).edges.second
                 << " 0x" << std::hex << xid << std::dec
-                << " " << decoder()->get(xid, "row") << " " << zpos << "\n";
+                << " " << decoder()->get(xid, m_rowIndex) << " " << zpos << "\n";
     }
   }
 
@@ -382,7 +383,7 @@ namespace DDSegmentation {
 
     double lTheta = thetaFromXYZ(globalPosition);
     double lPhi = phiFromXYZ(globalPosition);
-    uint layer = decoder()->get(vID, m_layerID);
+    uint layer = decoder()->get(vID, m_layerIndex);
     const LayerInfo& li = getLayerInfo(layer);
 
     // find the cell (theta bin) corresponding to the hit and return the cellID
@@ -881,8 +882,8 @@ namespace DDSegmentation {
 
   VolumeID FCCSWHCalPhiTheta_k4geo::volumeID(const CellID& cID) const
   {
-    uint layer = decoder()->get(cID,m_layerID);
-    int thetaID = decoder()->get(cID,m_thetaID);
+    uint layer = decoder()->get(cID,m_layerIndex);
+    int thetaID = decoder()->get(cID,m_thetaIndex);
     const LayerInfo& li = getLayerInfo(layer);
     return li.cellInfo(thetaID).volumeID;
   }
