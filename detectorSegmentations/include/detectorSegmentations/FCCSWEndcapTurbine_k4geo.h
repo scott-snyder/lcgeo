@@ -180,7 +180,7 @@ namespace DDSegmentation {
      */
     unsigned expLayer(unsigned iWheel, unsigned iRho, unsigned iZ) const;
 
-  protected:
+  private:
     /// turbine blade angle in each wheel
     std::vector<double> m_bladeAngle;
     /// number of unit cells in each wheel
@@ -224,6 +224,20 @@ namespace DDSegmentation {
     std::string m_zID;
     std::string m_sideID;
     std::string m_layerID;
+
+    /// the field index used for rho
+    int m_rhoIndex = -1;
+    /// the field index used for wheel
+    int m_wheelIndex = -1;
+    /// the field index used for module
+    int m_moduleIndex = -1;
+    /// the field index used for z
+    int m_zIndex = -1;
+    /// the field index used for side
+    int m_sideIndex = -1;
+    /// the field index used for layer
+    int m_layerIndex = -1;
+    
   };
 } // namespace DDSegmentation
 } // namespace dd4hep

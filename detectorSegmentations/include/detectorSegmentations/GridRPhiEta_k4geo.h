@@ -68,14 +68,21 @@ namespace DDSegmentation {
     inline void setFieldNameR(const std::string& fieldName) { m_rID = fieldName; }
 
   private:
-    /// determine the radial distance R based on the current cell ID
-    double r() const;
     /// the grid size in r
     double m_gridSizeR;
     /// the coordinate offset in r
     double m_offsetR;
     /// the field name used for r
     std::string m_rID;
+
+    /// Initialization common to all ctors.
+    void commonSetup();
+    /// the field index used for eta
+    int m_etaIndex = -1;
+    /// the field index used for phi
+    int m_phiIndex = -1;
+    /// the field index used for r
+    int m_rIndex = -1;
   };
 } // namespace DDSegmentation
 } // namespace dd4hep

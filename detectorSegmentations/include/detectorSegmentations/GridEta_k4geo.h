@@ -88,15 +88,18 @@ namespace DDSegmentation {
       return std::sqrt(aposition.X * aposition.X + aposition.Y * aposition.Y);
     }
 
-  protected:
-    /// determine the pseudorapidity based on the current cell ID
-    double eta() const;
+  private:
     /// the grid size in eta
     double m_gridSizeEta;
     /// the coordinate offset in eta
     double m_offsetEta;
     /// the field name used for eta
     std::string m_etaID;
+
+    /// Initialization common to all ctors.
+    void commonSetup();
+    /// the field index used for eta
+    int m_etaIndex = -1;
   };
 } // namespace DDSegmentation
 } // namespace dd4hep

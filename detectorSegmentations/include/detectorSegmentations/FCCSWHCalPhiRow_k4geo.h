@@ -253,7 +253,7 @@ namespace DDSegmentation {
       return {gridSizePhi(), m_gridSizeRow[aLayer] * m_dz_row};
     }
 
-  protected:
+  private:
     /// the number of bins in phi
     int m_phiBins;
     /// the coordinate offset in phi
@@ -290,6 +290,17 @@ namespace DDSegmentation {
     mutable std::vector<std::vector<int>> m_cellIndexes;
     /// z-min and z-max of each cell in each layer
     mutable std::vector<std::unordered_map<int, std::pair<double, double>>> m_cellEdges;
+
+    /// Initialization common to all ctors.
+    void commonSetup();
+    /// the field index used for layer
+    int m_layerIndex = -1;
+    /// the field index used for row
+    int m_rowIndex = -1;
+    /// the field index used for type
+    int m_typeIndex = -1;
+    /// the field index used for phi
+    int m_phiIndex = -1;
   };
 } // namespace DDSegmentation
 } // namespace dd4hep

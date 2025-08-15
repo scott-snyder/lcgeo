@@ -149,6 +149,15 @@ namespace DDSegmentation {
     // been created yet.  Instead, build it lazily the first time it's needed.
     // Since that's in a const method, make it thread-safe.
     mutable std::atomic<const std::vector<LayerInfo>*> m_layerInfo = nullptr;
+
+    /// Initialization common to all ctors.
+    void commonSetup();
+    /// the field index used for layer
+    int m_layerIndex = -1;
+    /// the field index used for theta
+    int m_thetaIndex = -1;
+    /// the field index used for module
+    int m_moduleIndex = -1;
   };
 } // namespace DDSegmentation
 } // namespace dd4hep
