@@ -1,11 +1,10 @@
 {
   "version": 5,
-  "prev": "07e4e2ea14c16dc78dfeb75377e6187aa4d05b01",
-  "head": "3d2be86c097669d2f675d00fe3474fb072ea7b6a",
+  "prev": "e364dce9aac99647eec6a1bacab1d03d8b6334fc",
+  "head": "dae865383faf169383e611cf8e4af7001acd9719",
   "applied": [
     "segCleanup1",
-    "hcal-seg-wip",
-    "refresh-temp"
+    "hcal-seg-wip"
   ],
   "unapplied": [
     "ci",
@@ -25,13 +24,10 @@
       "oid": "150a9dd47df7477b3aef1a18b4e3b48d9b71bae9"
     },
     "hcal-seg-wip": {
-      "oid": "37a4d3e3ae934b4fd85a6f8749b9bc6b2bbeaf7b"
+      "oid": "dae865383faf169383e611cf8e4af7001acd9719"
     },
     "hidden": {
       "oid": "be43fc6061aff6ffe56e58d6bfc5a881e3b0b61a"
-    },
-    "refresh-temp": {
-      "oid": "3d2be86c097669d2f675d00fe3474fb072ea7b6a"
     },
     "segCleanup1": {
       "oid": "8c515e831abafa3f4bc19d91f4ef9ba942802535"
