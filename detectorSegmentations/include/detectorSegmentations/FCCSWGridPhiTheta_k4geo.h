@@ -29,7 +29,7 @@ namespace DDSegmentation {
      *   @param[in] aCellId ID of a cell.
      *   return Position (radius = 1).
      */
-    virtual Vector3D position(const CellID& aCellID) const;
+    virtual Vector3D position(const CellID& aCellID) const override;
     /**  Determine the cell ID based on the position.
      *   @param[in] aLocalPosition (not used).
      *   @param[in] aGlobalPosition position in the global coordinates.
@@ -37,12 +37,12 @@ namespace DDSegmentation {
      *   return Cell ID.
      */
     virtual CellID cellID(const Vector3D& aLocalPosition, const Vector3D& aGlobalPosition,
-                          const VolumeID& aVolumeID) const;
+                          const VolumeID& aVolumeID) const override;
     /**  Determine the azimuthal angle based on the cell ID.
      *   @param[in] aCellId ID of a cell.
      *   return Phi.
      */
-    double phi(const CellID& aCellID) const;
+    double phi(const CellID aCellID) const;
     /**  Get the grid size in phi.
      *   return Grid size in phi.
      */
@@ -76,7 +76,7 @@ namespace DDSegmentation {
      *  @param[in] cellID
      *  return a std::vector of size 2 with the cellDimensions of the given cell ID (phi, theta)
      */
-    inline std::vector<double> cellDimensions(const CellID& /* id */) const { return {gridSizePhi(), gridSizeTheta()}; }
+    inline std::vector<double> cellDimensions(const CellID /* id */) const { return {gridSizePhi(), gridSizeTheta()}; }
 
   private:
     /// determine the azimuthal angle phi based on the current cell ID

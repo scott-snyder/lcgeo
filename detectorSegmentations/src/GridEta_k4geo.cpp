@@ -44,7 +44,7 @@ namespace DDSegmentation {
   }
 
   /// determine the pseudorapidity based on the cell ID
-  double GridEta_k4geo::eta(const CellID& cID) const {
+  double GridEta_k4geo::eta(const CellID cID) const {
     CellID etaValue = decoder()->get(cID, m_etaIndex);
     return binToPosition(etaValue, m_gridSizeEta, m_offsetEta);
   }

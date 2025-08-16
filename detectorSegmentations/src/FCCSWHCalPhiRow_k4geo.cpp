@@ -41,10 +41,10 @@ namespace DDSegmentation {
     registerIdentifier("identifier_row", "Cell ID identifier for row", m_rowID, "row");
     registerIdentifier("identifier_layer", "Cell ID identifier for layer", m_layerID, "layer");
 
-    m_layerIndex = decoder()->index(m_layerID);
-    m_rowIndex   = decoder()->index(m_rowID);
-    m_typeIndex  = decoder()->index("type");
-    m_phiIndex   = decoder()->index(m_phiID);
+    m_layerIndex  = decoder()->index(m_layerID);
+    m_rowIndex    = decoder()->index(m_rowID);
+    m_typeIndex   = decoder()->index("type");
+    m_phiIndex    = decoder()->index(m_phiID);
   }
 
   /// determine the global position based on the cell ID
@@ -253,7 +253,7 @@ namespace DDSegmentation {
   }
 
   /// determine the azimuthal angle phi based on the cell ID
-  double FCCSWHCalPhiRow_k4geo::phi(const CellID& cID) const {
+  double FCCSWHCalPhiRow_k4geo::phi(const CellID cID) const {
     CellID phiValue = decoder()->get(cID, m_phiIndex);
     return binToPosition(phiValue, 2. * M_PI / (double)m_phiBins, m_offsetPhi);
   }
@@ -293,7 +293,7 @@ namespace DDSegmentation {
   }
 
   /// Calculates the neighbours of the given cell ID and adds them to the list of neighbours
-  std::vector<uint64_t> FCCSWHCalPhiRow_k4geo::neighbours(const CellID& cID) const {
+  std::vector<uint64_t> FCCSWHCalPhiRow_k4geo::neighbours(const CellID cID) const {
     std::vector<uint64_t> cellNeighbours;
 
     if (m_radii.empty())
@@ -587,7 +587,7 @@ namespace DDSegmentation {
   }
 
   /// Determine minimum and maximum polar angle of the cell
-  std::array<double, 2> FCCSWHCalPhiRow_k4geo::cellTheta(const CellID& cID) const {
+  std::array<double, 2> FCCSWHCalPhiRow_k4geo::cellTheta(const CellID cID) const {
     std::array<double, 2> cTheta = {M_PI, M_PI};
 
     // get the cell index

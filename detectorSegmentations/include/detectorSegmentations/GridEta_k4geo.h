@@ -30,7 +30,7 @@ namespace DDSegmentation {
      *   @param[in] aCellId ID of a cell.
      *   return Position (radius = 1).
      */
-    virtual Vector3D position(const CellID& aCellID) const;
+    virtual Vector3D position(const CellID& aCellID) const override;
     /**  Determine the cell ID based on the position.
      *   @param[in] aLocalPosition (not used).
      *   @param[in] aGlobalPosition position in the global coordinates.
@@ -38,12 +38,12 @@ namespace DDSegmentation {
      *   return Cell ID.
      */
     virtual CellID cellID(const Vector3D& aLocalPosition, const Vector3D& aGlobalPosition,
-                          const VolumeID& aVolumeID) const;
+                          const VolumeID& aVolumeID) const override;
     /**  Determine the pseudorapidity based on the cell ID.
      *   @param[in] aCellId ID of a cell.
      *   return Pseudorapidity.
      */
-    double eta(const CellID& aCellID) const;
+    double eta(const CellID aCellID) const;
     /**  Get the grid size in pseudorapidity.
      *   return Grid size in eta.
      */

@@ -46,7 +46,7 @@ namespace DDSegmentation {
   }
 
   /// determine the polar angle theta based on the cell ID
-  double GridTheta_k4geo::theta(const CellID& cID) const {
+  double GridTheta_k4geo::theta(const CellID cID) const {
     CellID thetaValue = decoder()->get(cID, m_thetaIndex);
     return binToPosition(thetaValue, m_gridSizeTheta, m_offsetTheta);
   }

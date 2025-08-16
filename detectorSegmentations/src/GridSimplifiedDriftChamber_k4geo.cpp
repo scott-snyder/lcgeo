@@ -60,13 +60,13 @@ namespace DDSegmentation {
     return cID;
   }
 
-  double GridSimplifiedDriftChamber_k4geo::phi(const CellID& cID) const {
+  double GridSimplifiedDriftChamber_k4geo::phi(const CellID cID) const {
     CellID phiValue = decoder()->get(cID, m_phiIndex);
     return binToPosition(phiValue, _currentGridSizePhi, m_offsetPhi);
   }
 
   // Distance between a particle track and a wire
-  double GridSimplifiedDriftChamber_k4geo::distanceTrackWire(const CellID& cID, const TVector3& hit_start,
+  double GridSimplifiedDriftChamber_k4geo::distanceTrackWire(const CellID cID, const TVector3& hit_start,
                                                              const TVector3& hit_end) const {
     auto layerIndex = decoder()->get(cID, m_layerIndex);
     updateParams(layerIndex);
@@ -95,7 +95,7 @@ namespace DDSegmentation {
     return DCA;
   }
 
-  TVector3 GridSimplifiedDriftChamber_k4geo::Line_TrackWire(const CellID& cID, const TVector3& hit_start,
+  TVector3 GridSimplifiedDriftChamber_k4geo::Line_TrackWire(const CellID cID, const TVector3& hit_start,
                                                             const TVector3& hit_end) const {
     // The line connecting a particle track to the closest wire
     // Returns the vector connecting the both
@@ -117,7 +117,7 @@ namespace DDSegmentation {
     return intersect;
   }
 
-  TVector3 GridSimplifiedDriftChamber_k4geo::distanceClosestApproach(const CellID& cID, const TVector3& hitPos) const {
+  TVector3 GridSimplifiedDriftChamber_k4geo::distanceClosestApproach(const CellID cID, const TVector3& hitPos) const {
     // Distance of the closest approach between a single hit (point) and the closest wire
 
     auto layerIndex = decoder()->get(cID, m_layerIndex);
@@ -144,7 +144,7 @@ namespace DDSegmentation {
   }
 
   // Get the wire position for a z
-  TVector3 GridSimplifiedDriftChamber_k4geo::wirePos_vs_z(const CellID& cID, const double& zpos) const {
+  TVector3 GridSimplifiedDriftChamber_k4geo::wirePos_vs_z(const CellID cID, const double zpos) const {
     auto layerIndex = decoder()->get(cID, m_layerIndex);
     updateParams(layerIndex);
 
@@ -162,7 +162,7 @@ namespace DDSegmentation {
     return wireCoord;
   }
 
-  TVector3 GridSimplifiedDriftChamber_k4geo::IntersectionTrackWire(const CellID& cID, const TVector3& hit_start,
+  TVector3 GridSimplifiedDriftChamber_k4geo::IntersectionTrackWire(const CellID cID, const TVector3& hit_start,
                                                                    const TVector3& hit_end) const {
     // Intersection between the particle track and the wire assuming that the track between hit_start and hit_end is
     // linear

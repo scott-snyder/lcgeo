@@ -83,7 +83,7 @@ namespace DDSegmentation {
     return Vector3D(total.x(), total.y(), total.z());
   }
 
-  Vector3D GridDRcalo_k4geo::localPosition(const CellID& cID) const {
+  Vector3D GridDRcalo_k4geo::localPosition(const CellID cID) const {
     int numx = numX(cID);
     int numy = numY(cID);
     int x_ = x(cID);
@@ -161,7 +161,7 @@ namespace DDSegmentation {
     return vID;
   }
 
-  void GridDRcalo_k4geo::neighbours(const CellID& cID, std::set<CellID>& neighbours) const {
+  void GridDRcalo_k4geo::neighbours(const CellID cID, std::set<CellID>& neighbours) const {
     int systemId = static_cast<int>(decoder()->get(cID, m_systemIndex));
     int noEta = numEta(cID);
     int noPhi = numPhi(cID);
@@ -315,18 +315,18 @@ namespace DDSegmentation {
   }
 
   // Get the identifier number of a mother tower in eta or phi direction
-  int GridDRcalo_k4geo::numEta(const CellID& aCellID) const {
+  int GridDRcalo_k4geo::numEta(const CellID aCellID) const {
     VolumeID numEta = static_cast<VolumeID>(decoder()->get(aCellID, m_numEtaIndex));
     return static_cast<int>(numEta);
   }
 
-  int GridDRcalo_k4geo::numPhi(const CellID& aCellID) const {
+  int GridDRcalo_k4geo::numPhi(const CellID aCellID) const {
     VolumeID numPhi = static_cast<VolumeID>(decoder()->get(aCellID, m_numPhiIndex));
     return static_cast<int>(numPhi);
   }
 
   // Get the total number of SiPMs of the mother tower in x or y direction (local coordinate)
-  int GridDRcalo_k4geo::numX(const CellID& aCellID) const {
+  int GridDRcalo_k4geo::numX(const CellID aCellID) const {
     int noEta = numEta(aCellID);
 
     DRparamBase_k4geo* paramBase = setParamBase(noEta);
@@ -337,7 +337,7 @@ namespace DDSegmentation {
     return noX;
   }
 
-  int GridDRcalo_k4geo::numY(const CellID& aCellID) const {
+  int GridDRcalo_k4geo::numY(const CellID aCellID) const {
     int noEta = numEta(aCellID);
 
     DRparamBase_k4geo* paramBase = setParamBase(noEta);
@@ -349,16 +349,16 @@ namespace DDSegmentation {
   }
 
   // Get the identifier number of a SiPM in x or y direction (local coordinate)
-  int GridDRcalo_k4geo::x(const CellID& aCellID) const { // approx phi direction
+  int GridDRcalo_k4geo::x(const CellID aCellID) const { // approx phi direction
     VolumeID x = static_cast<VolumeID>(decoder()->get(aCellID, m_xIndex));
     return static_cast<int>(x);
   }
-  int GridDRcalo_k4geo::y(const CellID& aCellID) const { // approx eta direction
+  int GridDRcalo_k4geo::y(const CellID aCellID) const { // approx eta direction
     VolumeID y = static_cast<VolumeID>(decoder()->get(aCellID, m_yIndex));
     return static_cast<int>(y);
   }
 
-  bool GridDRcalo_k4geo::IsCerenkov(const CellID& aCellID) const {
+  bool GridDRcalo_k4geo::IsCerenkov(const CellID aCellID) const {
     VolumeID isCeren = static_cast<VolumeID>(decoder()->get(aCellID, m_isCerenkovIndex));
     return static_cast<bool>(isCeren);
   }
@@ -374,22 +374,22 @@ namespace DDSegmentation {
     return isCeren;
   }
 
-  bool GridDRcalo_k4geo::IsTower(const CellID& aCellID) const {
+  bool GridDRcalo_k4geo::IsTower(const CellID aCellID) const {
     VolumeID module = static_cast<VolumeID>(decoder()->get(aCellID, m_moduleIndex));
     return module == 0;
   }
 
-  bool GridDRcalo_k4geo::IsSiPM(const CellID& aCellID) const {
+  bool GridDRcalo_k4geo::IsSiPM(const CellID aCellID) const {
     VolumeID module = static_cast<VolumeID>(decoder()->get(aCellID, m_moduleIndex));
     return module == 1;
   }
 
-  bool GridDRcalo_k4geo::IsRHS(const CellID& aCellID) const {
+  bool GridDRcalo_k4geo::IsRHS(const CellID aCellID) const {
     VolumeID assembly = static_cast<VolumeID>(decoder()->get(aCellID, m_assemblyIndex));
     return assembly == 0;
   }
 
-  int GridDRcalo_k4geo::getLast32bits(const CellID& aCellID) const {
+  int GridDRcalo_k4geo::getLast32bits(const CellID aCellID) const {
     CellID aId64 = aCellID >> sizeof(int) * CHAR_BIT;
     int aId32 = (int)aId64;
 

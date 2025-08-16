@@ -192,7 +192,7 @@ namespace DDSegmentation {
   /// merged ones - which will be then added on top of
   /// the phi of the volume containing the first cell
   /// by the positioning tool
-  double FCCSWGridModuleThetaMerged_k4geo::phi(const CellID& cID) const {
+  double FCCSWGridModuleThetaMerged_k4geo::phi(const CellID cID) const {
 
     // retrieve layer
     int layer = this->layer(cID);
@@ -211,7 +211,7 @@ namespace DDSegmentation {
 
   /// determine the polar angle based on the cell ID and the
   /// number of merged theta cells
-  double FCCSWGridModuleThetaMerged_k4geo::theta(const CellID& cID) const {
+  double FCCSWGridModuleThetaMerged_k4geo::theta(const CellID cID) const {
 
     // retrieve layer
     int layer = this->layer(cID);
@@ -236,7 +236,7 @@ namespace DDSegmentation {
   }
 
   /// Extract the layer index fom a cell ID.
-  int FCCSWGridModuleThetaMerged_k4geo::layer(const CellID& cID) const { return decoder()->get(cID, m_layerIndex); }
+  int FCCSWGridModuleThetaMerged_k4geo::layer(const CellID cID) const { return decoder()->get(cID, m_layerIndex); }
 
   /// Determine the volume ID from the full cell ID by removing all local fields
   VolumeID FCCSWGridModuleThetaMerged_k4geo::volumeID(const CellID& cID) const {

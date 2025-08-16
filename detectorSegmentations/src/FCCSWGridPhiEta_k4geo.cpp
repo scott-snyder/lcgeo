@@ -49,7 +49,7 @@ namespace DDSegmentation {
   }
 
   /// determine the azimuthal angle phi based on the cell ID
-  double FCCSWGridPhiEta_k4geo::phi(const CellID& cID) const {
+  double FCCSWGridPhiEta_k4geo::phi(const CellID cID) const {
     CellID phiValue = decoder()->get(cID, m_phiIndex);
     return binToPosition(phiValue, 2. * M_PI / (double)m_phiBins, m_offsetPhi);
   }

@@ -54,7 +54,7 @@ namespace DDSegmentation {
   }
 
   /// determine the radial distance R based on the cell ID
-  double GridRPhiEta_k4geo::r(const CellID& cID) const {
+  double GridRPhiEta_k4geo::r(const CellID cID) const {
     CellID rValue = decoder()->get(cID, m_rIndex);
     return binToPosition(rValue, m_gridSizeR, m_offsetR);
   }

@@ -19,7 +19,7 @@ namespace DDSegmentation {
 
     //  Determine the global(local) position based on the cell ID.
     virtual Vector3D position(const CellID& aCellID) const override;
-    Vector3D localPosition(const CellID& aCellID) const;
+    Vector3D localPosition(const CellID aCellID) const;
     Vector3D localPosition(int numx, int numy, int x_, int y_) const;
 
     virtual CellID cellID(const Vector3D& aLocalPosition, const Vector3D& aGlobalPosition,
@@ -28,48 +28,48 @@ namespace DDSegmentation {
     VolumeID setVolumeID(int systemId, int numEta, int numPhi) const;
     CellID setCellID(bool isRHS, int systemId, int numEta, int numPhi, int x, int y) const;
 
-    void neighbours(const CellID& cellID, std::set<CellID>& neighbours) const override;
+    void neighbours(const CellID cellID, std::set<CellID>& neighbours) const;
 
     void setGridSize(double grid) { m_gridSize = grid; }
     void setSipmSize(double sipm) { m_sipmSize = sipm; }
 
     // Get the identifier number of a mother tower in eta or phi direction
-    int numEta(const CellID& aCellID) const;
-    int numPhi(const CellID& aCellID) const;
+    int numEta(const CellID aCellID) const;
+    int numPhi(const CellID aCellID) const;
 
     // Get the total number of SiPMs of the mother tower in x or y direction (local coordinate)
-    int numX(const CellID& aCellID) const;
-    int numY(const CellID& aCellID) const;
+    int numX(const CellID aCellID) const;
+    int numY(const CellID aCellID) const;
 
     // Get the identifier number of a SiPM in x or y direction (local coordinate)
-    int x(const CellID& aCellID) const; // approx phi direction
-    int y(const CellID& aCellID) const; // approx eta direction
+    int x(const CellID aCellID) const; // approx phi direction
+    int y(const CellID aCellID) const; // approx eta direction
 
-    bool IsCerenkov(const CellID& aCellID) const;
+    bool IsCerenkov(const CellID aCellID) const;
     bool IsCerenkov(int col, int row) const;
 
-    bool IsTower(const CellID& aCellID) const;
-    bool IsSiPM(const CellID& aCellID) const;
-    bool IsRHS(const CellID& aCellID) const;
+    bool IsTower(const CellID aCellID) const;
+    bool IsSiPM(const CellID aCellID) const;
+    bool IsRHS(const CellID aCellID) const;
 
-    int getFirst32bits(const CellID& aCellID) const { return (int)aCellID; }
-    int getLast32bits(const CellID& aCellID) const;
+    int getFirst32bits(const CellID aCellID) const { return (int)aCellID; }
+    int getLast32bits(const CellID aCellID) const;
     CellID convertFirst32to64(const int aId32) const { return (CellID)aId32; }
     CellID convertLast32to64(const int aId32) const;
 
     // Methods for 32bit to 64bit en/decoder
-    int numEta(const int& aId32) const { return numEta(convertFirst32to64(aId32)); }
-    int numPhi(const int& aId32) const { return numPhi(convertFirst32to64(aId32)); }
+    int numEta(const int aId32) const { return numEta(convertFirst32to64(aId32)); }
+    int numPhi(const int aId32) const { return numPhi(convertFirst32to64(aId32)); }
 
-    int numX(const int& aId32) const { return numX(convertFirst32to64(aId32)); }
-    int numY(const int& aId32) const { return numY(convertFirst32to64(aId32)); }
+    int numX(const int aId32) const { return numX(convertFirst32to64(aId32)); }
+    int numY(const int aId32) const { return numY(convertFirst32to64(aId32)); }
 
-    int x(const int& aId32) const { return x(convertLast32to64(aId32)); }
-    int y(const int& aId32) const { return y(convertLast32to64(aId32)); }
+    int x(const int aId32) const { return x(convertLast32to64(aId32)); }
+    int y(const int aId32) const { return y(convertLast32to64(aId32)); }
 
-    bool IsCerenkov(const int& aId32) const { return IsCerenkov(convertLast32to64(aId32)); }
+    bool IsCerenkov(const int aId32) const { return IsCerenkov(convertLast32to64(aId32)); }
 
-    bool IsTower(const int& aId32) const { return IsTower(convertLast32to64(aId32)); }
+    bool IsTower(const int aId32) const { return IsTower(convertLast32to64(aId32)); }
     bool IsSiPM(const int& aId32) const { return IsSiPM(convertLast32to64(aId32)); }
 
     inline const std::string& fieldNameAssembly() const { return m_assemblyID; }
