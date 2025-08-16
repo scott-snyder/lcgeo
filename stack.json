@@ -1,33 +1,32 @@
 {
   "version": 5,
-  "prev": "d1b20e6229203ace14ca86e5ab658de1979e3bce",
-  "head": "0c97ad476f9450bceaca1d9ffeac7205442c9a1d",
+  "prev": "d91d1429a5d331012f8afc49c3f4560c8bc99605",
+  "head": "ae607c436f6f9f57071054cc6ee0c37fedf40444",
   "applied": [
     "segCleanup1",
-    "hcal-seg-wip"
-  ],
-  "unapplied": [
+    "hcal-seg-wip",
     "ci",
     "hidden",
     "except",
     "cmakewarn"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
-      "oid": "778cf6633ad0337b7ba4acddb40a5580e0f76cab"
+      "oid": "c1603620d034b8fa8f3964c3e5fa5538fd0677ca"
     },
     "cmakewarn": {
-      "oid": "4fdde0127aa3a48d8239c2d7c5f6733c9bc7bc36"
+      "oid": "ae607c436f6f9f57071054cc6ee0c37fedf40444"
     },
     "except": {
-      "oid": "7856c4d10ff5e17382bf141983fb0e54e632e0a8"
+      "oid": "64ae2f070ac55394dd19ec22f15e692e635db850"
     },
     "hcal-seg-wip": {
       "oid": "0c97ad476f9450bceaca1d9ffeac7205442c9a1d"
     },
     "hidden": {
-      "oid": "6f978c0a42f974068e91831c59836458b0be8881"
+      "oid": "1d2774864029482f1b6f4d5ca1add7041a164dcd"
     },
     "segCleanup1": {
       "oid": "0eeb7bf72e99245c8ef539d10d3342c2e7f0873d"
