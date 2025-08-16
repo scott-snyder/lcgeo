@@ -1,7 +1,7 @@
 Bottom: 8a3c4621cfbd2d8ed8190f771eda06d544f96781
 Top:    c847105fce8fa095b80ac30980cdfeba6ef2f68f
 Author: sss <sss@karma>
-Date:   2025-08-15 22:43:28 -0400
+Date:   2025-08-15 22:43:30 -0400
 
 Some segmentation cleanup.
 
@@ -10,3 +10,6 @@ Some segmentation cleanup.
  - Remember field indices, to avoid having to always do string lookups.
  - Factor out duplicated code between constructors.
  - Naming convention consistency.
+ - Prefer to pass simple types by value, and to return vector members
+   as const references.
+ - Use override keywords.
