@@ -1,12 +1,12 @@
 {
   "version": 5,
-  "prev": "a7094d62dd3526c43943463709b6b5ec0780091c",
-  "head": "0eeb7bf72e99245c8ef539d10d3342c2e7f0873d",
+  "prev": "7ce0b63e6ef9b6974223e37dc0d39329908a9d37",
+  "head": "cd1db3cb0e0cbe4c23abf91a6b8b5b525473a818",
   "applied": [
-    "segCleanup1"
+    "segCleanup1",
+    "hcal-seg-wip"
   ],
   "unapplied": [
-    "hcal-seg-wip",
     "ci",
     "hidden",
     "except",
@@ -24,7 +24,7 @@
       "oid": "7856c4d10ff5e17382bf141983fb0e54e632e0a8"
     },
     "hcal-seg-wip": {
-      "oid": "ecb0d8b94d03efed49a5379c383ff6670632f9cc"
+      "oid": "cd1db3cb0e0cbe4c23abf91a6b8b5b525473a818"
     },
     "hidden": {
       "oid": "6f978c0a42f974068e91831c59836458b0be8881"
