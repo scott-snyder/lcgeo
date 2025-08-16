@@ -198,7 +198,7 @@ namespace DDSegmentation {
     inline std::vector<double> cellDimensions(const CellID /* id */) const { return {gridSizePhi(), gridSizeTheta()}; }
 
 
-    virtual bool cellsSpanVolumes() const /*override*/
+    virtual bool cellsSpanVolumes() const override
     {
       return true;
     }
