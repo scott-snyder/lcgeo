@@ -1,15 +1,15 @@
 {
   "version": 5,
-  "prev": "8aa21a36e714b1e345e850c5a2917c8196b2fa53",
-  "head": "b61be981d88863db6093dae94d6a3561530f0151",
+  "prev": "21f262049a52c2233e1f02f7048261e79dfea16b",
+  "head": "f6f28604b58fc5014e5901d4daefdb65a3c99c9c",
   "applied": [
     "ci",
     "hidden",
     "except",
-    "cmakewarn",
-    "segCleanup1"
+    "cmakewarn"
   ],
   "unapplied": [
+    "segCleanup1",
     "hcal-seg-wip"
   ],
   "hidden": [],
