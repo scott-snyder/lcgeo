@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "2f0c5a358872a05b02264f4d957f6b0f1fa28cde",
-  "head": "adc4b3d5ee50f8ed6d0ef11e1efb6aefd1dc523f",
+  "prev": "065f3e0e972ce8d451b265610814c3fe29d5be66",
+  "head": "1df38d2232766a29a822517396992d6d30bb1d69",
   "applied": [
     "ci",
     "hidden",
     "except",
     "cmakewarn",
-    "segCleanup1",
-    "refresh-temp"
+    "segCleanup1"
   ],
   "unapplied": [
     "hcal-seg-wip"
@@ -30,11 +29,8 @@
     "hidden": {
       "oid": "2179318644e5881aec1576bfc6f86ed0ed970432"
     },
-    "refresh-temp": {
-      "oid": "adc4b3d5ee50f8ed6d0ef11e1efb6aefd1dc523f"
-    },
     "segCleanup1": {
-      "oid": "b61be981d88863db6093dae94d6a3561530f0151"
+      "oid": "1df38d2232766a29a822517396992d6d30bb1d69"
     }
   }
 }
