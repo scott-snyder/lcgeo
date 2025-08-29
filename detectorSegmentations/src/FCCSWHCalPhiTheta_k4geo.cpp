@@ -38,9 +38,17 @@ namespace DDSegmentation {
 
     m_layerIndex  = decoder()->index(m_layerID);
     m_rowIndex    = decoder()->index("row");
-    m_typeIndex   = decoder()->index("type");
     m_thetaIndex  = decoder()->index(fieldNameTheta());
     m_phiIndex    = decoder()->index(m_phiID);
+
+    // Only endcap has "type" --- but it's too early to look at m_detLayout.
+    for (const dd4hep::DDSegmentation::BitFieldElement& bfe : decoder()->fields())
+    {
+      if (bfe.name() == "type") {
+        m_typeIndex = decoder()->index("type");
+        break;
+      }
+    }
   }
 
   /** /// determine the global position based on the cell ID
