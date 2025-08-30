@@ -50,6 +50,7 @@ namespace DDSegmentation {
     uint layer = decoder()->get(cID, m_layerIndex);
 
     const LayerInfo& li = getLayerInfo(layer);
+    dumpneighbors();
 
     double radius = li.radius;
 
