@@ -64,6 +64,7 @@ namespace DDSegmentation {
     int thetaID = decoder()->get(cID, m_thetaIndex);
 
     const LayerInfo& li = getLayerInfo(layer);
+    dumpneighbors();
     const LayerInfo::CellInfo& ci = li.cellInfo(thetaID);
     double zpos = (ci.edges.first + ci.edges.second) * 0.5 - ci.volumeZ;
 
@@ -940,6 +941,53 @@ namespace DDSegmentation {
     return li.cellInfo(thetaID).volumeID;
   }
 
+
+std::vector<CellID> FCCSWHCalPhiTheta_k4geo::allCells() const
+{
+  dd4hep::DDSegmentation::CellID cID = 0;
+  int id = m_detLayout == 0 ? 8 : 9;
+  decoder()->set(cID, "system", id);
+
+  std::vector<CellID> out;
+  int nl = std::ranges::fold_left (m_numLayers, 0, std::plus<int>());
+
+  for (int layer = 0; layer < nl; ++layer) {
+    const LayerInfo& li = getLayerInfo(layer);
+    decoder()->set(cID, m_layerIndex, layer);
+    for (int theta : li.thetaBins) {
+      decoder()->set(cID, m_thetaIndex, theta);
+      for (int phi = 0; phi < m_phiBins; ++phi) {
+        decoder()->set(cID, m_phiIndex, phi);
+        out.push_back(cID);
+      }
+    }
+  }
+  return out;
+}
+
+void FCCSWHCalPhiTheta_k4geo::dumpneighbors() const
+{
+  if (m_dumped) return;
+  m_dumped = true;
+  FILE* fout = fopen ("out/neigh-theta.dump", "w");
+  fprintf (fout, "diag false\n");
+  for (CellID cid : allCells()) {
+    fprintf (fout, "%lx ->", cid);
+    for (uint64_t n : this->neighbours(cid, false)) {
+      fprintf (fout, " %lx", n);
+    }
+    fprintf (fout, "\n");
+  }
+  fprintf (fout, "\ndiag true\n");
+  for (CellID cid : allCells()) {
+    fprintf (fout, "%lx ->", cid);
+    for (uint64_t n : this->neighbours(cid, true)) {
+      fprintf (fout, " %lx", n);
+    }
+    fprintf (fout, "\n");
+  }
+  fclose(fout);
+}
 
 } // namespace DDSegmentation
 } // namespace dd4hep
