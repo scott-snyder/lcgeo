@@ -307,6 +307,10 @@ namespace DDSegmentation {
     int m_typeIndex = -1;
     /// the field index used for phi
     int m_phiIndex = -1;
+
+    std::vector<CellID> allCells() const;
+    void dumpneighbors() const;
+    mutable bool m_dumped = false;
   };
 } // namespace DDSegmentation
 } // namespace dd4hep

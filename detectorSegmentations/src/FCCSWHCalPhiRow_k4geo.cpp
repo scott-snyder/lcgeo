@@ -55,6 +55,7 @@ namespace DDSegmentation {
       dd4hep::printout(dd4hep::ERROR, "FCCSWHCalPhiRow_k4geo", "Could not calculate layer radii!");
       return Vector3D(0., 0., 0.);
     }
+    dumpneighbors();
 
     double radius = m_radii[layer];
     double minLayerZ = m_layerEdges[layer].first;
@@ -653,6 +654,45 @@ namespace DDSegmentation {
 
     return (M_PI - thetaMin); // theta max
   }
+
+std::vector<CellID> FCCSWHCalPhiRow_k4geo::allCells() const
+{
+  dd4hep::DDSegmentation::CellID cID = 0;
+  int id = m_detLayout == 0 ? 8 : 9;
+  decoder()->set(cID, "system", id);
+
+  std::vector<CellID> out;
+  int nl = std::ranges::fold_left (m_numLayers, 0, std::plus<int>());
+
+  for (int layer = 0; layer < nl; ++layer) {
+    //const LayerInfo& li = getLayerInfo(layer);
+    decoder()->set(cID, m_layerIndex, layer);
+    //for (int row : li.cellIndexes) {
+    for (int row : m_cellIndexes[layer]) {
+      decoder()->set(cID, m_rowIndex, row);
+      for (int phi = 0; phi < m_phiBins; ++phi) {
+        decoder()->set(cID, m_phiIndex, phi);
+        out.push_back(cID);
+      }
+    }
+  }
+  return out;
+}
+
+void FCCSWHCalPhiRow_k4geo::dumpneighbors() const
+{
+  if (m_dumped) return;
+  m_dumped = true;
+  FILE* fout = fopen ("out/neigh-row.dump", "w");
+  for (CellID cid : allCells()) {
+    fprintf (fout, "%lx ->", cid);
+    for (uint64_t n : this->neighbours(cid)) {
+      fprintf (fout, " %lx", n);
+    }
+    fprintf (fout, "\n");
+  }
+  fclose(fout);
+}
 
 } // namespace DDSegmentation
 } // namespace dd4hep
