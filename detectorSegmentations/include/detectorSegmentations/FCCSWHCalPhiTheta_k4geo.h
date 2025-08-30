@@ -334,6 +334,10 @@ namespace DDSegmentation {
 
     // Check consistency of input geometric variables.
     bool checkParameters() const;
+
+    std::vector<CellID> allCells() const;
+    void dumpneighbors() const;
+    mutable bool m_dumped = false;
   };
 } // namespace DDSegmentation
 } // namespace dd4hep
