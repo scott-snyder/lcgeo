@@ -4,6 +4,7 @@
 #include "DDSegmentation/Segmentation.h"
 #include "DDSegmentation/SegmentationUtil.h"
 #include "TVector3.h"
+#include <atomic>
 
 /** FCCSWHCalPhiRow_k4geo Detector/detectorSegmentations/detectorSegmentations/FCCSWHCalPhiRow_k4geo.h
  * FCCSWHCalPhiRow_k4geo.h
@@ -53,6 +54,11 @@ namespace DDSegmentation {
      */
     std::vector<uint64_t> neighbours(const CellID cID) const;
 
+    /**  Find neighbours of the cell.
+     *   Implement the signature from the Segmentation base class.
+     */
+    virtual void neighbours(const CellID& cellID, std::set<CellID>& neighbours) const override;
+
     /**  Calculate layer radii and edges in z-axis.
      *    Following member variables are calculated:
      *      m_radii
@@ -73,11 +79,6 @@ namespace DDSegmentation {
      *   @param[in] layer index
      */
     void defineCellIndexes(const unsigned int layer) const;
-
-    /**  Find neighbours of the cell.
-     *   Implement the signature from the Segmentation base class.
-     */
-    virtual void neighbours(const CellID& cellID, std::set<CellID>& neighbours) const override;
 
     /**  Determine the azimuthal angle of HCal cell based on the cellID.
      *   @param[in] aCellId ID of a cell.
@@ -122,12 +123,8 @@ namespace DDSegmentation {
     /**  Get the vector of cell indexes in a given layer.
      */
     inline std::vector<int> cellIndexes(const uint layer) const {
-      if (m_radii.empty())
-        calculateLayerRadii();
-      if (!m_cellIndexes.empty())
-        return m_cellIndexes[layer];
-      else
-        return std::vector<int>();
+      const LayerInfo& li = getLayerInfo(layer);
+      return li.cellIndexes;
     }
 
     /**  Get the thetaMax needed for SW clustering
@@ -285,16 +282,6 @@ namespace DDSegmentation {
     std::vector<int> m_numLayers;
     /// dR of the layer
     std::vector<double> m_dRlayer;
-    /// radius of each layer
-    mutable std::vector<double> m_radii;
-    /// z-min and z-max of each layer
-    mutable std::vector<std::pair<double, double>> m_layerEdges;
-    /// dR of each layer
-    mutable std::vector<double> m_layerDepth;
-    /// cell indexes in each layer
-    mutable std::vector<std::vector<int>> m_cellIndexes;
-    /// z-min and z-max of each cell in each layer
-    mutable std::vector<std::unordered_map<int, std::pair<double, double>>> m_cellEdges;
 
     /// Initialization common to all ctors.
     void commonSetup();
@@ -306,6 +293,62 @@ namespace DDSegmentation {
     int m_typeIndex = -1;
     /// the field index used for phi
     int m_phiIndex = -1;
+
+    // Derived geometrical information about each layer.
+    struct LayerInfo {
+      /// Radius of the layer.
+      double radius = 1;
+
+      /// Half the layer depth (dR).
+      double halfDepth = 0;
+
+      /// z-min and z-max of the layer
+      double zmin = 0;
+      double zmax = 0;
+
+      /// cell indexes in each layer
+      std::vector<int> cellIndexes{};
+
+      /// z-min and z-max of each cell in each layer
+      std::unordered_map<int, std::pair<double, double>> cellEdges{};
+    };
+
+    // The vector of tabulated values, indexed by layer number.
+    // We can't build this in the constructor --- the volumes won't have
+    // been created yet.  Instead, build it lazily the first time it's needed.
+    // Since that's in a const method, make it thread-safe.
+    mutable std::atomic<const std::vector<LayerInfo>*> m_layerInfo = nullptr;
+
+    // Retrieve the derived geometrical information for a given layer.
+    const LayerInfo& getLayerInfo(const unsigned layer) const;
+
+    /**  Construct the derived geometrical information.
+     * Calculate layer radii and edges in z-axis, then define cell edges in each layer using defineCellEdges().
+     *    Following member variables are calculated:
+     *      radius
+     *      layerEdges
+     *      layerDepth
+     *      thetaBins (updated through defineCellEdges())
+     *      cellEdges* (updated through defineCellEdges())
+     */
+    std::vector<LayerInfo> initLayerInfo() const;
+
+    /**  Define cell indexes for the given layer.
+     *  This function fills the cellIndexes vector per layer with the cell indexes.
+     *  The cell index is encoded in CellID with "row" field.
+     *  In case of a cell with single row/sequence, the index is directly the number of row in the layer.
+     *  In case of a cell with several rows/sequences merged, the index is the number of cell in the layer.
+     *  For the layers of negative-z Endcap, indexes of cells are negative.
+     *  Following member variables are calculated:
+     *   cellIndexes
+     *   cellEdges
+     *   @param[in] li Layer info entry corresponding to layer.
+     *   @param[in] layer index
+     */
+    void defineCellIndexes(LayerInfo& li, const unsigned int layer) const;
+
+    // Check consistency of input geometric variables.
+    bool checkParameters() const;
   };
 } // namespace DDSegmentation
 } // namespace dd4hep
