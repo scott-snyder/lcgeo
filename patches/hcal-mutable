@@ -1,0 +1,12 @@
+Bottom: fba2bd6a816c17b221eb6b9b28796c81b7b8ba29
+Top:    fba2bd6a816c17b221eb6b9b28796c81b7b8ba29
+Author: sss <sss@karma>
+Date:   2025-08-29 23:00:07 -0400
+
+Update HCal segmentation classes to avoid mutable members.
+
+Update FCCSWHCalPhiTheta_k4geo and FCCSWHCalPhiRow_k4geo to avoid
+the thread-unsafe use of mutable members.  Instead of several arrays,
+structure the data as an array of structures which is built lazily
+when needed and installed atomically (this is the same strategy
+as was used in FCCSWGridModuleThetaMerged_k4geo).
