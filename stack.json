@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b79fa90b437aaa43892302116ced66e5086cdde4",
-  "head": "3ed2e199fbee44e2c7d159daac73d45aa15457e8",
+  "prev": "63a42776af3c32d9fbe4e5fcac543b0577b61249",
+  "head": "e3a8753811ee7df3f4f197b143c73e37ece8b319",
   "applied": [
     "ci",
     "hidden",
@@ -10,11 +10,10 @@
     "segCleanup1",
     "hcal-mutable",
     "hcal-edge-vector",
-    "neighbor-dump-wip"
-  ],
-  "unapplied": [
+    "neighbor-dump-wip",
     "hcal-seg-wip"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
@@ -33,7 +32,7 @@
       "oid": "d2c7f251d38aa2ed54df1f84ffbcdc8f084f5ccb"
     },
     "hcal-seg-wip": {
-      "oid": "e5319cf0915239a09be246075ce1c4e9870f9cd4"
+      "oid": "e3a8753811ee7df3f4f197b143c73e37ece8b319"
     },
     "hidden": {
       "oid": "2179318644e5881aec1576bfc6f86ed0ed970432"
