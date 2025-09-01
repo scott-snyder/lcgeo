@@ -1,0 +1,9 @@
+Bottom: eb72c89c3077ff952acd0c40f0cdda74464f5da1
+Top:    eb72c89c3077ff952acd0c40f0cdda74464f5da1
+Author: sss <sss@karma>
+Date:   2025-08-31 22:47:29 -0400
+
+Update HCal segmentation classes to use vectors to store cell edge information.
+
+Update FCCSWHCalPhiTheta_k4geo and FCCSWHCalPhiRow_k4geo to store cell
+edge information in vectors rather than hash maps.
