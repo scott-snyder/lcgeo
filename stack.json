@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a295656ce524e25d054ccf400bf6642f3644495c",
-  "head": "61d6336aba9848ce57d5bd4273e60f08aaa61a22",
+  "prev": "1b2c6c0d44f4fc9d7d457389b2d83c0eb8e836f6",
+  "head": "3ed2e199fbee44e2c7d159daac73d45aa15457e8",
   "applied": [
     "ci",
     "hidden",
@@ -10,10 +10,11 @@
     "segCleanup1",
     "hcal-mutable",
     "hcal-edge-vector",
-    "neighbor-dump-wip",
+    "neighbor-dump-wip"
+  ],
+  "unapplied": [
     "hcal-seg-wip"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
