@@ -148,7 +148,7 @@ namespace DDSegmentation {
 
   // Define cell edges in z-axis for the given layer.
   void FCCSWHCalPhiTheta_k4geo::defineCellEdges(LayerInfo& li,
-                                                const uint layer) const
+                                                const unsigned int layer) const
   {
     // Helper to find the z-coordinate corresponding to a theta bin number.
     auto binToZ = [&] (int ibin)
@@ -527,12 +527,12 @@ namespace DDSegmentation {
       // correct the min and max theta bin for endcap
       if (theta(cID) > M_PI / 2) // negative-z part
       {
-        // second half of elements in thetaBins vector corresponds to the negative-z layer cells
+        // second half of elements in li.thetaBins vector corresponds to the negative-z layer cells
         minCellThetaBin = li.thetaBins[li.thetaBins.size() / 2];
         maxCellThetaBin = li.thetaBins.back();
       } else // positive-z part
       {
-        // first half of elements in thetaBins vector corresponds to the positive-z layer cells
+        // first half of elements in li.thetaBins vector corresponds to the positive-z layer cells
         minCellThetaBin = li.thetaBins.front();
         maxCellThetaBin = li.thetaBins[li.thetaBins.size() / 2 - 1];
       }

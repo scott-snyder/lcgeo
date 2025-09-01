@@ -279,7 +279,6 @@ namespace DDSegmentation {
 
         // The z-center of the dd4hep volume.
         double volumeZ {0};
-      
       };
       std::vector<CellInfo> m_cellInfo1 {};
       std::vector<CellInfo> m_cellInfo2 {};
