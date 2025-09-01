@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "06dcac8048cb187072322eedc0d7afceb7df01c2",
-  "head": "1ff4195ddd64a0dde936160fbb2d334c078b3bf3",
+  "prev": "28dfd28751239b6106b5fbd0ba119d8306e9978c",
+  "head": "8efe43a8adb351a323f8d8adb6a54b3e3a242da5",
   "applied": [
     "ci",
     "hidden",
@@ -13,8 +13,7 @@
     "hcal-edge-vector",
     "hcal-theta-pos",
     "neighbor-dump-wip",
-    "hcal-seg-wip",
-    "refresh-temp"
+    "hcal-seg-wip"
   ],
   "unapplied": [],
   "hidden": [],
@@ -38,7 +37,7 @@
       "oid": "f7c7dc9dffbc28f83bc6db4c81b7a5f92f35e71e"
     },
     "hcal-seg-wip": {
-      "oid": "c8119cb8ebcc6b7f192cec63467137a9e1ec2d72"
+      "oid": "8efe43a8adb351a323f8d8adb6a54b3e3a242da5"
     },
     "hcal-theta-pos": {
       "oid": "93da597b5076587a063bb6ca607f36c956c8bfef"
@@ -48,9 +47,6 @@
     },
     "neighbor-dump-wip": {
       "oid": "cacbee0a3aa836884b5b99c88bcb79e558ddf1d7"
-    },
-    "refresh-temp": {
-      "oid": "1ff4195ddd64a0dde936160fbb2d334c078b3bf3"
     },
     "segCleanup1": {
       "oid": "1df38d2232766a29a822517396992d6d30bb1d69"
