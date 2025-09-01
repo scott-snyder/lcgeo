@@ -1,0 +1,9 @@
+Bottom: c4994dd2b0f961dda2054a3f78ac91986f5d5920
+Top:    c4994dd2b0f961dda2054a3f78ac91986f5d5920
+Author: sss <sss@karma>
+Date:   2025-09-01 15:24:37 -0400
+
+Fix comment for FCCSWGridModuleThetaMerged_k4geo::position.
+
+Clarify that the returned position is in the coordinate system defined
+by the associated volume.
