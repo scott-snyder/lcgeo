@@ -77,7 +77,7 @@ namespace DDSegmentation {
               << " " << layer << " " << thetaID << " " <<
       li.radius << " " << pos.x() << " " << pos.y() << " " << zpos << " "
               << ci.volumeZ << " " << ci.edges.first << " " << ci.edges.second << "\n";
-    
+
     return Vector3D(pos.x(), pos.y(), zpos);
   }
 
