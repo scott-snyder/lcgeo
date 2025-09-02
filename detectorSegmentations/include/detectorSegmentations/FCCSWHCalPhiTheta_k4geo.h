@@ -307,14 +307,13 @@ namespace DDSegmentation {
     const LayerInfo& getLayerInfo (const unsigned layer) const;
 
     /**  Construct the derived geometrical information.
-     *
      * Calculate layer radii and edges in z-axis, then define cell edges in each layer using defineCellEdges().
      *    Following member variables are calculated:
      *      radius
      *      layerEdges
      *      layerDepth
      *      thetaBins (updated through defineCellEdges())
-     *      m_cellEdges* (updated through defineCellEdges())
+     *      cellEdges* (updated through defineCellEdges())
      */
     std::vector<LayerInfo> initLayerInfo() const;
 
