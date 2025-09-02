@@ -98,6 +98,7 @@ namespace DDSegmentation {
     return liv->at (layer);
   }
 
+
   // Initialize derived derived layer information.
   std::vector<FCCSWHCalPhiTheta_k4geo::LayerInfo>
   FCCSWHCalPhiTheta_k4geo::initLayerInfo() const
