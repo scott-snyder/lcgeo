@@ -271,7 +271,7 @@ namespace DDSegmentation {
                         int layernum,
                         std::span<const int> thetaBins)
     {
-      // Find the DetectorElement correspondnig to the layer.
+      // Find the DetectorElement corresponding to the layer.
       auto layer_it = de.children.find ("layer" + std::to_string(layernum));
       if (layer_it == de.children.end()) {
         std::abort();
