@@ -1,12 +1,12 @@
 {
   "version": 5,
-  "prev": "016df1efa1f908fb54e2b0b14ff086d1f59772dc",
-  "head": "97195dfb8f1b241e4dd3b5af79c135e8cd90f006",
+  "prev": "cf2adb0515cdf9859cce2c063fddf3ea68be8b13",
+  "head": "3e9a6c103bfdb316f9d81a96d8340fa4336d19a6",
   "applied": [
-    "ci"
+    "ci",
+    "cmakewarn"
   ],
   "unapplied": [
-    "cmakewarn",
     "hidden",
     "except",
     "segCleanup1",
