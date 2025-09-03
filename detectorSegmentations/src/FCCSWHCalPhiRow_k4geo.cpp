@@ -1,5 +1,8 @@
 #include "detectorSegmentations/FCCSWHCalPhiRow_k4geo.h"
 #include "DD4hep/Printout.h"
+#include "DD4hep/Detector.h"
+#include "DD4hep/VolumeManager.h"
+#include "DD4hep/detail/DetectorInterna.h"
 
 namespace dd4hep {
 namespace DDSegmentation {
@@ -63,16 +66,16 @@ namespace DDSegmentation {
     const LayerInfo& li = getLayerInfo(layer);
 
     double radius = li.radius;
-    double minLayerZ = li.zmin;
 
     // get index of the cell in the layer (index starts from 1!)
     int idx = decoder()->get(cID, m_rowIndex);
     // calculate z-coordinate of the cell center
-    double zpos = minLayerZ + (idx - 1) * m_dz_row * m_gridSizeRow[layer] + 0.5 * m_dz_row * m_gridSizeRow[layer];
-
-    // for negative-z Endcap, the index is negative (starts from -1!)
-    if (idx < 0)
-      zpos = -minLayerZ + (idx + 1) * m_dz_row * m_gridSizeRow[layer] - 0.5 * m_dz_row * m_gridSizeRow[layer];
+    // Should be relative to the center of the first volume of the row.
+    double zpos = (m_gridSizeRow[layer] - 1) * m_dz_row * 0.5;
+    if (idx < 0) {
+      // for negative-z Endcap, the index is negative (starts from -1!)
+      zpos = -zpos;
+    }
 
     return Vector3D(radius * std::cos(phi(cID)), radius * std::sin(phi(cID)), zpos);
   }
@@ -127,6 +130,7 @@ namespace DDSegmentation {
         {
           moduleDepth[i_section] += m_dRlayer[i_dR];
           out.push_back (LayerInfo {
+              .type = i_section,
               .radius = moduleDepth[i_section] - m_dRlayer[i_dR]*0.5,
               .halfDepth = m_dRlayer[i_dR]/2,
               .zmin = zmin,
@@ -206,6 +210,44 @@ namespace DDSegmentation {
 
     dd4hep::printout(dd4hep::DEBUG, "FCCSWHCalPhiRow_k4geo", "Number of cells in layer %d: %d", layer,
                      li.cellIndexes.size());
+    std::cout << "rrr " << m_detLayout <<  " layer " << layer << " "
+              << li.cellIndexes.size() << " cells "
+              << this->fieldDescription() << "\n";
+    for (int idx : li.cellIndexes) {
+      if (idx < 0) break;
+      const auto& edges = li.m_cellEdges.at(idx-li.m_ibin);
+      std::cout << "  " << idx << " " << edges.first << " " << edges.second
+                << " " << (edges.first+edges.second)/2 << "\n";
+    }
+
+    dd4hep::Detector* dd4hepgeo = &(dd4hep::Detector::getInstance());
+    VolumeManager vman = VolumeManager::getVolumeManager(*dd4hepgeo);
+    const DetElementObject& de = *dd4hepgeo->readout (this->name()).segmentation().detector();
+
+    int ilayer = layer;
+    if (m_detLayout == 1) ilayer = layer + 1;
+    auto layer_it = de.children.find ("layer" + std::to_string(ilayer));
+    VolumeID vID = 0;
+    decoder()->set(vID, "system", de.id);
+    for (const auto& [name, val] : layer_it->second.placement().volIDs()) {
+      decoder()->set(vID, name, val);
+    }
+    size_t nrows = layer_it->second.children().size();
+    auto gettype = [&] (unsigned id) -> int { if (m_typeIndex==-1) return -1; return decoder()->get(id, m_typeIndex); };
+    std::cout << " " << nrows << " rows\n";
+    for (size_t ir=0; ir < nrows; ir++) {
+      decoder()->set(vID, m_rowIndex, ir);
+      VolumeManagerContext* vc = vman.lookupContext(vID);
+      double zpos = vc->localToWorld({0,0,0}).Z();
+      double zoffs1 = vc->volumePlacement().position().Z();
+      double zoffs2 = vc->elementPlacement().position().Z();
+      std::cout << "   " << ir << " " << vID << " " << zpos << " " << zoffs1 << " " << zoffs2 << " -> "
+                << decoder()->get(vID, "system") << ":"
+                << decoder()->get(vID, m_layerIndex) << ":"
+                << decoder()->get(vID, m_rowIndex) << ":"
+                << gettype(vID) << ":"
+                << decoder()->get(vID, m_phiIndex) << "\n";
+    }
   }
 
   // Check consistency of input geometric variables.
@@ -695,6 +737,38 @@ namespace DDSegmentation {
     double thetaMin = std::atan2(Rmin, zhigh); // theta min
 
     return (M_PI - thetaMin); // theta max
+  }
+
+  // Determine the volume ID containing a cellID.
+  VolumeID FCCSWHCalPhiRow_k4geo::volumeID(const CellID& cID) const
+  {
+    VolumeID vID = cID;
+
+    // Null out the phi index.
+    decoder()->set(vID, m_phiIndex, 0);
+
+    // Get layer and row.
+    uint layer = decoder()->get(cID, m_layerIndex);
+    int irow = decoder()->get (vID, m_rowIndex);
+
+    // For the endcap, we need to fill in the type field.  For the negative
+    // endcap, types are offset by three, and we also need to make the row
+    // index positive.
+    if (m_detLayout == 1) {
+      const LayerInfo& li = getLayerInfo(layer);
+      int type = li.type;
+      if (irow < 0) {
+        irow = -irow;
+        type += 3;
+      }
+      decoder()->set(vID, m_typeIndex, type);
+    }
+
+    // Calculate the row.  Careful --- cell indices start with 1,
+    // volume indices start with 0!
+    decoder()->set(vID, m_rowIndex, (irow-1) * m_gridSizeRow[layer]);
+
+    return vID;
   }
 
 std::vector<CellID> FCCSWHCalPhiRow_k4geo::allCells() const
