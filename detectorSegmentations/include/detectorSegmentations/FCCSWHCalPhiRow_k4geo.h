@@ -256,6 +256,14 @@ namespace DDSegmentation {
       return {gridSizePhi(), m_gridSizeRow[aLayer] * m_dz_row};
     }
 
+    /// Determine the volume ID containing a cellID.
+    virtual VolumeID volumeID(const CellID& cellID) const override;
+
+    /// Return true if this segmentation can have cells that span multiple
+    /// volumes.  That is, points from multiple distinct volumes may
+    /// be assigned to the same cell.
+    virtual bool cellsSpanVolumes() const override { return true; }
+
   private:
     /// the number of bins in phi
     int m_phiBins;
@@ -297,6 +305,9 @@ namespace DDSegmentation {
 
     // Derived geometrical information about each layer.
     struct LayerInfo {
+      /// Type/section of the layer (only relevant for endcap).
+      unsigned int type = 0;
+
       /// Radius of the layer.
       double radius = 1;
 
