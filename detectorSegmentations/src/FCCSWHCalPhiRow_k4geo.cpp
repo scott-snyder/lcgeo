@@ -52,16 +52,16 @@ namespace DDSegmentation {
     const LayerInfo& li = getLayerInfo(layer);
 
     double radius = li.radius;
-    double minLayerZ = li.zmin;
 
     // get index of the cell in the layer (index starts from 1!)
     int idx = decoder()->get(cID, m_rowIndex);
     // calculate z-coordinate of the cell center
-    double zpos = minLayerZ + (idx - 1) * m_dz_row * m_gridSizeRow[layer] + 0.5 * m_dz_row * m_gridSizeRow[layer];
-
-    // for negative-z Endcap, the index is negative (starts from -1!)
-    if (idx < 0)
-      zpos = -minLayerZ + (idx + 1) * m_dz_row * m_gridSizeRow[layer] - 0.5 * m_dz_row * m_gridSizeRow[layer];
+    // Should be relative to the center of the first volume of the row.
+    double zpos = (m_gridSizeRow[layer] - 1) * m_dz_row * 0.5;
+    if (idx < 0) {
+      // for negative-z Endcap, the index is negative (starts from -1!)
+      zpos = -zpos;
+    }
 
     return Vector3D(radius * std::cos(phi(cID)), radius * std::sin(phi(cID)), zpos);
   }
@@ -107,7 +107,8 @@ namespace DDSegmentation {
         // Loop over individual layers.
         for (int i_lay = 0; i_lay < m_numLayers[i_dR + i_section * N_dR]; i_lay++) {
           moduleDepth[i_section] += m_dRlayer[i_dR];
-          out.push_back(LayerInfo{.radius = moduleDepth[i_section] - m_dRlayer[i_dR] * 0.5,
+          out.push_back(LayerInfo{.type = i_section,
+                                  .radius = moduleDepth[i_section] - m_dRlayer[i_dR] * 0.5,
                                   .halfDepth = m_dRlayer[i_dR] / 2,
                                   .zmin = zmin,
                                   .zmax = zmax});
