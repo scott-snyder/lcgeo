@@ -1,0 +1,50 @@
+Bottom: 0e91d14ea8fb951970e5f6f20e43995d3e13ed5e
+Top:    0e91d14ea8fb951970e5f6f20e43995d3e13ed5e
+Author: sss <sss@karma>
+Date:   2025-09-03 16:30:10 -0400
+
+Fix overlaps in HCalTileBarrel
+
+HCalTileBarrel has overlaps between the volumes representing the first
+(minimum z) row and the end plate.
+
+Specifically, the geometry places the center of each row (also called
+a sequence, consistenting of absorber+scintillator+spacing) by
+
+```
+      double zOffset = -dzDetector + (2 * numSeq + 1) * (dzSequence * 0.5);
+```
+
+where numSeq is the index of the row/sequence and dzSequence is the z-width
+of a row/sequence.  This can be rewritten probably more clearly as
+
+```
+      double zOffset = -dzDetector + numSeq*dzSequence + dzSequence/2;
+```
+
+dzDetector is calculated as
+
+```
+  double dzDetector = (numSequencesZ * dzSequence) / 2 + dZEndPlate + space;
+```
+
+so this is the total half-length of the barrel, including the sensitive
+area and the end plate.  But the placement above starts putting the rows
+right at -dzDetector ... overlapping the end plate.  Further, since
+(dZEndPlate+space) is not divisible by dzSequence, then the row edges
+do not line up with z=0, and they are asymmetric with respect to z inversion.
+
+We can fix this by simply changing the offset calculation to
+
+```
+      double zOffset = -dzDetector + numSeq*dzSequence + dzSequence/2 + dZEndPlate + space;
+```
+
+This gets rid of the overlaps and makes the layout symmetric.
+
+To be consistent, we also need to change the width_z parameter for the
+FCCSWHCalPhiRow_k4geo segmentation.  This was set to a hardcoded
+value of 2795.5*2*mm, which is just twice dzDetector.  So we should also
+subtract (twice) the end plate width + space.  Before this, the segmentation
+cell edges were also offset --- not lining up with 0 and asymmetric.
+With this change, they are symmetric.
