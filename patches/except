@@ -1,7 +1,7 @@
-Bottom: 0783c0fba7d7d88bd9025cf417c0db921266e9ff
-Top:    63806c748a3970957e1f560935699d90a7c4ac55
+Bottom: 8a5df9366e9d8ef44b39050f385904f94d8efbfb
+Top:    2cf6180195a53eb8d53b1d9359a3e5abbe05bf82
 Author: sss <sss@karma>
-Date:   2025-08-15 22:49:48 -0400
+Date:   2025-09-03 18:40:23 -0400
 
 Don't use exceptions to test for the presence of an attribute.
 

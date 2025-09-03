@@ -1,11 +1,9 @@
 {
   "version": 5,
-  "prev": "02403afdf7bf88f82d3d4b83e07078a1367fc081",
-  "head": "97195dfb8f1b241e4dd3b5af79c135e8cd90f006",
+  "prev": "45a7c27ebc0bda34cc2ec7eaa0f9fba4d2d55d53",
+  "head": "fe2c98aeb9dc853368599f1b839220e4fbbf6c72",
   "applied": [
-    "ci"
-  ],
-  "unapplied": [
+    "ci",
     "cmakewarn",
     "hidden",
     "except",
@@ -19,6 +17,7 @@
     "hcal-row-pos-wip",
     "hcal-barrel-overlap"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
@@ -28,37 +27,37 @@
       "oid": "f0530d92f5195aa82dae186ff85eae75f89183fb"
     },
     "ecal-pos-comment": {
-      "oid": "972aa170d2b52ef340505e82f3b309b1030f6251"
+      "oid": "a96c7d67dcda4aa09dc92207acba754acf7d9201"
     },
     "except": {
-      "oid": "7ef2ecff1611b082a9127e6f31bcf747b83d462a"
+      "oid": "9e02103d7d6aa56597365e8cbcf6287760dd4357"
     },
     "hcal-barrel-overlap": {
-      "oid": "b653ae5225d7e245fbd048ca15c9902d7d5ca031"
+      "oid": "fe2c98aeb9dc853368599f1b839220e4fbbf6c72"
     },
     "hcal-edge-vector": {
-      "oid": "fd68e7d4d92f8a5399199c8d194ebc6a63752c6b"
+      "oid": "7cc2a60d02762e503ce7061da0cd073bc8ac1dde"
     },
     "hcal-mutable": {
-      "oid": "673ecbff6f0f7f19e1afe49d6da6724abad90d0f"
+      "oid": "5cba046761f33c452651c5372e9e6a58dbdd100b"
     },
     "hcal-row-pos-wip": {
-      "oid": "a4be10587a59a64c0650f498718f44b1c148bec3"
+      "oid": "d28f99494dd8f8a33a0df98483756f4405ea205e"
     },
     "hcal-seg-wip": {
-      "oid": "97d4061badcbba6ceef2f6ab3faa6e821135eacc"
+      "oid": "1c45077ad510b27d752c46f810f6f5f287e04fdf"
     },
     "hcal-theta-pos": {
-      "oid": "e2bcd5db8d8c244b647ef56fb3c0aeac53be47c4"
+      "oid": "d743be96a15d9f7d43a844fed9fec523489e6a8d"
     },
     "hidden": {
-      "oid": "2179318644e5881aec1576bfc6f86ed0ed970432"
+      "oid": "cd912af82e57a67ef12832bd089c171cd11eddcc"
     },
     "neighbor-dump-wip": {
-      "oid": "1e3a9a58a7e13cf52ddf28cec89e47a58f0d9b99"
+      "oid": "993ed056905a5cd94265ef149efd834fa18f49b2"
     },
     "segCleanup1": {
-      "oid": "1df38d2232766a29a822517396992d6d30bb1d69"
+      "oid": "b12cd49eb8c700d3430d320792d87f0cde4b1d5b"
     }
   }
 }
