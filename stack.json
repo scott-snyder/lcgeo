@@ -1,8 +1,9 @@
 {
   "version": 5,
-  "prev": "acbd838c6a3608e8ec260ecb4044d05549e1be7f",
-  "head": "b653ae5225d7e245fbd048ca15c9902d7d5ca031",
-  "applied": [
+  "prev": "05d2f15ad6eba4225112f4e40d19f3edea1c9c1f",
+  "head": "047779d1d20aa6ad85491475d2533237635bd005",
+  "applied": [],
+  "unapplied": [
     "ci",
     "hidden",
     "except",
@@ -17,7 +18,6 @@
     "hcal-row-pos-wip",
     "hcal-barrel-overlap"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
