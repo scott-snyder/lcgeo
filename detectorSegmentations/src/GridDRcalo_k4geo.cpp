@@ -161,7 +161,7 @@ namespace DDSegmentation {
     return vID;
   }
 
-  void GridDRcalo_k4geo::neighbours(const CellID cID, std::set<CellID>& neighbours) const {
+  void GridDRcalo_k4geo::neighbours(const CellID& cID, std::set<CellID>& neighbours) const {
     int systemId = static_cast<int>(decoder()->get(cID, m_systemIndex));
     int noEta = numEta(cID);
     int noPhi = numPhi(cID);
