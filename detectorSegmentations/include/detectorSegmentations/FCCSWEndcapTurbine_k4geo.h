@@ -27,7 +27,7 @@ namespace DDSegmentation {
     virtual ~FCCSWEndcapTurbine_k4geo() = default;
 
     /**  Determine the global position based on the cell ID. **/
-    virtual Vector3D position(const CellID& aCellID) const;
+    virtual Vector3D position(const CellID& aCellID) const override;
     /**  Determine the cell ID based on the position.
      *   @param[in] aLocalPosition (not used).
      *   @param[in] aGlobalPosition position in the global coordinates.
@@ -237,7 +237,7 @@ namespace DDSegmentation {
     int m_sideIndex = -1;
     /// the field index used for layer
     int m_layerIndex = -1;
-    
+
   };
 } // namespace DDSegmentation
 } // namespace dd4hep
