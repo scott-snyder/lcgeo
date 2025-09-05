@@ -1,6 +1,3 @@
-// still to do:
-//   avoid linear searches
-#pragma GCC optimize "-O0"
 #include "detectorSegmentations/FCCSWHCalPhiTheta_k4geo.h"
 #include "DD4hep/Printout.h"
 #include "DD4hep/Detector.h"
