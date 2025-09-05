@@ -28,7 +28,7 @@ namespace DDSegmentation {
     VolumeID setVolumeID(int systemId, int numEta, int numPhi) const;
     CellID setCellID(bool isRHS, int systemId, int numEta, int numPhi, int x, int y) const;
 
-    void neighbours(const CellID cellID, std::set<CellID>& neighbours) const;
+    virtual void neighbours(const CellID& cellID, std::set<CellID>& neighbours) const override;
 
     void setGridSize(double grid) { m_gridSize = grid; }
     void setSipmSize(double sipm) { m_sipmSize = sipm; }
