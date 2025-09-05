@@ -225,7 +225,7 @@ namespace DDSegmentation {
      *  @param[in] cellID
      *  return a std::vector of size 2 with the cellDimensions of the given cell ID (phi, z)
      */
-    inline std::vector<double> cellDimensions(const CellID id) const {
+    virtual std::vector<double> cellDimensions(const CellID& id) const override {
       const int aLayer = layer(id);
       return {gridSizePhi(), m_gridSizeRow[aLayer] * m_dz_row};
     }
