@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "8d121f4c173cba6553780eb0621730f81139bfed",
-  "head": "cccc845849ab75afce417ae0ea865189029b1f47",
+  "prev": "115f7250e325e6362718a0772b6359196cd93d50",
+  "head": "2a722cf2a346f9033605f236d51010e78aa516a0",
   "applied": [
     "ci",
     "cmakewarn",
@@ -16,8 +16,7 @@
     "hcal-seg-wip",
     "hcal-row-pos-wip",
     "hcal-barrel-overlap",
-    "danglewarn",
-    "refresh-temp"
+    "danglewarn"
   ],
   "unapplied": [],
   "hidden": [],
@@ -29,7 +28,7 @@
       "oid": "f0530d92f5195aa82dae186ff85eae75f89183fb"
     },
     "danglewarn": {
-      "oid": "5e6b8000f1c134e677d1e1a61caf900931a84e1b"
+      "oid": "2a722cf2a346f9033605f236d51010e78aa516a0"
     },
     "ecal-pos-comment": {
       "oid": "191939ac95bc1211e92a098e01b80457925a271c"
@@ -38,7 +37,7 @@
       "oid": "9e02103d7d6aa56597365e8cbcf6287760dd4357"
     },
     "hcal-barrel-overlap": {
-      "oid": "6f607b972ed5fad50d3151052caf774a48c48309"
+      "oid": "9a8ac2eba43f96ce06df9f5ec6950e25d4e39e95"
     },
     "hcal-edge-vector": {
       "oid": "e0de6ffbce19375cad73bc698cdd2bf1b5d417d7"
@@ -47,10 +46,10 @@
       "oid": "99dc8db02f3520865ac9e7849c6276ffb66e6fb0"
     },
     "hcal-row-pos-wip": {
-      "oid": "3a6213e577122996d176c3fc6aad65e49d85493f"
+      "oid": "e7d389548d4881f4a3caa494ab3ba921ad0310a2"
     },
     "hcal-seg-wip": {
-      "oid": "e479449ba2410db5fd3766e48ba0977d6b850f13"
+      "oid": "506ee5723564d270295becb92aa75315c946b562"
     },
     "hcal-theta-pos": {
       "oid": "f2663ae9e5beb6e545e49eed3e69e80cf50a5f7f"
@@ -60,9 +59,6 @@
     },
     "neighbor-dump-wip": {
       "oid": "ac9e899928e6306f429f6f1157aa6e11c8b77fe1"
-    },
-    "refresh-temp": {
-      "oid": "cccc845849ab75afce417ae0ea865189029b1f47"
     },
     "segCleanup1": {
       "oid": "ff024a05dfa11bf3b7dc12fe14556690141e9864"
