@@ -76,7 +76,7 @@ namespace DDSegmentation {
      *  @param[in] cellID
      *  return a std::vector of size 2 with the cellDimensions of the given cell ID (phi, theta)
      */
-    inline std::vector<double> cellDimensions(const CellID /* id */) const { return {gridSizePhi(), gridSizeTheta()}; }
+    virtual std::vector<double> cellDimensions(const CellID& /* id */) const override { return {gridSizePhi(), gridSizeTheta()}; }
 
   private:
     /// determine the azimuthal angle phi based on the current cell ID
