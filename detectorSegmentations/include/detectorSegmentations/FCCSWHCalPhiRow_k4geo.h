@@ -54,6 +54,11 @@ namespace DDSegmentation {
      */
     std::vector<uint64_t> neighbours(const CellID cID) const;
 
+    /**  Find neighbours of the cell.
+     *   Implement the signature from the Segmentation base class.
+     */
+    virtual void neighbours(const CellID& cellID, std::set<CellID>& neighbours) const override;
+
     /**  Determine the azimuthal angle of HCal cell based on the cellID.
      *   @param[in] aCellId ID of a cell.
      *   return Phi.
