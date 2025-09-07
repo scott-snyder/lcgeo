@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "09785261c2df393edfe5d6ed4f81d76fd80d7fbf",
+  "prev": "6e176a30d05cd1d09e725db7296477d10b97e4f7",
   "head": "d5c0d6194c814a56b054e6d77bc863a288d67455",
   "applied": [
     "ci",
@@ -20,8 +20,7 @@
     "hcal-seg-wip",
     "hcal-row-pos-wip",
     "danglewarn",
-    "nosystem",
-    "hidden"
+    "nosystem"
   ],
   "hidden": [],
   "patches": {
@@ -60,9 +59,6 @@
     },
     "hcal-theta-pos": {
       "oid": "d5c0d6194c814a56b054e6d77bc863a288d67455"
-    },
-    "hidden": {
-      "oid": "cd912af82e57a67ef12832bd089c171cd11eddcc"
     },
     "neighbor-dump-wip": {
       "oid": "1fde86df57da312ebea6c8c57492b58102e24427"

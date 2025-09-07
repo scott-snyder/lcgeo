@@ -1,6 +1,0 @@
-Bottom: b4bb7bc4419cfde51cbf8c2b946a825f91bead69
-Top:    8a5df9366e9d8ef44b39050f385904f94d8efbfb
-Author: sss <sss@karma>
-Date:   2025-09-03 18:40:23 -0400
-
-Avoid warnings about hidden method.
