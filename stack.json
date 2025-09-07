@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "6e45f55a3c4c7d08ed36e462e3731dd6f3e08636",
-  "head": "9a861af2b9e56e9dd657876f4852355e74045481",
+  "prev": "6536e44957c9ae5865d83c6b4737e40e7aaa064b",
+  "head": "f0530d92f5195aa82dae186ff85eae75f89183fb",
   "applied": [
     "ci",
-    "cmakewarn",
-    "except",
-    "segneighbours"
+    "cmakewarn"
   ],
   "unapplied": [
+    "except",
+    "segneighbours",
     "segCleanup1",
     "ecal-pos-comment",
     "hcal-mutable",
