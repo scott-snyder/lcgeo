@@ -1,17 +1,17 @@
 {
   "version": 5,
-  "prev": "5e3c6a21640f715a8a1b0d9d658e4045bd8827c0",
-  "head": "78a41bbff273bcdfbb891447d51e75f25dfdb6b5",
+  "prev": "6e45f55a3c4c7d08ed36e462e3731dd6f3e08636",
+  "head": "9a861af2b9e56e9dd657876f4852355e74045481",
   "applied": [
     "ci",
     "cmakewarn",
     "except",
-    "segneighbours",
-    "segCleanup1",
-    "ecal-pos-comment",
-    "hcal-mutable"
+    "segneighbours"
   ],
   "unapplied": [
+    "segCleanup1",
+    "ecal-pos-comment",
+    "hcal-mutable",
     "hcal-edge-vector",
     "hcal-theta-pos",
     "neighbor-dump-wip",
