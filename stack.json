@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "6536e44957c9ae5865d83c6b4737e40e7aaa064b",
-  "head": "f0530d92f5195aa82dae186ff85eae75f89183fb",
+  "prev": "744e127244d7f02e4443df107f56a4e4d3e693aa",
+  "head": "730861da646b90b933898150dd5b9c426a8ba295",
   "applied": [
     "ci",
-    "cmakewarn"
+    "cmakewarn",
+    "deprarrow"
   ],
   "unapplied": [
     "except",
@@ -19,7 +20,6 @@
     "hcal-row-pos-wip",
     "hcal-barrel-overlap",
     "danglewarn",
-    "deprarrow",
     "nosystem",
     "hidden"
   ],
@@ -35,7 +35,7 @@
       "oid": "6b0ebe8225f1edcaa03ecb57bafef008a4dc13a2"
     },
     "deprarrow": {
-      "oid": "31860f36de0e73f5a9c90c17a17906fca4178a76"
+      "oid": "730861da646b90b933898150dd5b9c426a8ba295"
     },
     "ecal-pos-comment": {
       "oid": "5dba56358dcc2a6fad0b0f453cb736f3e5628145"
