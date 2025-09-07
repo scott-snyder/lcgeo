@@ -1,17 +1,17 @@
 {
   "version": 5,
-  "prev": "80c01a3298f1338b02cdcf16000219c3b7e61c48",
-  "head": "973eb0657023108bdd065497888e4b23bfa28119",
+  "prev": "2d57b8ebc70b60d6f1e4e438645f8dab1850533f",
+  "head": "fbc8f54d2edd14924c60f214f2636695c1ab7f25",
   "applied": [
     "ci",
     "cmakewarn",
     "deprarrow",
     "segneighbours",
     "except",
-    "ecal-pos-comment",
-    "hcal-barrel-overlap"
+    "ecal-pos-comment"
   ],
   "unapplied": [
+    "hcal-barrel-overlap",
     "segCleanup1",
     "hcal-mutable",
     "hcal-edge-vector",
