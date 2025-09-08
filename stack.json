@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "48fb3d1c23bf2235a6e7d872ad7eedf7cc1251c1",
-  "head": "1111bf86fef080ad1435f7eeec47dd3c2a32b234",
+  "prev": "a67249a2c3bddeb5e7a301034afe0e50cbd6c038",
+  "head": "313d2cdd6086fa46fcb72cb0765aece465e4428e",
   "applied": [
     "ci",
     "cmakewarn",
@@ -14,11 +14,11 @@
     "hcal-edge-vector",
     "hcal-theta-pos",
     "hcal-row-pos",
-    "neighbor-dump-wip",
-    "hcal-theta-pos-debugprint",
-    "hcal-row-pos-debugprint"
+    "neighbor-dump-wip"
   ],
   "unapplied": [
+    "hcal-theta-pos-debugprint",
+    "hcal-row-pos-debugprint",
     "hcal-barrel-overlap",
     "danglewarn",
     "nosystem"
