@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "6ffe6b9bc159f4bf26ff0db83b8c2cf9f2d74a77",
-  "head": "b5aec41368c13687df7bc3514d2e5004a00ebd62",
+  "prev": "cc7fcc60455d00693851cb1ab172f5b03514054a",
+  "head": "0e2abbfc8bc0ded647285ae510851b1f449b4613",
   "applied": [
     "ci",
     "cmakewarn",
@@ -16,13 +16,12 @@
     "hcal-row-pos",
     "neighbor-dump-wip",
     "hcal-theta-pos-debugprint",
-    "hcal-row-pos-debugprint"
-  ],
-  "unapplied": [
+    "hcal-row-pos-debugprint",
     "hcal-barrel-overlap",
     "danglewarn",
     "nosystem"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
@@ -32,7 +31,7 @@
       "oid": "f0530d92f5195aa82dae186ff85eae75f89183fb"
     },
     "danglewarn": {
-      "oid": "632a8b6e215ff83e0a2a4af0287a09b49d850d91"
+      "oid": "3cc0f3c227c55b449ca49cac46b6b219a1e8dfce"
     },
     "deprarrow": {
       "oid": "730861da646b90b933898150dd5b9c426a8ba295"
@@ -44,7 +43,7 @@
       "oid": "97b88bd092a45f887c8867a7b103e2d29e704dff"
     },
     "hcal-barrel-overlap": {
-      "oid": "9bd40a6df7a803a21217b992ba65856b9679a8d2"
+      "oid": "bb229d3370daaf510e07dfa2d0c61f840e6be208"
     },
     "hcal-edge-vector": {
       "oid": "32c6195b26d50ff01a80e59c9eb94850bf35ac1a"
@@ -68,7 +67,7 @@
       "oid": "475645ace21ecd6991cbca3efc83100e80eea64c"
     },
     "nosystem": {
-      "oid": "19d6f5731574bdfac3f423729cad4e545c1fa76b"
+      "oid": "0e2abbfc8bc0ded647285ae510851b1f449b4613"
     },
     "segCleanup1": {
       "oid": "b6c4bbbce533962ec07c52fbaf9a093070290846"
