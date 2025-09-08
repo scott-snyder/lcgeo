@@ -64,9 +64,9 @@ namespace DDSegmentation {
     int thetaID = decoder()->get(cID, m_thetaIndex);
 
     const LayerInfo& li = getLayerInfo(layer);
+    dumpneighbors();
     const LayerInfo::CellInfo& ci = li.cellInfo(thetaID);
     double zpos = (ci.edges.first + ci.edges.second) * 0.5 - ci.volumeZ;
-    dumpneighbors();
 
     auto pos = positionFromRThetaPhi(li.radius, theta(cID), phi(cID));
     return Vector3D(pos.x(), pos.y(), zpos);

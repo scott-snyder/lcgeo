@@ -59,8 +59,8 @@ namespace DDSegmentation {
   Vector3D FCCSWHCalPhiRow_k4geo::position(const CellID& cID) const {
     uint layer = decoder()->get(cID, m_layerIndex);
 
-    dumpneighbors();
     const LayerInfo& li = getLayerInfo(layer);
+    dumpneighbors();
 
     double radius = li.radius;
 
