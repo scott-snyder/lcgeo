@@ -1,5 +1,8 @@
 #include "detectorSegmentations/FCCSWHCalPhiRow_k4geo.h"
 #include "DD4hep/Printout.h"
+#include "DD4hep/Detector.h"
+#include "DD4hep/VolumeManager.h"
+#include "DD4hep/detail/DetectorInterna.h"
 
 namespace dd4hep {
 namespace DDSegmentation {
@@ -184,6 +187,44 @@ namespace DDSegmentation {
 
     dd4hep::printout(dd4hep::DEBUG, "FCCSWHCalPhiRow_k4geo", "Number of cells in layer %d: %d", layer,
                      li.cellIndexes.size());
+    std::cout << "rrr " << m_detLayout <<  " layer " << layer << " "
+              << li.cellIndexes.size() << " cells "
+              << this->fieldDescription() << "\n";
+    for (int idx : li.cellIndexes) {
+      if (idx < 0) break;
+      const auto& edge = li.m_cellEdge.at(idx-li.m_ibin);
+      std::cout << "  " << idx << " " << edge.low << " " << edge.high
+                << " " << (edge.low+edge.high)/2 << "\n";
+    }
+
+    dd4hep::Detector* dd4hepgeo = &(dd4hep::Detector::getInstance());
+    VolumeManager vman = VolumeManager::getVolumeManager(*dd4hepgeo);
+    const DetElementObject& de = *dd4hepgeo->readout (this->name()).segmentation().detector();
+
+    int ilayer = layer;
+    if (m_detLayout == 1) ilayer = layer + 1;
+    auto layer_it = de.children.find ("layer" + std::to_string(ilayer));
+    VolumeID vID = 0;
+    decoder()->set(vID, "system", de.id);
+    for (const auto& [name, val] : layer_it->second.placement().volIDs()) {
+      decoder()->set(vID, name, val);
+    }
+    size_t nrows = layer_it->second.children().size();
+    auto gettype = [&] (unsigned id) -> int { if (m_typeIndex==-1) return -1; return decoder()->get(id, m_typeIndex); };
+    std::cout << " " << nrows << " rows\n";
+    for (size_t ir=0; ir < nrows; ir++) {
+      decoder()->set(vID, m_rowIndex, ir);
+      VolumeManagerContext* vc = vman.lookupContext(vID);
+      double zpos = vc->localToWorld({0,0,0}).Z();
+      double zoffs1 = vc->volumePlacement().position().Z();
+      double zoffs2 = vc->elementPlacement().position().Z();
+      std::cout << "   " << ir << " " << vID << " " << zpos << " " << zoffs1 << " " << zoffs2 << " -> "
+                << decoder()->get(vID, "system") << ":"
+                << decoder()->get(vID, m_layerIndex) << ":"
+                << decoder()->get(vID, m_rowIndex) << ":"
+                << gettype(vID) << ":"
+                << decoder()->get(vID, m_phiIndex) << "\n";
+    }
   }
 
   // Check consistency of input geometric variables.
