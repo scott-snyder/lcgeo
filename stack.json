@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4d16d1447c48729ac2cf403b9c10f5b27bccd7f5",
-  "head": "725ef8046edbcd75e6c0c4364f12911585c6a717",
+  "prev": "50c1d59205b736d5ea6a7367cb394986c34e038e",
+  "head": "06a4fa1764c17abef1833a547cbe96f2ccc14ec9",
   "applied": [
     "ci",
     "cmakewarn",
@@ -18,8 +18,7 @@
     "hcal-barrel-overlap",
     "danglewarn",
     "nosystem",
-    "hcal-row-pos-wip",
-    "refresh-temp"
+    "hcal-row-pos-wip"
   ],
   "unapplied": [],
   "hidden": [],
@@ -52,7 +51,7 @@
       "oid": "9085f9b38be43631a1d755c15bb8c8f330f02be8"
     },
     "hcal-row-pos-wip": {
-      "oid": "c453e7f0967c5009dba4429ded679f07be853567"
+      "oid": "06a4fa1764c17abef1833a547cbe96f2ccc14ec9"
     },
     "hcal-seg-wip": {
       "oid": "2194b64c18c40f5b834cd7020d051b99ab6afad6"
@@ -65,9 +64,6 @@
     },
     "nosystem": {
       "oid": "19d6f5731574bdfac3f423729cad4e545c1fa76b"
-    },
-    "refresh-temp": {
-      "oid": "725ef8046edbcd75e6c0c4364f12911585c6a717"
     },
     "segCleanup1": {
       "oid": "b6c4bbbce533962ec07c52fbaf9a093070290846"
