@@ -306,6 +306,9 @@ namespace DDSegmentation {
     // Derived geometrical information about each layer.
     struct LayerInfo
     {
+      /// Type/section of the layer (only relevant for endcap).
+      unsigned int type = 0;
+
       /// Radius of the layer.
       double radius = 1;
 
