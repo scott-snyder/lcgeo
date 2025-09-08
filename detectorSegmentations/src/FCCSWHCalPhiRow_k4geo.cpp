@@ -66,16 +66,16 @@ namespace DDSegmentation {
     const LayerInfo& li = getLayerInfo(layer);
 
     double radius = li.radius;
-    double minLayerZ = li.zmin;
 
     // get index of the cell in the layer (index starts from 1!)
     int idx = decoder()->get(cID, m_rowIndex);
     // calculate z-coordinate of the cell center
-    double zpos = minLayerZ + (idx - 1) * m_dz_row * m_gridSizeRow[layer] + 0.5 * m_dz_row * m_gridSizeRow[layer];
-
-    // for negative-z Endcap, the index is negative (starts from -1!)
-    if (idx < 0)
-      zpos = -minLayerZ + (idx + 1) * m_dz_row * m_gridSizeRow[layer] - 0.5 * m_dz_row * m_gridSizeRow[layer];
+    // Should be relative to the center of the first volume of the row.
+    double zpos = (m_gridSizeRow[layer] - 1) * m_dz_row * 0.5;
+    if (idx < 0) {
+      // for negative-z Endcap, the index is negative (starts from -1!)
+      zpos = -zpos;
+    }
 
     return Vector3D(radius * std::cos(phi(cID)), radius * std::sin(phi(cID)), zpos);
   }
@@ -729,6 +729,14 @@ namespace DDSegmentation {
     double thetaMin = std::atan2(Rmin, zhigh); // theta min
 
     return (M_PI - thetaMin); // theta max
+  }
+
+  // Determine the volume ID containing a cellID.
+  VolumeID FCCSWHCalPhiRow_k4geo::volumeID(const CellID& cID) const
+  {
+    VolumeID vID = cID;
+    decoder()->set(vID, m_phiIndex, 0);
+    return vID;
   }
 
 std::vector<CellID> FCCSWHCalPhiRow_k4geo::allCells() const
