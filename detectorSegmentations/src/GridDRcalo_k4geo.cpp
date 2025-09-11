@@ -275,7 +275,7 @@ namespace DDSegmentation {
 
     // if the seed fiber is not on the edge of the tower, return the minimal neighborhood
     if (nX > fl.cmin + margin && nX < fl.cmax - margin && nY > fl.rmin + margin && nY < fl.rmax - margin) {
-      if (fRemoveDifferentCh)
+      if (m_removeDifferentCh)
         removeDifferentChannel(isCeren, nb);
 
       neighbours = nb;
@@ -339,7 +339,7 @@ namespace DDSegmentation {
       for (int idx = totY - 1; idx >= fl.rmax - margin; idx--)
         nb.insert(setCellID(!isRHS, systemId, noEta, nextPhi, nextX, idx));
 
-      if (fRemoveDifferentCh)
+      if (m_removeDifferentCh)
         removeDifferentChannel(isCeren, nb);
 
       neighbours = nb;
@@ -355,8 +355,8 @@ namespace DDSegmentation {
 
       // for different noEta rmin and rmax can be different
       // also protect from map::at exception at the barrel-endcap boundary
-      auto flNext = paramBase->unsignedTowerNo(noEta) == fParamBarrel->GetTotTowerNum()
-                        ? fParamBarrel->GetFullLengthFibers(noEta - 1)
+      auto flNext = paramBase->unsignedTowerNo(noEta) == m_paramBarrel->GetTotTowerNum()
+                        ? m_paramBarrel->GetFullLengthFibers(noEta - 1)
                         : paramBase->GetFullLengthFibers(noEta - 1);
 
       // next tower
@@ -386,7 +386,7 @@ namespace DDSegmentation {
     }
 
     // finalize
-    if (fRemoveDifferentCh)
+    if (m_removeDifferentCh)
       removeDifferentChannel(isCeren, nb);
 
     neighbours = nb;
