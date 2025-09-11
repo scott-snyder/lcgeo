@@ -1,7 +1,7 @@
 Bottom: 9fcc07bc86a375d86adeaa5f652503005d066fef
 Top:    143fb2c1147d1c6e36c6ce7bdb43466e9dee2e7e
 Author: sss <sss@karma>
-Date:   2025-09-10 21:17:42 -0400
+Date:   2025-09-10 21:31:30 -0400
 
 Some segmentation classes defined a neighbours() method with a signature
 different from that defined in the Segmentation base class.
