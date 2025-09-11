@@ -993,6 +993,7 @@ void FCCSWHCalPhiTheta_k4geo::dumpneighbors() const
   if (m_dumped) return;
   m_dumped = true;
   FILE* fout = fopen ("out/neigh-theta.dump", "w");
+  if (!fout) return;
   fprintf (fout, "diag false\n");
   for (CellID cid : allCells()) {
     fprintf (fout, "%lx ->", cid);
