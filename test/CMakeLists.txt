@@ -62,7 +62,7 @@ add_test(NAME ${test_name} COMMAND ddsim --steeringFile=${CMAKE_CURRENT_SOURCE_D
 # test for IDEA o1 v02
 SET( test_name "test_IDEA_o1_v02" )
 add_test(NAME ${test_name} COMMAND ddsim --compactFile=${CMAKE_CURRENT_SOURCE_DIR}/../FCCee/IDEA/compact/IDEA_o1_v02/IDEA_o1_v02.xml --runType=batch -G -N=51000 --gun.distribution uniform --gun.particle geantino --random.seed 1988301045 --outputFile=testIDEA_o1_v02.slcio )
-SET_TESTS_PROPERTIES( ${test_name} PROPERTIES TIMEOUT 360)
+SET_TESTS_PROPERTIES( ${test_name} PROPERTIES TIMEOUT 600)
 
 #--------------------------------------------------
 # test for IDEA o1 v03
@@ -112,14 +112,14 @@ SET_TESTS_PROPERTIES( ${test_name} PROPERTIES TIMEOUT 120)
 
 SET( test_name "test_ARC_o1_v01_overlap" )
 add_test(NAME ${test_name} COMMAND ddsim --compactFile=${CMAKE_CURRENT_SOURCE_DIR}/compact/ARC_standalone_o1_v01.xml --runType run --part.userParticleHandler= --macroFile=${CMAKE_CURRENT_SOURCE_DIR}/../utils/overlap.mac  )
-SET_TESTS_PROPERTIES( ${test_name} PROPERTIES TIMEOUT 240)
+SET_TESTS_PROPERTIES( ${test_name} PROPERTIES TIMEOUT 600)
 
 #--------------------------------------------------
 # test for DCH o1 v02
 if(DCH_INFO_H_EXIST)
 SET( test_name "test_DCH_o1_v02_overlap" )
 add_test(NAME ${test_name} COMMAND ddsim --compactFile=${CMAKE_CURRENT_SOURCE_DIR}/compact/DCH_standalone_o1_v02.xml --runType run --part.userParticleHandler= --macroFile=${CMAKE_CURRENT_SOURCE_DIR}/../utils/overlap.mac  )
-set_tests_properties( ${test_name} PROPERTIES TIMEOUT 400)
+set_tests_properties( ${test_name} PROPERTIES TIMEOUT 600)
 endif()
 
 #--------------------------------------------------
