@@ -1,16 +1,17 @@
 {
   "version": 5,
-  "prev": "9ff6ea7d61f39d6776a47089946da625bed2daeb",
-  "head": "2eb66b3aec21278473013d59a7f73e773c7031f0",
-  "applied": [],
-  "unapplied": [
+  "prev": "191f8fb4204db4a9eaf0c492a3b8b10c72edf350",
+  "head": "b42b7c5d632f911ec7e701ef639244d34856aabf",
+  "applied": [
     "ci",
     "cmakewarn",
     "deprarrow",
     "segneighbours",
     "except",
     "ecal-pos-comment",
-    "segCleanup1",
+    "segCleanup1"
+  ],
+  "unapplied": [
     "hcal-mutable",
     "hcal-edge-vector",
     "hcal-theta-pos",
@@ -25,22 +26,22 @@
   "hidden": [],
   "patches": {
     "ci": {
-      "oid": "97195dfb8f1b241e4dd3b5af79c135e8cd90f006"
+      "oid": "fe129748e6faea9d6b1be698eef0c999fdfa14cc"
     },
     "cmakewarn": {
-      "oid": "f0530d92f5195aa82dae186ff85eae75f89183fb"
+      "oid": "32073c59e9b49304f9ea73454d93001a6443e5c1"
     },
     "danglewarn": {
       "oid": "3cc0f3c227c55b449ca49cac46b6b219a1e8dfce"
     },
     "deprarrow": {
-      "oid": "730861da646b90b933898150dd5b9c426a8ba295"
+      "oid": "555d0f434dfdd082abb3125837332de5a95b32da"
     },
     "ecal-pos-comment": {
-      "oid": "fbc8f54d2edd14924c60f214f2636695c1ab7f25"
+      "oid": "e91feb9156612ea75e0b17a40cf61fa502c8b753"
     },
     "except": {
-      "oid": "97b88bd092a45f887c8867a7b103e2d29e704dff"
+      "oid": "1f6aed36e461dda07069356abd12da52a346aaad"
     },
     "hcal-barrel-overlap": {
       "oid": "bb229d3370daaf510e07dfa2d0c61f840e6be208"
@@ -70,10 +71,10 @@
       "oid": "0e2abbfc8bc0ded647285ae510851b1f449b4613"
     },
     "segCleanup1": {
-      "oid": "b6c4bbbce533962ec07c52fbaf9a093070290846"
+      "oid": "b42b7c5d632f911ec7e701ef639244d34856aabf"
     },
     "segneighbours": {
-      "oid": "2947ee6993f6b9a450ba507bfa3f8cf3e146711c"
+      "oid": "77543ac8ce70e8708ff4c3a313f6c375fa73e9d9"
     }
   }
 }
