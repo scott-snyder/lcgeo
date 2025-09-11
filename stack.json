@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a3858d762c585de75c6d14ba116a49a65e59845e",
-  "head": "c1e398ecc3bef29d010a1c8f610b3f7c394676fd",
+  "prev": "64f6354364da6dde384805c13b74a1142b942678",
+  "head": "aaa3fe2bfc538f390083625d6bd366d756f010b8",
   "applied": [
     "ci",
     "cmakewarn",
@@ -19,7 +19,8 @@
     "hcal-barrel-overlap",
     "danglewarn",
     "nosystem",
-    "timeout"
+    "timeout",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
@@ -74,6 +75,9 @@
     },
     "timeout": {
       "oid": "c1e398ecc3bef29d010a1c8f610b3f7c394676fd"
+    },
+    "refresh-temp": {
+      "oid": "aaa3fe2bfc538f390083625d6bd366d756f010b8"
     }
   }
 }
