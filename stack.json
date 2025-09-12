@@ -1,12 +1,11 @@
 {
   "version": 5,
-  "prev": "4d0166e8b915f7523896828b7bdec77c4caf840c",
-  "head": "578e2dad8abf15a65ab55a811cf415183ad4e5d2",
+  "prev": "ebf7030006c46122ae8cddb0dba1fd2a96b693bf",
+  "head": "1579ba5fab2024d43dff5a2c85041b7077867bf7",
   "applied": [
     "cmakewarn",
     "segneighbours",
-    "except",
-    "refresh-temp"
+    "except"
   ],
   "unapplied": [
     "ecal-pos-comment",
@@ -39,7 +38,7 @@
       "oid": "86282310c7824a4bbb4b7d59a1c9ecb4a00e1bf6"
     },
     "except": {
-      "oid": "16ea2e1654e550afef597de7ddbbce415915bad1"
+      "oid": "1579ba5fab2024d43dff5a2c85041b7077867bf7"
     },
     "hcal-barrel-overlap": {
       "oid": "0e16ceca9f36d994a96a83bce920f4b29d61a2eb"
@@ -67,9 +66,6 @@
     },
     "nosystem": {
       "oid": "bf0cef67b83f3698ec663e995d03e3b5a65b13da"
-    },
-    "refresh-temp": {
-      "oid": "578e2dad8abf15a65ab55a811cf415183ad4e5d2"
     },
     "segCleanup1": {
       "oid": "6610531e48aba4c935e7332a8504c5cb219848df"
