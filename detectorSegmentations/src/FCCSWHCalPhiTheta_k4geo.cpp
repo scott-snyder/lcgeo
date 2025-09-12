@@ -126,13 +126,10 @@ namespace DDSegmentation {
     return out;
   }
 
-
-  void FCCSWHCalPhiTheta_k4geo::defineCellEdges(LayerInfo& li,
-                                                const unsigned int layer) const
-  {
+  void FCCSWHCalPhiTheta_k4geo::defineCellEdges(LayerInfo& li, const unsigned int layer) const {
     // Helper to find the z-coordinate corresponding to a theta bin number.
-    auto binToZ = [&] (int ibin)
-    { double theta = offsetTheta()+ibin*gridSizeTheta();
+    auto binToZ = [&](int ibin) {
+      double theta = offsetTheta() + ibin * gridSizeTheta();
       return li.radius / std::tan(theta);
     };
 
@@ -143,29 +140,27 @@ namespace DDSegmentation {
     // decreasing z-coordinate.  So we start remembering bin numbesr
     // once the z-coordinate is less than the maximum and stop once the
     // z-coordinate is less than the minimum.
-    for (; ; ++ibin)
-    {
+    for (;; ++ibin) {
       double z = binToZ(ibin);
-      if (z <= li.zmin) break;
-      if (z < li.zmax)
-      {
+      if (z <= li.zmin)
+        break;
+      if (z < li.zmax) {
         li.thetaBins.push_back(ibin);
       }
     }
- 
+
     {
       // find edges of each cell (theta bin) in the given layer,
       // initializing the first range of bins (m_cellInfo1).
       // set the upper edge of the first cell in the given layer (starting from positive z part)
       li.m_ibin1 = li.thetaBins[0];
-      li.m_cellInfo1.reserve (li.thetaBins.size());
+      li.m_cellInfo1.reserve(li.thetaBins.size());
       double prevZ = binToZ(li.m_ibin1);
       double prevEdge = li.zmax;
-      for(auto bin : li.thetaBins)
-      {
-        double z = binToZ(bin+1);
-        double edge = prevZ + 0.5*(z - prevZ);
-        li.m_cellInfo1.emplace_back (edge, prevEdge);
+      for (auto bin : li.thetaBins) {
+        double z = binToZ(bin + 1);
+        double edge = prevZ + 0.5 * (z - prevZ);
+        li.m_cellInfo1.emplace_back(edge, prevEdge);
         prevZ = z;
         prevEdge = edge;
       }
@@ -174,14 +169,12 @@ namespace DDSegmentation {
     }
 
     // for the EndCap, do it again but for negative z part
-    if(m_detLayout == 1)
-    {
-      for (; ; ++ibin)
-      {
+    if (m_detLayout == 1) {
+      for (;; ++ibin) {
         double z = binToZ(ibin);
-        if(z <= (-li.zmax)) break;
-        if(z < (-li.zmin))
-        {
+        if (z <= (-li.zmax))
+          break;
+        if (z < (-li.zmin)) {
           li.thetaBins.push_back(ibin);
         }
       }
@@ -190,25 +183,24 @@ namespace DDSegmentation {
         // Create a range over the theta bins corresponding to the Endcap in negative z part,
         // initializing the second range of bins (m_cellInfo2).
         // Make a range for the second range of bins.
-        auto thetaBins = std::ranges::drop_view (li.thetaBins, li.thetaBins.size()/2);
+        auto thetaBins = std::ranges::drop_view(li.thetaBins, li.thetaBins.size() / 2);
 
         // set the upper edge of the first cell in the given layer at negative z part
         li.m_ibin2 = thetaBins[0];
-        li.m_cellInfo2.reserve (thetaBins.size());
+        li.m_cellInfo2.reserve(thetaBins.size());
         double prevZ = binToZ(li.m_ibin2);
         double prevEdge = -li.zmin;
-        for(auto bin : thetaBins)
-        {
-          double z = binToZ(bin+1);
-          double edge = prevZ + 0.5*(z - prevZ);
-          li.m_cellInfo2.emplace_back (edge, prevEdge);
+        for (auto bin : thetaBins) {
+          double z = binToZ(bin + 1);
+          double edge = prevZ + 0.5 * (z - prevZ);
+          li.m_cellInfo2.emplace_back(edge, prevEdge);
           prevZ = z;
           prevEdge = edge;
         }
         // set the lower edge of the last cell in the given layer
         li.m_cellInfo2.back().edges.first = -li.zmax;
       }
-    }// negative-z endcap
+    } // negative-z endcap
 
     dd4hep::printout(dd4hep::DEBUG, "FCCSWHCalPhiTheta_k4geo", "Number of cells in layer %d: %d", layer,
                      li.thetaBins.size());

@@ -279,22 +279,24 @@ namespace DDSegmentation {
       int m_ibin2 = 9999999;
 
       struct CellInfo {
-        CellInfo (double lo, double hi): edges(lo, hi) {}
-        Edges edges {0, 0};
+        CellInfo(double lo, double hi) : edges(lo, hi) {}
+        Edges edges{0, 0};
       };
-      std::vector<CellInfo> m_cellInfo1 {};
-      std::vector<CellInfo> m_cellInfo2 {};
+      std::vector<CellInfo> m_cellInfo1{};
+      std::vector<CellInfo> m_cellInfo2{};
 
-      const CellInfo& cellInfo (int ibin) const
-      {
-        if (ibin < m_ibin1) throw std::out_of_range("cellInfo");
-        if (ibin < m_ibin2) return m_cellInfo1.at(ibin - m_ibin1);
+      const CellInfo& cellInfo(int ibin) const {
+        if (ibin < m_ibin1)
+          throw std::out_of_range("cellInfo");
+        if (ibin < m_ibin2)
+          return m_cellInfo1.at(ibin - m_ibin1);
         return m_cellInfo2.at(ibin - m_ibin2);
       }
-      CellInfo& cellInfo (int ibin)
-      {
-        if (ibin < m_ibin1) throw std::out_of_range("cellInfo");
-        if (ibin < m_ibin2) return m_cellInfo1.at(ibin - m_ibin1);
+      CellInfo& cellInfo(int ibin) {
+        if (ibin < m_ibin1)
+          throw std::out_of_range("cellInfo");
+        if (ibin < m_ibin2)
+          return m_cellInfo1.at(ibin - m_ibin1);
         return m_cellInfo2.at(ibin - m_ibin2);
       }
     };

@@ -159,19 +159,19 @@ namespace DDSegmentation {
 
     // for the EndCap, we have the same indices but negative for the other half
     if (m_detLayout == 1) {
-      li.cellIndexes.resize (sz*2);
+      li.cellIndexes.resize(sz * 2);
       for (size_t i = 0; i < sz; i++) {
-        li.cellIndexes[i+sz] = -li.cellIndexes[i];
+        li.cellIndexes[i + sz] = -li.cellIndexes[i];
       }
     }
 
     // find edges of each cell in the given layer along z axis
-    li.m_cellEdges.reserve (sz);
+    li.m_cellEdges.reserve(sz);
     li.m_ibin = li.cellIndexes[0];
     for (auto idx : li.cellIndexes) {
       // calculate z-coordinates of the cell edges
       double z1 = minLayerZ + (idx - 1) * m_dz_row * m_gridSizeRow[layer]; // lower edge
-      double z2 = z1 + m_dz_row;       // upper edge
+      double z2 = z1 + m_dz_row;                                           // upper edge
 
       // We don't store the edges for the negative endcap, since they're
       // exactly the same as positive but flipped.
@@ -179,7 +179,7 @@ namespace DDSegmentation {
         break;
       }
 
-      li.m_cellEdges.emplace_back (z1, z2);
+      li.m_cellEdges.emplace_back(z1, z2);
     }
 
     dd4hep::printout(dd4hep::DEBUG, "FCCSWHCalPhiRow_k4geo", "Number of cells in layer %d: %d", layer,
