@@ -311,19 +311,20 @@ namespace DDSegmentation {
 
       /// z-min and z-max of each cell in the layer
       // For the endcap, we only store the positive half.
-      std::vector<std::pair<double, double> > m_cellEdges {};
+      std::vector<std::pair<double, double>> m_cellEdges{};
       int m_ibin = 0; // Index of first bin in m_cellEdges.
 
       /// Return z-min and z-max for cell with row index idx.
-      std::pair<double, double> cellEdges (int idx) const {
+      std::pair<double, double> cellEdges(int idx) const {
         if (idx > 0) {
-          if (idx < m_ibin) throw std::out_of_range("cellEdges");
+          if (idx < m_ibin)
+            throw std::out_of_range("cellEdges");
           return m_cellEdges[idx - m_ibin];
-        }
-        else {
-          if (-idx < m_ibin) throw std::out_of_range("cellEdges");
+        } else {
+          if (-idx < m_ibin)
+            throw std::out_of_range("cellEdges");
           const auto& e = m_cellEdges[-idx - m_ibin];
-          return std::make_pair (e.second, e.first);
+          return std::make_pair(e.second, e.first);
         }
       }
     };
