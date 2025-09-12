@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "8179aedd3eb72bc1bb45ea585d06ebe16ddb3aa1",
-  "head": "e4b74f308f8af93c9a95c1e107cfe329315ad007",
+  "prev": "86e0c92ca85cde587b1f14c86027d3ee29ee5a36",
+  "head": "d5f3f19c5e79f5e3caa2ef1d557c360a1f318756",
   "applied": [
     "cmakewarn",
     "segneighbours",
@@ -13,7 +13,9 @@
     "hcal-theta-pos",
     "hcal-row-pos",
     "hcal-barrel-overlap",
-    "ci",
+    "ci"
+  ],
+  "unapplied": [
     "neighbor-dump-wip",
     "hcal-theta-pos-debugprint",
     "hcal-row-pos-debugprint",
@@ -21,7 +23,6 @@
     "nosystem",
     "timeout"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
