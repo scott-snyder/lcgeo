@@ -72,7 +72,6 @@ static Ref_t create_element(Detector& theDetector, xml_h e, SensitiveDetector se
   bool isStripDetector = false;
   if (x_det.hasAttr(_Unicode(isStripDetector))) {
     isStripDetector = x_det.attr<bool>(_Unicode(isStripDetector));
-
   }
 
   //=========  loop over layer elements in xml  ======================================
