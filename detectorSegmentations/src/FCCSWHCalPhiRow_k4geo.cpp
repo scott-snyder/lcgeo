@@ -54,16 +54,16 @@ namespace DDSegmentation {
     const LayerInfo& li = getLayerInfo(layer);
 
     double radius = li.radius;
-    double minLayerZ = li.zmin;
 
     // get index of the cell in the layer (index starts from 1!)
     int idx = decoder()->get(cID, m_rowIndex);
     // calculate z-coordinate of the cell center
-    double zpos = minLayerZ + (idx - 1) * m_dz_row * m_gridSizeRow[layer] + 0.5 * m_dz_row * m_gridSizeRow[layer];
-
-    // for negative-z Endcap, the index is negative (starts from -1!)
-    if (idx < 0)
-      zpos = -minLayerZ + (idx + 1) * m_dz_row * m_gridSizeRow[layer] - 0.5 * m_dz_row * m_gridSizeRow[layer];
+    // Should be relative to the center of the first volume of the row.
+    double zpos = (m_gridSizeRow[layer] - 1) * m_dz_row * 0.5;
+    if (idx < 0) {
+      // for negative-z Endcap, the index is negative (starts from -1!)
+      zpos = -zpos;
+    }
 
     return Vector3D(radius * std::cos(phi(cID)), radius * std::sin(phi(cID)), zpos);
   }
@@ -109,10 +109,13 @@ namespace DDSegmentation {
         // Loop over individual layers.
         for (int i_lay = 0; i_lay < m_numLayers[i_dR + i_section * N_dR]; i_lay++) {
           moduleDepth[i_section] += m_dRlayer[i_dR];
-          out.push_back(LayerInfo{.radius = moduleDepth[i_section] - m_dRlayer[i_dR] * 0.5,
-                                  .halfDepth = m_dRlayer[i_dR] / 2,
-                                  .zmin = zmin,
-                                  .zmax = zmax});
+          out.push_back (LayerInfo {
+              .type = i_section,
+              .radius = moduleDepth[i_section] - m_dRlayer[i_dR]*0.5,
+              .halfDepth = m_dRlayer[i_dR]/2,
+              .zmin = zmin,
+              .zmax = zmax
+            });
         }
       }
     }
@@ -668,6 +671,38 @@ namespace DDSegmentation {
     double thetaMin = std::atan2(Rmin, zhigh); // theta min
 
     return (M_PI - thetaMin); // theta max
+  }
+
+  // Determine the volume ID containing a cellID.
+  VolumeID FCCSWHCalPhiRow_k4geo::volumeID(const CellID& cID) const
+  {
+    VolumeID vID = cID;
+
+    // Null out the phi index.
+    decoder()->set(vID, m_phiIndex, 0);
+
+    // Get layer and row.
+    uint layer = decoder()->get(cID, m_layerIndex);
+    int irow = decoder()->get (vID, m_rowIndex);
+
+    // For the endcap, we need to fill in the type field.  For the negative
+    // endcap, types are offset by three, and we also need to make the row
+    // index positive.
+    if (m_detLayout == 1) {
+      const LayerInfo& li = getLayerInfo(layer);
+      int type = li.type;
+      if (irow < 0) {
+        irow = -irow;
+        type += 3;
+      }
+      decoder()->set(vID, m_typeIndex, type);
+    }
+
+    // Calculate the row.  Careful --- cell indices start with 1,
+    // volume indices start with 0!
+    decoder()->set(vID, m_rowIndex, (irow-1) * m_gridSizeRow[layer]);
+
+    return vID;
   }
 
 } // namespace DDSegmentation
