@@ -263,7 +263,6 @@ namespace DDSegmentation {
     /// be assigned to the same cell.
     virtual bool cellsSpanVolumes() const override { return true; }
 
-
   private:
     /// the number of bins in phi
     int m_phiBins;
@@ -304,8 +303,7 @@ namespace DDSegmentation {
     int m_phiIndex = -1;
 
     // Derived geometrical information about each layer.
-    struct LayerInfo
-    {
+    struct LayerInfo {
       /// Type/section of the layer (only relevant for endcap).
       unsigned int type = 0;
 

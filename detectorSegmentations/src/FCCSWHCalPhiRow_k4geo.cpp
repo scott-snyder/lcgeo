@@ -109,13 +109,11 @@ namespace DDSegmentation {
         // Loop over individual layers.
         for (int i_lay = 0; i_lay < m_numLayers[i_dR + i_section * N_dR]; i_lay++) {
           moduleDepth[i_section] += m_dRlayer[i_dR];
-          out.push_back (LayerInfo {
-              .type = i_section,
-              .radius = moduleDepth[i_section] - m_dRlayer[i_dR]*0.5,
-              .halfDepth = m_dRlayer[i_dR]/2,
-              .zmin = zmin,
-              .zmax = zmax
-            });
+          out.push_back(LayerInfo{.type = i_section,
+                                  .radius = moduleDepth[i_section] - m_dRlayer[i_dR] * 0.5,
+                                  .halfDepth = m_dRlayer[i_dR] / 2,
+                                  .zmin = zmin,
+                                  .zmax = zmax});
         }
       }
     }
@@ -674,8 +672,7 @@ namespace DDSegmentation {
   }
 
   // Determine the volume ID containing a cellID.
-  VolumeID FCCSWHCalPhiRow_k4geo::volumeID(const CellID& cID) const
-  {
+  VolumeID FCCSWHCalPhiRow_k4geo::volumeID(const CellID& cID) const {
     VolumeID vID = cID;
 
     // Null out the phi index.
@@ -683,7 +680,7 @@ namespace DDSegmentation {
 
     // Get layer and row.
     uint layer = decoder()->get(cID, m_layerIndex);
-    int irow = decoder()->get (vID, m_rowIndex);
+    int irow = decoder()->get(vID, m_rowIndex);
 
     // For the endcap, we need to fill in the type field.  For the negative
     // endcap, types are offset by three, and we also need to make the row
@@ -700,7 +697,7 @@ namespace DDSegmentation {
 
     // Calculate the row.  Careful --- cell indices start with 1,
     // volume indices start with 0!
-    decoder()->set(vID, m_rowIndex, (irow-1) * m_gridSizeRow[layer]);
+    decoder()->set(vID, m_rowIndex, (irow - 1) * m_gridSizeRow[layer]);
 
     return vID;
   }
