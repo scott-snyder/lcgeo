@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "63ee46e6ea307570059395272dfcd4b1523bd31f",
-  "head": "24fdbd936c63581d83fdb19ebe4cc430eb97ce04",
+  "prev": "618c1f28f512256ee6971e4f49df5c26cbc0b007",
+  "head": "4bee80e1b41d3b63d5a3c6719a47e1ccac70b719",
   "applied": [
     "cmakewarn",
     "segneighbours",
@@ -35,28 +35,28 @@
       "oid": "0611746cee4949db5b976fc603b1da7a6b4a6f72"
     },
     "ecal-pos-comment": {
-      "oid": "a84ff2f81e139bb16fcce9d74e30539cb3a75b18"
+      "oid": "0037e41057f3b684fdc84a5c3565d4953c512057"
     },
     "except": {
-      "oid": "e571c756eb1d76868555d14c03b25f9a4e3dde8a"
+      "oid": "82bf0bb4dadce08b05dbfdca9bfc196d56e9cd93"
     },
     "hcal-barrel-overlap": {
-      "oid": "24fdbd936c63581d83fdb19ebe4cc430eb97ce04"
+      "oid": "4bee80e1b41d3b63d5a3c6719a47e1ccac70b719"
     },
     "hcal-edge-vector": {
-      "oid": "493b69290b91ac862f9a76ee1b3d1e8c3dea9c50"
+      "oid": "349849980e88681c75ae426fc1bbcb6f18e30693"
     },
     "hcal-mutable": {
-      "oid": "fea16ecbc6ae854651b4105a71c6e4d62998abe6"
+      "oid": "8d17fe1c675fd8c459278c53820f90103ddc1e0a"
     },
     "hcal-row-pos": {
-      "oid": "5d0045cabad66833198d0e9900c01c93a4eda77f"
+      "oid": "1a96efc04c4d541287d49ccb736092354eb8c715"
     },
     "hcal-row-pos-debugprint": {
       "oid": "5fe79dd8af287822980b745d5fa88ded8fbaeffd"
     },
     "hcal-theta-pos": {
-      "oid": "12b9fb2f513ebf72eec9081089b27bd8a97bd717"
+      "oid": "2985cb7ebd4dadf57adde9de2e37ac8c1fc46b7f"
     },
     "hcal-theta-pos-debugprint": {
       "oid": "be120579a95fe8289427ed243c70618932d42808"
@@ -68,10 +68,10 @@
       "oid": "ad806f9a641162ee9e0075a65105b65c0c1690d3"
     },
     "segCleanup1": {
-      "oid": "93b0078a6c4ee7bc5f96681644e0955948417dc8"
+      "oid": "03f8fe83db0b3ff21c28231bed6fdd0680c1ab96"
     },
     "segneighbours": {
-      "oid": "ddc9bd4e2bff406ae16d25d47ab35850897198b3"
+      "oid": "5952b654fa29f917404dbae76fc33505cca332c3"
     },
     "timeout": {
       "oid": "e4b74f308f8af93c9a95c1e107cfe329315ad007"

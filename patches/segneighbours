@@ -1,7 +1,9 @@
 Bottom: f18c28013f891f33f01cf8ed193d031c3f0edbe6
 Top:    11b208af99861dd1f5ae91bbe58fcc181a2f416c
 Author: sss <sss@karma>
-Date:   2025-09-11 23:19:38 -0400
+Date:   2025-09-12 16:34:34 -0400
+
+Properly override neighbours() virtual methods.
 
 Some segmentation classes defined a neighbours() method with a signature
 different from that defined in the Segmentation base class.
