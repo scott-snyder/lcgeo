@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "858fe61aa6a82d6de2f007fa423d89c21178f11e",
-  "head": "5d0045cabad66833198d0e9900c01c93a4eda77f",
+  "prev": "83d6dd9a34e34cde04e24dda7de80d2f4af26599",
+  "head": "6913cd7d772d2dbfe7e073eefda0ac0c49568cc4",
   "applied": [
     "cmakewarn",
     "segneighbours",
@@ -11,13 +11,13 @@
     "hcal-mutable",
     "hcal-edge-vector",
     "hcal-theta-pos",
-    "hcal-row-pos"
+    "hcal-row-pos",
+    "hcal-barrel-overlap"
   ],
   "unapplied": [
     "neighbor-dump-wip",
     "hcal-theta-pos-debugprint",
     "hcal-row-pos-debugprint",
-    "hcal-barrel-overlap",
     "danglewarn",
     "nosystem",
     "timeout",
@@ -41,7 +41,7 @@
       "oid": "e571c756eb1d76868555d14c03b25f9a4e3dde8a"
     },
     "hcal-barrel-overlap": {
-      "oid": "0e16ceca9f36d994a96a83bce920f4b29d61a2eb"
+      "oid": "6913cd7d772d2dbfe7e073eefda0ac0c49568cc4"
     },
     "hcal-edge-vector": {
       "oid": "493b69290b91ac862f9a76ee1b3d1e8c3dea9c50"
