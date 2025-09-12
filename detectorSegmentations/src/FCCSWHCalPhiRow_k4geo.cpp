@@ -589,11 +589,10 @@ namespace DDSegmentation {
   }
 
   // Implement the signature from the Segmentations base class.
-  void FCCSWHCalPhiRow_k4geo::neighbours(const CellID& cellID, std::set<CellID>& neighbours) const
-  {
-    std::vector<uint64_t> neigh = this->neighbours (cellID);
+  void FCCSWHCalPhiRow_k4geo::neighbours(const CellID& cellID, std::set<CellID>& neighbours) const {
+    std::vector<uint64_t> neigh = this->neighbours(cellID);
     neighbours.clear();
-    neighbours.insert (neigh.begin(), neigh.end());
+    neighbours.insert(neigh.begin(), neigh.end());
   }
 
   /// Determine minimum and maximum polar angle of the cell
