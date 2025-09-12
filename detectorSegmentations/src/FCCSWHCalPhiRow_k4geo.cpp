@@ -7,21 +7,14 @@ namespace DDSegmentation {
   using std::runtime_error;
 
   /// default constructor using an encoding string
-  FCCSWHCalPhiRow_k4geo::FCCSWHCalPhiRow_k4geo(const std::string& cellEncoding)
-    : Segmentation(cellEncoding)
-  {
+  FCCSWHCalPhiRow_k4geo::FCCSWHCalPhiRow_k4geo(const std::string& cellEncoding) : Segmentation(cellEncoding) {
     commonSetup();
   }
 
-  FCCSWHCalPhiRow_k4geo::FCCSWHCalPhiRow_k4geo(const BitFieldCoder* decoder)
-    : Segmentation(decoder)
-  {
-    commonSetup();
-  }
+  FCCSWHCalPhiRow_k4geo::FCCSWHCalPhiRow_k4geo(const BitFieldCoder* decoder) : Segmentation(decoder) { commonSetup(); }
 
   /// Initialization common to all ctors.
-  void FCCSWHCalPhiRow_k4geo::commonSetup()
-  {
+  void FCCSWHCalPhiRow_k4geo::commonSetup() {
     // define type and description
     _type = "FCCSWHCalPhiRow_k4geo";
     _description = "Phi-theta segmentation in the global coordinates";
@@ -41,13 +34,12 @@ namespace DDSegmentation {
     registerIdentifier("identifier_row", "Cell ID identifier for row", m_rowID, "row");
     registerIdentifier("identifier_layer", "Cell ID identifier for layer", m_layerID, "layer");
 
-    m_layerIndex  = decoder()->index(m_layerID);
-    m_rowIndex    = decoder()->index(m_rowID);
-    m_phiIndex    = decoder()->index(m_phiID);
+    m_layerIndex = decoder()->index(m_layerID);
+    m_rowIndex = decoder()->index(m_rowID);
+    m_phiIndex = decoder()->index(m_phiID);
 
     // Only endcap has "type" --- but it's too early to look at m_detLayout.
-    for (const dd4hep::DDSegmentation::BitFieldElement& bfe : decoder()->fields())
-    {
+    for (const dd4hep::DDSegmentation::BitFieldElement& bfe : decoder()->fields()) {
       if (bfe.name() == "type") {
         m_typeIndex = decoder()->index("type");
         break;
@@ -249,8 +241,8 @@ namespace DDSegmentation {
 
     decoder()->set(cID, m_rowIndex, idx);
     decoder()->set(cID, m_phiIndex,
-                  positionToBin(dd4hep::DDSegmentation::Util::phiFromXYZ(globalPosition), 2 * M_PI / (double)m_phiBins,
-                                m_offsetPhi));
+                   positionToBin(dd4hep::DDSegmentation::Util::phiFromXYZ(globalPosition), 2 * M_PI / (double)m_phiBins,
+                                 m_offsetPhi));
 
     // For endcap, the volume ID comes with "type" field information which would screw up the topo-clustering,
     // therefore, lets set it to zero, as it is for the cell IDs in the neighbours map.
@@ -584,11 +576,13 @@ namespace DDSegmentation {
     // At the end, find neighbours with the same layer/row in next/previous phi module
     CellID nID = cID;
     // previous: if the current is 0 then previous is the last bin (id = m_phiBins - 1) else current - 1
-    decoder()->set(nID, m_phiIndex, (decoder()->get(cID, m_phiIndex) == 0) ? m_phiBins - 1 : decoder()->get(cID, m_phiIndex) - 1);
+    decoder()->set(nID, m_phiIndex,
+                   (decoder()->get(cID, m_phiIndex) == 0) ? m_phiBins - 1 : decoder()->get(cID, m_phiIndex) - 1);
     cellNeighbours.push_back(nID);
     // next: if the current is the last bin (id = m_phiBins - 1) then the next is the first bin (id = 0) else current +
     // 1
-    decoder()->set(nID, m_phiIndex, (decoder()->get(cID, m_phiIndex) == (m_phiBins - 1)) ? 0 : decoder()->get(cID, m_phiIndex) + 1);
+    decoder()->set(nID, m_phiIndex,
+                   (decoder()->get(cID, m_phiIndex) == (m_phiBins - 1)) ? 0 : decoder()->get(cID, m_phiIndex) + 1);
     cellNeighbours.push_back(nID);
 
     return cellNeighbours;
