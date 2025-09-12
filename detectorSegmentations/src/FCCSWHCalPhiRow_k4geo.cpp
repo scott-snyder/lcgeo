@@ -68,9 +68,7 @@ namespace DDSegmentation {
     return Vector3D(radius * std::cos(phi(cID)), radius * std::sin(phi(cID)), zpos);
   }
 
-
-  auto FCCSWHCalPhiRow_k4geo::getLayerInfo (const unsigned layer) const -> const LayerInfo&
-  {
+  auto FCCSWHCalPhiRow_k4geo::getLayerInfo(const unsigned layer) const -> const LayerInfo& {
     // If the LayerInfo vector hasn't been made yet, calculate it now.
     const std::vector<LayerInfo>* liv = m_layerInfo.load();
     if (!liv) {
@@ -82,17 +80,14 @@ namespace DDSegmentation {
       }
     }
 
-    return liv->at (layer);
+    return liv->at(layer);
   }
 
-
   // Initialize derived derived layer information.
-  std::vector<FCCSWHCalPhiRow_k4geo::LayerInfo>
-  FCCSWHCalPhiRow_k4geo::initLayerInfo() const
-  {
+  std::vector<FCCSWHCalPhiRow_k4geo::LayerInfo> FCCSWHCalPhiRow_k4geo::initLayerInfo() const {
     std::vector<LayerInfo> out;
     if (!checkParameters()) {
-      out.resize ((*decoder())[m_layerIndex].maxValue()+1);
+      out.resize((*decoder())[m_layerIndex].maxValue() + 1);
       return out;
     }
 
@@ -104,43 +99,37 @@ namespace DDSegmentation {
     // calculate the radius for each layer
     uint N_dR = m_numLayers.size() / m_offsetZ.size();
     std::vector<double> moduleDepth = m_offsetR;
-    for(uint i_section = 0; i_section < m_offsetZ.size(); i_section++)
-    {
+    for (uint i_section = 0; i_section < m_offsetZ.size(); i_section++) {
       // lower and upper edges in z-axis
-      double zmin = m_offsetZ[i_section] - 0.5*m_widthZ[i_section];
-      double zmax = m_offsetZ[i_section] + 0.5*m_widthZ[i_section];
+      double zmin = m_offsetZ[i_section] - 0.5 * m_widthZ[i_section];
+      double zmax = m_offsetZ[i_section] + 0.5 * m_widthZ[i_section];
 
       // Loop over groups of layers.
-      for(uint i_dR = 0; i_dR < N_dR; i_dR++)
-      {
+      for (uint i_dR = 0; i_dR < N_dR; i_dR++) {
         // Loop over individual layers.
-        for(int i_lay = 0; i_lay < m_numLayers[i_dR + i_section * N_dR]; i_lay++)
-        {
+        for (int i_lay = 0; i_lay < m_numLayers[i_dR + i_section * N_dR]; i_lay++) {
           moduleDepth[i_section] += m_dRlayer[i_dR];
-          out.push_back (LayerInfo {
-              .radius = moduleDepth[i_section] - m_dRlayer[i_dR]*0.5,
-              .halfDepth = m_dRlayer[i_dR]/2,
-              .zmin = zmin,
-              .zmax = zmax
-            });
+          out.push_back(LayerInfo{.radius = moduleDepth[i_section] - m_dRlayer[i_dR] * 0.5,
+                                  .halfDepth = m_dRlayer[i_dR] / 2,
+                                  .zmin = zmin,
+                                  .zmax = zmax});
         }
       }
     }
 
     // print info of calculated radii and edges
-    for(uint i_layer = 0; const LayerInfo& li  : out) {
-      dd4hep::printout(dd4hep::INFO, "FCCSWHCalPhiRow_k4geo","layer %d radius: %.2f, z range: %.2f - %.2f cm", 
+    for (uint i_layer = 0; const LayerInfo& li : out) {
+      dd4hep::printout(dd4hep::INFO, "FCCSWHCalPhiRow_k4geo", "layer %d radius: %.2f, z range: %.2f - %.2f cm",
                        i_layer++, li.radius, li.zmin, li.zmax);
     }
 
     // determine theta bins and cell edges for each layer
-    for(uint i_layer = 0; LayerInfo& li  : out) {
+    for (uint i_layer = 0; LayerInfo& li : out) {
       defineCellIndexes(li, i_layer);
       ++i_layer;
     }
     return out;
   }
-
 
   /*
    *  This function fills the cellIndexes vector per layer with the cell indexes.
@@ -151,9 +140,7 @@ namespace DDSegmentation {
    *
    *  cellIndexes vector can be used to define the neighbours using CreateFCCeeCaloNeighbours tool.
    */
-  void FCCSWHCalPhiRow_k4geo::defineCellIndexes(LayerInfo& li,
-                                                const uint layer) const
-  {
+  void FCCSWHCalPhiRow_k4geo::defineCellIndexes(LayerInfo& li, const uint layer) const {
     double minLayerZ = li.zmin;
     double maxLayerZ = li.zmax;
 
@@ -201,69 +188,63 @@ namespace DDSegmentation {
   }
 
   // Check consistency of input geometric variables.
-  bool FCCSWHCalPhiRow_k4geo::checkParameters() const
-  {
+  bool FCCSWHCalPhiRow_k4geo::checkParameters() const {
     // check if all necessary variables are available
-    if(m_detLayout==-1 || m_offsetZ.empty() || m_widthZ.empty() ||
-       m_offsetR.empty() || m_numLayers.empty() || m_dRlayer.empty())
-    {
-      dd4hep::printout(dd4hep::ERROR, "FCCSWHCalPhiRow_k4geo","Please check the readout description in the XML file!\n%s",
-                       "One of the variables is missing: detLayout | offset_z | width_z | offset_r | numLayers | dRlayer");
+    if (m_detLayout == -1 || m_offsetZ.empty() || m_widthZ.empty() || m_offsetR.empty() || m_numLayers.empty() ||
+        m_dRlayer.empty()) {
+      dd4hep::printout(
+          dd4hep::ERROR, "FCCSWHCalPhiRow_k4geo", "Please check the readout description in the XML file!\n%s",
+          "One of the variables is missing: detLayout | offset_z | width_z | offset_r | numLayers | dRlayer");
       return false;
     }
 
     // some sanity checks of the xml
-    if( m_offsetZ.size() != m_offsetR.size() )
-    {
+    if (m_offsetZ.size() != m_offsetR.size()) {
       dd4hep::printout(dd4hep::ERROR, "FCCSWHCalPhiRow_k4geo",
                        "Please check the readout description in the XML file!\n%s",
                        "Number of elements in offsetZ and offsetR must be the same!");
       return false;
     }
 
-    if( m_widthZ.size() != m_offsetR.size() )
-    {
+    if (m_widthZ.size() != m_offsetR.size()) {
       dd4hep::printout(dd4hep::ERROR, "FCCSWHCalPhiRow_k4geo",
                        "Please check the readout description in the XML file!\n%s",
                        "Number of elements in widthZ and offsetR must be the same!");
       return false;
     }
 
-    if( m_detLayout == 0 && m_offsetZ.size() != 1)
-    {
+    if (m_detLayout == 0 && m_offsetZ.size() != 1) {
       dd4hep::printout(dd4hep::ERROR, "FCCSWHCalPhiRow_k4geo",
                        "Please check the readout description in the XML file!\n%s",
                        "Number of elements in offsetZ/offsetR/widthZ must be 1 for the Barrel!");
       return false;
     }
 
-    if( m_numLayers.size() % m_offsetZ.size() != 0 )
-    {
+    if (m_numLayers.size() % m_offsetZ.size() != 0) {
       dd4hep::printout(dd4hep::ERROR, "FCCSWHCalPhiRow_k4geo",
                        "Please check the readout description in the XML file!\n%s",
                        "Number of elements in numLayers must be multiple of offsetZ.size()!");
       return false;
     }
 
-      if( m_dRlayer.size() != m_numLayers.size()/m_offsetZ.size() )
-      {
-        dd4hep::printout(dd4hep::ERROR, "FCCSWHCalPhiRow_k4geo",
-                         "Please check the readout description in the XML file!\n%s",
-                         "Number of elements in dRlayer must be equal to numLayers.size()/offsetZ.size()!");
-        return false;
-      }
+    if (m_dRlayer.size() != m_numLayers.size() / m_offsetZ.size()) {
+      dd4hep::printout(dd4hep::ERROR, "FCCSWHCalPhiRow_k4geo",
+                       "Please check the readout description in the XML file!\n%s",
+                       "Number of elements in dRlayer must be equal to numLayers.size()/offsetZ.size()!");
+      return false;
+    }
 
-      uint nlayers = 0;
-      for (auto n : m_numLayers)
-        nlayers += n;
-      if (m_gridSizeRow.size() != nlayers) {
-        dd4hep::printout(dd4hep::ERROR, "FCCSWHCalPhiRow_k4geo",
-                         "Please check the readout description in the XML file!\n%s",
-                         "Number of elements in gridSizeRow must be equal to sum of contents of numLayers!");
-        return false;
-      }
+    uint nlayers = 0;
+    for (auto n : m_numLayers)
+      nlayers += n;
+    if (m_gridSizeRow.size() != nlayers) {
+      dd4hep::printout(dd4hep::ERROR, "FCCSWHCalPhiRow_k4geo",
+                       "Please check the readout description in the XML file!\n%s",
+                       "Number of elements in gridSizeRow must be equal to sum of contents of numLayers!");
+      return false;
+    }
 
-      return true;
+    return true;
   }
 
   /// create the cell ID based on the position

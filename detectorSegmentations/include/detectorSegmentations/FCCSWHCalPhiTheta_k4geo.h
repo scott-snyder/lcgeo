@@ -249,8 +249,7 @@ namespace DDSegmentation {
     int m_phiIndex = -1;
 
     // Derived geometrical information about each layer.
-    struct LayerInfo
-    {
+    struct LayerInfo {
       /// Radius of the layer.
       double radius = 1;
 
@@ -262,10 +261,10 @@ namespace DDSegmentation {
       double zmax = 0;
 
       /// theta bins (cells) in the layer
-      std::vector<int> thetaBins {};
+      std::vector<int> thetaBins{};
 
       /// z-min and z-max of each cell (theta bin) in each layer
-      std::unordered_map<int, std::pair<double, double> > cellEdges {};
+      std::unordered_map<int, std::pair<double, double>> cellEdges{};
     };
 
     // The vector of tabulated values, indexed by layer number.
@@ -275,7 +274,7 @@ namespace DDSegmentation {
     mutable std::atomic<const std::vector<LayerInfo>*> m_layerInfo = nullptr;
 
     // Retrieve the derived geometrical information for a given layer.
-    const LayerInfo& getLayerInfo (const unsigned layer) const;
+    const LayerInfo& getLayerInfo(const unsigned layer) const;
 
     /**  Construct the derived geometrical information.
      *xxx

@@ -61,9 +61,7 @@ namespace DDSegmentation {
     return Vector3D(pos.x(), pos.y(), zpos);
   }
 
-
-  auto FCCSWHCalPhiTheta_k4geo::getLayerInfo (const unsigned layer) const -> const LayerInfo&
-  {
+  auto FCCSWHCalPhiTheta_k4geo::getLayerInfo(const unsigned layer) const -> const LayerInfo& {
     // If the LayerInfo vector hasn't been made yet, calculate it now.
     const std::vector<LayerInfo>* liv = m_layerInfo.load();
     if (!liv) {
@@ -75,17 +73,14 @@ namespace DDSegmentation {
       }
     }
 
-    return liv->at (layer);
+    return liv->at(layer);
   }
 
-
   // Initialize derived derived layer information.
-  std::vector<FCCSWHCalPhiTheta_k4geo::LayerInfo>
-  FCCSWHCalPhiTheta_k4geo::initLayerInfo() const
-  {
+  std::vector<FCCSWHCalPhiTheta_k4geo::LayerInfo> FCCSWHCalPhiTheta_k4geo::initLayerInfo() const {
     std::vector<LayerInfo> out;
     if (!checkParameters()) {
-      out.resize ((*decoder())[m_layerIndex].maxValue()+1);
+      out.resize((*decoder())[m_layerIndex].maxValue() + 1);
       return out;
     }
 
@@ -97,55 +92,47 @@ namespace DDSegmentation {
     // calculate the radius for each layer
     uint N_dR = m_numLayers.size() / m_offsetZ.size();
     std::vector<double> moduleDepth = m_offsetR;
-    for(uint i_section = 0; i_section < m_offsetZ.size(); i_section++)
-    {
+    for (uint i_section = 0; i_section < m_offsetZ.size(); i_section++) {
       // lower and upper edges in z-axis
-      double zmin = m_offsetZ[i_section] - 0.5*m_widthZ[i_section];
-      double zmax = m_offsetZ[i_section] + 0.5*m_widthZ[i_section];
+      double zmin = m_offsetZ[i_section] - 0.5 * m_widthZ[i_section];
+      double zmax = m_offsetZ[i_section] + 0.5 * m_widthZ[i_section];
 
       // Loop over groups of layers.
-      for(uint i_dR = 0; i_dR < N_dR; i_dR++)
-      {
+      for (uint i_dR = 0; i_dR < N_dR; i_dR++) {
         // Loop over individual layers.
-        for(int i_lay = 0; i_lay < m_numLayers[i_dR + i_section * N_dR]; i_lay++)
-        {
+        for (int i_lay = 0; i_lay < m_numLayers[i_dR + i_section * N_dR]; i_lay++) {
           moduleDepth[i_section] += m_dRlayer[i_dR];
-          out.push_back (LayerInfo {
-              .radius = moduleDepth[i_section] - m_dRlayer[i_dR]*0.5,
-              .halfDepth = m_dRlayer[i_dR]/2,
-              .zmin = zmin,
-              .zmax = zmax
-            });
+          out.push_back(LayerInfo{.radius = moduleDepth[i_section] - m_dRlayer[i_dR] * 0.5,
+                                  .halfDepth = m_dRlayer[i_dR] / 2,
+                                  .zmin = zmin,
+                                  .zmax = zmax});
         }
       }
     }
 
     // print info of calculated radii and edges
-    for(uint i_layer = 0; const LayerInfo& li  : out) {
-      dd4hep::printout(dd4hep::INFO, "FCCSWHCalPhiTheta_k4geo","layer %d radius: %.2f, z range: %.2f - %.2f cm", 
+    for (uint i_layer = 0; const LayerInfo& li : out) {
+      dd4hep::printout(dd4hep::INFO, "FCCSWHCalPhiTheta_k4geo", "layer %d radius: %.2f, z range: %.2f - %.2f cm",
                        i_layer++, li.radius, li.zmin, li.zmax);
     }
 
     // determine theta bins and cell edges for each layer
-    for(uint i_layer = 0; LayerInfo& li  : out) {
+    for (uint i_layer = 0; LayerInfo& li : out) {
       defineCellEdges(li, i_layer);
       ++i_layer;
     }
     return out;
   }
 
-
-  void FCCSWHCalPhiTheta_k4geo::defineCellEdges(LayerInfo& li,
-                                                const unsigned int layer) const
-  {
+  void FCCSWHCalPhiTheta_k4geo::defineCellEdges(LayerInfo& li, const unsigned int layer) const {
     // find theta bins that fit within the given layer
     int ibin =
-      positionToBin(0.02, gridSizeTheta(), offsetTheta()); // <--- start from theta bin outside the HCal theta range
+        positionToBin(0.02, gridSizeTheta(), offsetTheta()); // <--- start from theta bin outside the HCal theta range
     while (li.radius * std::cos(offsetTheta() + ibin * gridSizeTheta()) /
-           std::sin(offsetTheta() + ibin * gridSizeTheta()) >
+               std::sin(offsetTheta() + ibin * gridSizeTheta()) >
            li.zmin) {
       if (li.radius * std::cos(offsetTheta() + ibin * gridSizeTheta()) /
-          std::sin(offsetTheta() + ibin * gridSizeTheta()) <
+              std::sin(offsetTheta() + ibin * gridSizeTheta()) <
           li.zmax) {
         li.thetaBins.push_back(ibin);
       }
@@ -159,9 +146,9 @@ namespace DDSegmentation {
     for (auto bin : li.thetaBins) {
       if (bin != prevBin) {
         double z1 = li.radius * std::cos(offsetTheta() + bin * gridSizeTheta()) /
-          std::sin(offsetTheta() + bin * gridSizeTheta());
+                    std::sin(offsetTheta() + bin * gridSizeTheta());
         double z2 = li.radius * std::cos(offsetTheta() + prevBin * gridSizeTheta()) /
-          std::sin(offsetTheta() + prevBin * gridSizeTheta());
+                    std::sin(offsetTheta() + prevBin * gridSizeTheta());
         // set the lower edge of the prevBin cell
         li.cellEdges[prevBin].first = z1 + 0.5 * (z2 - z1);
         // set the upper edge of current bin cell
@@ -176,10 +163,10 @@ namespace DDSegmentation {
     // for the EndCap, do it again but for negative z part
     if (m_detLayout == 1) {
       while (li.radius * std::cos(offsetTheta() + ibin * gridSizeTheta()) /
-             std::sin(offsetTheta() + ibin * gridSizeTheta()) >
+                 std::sin(offsetTheta() + ibin * gridSizeTheta()) >
              (-li.zmax)) {
         if (li.radius * std::cos(offsetTheta() + ibin * gridSizeTheta()) /
-            std::sin(offsetTheta() + ibin * gridSizeTheta()) <
+                std::sin(offsetTheta() + ibin * gridSizeTheta()) <
             (-li.zmin)) {
           li.thetaBins.push_back(ibin);
         }
@@ -195,9 +182,9 @@ namespace DDSegmentation {
       for (auto bin : thetaBins) {
         if (bin != prevBin) {
           double z1 = li.radius * std::cos(offsetTheta() + bin * gridSizeTheta()) /
-            std::sin(offsetTheta() + bin * gridSizeTheta());
+                      std::sin(offsetTheta() + bin * gridSizeTheta());
           double z2 = li.radius * std::cos(offsetTheta() + prevBin * gridSizeTheta()) /
-            std::sin(offsetTheta() + prevBin * gridSizeTheta());
+                      std::sin(offsetTheta() + prevBin * gridSizeTheta());
           // set the lower edge of the prevBin cell
           li.cellEdges[prevBin].first = z1 + 0.5 * (z2 - z1);
           // set the upper edge of current bin cell
@@ -217,60 +204,53 @@ namespace DDSegmentation {
   }
 
   // Check consistency of input geometric variables.
-  bool FCCSWHCalPhiTheta_k4geo::checkParameters() const
-  {
+  bool FCCSWHCalPhiTheta_k4geo::checkParameters() const {
     // check if all necessary variables are available
-    if(m_detLayout==-1 || m_offsetZ.empty() || m_widthZ.empty() ||
-       m_offsetR.empty() || m_numLayers.empty() || m_dRlayer.empty())
-    {
-      dd4hep::printout(dd4hep::ERROR, "FCCSWHCalPhiTheta_k4geo",
-                       "Please check the readout description in the XML file!\n%s",
-                       "One of the variables is missing: detLayout | offset_z | width_z | offset_r | numLayers | dRlayer");
+    if (m_detLayout == -1 || m_offsetZ.empty() || m_widthZ.empty() || m_offsetR.empty() || m_numLayers.empty() ||
+        m_dRlayer.empty()) {
+      dd4hep::printout(
+          dd4hep::ERROR, "FCCSWHCalPhiTheta_k4geo", "Please check the readout description in the XML file!\n%s",
+          "One of the variables is missing: detLayout | offset_z | width_z | offset_r | numLayers | dRlayer");
       return false;
     }
 
     // some sanity checks of the xml
-    if( m_offsetZ.size() != m_offsetR.size() )
-    {
+    if (m_offsetZ.size() != m_offsetR.size()) {
       dd4hep::printout(dd4hep::ERROR, "FCCSWHCalPhiTheta_k4geo",
                        "Please check the readout description in the XML file!\n%s",
                        "Number of elements in offsetZ and offsetR must be the same!");
       return false;
     }
 
-    if( m_widthZ.size() != m_offsetR.size() )
-    {
+    if (m_widthZ.size() != m_offsetR.size()) {
       dd4hep::printout(dd4hep::ERROR, "FCCSWHCalPhiTheta_k4geo",
                        "Please check the readout description in the XML file!\n%s",
                        "Number of elements in widthZ and offsetR must be the same!");
       return false;
     }
 
-    if( m_detLayout == 0 && m_offsetZ.size() != 1)
-    {
+    if (m_detLayout == 0 && m_offsetZ.size() != 1) {
       dd4hep::printout(dd4hep::ERROR, "FCCSWHCalPhiTheta_k4geo",
                        "Please check the readout description in the XML file!\n%s",
                        "Number of elements in offsetZ/offsetR/widthZ must be 1 for the Barrel!");
       return false;
     }
 
-    if( m_numLayers.size() % m_offsetZ.size() != 0 )
-    {
+    if (m_numLayers.size() % m_offsetZ.size() != 0) {
       dd4hep::printout(dd4hep::ERROR, "FCCSWHCalPhiTheta_k4geo",
                        "Please check the readout description in the XML file!\n%s",
                        "Number of elements in numLayers must be multiple of offsetZ.size()!");
       return false;
     }
 
-      if( m_dRlayer.size() != m_numLayers.size()/m_offsetZ.size() )
-      {
-        dd4hep::printout(dd4hep::ERROR, "FCCSWHCalPhiTheta_k4geo",
-                         "Please check the readout description in the XML file!\n%s",
-                         "Number of elements in dRlayer must be equal to numLayers.size()/offsetZ.size()!");
-        return false;
-      }
+    if (m_dRlayer.size() != m_numLayers.size() / m_offsetZ.size()) {
+      dd4hep::printout(dd4hep::ERROR, "FCCSWHCalPhiTheta_k4geo",
+                       "Please check the readout description in the XML file!\n%s",
+                       "Number of elements in dRlayer must be equal to numLayers.size()/offsetZ.size()!");
+      return false;
+    }
 
-      return true;
+    return true;
   }
 
   /// create the cell ID based on the position
