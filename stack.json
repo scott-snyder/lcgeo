@@ -1,13 +1,15 @@
 {
   "version": 5,
-  "prev": "4334ef61ace80ca247bb32edda6551cf4e7e65f5",
-  "head": "63b8879ceb66066ecbc7d59d894fdddd9a9579b5",
+  "prev": "8b6c689b268c05d3d5ad403bc970b406ce66a3ca",
+  "head": "6610531e48aba4c935e7332a8504c5cb219848df",
   "applied": [
     "cmakewarn",
     "segneighbours",
     "except",
     "ecal-pos-comment",
-    "segCleanup1",
+    "segCleanup1"
+  ],
+  "unapplied": [
     "hcal-mutable",
     "hcal-edge-vector",
     "hcal-theta-pos",
@@ -18,9 +20,7 @@
     "hcal-barrel-overlap",
     "danglewarn",
     "nosystem",
-    "timeout"
-  ],
-  "unapplied": [
+    "timeout",
     "ci"
   ],
   "hidden": [],
