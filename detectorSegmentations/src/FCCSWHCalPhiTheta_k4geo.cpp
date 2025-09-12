@@ -1,6 +1,6 @@
 #include "detectorSegmentations/FCCSWHCalPhiTheta_k4geo.h"
-#include "DD4hep/Printout.h"
 #include "DD4hep/Detector.h"
+#include "DD4hep/Printout.h"
 #include "DD4hep/VolumeManager.h"
 #include "DD4hep/detail/DetectorInterna.h"
 #include <ranges>
@@ -130,9 +130,7 @@ namespace DDSegmentation {
   }
 
   // Define cell edges in z-axis for the given layer.
-  void FCCSWHCalPhiTheta_k4geo::defineCellEdges(LayerInfo& li,
-                                                const unsigned int layer) const
-  {
+  void FCCSWHCalPhiTheta_k4geo::defineCellEdges(LayerInfo& li, const unsigned int layer) const {
     // Helper to find the z-coordinate corresponding to a theta bin number.
     auto binToZ = [&](int ibin) {
       double theta = offsetTheta() + ibin * gridSizeTheta();
@@ -217,27 +215,21 @@ namespace DDSegmentation {
     }
   }
 
-
   // Define mapping between cells and dd4hep volumes.
-  void FCCSWHCalPhiTheta_k4geo::defineVolIDMappings(LayerInfo& li,
-                                                    const unsigned int layer) const
-  {
+  void FCCSWHCalPhiTheta_k4geo::defineVolIDMappings(LayerInfo& li, const unsigned int layer) const {
     // Get information from dd4hep.
     dd4hep::Detector* dd4hepgeo = &(dd4hep::Detector::getInstance());
     VolumeManager vman = VolumeManager::getVolumeManager(*dd4hepgeo);
-    const DetElementObject& de = *dd4hepgeo->readout (this->name()).segmentation().detector();
+    const DetElementObject& de = *dd4hepgeo->readout(this->name()).segmentation().detector();
 
     // Process a contiguous set of theta bins.
     // zmin is the minimum z-coordinate of the range.
     // layernum is the dd4hep layer number (different from the layer number
     // used in the segmentation).
     // thetaBins is the set of bins to process.
-    auto scanRows = [&](double zmin,
-                        int layernum,
-                        std::span<const int> thetaBins)
-    {
+    auto scanRows = [&](double zmin, int layernum, std::span<const int> thetaBins) {
       // Find the DetectorElement corresponding to the layer.
-      auto layer_it = de.children.find ("layer" + std::to_string(layernum));
+      auto layer_it = de.children.find("layer" + std::to_string(layernum));
       if (layer_it == de.children.end()) {
         std::abort();
       }
@@ -266,45 +258,48 @@ namespace DDSegmentation {
       auto itbin = thetaBins.end();
 
       // Edges of the cell we're looking it.  Start with an empty cell.
-      LayerInfo::Edges edges (zmin, zmin);
+      LayerInfo::Edges edges(zmin, zmin);
 
       // The z-position of the row which is so far closest to the
       // center of the cell.
       double last_zpos = zmin - 100;
 
       // Step through rows.
-      for (size_t ir=0; ir < nrows; ir++) {
+      for (size_t ir = 0; ir < nrows; ir++) {
         // Make the volume ID for this row and find the position of its center.
         decoder()->set(vID, m_rowIndex, ir);
         VolumeManagerContext* vc = vman.lookupContext(vID);
-        double zpos = vc->localToWorld({0,0,0}).Z();
+        double zpos = vc->localToWorld({0, 0, 0}).Z();
 
-        if (zpos < edges.first) continue; // We haven't gotten to the current cell yet.
+        if (zpos < edges.first)
+          continue; // We haven't gotten to the current cell yet.
 
         if (zpos > edges.second) {
           // We've moved past the current cell.  Stop if we've reached the end;
           // otherwise move to the next cell.
-          if (itbin == thetaBins.begin()) break;
+          if (itbin == thetaBins.begin())
+            break;
           --itbin;
 
           // Check that this cell matches the row.
-          edges = li.cellInfo (*itbin).edges;
-          if (zpos < edges.first) continue;
-          if (zpos > edges.second) break;
+          edges = li.cellInfo(*itbin).edges;
+          if (zpos < edges.first)
+            continue;
+          if (zpos > edges.second)
+            break;
 
           // Initialize the information for this cell from this row.
           // We'll update later if we find another row closer to the center.
           li.cellInfo(*itbin).volumeID = vID;
           li.cellInfo(*itbin).volumeZ = zpos;
           last_zpos = zpos;
-        }
-        else {
+        } else {
           // We found another row matching the current cell.
           // See if it closer to the cell center than the last row we saw.
           // If so, update.
-          assert (itbin != thetaBins.end());
+          assert(itbin != thetaBins.end());
           double center = (edges.first + edges.second) / 2;
-          if (std::abs (zpos - center) < std::abs (last_zpos - center)) {
+          if (std::abs(zpos - center) < std::abs(last_zpos - center)) {
             li.cellInfo(*itbin).volumeID = vID;
             li.cellInfo(*itbin).volumeZ = zpos;
             last_zpos = zpos;
@@ -316,19 +311,15 @@ namespace DDSegmentation {
     // Process the ranges of bins.
     if (m_detLayout == 0) {
       // Barrel
-      scanRows (li.zmin, layer, li.thetaBins);
-    }
-    else {
+      scanRows(li.zmin, layer, li.thetaBins);
+    } else {
       // positive endcap
-      scanRows (li.zmin, layer+1,
-                std::ranges::take_view (li.thetaBins, li.thetaBins.size()/2));
+      scanRows(li.zmin, layer + 1, std::ranges::take_view(li.thetaBins, li.thetaBins.size() / 2));
 
       // negative endcap
-      scanRows (-li.zmax, -(layer+1),
-                std::ranges::drop_view (li.thetaBins, li.thetaBins.size()/2));
+      scanRows(-li.zmax, -(layer + 1), std::ranges::drop_view(li.thetaBins, li.thetaBins.size() / 2));
     }
   }
-
 
   // Check consistency of input geometric variables.
   bool FCCSWHCalPhiTheta_k4geo::checkParameters() const {
@@ -902,16 +893,13 @@ namespace DDSegmentation {
     return cTheta;
   }
 
-
   // Determine the volume ID containing a cellID.
-  VolumeID FCCSWHCalPhiTheta_k4geo::volumeID(const CellID& cID) const
-  {
-    uint layer = decoder()->get(cID,m_layerIndex);
-    int thetaID = decoder()->get(cID,m_thetaIndex);
+  VolumeID FCCSWHCalPhiTheta_k4geo::volumeID(const CellID& cID) const {
+    uint layer = decoder()->get(cID, m_layerIndex);
+    int thetaID = decoder()->get(cID, m_thetaIndex);
     const LayerInfo& li = getLayerInfo(layer);
     return li.cellInfo(thetaID).volumeID;
   }
-
 
 } // namespace DDSegmentation
 } // namespace dd4hep

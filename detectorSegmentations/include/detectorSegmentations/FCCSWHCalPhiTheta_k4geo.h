@@ -220,7 +220,6 @@ namespace DDSegmentation {
     /// be assigned to the same cell.
     virtual bool cellsSpanVolumes() const override { return true; }
 
-
   private:
     /// determine the azimuthal angle phi based on the current cell ID
     double phi() const;
@@ -292,16 +291,16 @@ namespace DDSegmentation {
       int m_ibin2 = 9999999;
 
       struct CellInfo {
-        CellInfo (double lo, double hi): edges(lo, hi) {}
+        CellInfo(double lo, double hi) : edges(lo, hi) {}
 
         // Cell edges.
-        Edges edges {0, 0};
+        Edges edges{0, 0};
 
         // The ID of the dd4hep volume containing this cell.
-        VolumeID volumeID {0};
+        VolumeID volumeID{0};
 
         // The z-center of the dd4hep volume.
-        double volumeZ {0};
+        double volumeZ{0};
       };
       std::vector<CellInfo> m_cellInfo1{};
       std::vector<CellInfo> m_cellInfo2{};
