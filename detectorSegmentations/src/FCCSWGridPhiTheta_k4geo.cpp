@@ -4,21 +4,16 @@ namespace dd4hep {
 namespace DDSegmentation {
 
   /// default constructor using an encoding string
-  FCCSWGridPhiTheta_k4geo::FCCSWGridPhiTheta_k4geo(const std::string& cellEncoding)
-    : GridTheta_k4geo(cellEncoding)
-  {
+  FCCSWGridPhiTheta_k4geo::FCCSWGridPhiTheta_k4geo(const std::string& cellEncoding) : GridTheta_k4geo(cellEncoding) {
     commonSetup();
   }
 
-  FCCSWGridPhiTheta_k4geo::FCCSWGridPhiTheta_k4geo(const BitFieldCoder* decoder)
-    : GridTheta_k4geo(decoder)
-  {
+  FCCSWGridPhiTheta_k4geo::FCCSWGridPhiTheta_k4geo(const BitFieldCoder* decoder) : GridTheta_k4geo(decoder) {
     commonSetup();
   }
 
   /// Initialization common to all ctors.
-  void FCCSWGridPhiTheta_k4geo::commonSetup()
-  {
+  void FCCSWGridPhiTheta_k4geo::commonSetup() {
     // define type and description
     _type = "FCCSWGridPhiTheta_k4geo";
     _description = "Phi-theta segmentation in the global coordinates";
@@ -29,7 +24,7 @@ namespace DDSegmentation {
     registerIdentifier("identifier_phi", "Cell ID identifier for phi", m_phiID, "phi");
 
     m_thetaIndex = decoder()->index(fieldNameTheta());
-    m_phiIndex   = decoder()->index(m_phiID);
+    m_phiIndex = decoder()->index(m_phiID);
   }
 
   /// determine the local based on the cell ID

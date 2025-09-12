@@ -9,20 +9,17 @@ namespace DDSegmentation {
 
   /// default constructor using an encoding string
   FCCSWGridModuleThetaMerged_k4geo::FCCSWGridModuleThetaMerged_k4geo(const std::string& cellEncoding)
-    : GridTheta_k4geo(cellEncoding)
-  {
+      : GridTheta_k4geo(cellEncoding) {
     commonSetup();
   }
 
   FCCSWGridModuleThetaMerged_k4geo::FCCSWGridModuleThetaMerged_k4geo(const BitFieldCoder* decoder)
-    : GridTheta_k4geo(decoder)
-  {
+      : GridTheta_k4geo(decoder) {
     commonSetup();
   }
 
   /// Initialization common to all ctors.
-  void FCCSWGridModuleThetaMerged_k4geo::commonSetup()
-  {
+  void FCCSWGridModuleThetaMerged_k4geo::commonSetup() {
     // define type and description
     _type = "FCCSWGridModuleThetaMerged_k4geo";
     _description = "Module-theta segmentation with per-layer merging along theta and/or module";
@@ -38,7 +35,7 @@ namespace DDSegmentation {
 
     m_layerIndex = decoder()->index(m_layerID);
     m_thetaIndex = decoder()->index(fieldNameTheta());
-    m_moduleIndex   = decoder()->index(m_moduleID);
+    m_moduleIndex = decoder()->index(m_moduleID);
   }
 
   FCCSWGridModuleThetaMerged_k4geo::~FCCSWGridModuleThetaMerged_k4geo() { delete m_layerInfo; }

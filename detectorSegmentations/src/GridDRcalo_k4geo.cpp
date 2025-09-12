@@ -9,17 +9,9 @@ namespace dd4hep {
 namespace DDSegmentation {
 
   /// default constructor using an encoding string
-  GridDRcalo_k4geo::GridDRcalo_k4geo(const std::string& cellEncoding)
-    : Segmentation(cellEncoding)
-  {
-    commonSetup();
-  }
+  GridDRcalo_k4geo::GridDRcalo_k4geo(const std::string& cellEncoding) : Segmentation(cellEncoding) { commonSetup(); }
 
-  GridDRcalo_k4geo::GridDRcalo_k4geo(const BitFieldCoder* decoder)
-    : Segmentation(decoder)
-  {
-    commonSetup();
-  }
+  GridDRcalo_k4geo::GridDRcalo_k4geo(const BitFieldCoder* decoder) : Segmentation(decoder) { commonSetup(); }
 
   GridDRcalo_k4geo::~GridDRcalo_k4geo() {
     delete m_paramBarrel;
@@ -27,8 +19,7 @@ namespace DDSegmentation {
   }
 
   /// Initialization common to all ctors.
-  void GridDRcalo_k4geo::commonSetup()
-  {
+  void GridDRcalo_k4geo::commonSetup() {
     // define type and description
     _type = "GridDRcalo_k4geo";
     _description = "DRcalo segmentation based on the tower / (Cerenkov or Scintillation) fiber / SiPM hierarchy";
@@ -45,14 +36,14 @@ namespace DDSegmentation {
     m_paramBarrel = new DRparamBarrel_k4geo();
     m_paramEndcap = new DRparamEndcap_k4geo();
 
-    m_systemIndex     = decoder()->index("system");
-    m_numEtaIndex     = decoder()->index(m_numEtaID);
-    m_numPhiIndex     = decoder()->index(m_numPhiID);
-    m_moduleIndex     = decoder()->index(m_moduleID);
-    m_xIndex          = decoder()->index(m_xID);
-    m_yIndex          = decoder()->index(m_yID);
+    m_systemIndex = decoder()->index("system");
+    m_numEtaIndex = decoder()->index(m_numEtaID);
+    m_numPhiIndex = decoder()->index(m_numPhiID);
+    m_moduleIndex = decoder()->index(m_moduleID);
+    m_xIndex = decoder()->index(m_xID);
+    m_yIndex = decoder()->index(m_yID);
     m_isCerenkovIndex = decoder()->index(m_isCerenkovID);
-    m_assemblyIndex   = decoder()->index(m_assemblyID);
+    m_assemblyIndex = decoder()->index(m_assemblyID);
   }
 
   // front end position (default calo hit position)

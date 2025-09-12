@@ -4,21 +4,14 @@ namespace dd4hep {
 namespace DDSegmentation {
 
   /// default constructor using an encoding string
-  GridRPhiEta_k4geo::GridRPhiEta_k4geo(const std::string& cellEncoding)
-    : FCCSWGridPhiEta_k4geo(cellEncoding)
-  {
+  GridRPhiEta_k4geo::GridRPhiEta_k4geo(const std::string& cellEncoding) : FCCSWGridPhiEta_k4geo(cellEncoding) {
     commonSetup();
   }
 
-  GridRPhiEta_k4geo::GridRPhiEta_k4geo(const BitFieldCoder* decoder)
-    : FCCSWGridPhiEta_k4geo(decoder)
-  {
-    commonSetup();
-  }
+  GridRPhiEta_k4geo::GridRPhiEta_k4geo(const BitFieldCoder* decoder) : FCCSWGridPhiEta_k4geo(decoder) { commonSetup(); }
 
   /// Initialization common to all ctors.
-  void GridRPhiEta_k4geo::commonSetup()
-  {
+  void GridRPhiEta_k4geo::commonSetup() {
     // define type and description
     _type = "GridRPhiEta_k4geo";
     _description = "R-phi-eta segmentation in the global coordinates";
@@ -32,7 +25,7 @@ namespace DDSegmentation {
 
     m_etaIndex = decoder()->index(fieldNameEta());
     m_phiIndex = decoder()->index(fieldNamePhi());
-    m_rIndex   = decoder()->index(m_rID);
+    m_rIndex = decoder()->index(m_rID);
   }
 
   /// determine the local based on the cell ID

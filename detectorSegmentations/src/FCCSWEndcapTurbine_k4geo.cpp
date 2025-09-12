@@ -5,15 +5,11 @@ namespace dd4hep {
 namespace DDSegmentation {
 
   /// default constructor using an encoding string
-  FCCSWEndcapTurbine_k4geo::FCCSWEndcapTurbine_k4geo(const std::string& cellEncoding)
-    : Segmentation(cellEncoding)
-  {
+  FCCSWEndcapTurbine_k4geo::FCCSWEndcapTurbine_k4geo(const std::string& cellEncoding) : Segmentation(cellEncoding) {
     commonSetup();
   }
 
-  FCCSWEndcapTurbine_k4geo::FCCSWEndcapTurbine_k4geo(const BitFieldCoder* decoder)
-    : Segmentation(decoder)
-  {
+  FCCSWEndcapTurbine_k4geo::FCCSWEndcapTurbine_k4geo(const BitFieldCoder* decoder) : Segmentation(decoder) {
     commonSetup();
   }
 
@@ -162,12 +158,12 @@ namespace DDSegmentation {
       exit(1);
     }
 
-    m_rhoIndex    = decoder()->index(m_rhoID);
-    m_wheelIndex  = decoder()->index(m_wheelID);
+    m_rhoIndex = decoder()->index(m_rhoID);
+    m_wheelIndex = decoder()->index(m_wheelID);
     m_moduleIndex = decoder()->index(m_moduleID);
-    m_zIndex      = decoder()->index(m_zID);
-    m_sideIndex   = decoder()->index(m_sideID);
-    m_layerIndex  = decoder()->index(m_layerID);
+    m_zIndex = decoder()->index(m_zID);
+    m_sideIndex = decoder()->index(m_sideID);
+    m_layerIndex = decoder()->index(m_layerID);
   }
 
   /// determine the local position based on the cell ID

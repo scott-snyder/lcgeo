@@ -4,21 +4,14 @@ namespace dd4hep {
 namespace DDSegmentation {
 
   /// default constructor using an encoding string
-  FCCSWGridPhiEta_k4geo::FCCSWGridPhiEta_k4geo(const std::string& cellEncoding)
-    : GridEta_k4geo(cellEncoding)
-  {
+  FCCSWGridPhiEta_k4geo::FCCSWGridPhiEta_k4geo(const std::string& cellEncoding) : GridEta_k4geo(cellEncoding) {
     commonSetup();
   }
 
-  FCCSWGridPhiEta_k4geo::FCCSWGridPhiEta_k4geo(const BitFieldCoder* decoder)
-    : GridEta_k4geo(decoder)
-  {
-    commonSetup();
-  }
+  FCCSWGridPhiEta_k4geo::FCCSWGridPhiEta_k4geo(const BitFieldCoder* decoder) : GridEta_k4geo(decoder) { commonSetup(); }
 
   /// Initialization common to all ctors.
-  void FCCSWGridPhiEta_k4geo::commonSetup()
-  {
+  void FCCSWGridPhiEta_k4geo::commonSetup() {
     // define type and description
     _type = "FCCSWGridPhiEta_k4geo";
     _description = "Phi-eta segmentation in the global coordinates";
@@ -29,7 +22,7 @@ namespace DDSegmentation {
     registerIdentifier("identifier_phi", "Cell ID identifier for phi", m_phiID, "phi");
 
     m_etaIndex = decoder()->index(fieldNameEta());
-    m_phiIndex   = decoder()->index(m_phiID);
+    m_phiIndex = decoder()->index(m_phiID);
   }
 
   /// determine the local based on the cell ID

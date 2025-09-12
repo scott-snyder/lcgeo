@@ -4,21 +4,12 @@ namespace dd4hep {
 namespace DDSegmentation {
 
   /// default constructor using an encoding string
-  GridEta_k4geo::GridEta_k4geo(const std::string& cellEncoding)
-    : Segmentation(cellEncoding)
-  {
-    commonSetup();
-  }
+  GridEta_k4geo::GridEta_k4geo(const std::string& cellEncoding) : Segmentation(cellEncoding) { commonSetup(); }
 
-  GridEta_k4geo::GridEta_k4geo(const BitFieldCoder* decoder)
-    : Segmentation(decoder)
-  {
-    commonSetup();
-  }
+  GridEta_k4geo::GridEta_k4geo(const BitFieldCoder* decoder) : Segmentation(decoder) { commonSetup(); }
 
   /// Initialization common to all ctors.
-  void GridEta_k4geo::commonSetup()
-  {
+  void GridEta_k4geo::commonSetup() {
     // define type and description
     _type = "GridEta_k4geo";
     _description = "Eeta segmentation in the global coordinates";

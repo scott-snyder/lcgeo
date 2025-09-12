@@ -5,21 +5,16 @@ namespace dd4hep {
 namespace DDSegmentation {
 
   /// default constructor using an encoding string
-  FCCSWHCalPhiTheta_k4geo::FCCSWHCalPhiTheta_k4geo(const std::string& cellEncoding)
-    : GridTheta_k4geo(cellEncoding)
-  {
+  FCCSWHCalPhiTheta_k4geo::FCCSWHCalPhiTheta_k4geo(const std::string& cellEncoding) : GridTheta_k4geo(cellEncoding) {
     commonSetup();
   }
 
-  FCCSWHCalPhiTheta_k4geo::FCCSWHCalPhiTheta_k4geo(const BitFieldCoder* decoder)
-    : GridTheta_k4geo(decoder)
-  {
+  FCCSWHCalPhiTheta_k4geo::FCCSWHCalPhiTheta_k4geo(const BitFieldCoder* decoder) : GridTheta_k4geo(decoder) {
     commonSetup();
   }
 
   /// Initialization common to all ctors.
-  void FCCSWHCalPhiTheta_k4geo::commonSetup()
-  {
+  void FCCSWHCalPhiTheta_k4geo::commonSetup() {
     // define type and description
     _type = "FCCSWHCalPhiTheta_k4geo";
     _description = "Phi-theta segmentation in the global coordinates";
@@ -36,14 +31,13 @@ namespace DDSegmentation {
     registerIdentifier("identifier_phi", "Cell ID identifier for phi", m_phiID, "phi");
     registerIdentifier("identifier_layer", "Cell ID identifier for layer", m_layerID, "layer");
 
-    m_layerIndex  = decoder()->index(m_layerID);
-    m_rowIndex    = decoder()->index("row");
-    m_thetaIndex  = decoder()->index(fieldNameTheta());
-    m_phiIndex    = decoder()->index(m_phiID);
+    m_layerIndex = decoder()->index(m_layerID);
+    m_rowIndex = decoder()->index("row");
+    m_thetaIndex = decoder()->index(fieldNameTheta());
+    m_phiIndex = decoder()->index(m_phiID);
 
     // Only endcap has "type" --- but it's too early to look at m_detLayout.
-    for (const dd4hep::DDSegmentation::BitFieldElement& bfe : decoder()->fields())
-    {
+    for (const dd4hep::DDSegmentation::BitFieldElement& bfe : decoder()->fields()) {
       if (bfe.name() == "type") {
         m_typeIndex = decoder()->index("type");
         break;
@@ -733,11 +727,13 @@ namespace DDSegmentation {
     // At the end, find neighbours with the same layer/row in next/previous phi module
     CellID nID = cID;
     // previous: if the current is 0 then previous is the last bin (id = m_phiBins - 1) else current - 1
-    decoder()->set(nID, m_phiIndex, (decoder()->get(cID, m_phiIndex) == 0) ? m_phiBins - 1 : decoder()->get(cID, m_phiIndex) - 1);
+    decoder()->set(nID, m_phiIndex,
+                   (decoder()->get(cID, m_phiIndex) == 0) ? m_phiBins - 1 : decoder()->get(cID, m_phiIndex) - 1);
     cellNeighbours.push_back(nID);
     // next: if the current is the last bin (id = m_phiBins - 1) then the next is the first bin (id = 0) else current +
     // 1
-    decoder()->set(nID, m_phiIndex, (decoder()->get(cID, m_phiIndex) == (m_phiBins - 1)) ? 0 : decoder()->get(cID, m_phiIndex) + 1);
+    decoder()->set(nID, m_phiIndex,
+                   (decoder()->get(cID, m_phiIndex) == (m_phiBins - 1)) ? 0 : decoder()->get(cID, m_phiIndex) + 1);
     cellNeighbours.push_back(nID);
 
     return cellNeighbours;

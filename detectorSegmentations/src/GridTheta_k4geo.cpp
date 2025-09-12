@@ -4,21 +4,12 @@ namespace dd4hep {
 namespace DDSegmentation {
 
   /// default constructor using an encoding string
-  GridTheta_k4geo::GridTheta_k4geo(const std::string& cellEncoding)
-    : Segmentation(cellEncoding)
-  {
-    commonSetup();
-  }
+  GridTheta_k4geo::GridTheta_k4geo(const std::string& cellEncoding) : Segmentation(cellEncoding) { commonSetup(); }
 
-  GridTheta_k4geo::GridTheta_k4geo(const BitFieldCoder* decoder)
-    : Segmentation(decoder)
-  {
-    commonSetup();
-  }
+  GridTheta_k4geo::GridTheta_k4geo(const BitFieldCoder* decoder) : Segmentation(decoder) { commonSetup(); }
 
   /// Initialization common to all ctors.
-  void GridTheta_k4geo::commonSetup()
-  {
+  void GridTheta_k4geo::commonSetup() {
     // define type and description
     _type = "GridTheta_k4geo";
     _description = "Etheta segmentation in the global coordinates";
@@ -31,7 +22,6 @@ namespace DDSegmentation {
 
     m_thetaIndex = decoder()->index(m_thetaID);
   }
-
 
   /// determine the local based on the cell ID
   Vector3D GridTheta_k4geo::position(const CellID& cID) const { return positionFromRThetaPhi(1.0, theta(cID), 0.); }

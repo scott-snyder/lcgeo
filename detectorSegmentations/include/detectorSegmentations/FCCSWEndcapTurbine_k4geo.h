@@ -237,7 +237,6 @@ namespace DDSegmentation {
     int m_sideIndex = -1;
     /// the field index used for layer
     int m_layerIndex = -1;
-
   };
 } // namespace DDSegmentation
 } // namespace dd4hep

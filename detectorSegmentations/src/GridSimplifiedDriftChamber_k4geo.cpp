@@ -5,20 +5,17 @@ namespace DDSegmentation {
 
   /// default constructor using an encoding string
   GridSimplifiedDriftChamber_k4geo::GridSimplifiedDriftChamber_k4geo(const std::string& cellEncoding)
-    : Segmentation(cellEncoding)
-  {
+      : Segmentation(cellEncoding) {
     commonSetup();
   }
 
   GridSimplifiedDriftChamber_k4geo::GridSimplifiedDriftChamber_k4geo(const BitFieldCoder* decoder)
-    : Segmentation(decoder)
-  {
+      : Segmentation(decoder) {
     commonSetup();
   }
 
   /// Initialization common to all ctors.
-  void GridSimplifiedDriftChamber_k4geo::commonSetup()
-  {
+  void GridSimplifiedDriftChamber_k4geo::commonSetup() {
     // define type and description
     _type = "GridSimplifiedDriftChamber_k4geo";
     _description = "Drift chamber segmentation in the global coordinates";
@@ -32,7 +29,7 @@ namespace DDSegmentation {
     registerIdentifier("identifier_phi", "Cell ID identifier for phi", m_phiID, "phi");
 
     m_layerIndex = decoder()->index("layer");
-    m_phiIndex   = decoder()->index(m_phiID);
+    m_phiIndex = decoder()->index(m_phiID);
   }
 
   Vector3D GridSimplifiedDriftChamber_k4geo::position(const CellID& /*cID*/) const { //// ???? TODO
