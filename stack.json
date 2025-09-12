@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "0135d52b895be6d0c6281b28f1f4cf647446ad13",
-  "head": "167057cfdb84b51a300566fb8d704092c2ae2860",
+  "prev": "ca78fa273a6815c5f94c67e5f0847d6c611454e3",
+  "head": "94a00298f8d0a4de0fd02214b4fd51eed3dd673b",
   "applied": [
     "cmakewarn",
     "segneighbours",
@@ -14,8 +14,7 @@
     "hcal-row-pos",
     "hcal-barrel-overlap",
     "ci",
-    "neighbor-dump-wip",
-    "refresh-temp"
+    "neighbor-dump-wip"
   ],
   "unapplied": [
     "hcal-theta-pos-debugprint",
@@ -63,13 +62,10 @@
       "oid": "45de9185ae0c71571d6c688286249a460c3a932c"
     },
     "neighbor-dump-wip": {
-      "oid": "37eacf63e5e70073557bf35be063127252ad032a"
+      "oid": "94a00298f8d0a4de0fd02214b4fd51eed3dd673b"
     },
     "nosystem": {
       "oid": "bf0cef67b83f3698ec663e995d03e3b5a65b13da"
-    },
-    "refresh-temp": {
-      "oid": "167057cfdb84b51a300566fb8d704092c2ae2860"
     },
     "segCleanup1": {
       "oid": "93b0078a6c4ee7bc5f96681644e0955948417dc8"
