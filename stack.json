@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "421273b17b6a4960ecd51e65de67d9dfac67fe14",
-  "head": "4bee80e1b41d3b63d5a3c6719a47e1ccac70b719",
+  "prev": "e22ed70a3767d22f6573746e8a4fd930bffc675b",
+  "head": "15216808259e005c376dffe5f70a5bb5f8c1d9e0",
   "applied": [
     "cmakewarn",
     "segneighbours",
@@ -12,7 +12,8 @@
     "hcal-edge-vector",
     "hcal-theta-pos",
     "hcal-row-pos",
-    "hcal-barrel-overlap"
+    "hcal-barrel-overlap",
+    "ci"
   ],
   "unapplied": [
     "neighbor-dump-wip",
@@ -20,13 +21,12 @@
     "hcal-row-pos-debugprint",
     "danglewarn",
     "nosystem",
-    "timeout",
-    "ci"
+    "timeout"
   ],
   "hidden": [],
   "patches": {
     "ci": {
-      "oid": "3827ba405398cf52e63466fcc2cb7872950f95d2"
+      "oid": "15216808259e005c376dffe5f70a5bb5f8c1d9e0"
     },
     "cmakewarn": {
       "oid": "a82495beff364277f41aab93823ad377baba7f11"
