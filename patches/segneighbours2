@@ -1,0 +1,6 @@
+Bottom: 1b80e6f93590aa5e21cebc34152ecbdc0a274252
+Top:    1b80e6f93590aa5e21cebc34152ecbdc0a274252
+Author: sss <sss@karma>
+Date:   2025-09-15 11:19:49 -0400
+
+Move neighbours() declarations together.
