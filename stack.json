@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "4fc343556e7ac7bb8831becbf6d1936627fd9e5e",
-  "head": "2eb66b3aec21278473013d59a7f73e773c7031f0",
-  "applied": [],
+  "prev": "f573a4421b33ae1fb1b2d65be0f8c8afec1eea63",
+  "head": "a8b8f29f08107679c7544f5e9c8492af84472c57",
+  "applied": [
+    "hcal-barrel-overlap"
+  ],
   "unapplied": [
-    "hcal-barrel-overlap",
     "cmakewarn",
     "segneighbours",
     "except",
