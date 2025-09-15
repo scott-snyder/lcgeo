@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "bd6a7cdf447e73b07de6774e0de2bc7773837363",
-  "head": "ca4b4d8d6aa181a008ab73dda26034c1c7c80ee2",
+  "prev": "cd7e7e87fe3041b710f74a969ec753b3e8d17243",
+  "head": "e98ea97fb1868aa9c7a58c35dc95ca3039c8b98c",
   "applied": [
     "hcal-barrel-overlap",
     "cmakewarn",
@@ -18,7 +18,8 @@
     "hcal-row-pos-debugprint",
     "danglewarn",
     "nosystem",
-    "timeout"
+    "timeout",
+    "hcal-barrel-overlap2"
   ],
   "unapplied": [
     "ci"
@@ -42,6 +43,9 @@
     },
     "hcal-barrel-overlap": {
       "oid": "a8b8f29f08107679c7544f5e9c8492af84472c57"
+    },
+    "hcal-barrel-overlap2": {
+      "oid": "e98ea97fb1868aa9c7a58c35dc95ca3039c8b98c"
     },
     "hcal-edge-vector": {
       "oid": "12dbe42cc2c1c883f358615a35b86e319b6a2867"
