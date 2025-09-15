@@ -1,13 +1,12 @@
 {
   "version": 5,
-  "prev": "5f5c79bf4bec0c661336ead4939a20a4dfaf3769",
-  "head": "1b6e5e0b722c37960c128f12054018b5e4278494",
+  "prev": "5c0cc2e42de473ec2593c0663539d6d00b498e6b",
+  "head": "dca9bd3b987f02679861ff6fb8ce5987d9f5a42d",
   "applied": [
     "hcal-barrel-overlap",
     "cmakewarn",
     "segneighbours",
-    "segneighbours2",
-    "refresh-temp"
+    "segneighbours2"
   ],
   "unapplied": [
     "except",
@@ -69,9 +68,6 @@
     "nosystem": {
       "oid": "4a1d41c4cc1d7bf78dcb180722f2a66f7734781e"
     },
-    "refresh-temp": {
-      "oid": "1b6e5e0b722c37960c128f12054018b5e4278494"
-    },
     "segCleanup1": {
       "oid": "9e43cdd2d00d425267b4893079c52ccdf20f793f"
     },
@@ -79,7 +75,7 @@
       "oid": "a910495eb35668da6af7a628ad167b3a86618035"
     },
     "segneighbours2": {
-      "oid": "3e02708b864a54befd8422d3afe16bda3c850292"
+      "oid": "dca9bd3b987f02679861ff6fb8ce5987d9f5a42d"
     },
     "timeout": {
       "oid": "dfe08985a568e9ad33847de08e4711b0b476d848"
