@@ -1,13 +1,11 @@
 {
   "version": 5,
-  "prev": "69963733572ea8841dd51fec24fcf73d4b64b8cf",
-  "head": "4b660d336fe8c0759a3400c38221652052ffa653",
+  "prev": "fb2fe57007b6db10e78178dbdacaecaa23abed62",
+  "head": "a9876797432beb5e9c6afd96ad32caface52fe9e",
   "applied": [
     "hcal-barrel-overlap",
     "cmakewarn",
-    "segneighbours"
-  ],
-  "unapplied": [
+    "segneighbours",
     "except",
     "ecal-pos-comment",
     "segCleanup1",
@@ -23,6 +21,7 @@
     "timeout",
     "ci"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
