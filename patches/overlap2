@@ -1,0 +1,6 @@
+Bottom: e6c4d6c5eb78e88b64d6c7ca925eb9c386566092
+Top:    e6c4d6c5eb78e88b64d6c7ca925eb9c386566092
+Author: sss <sss@karma>
+Date:   2025-09-17 17:17:46 -0400
+
+Calculate hcal in xml rather than hardcoding.
