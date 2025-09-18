@@ -1,11 +1,9 @@
 {
   "version": 5,
-  "prev": "33bf3d7488b95119cd0ac698fdedfb704a87acc6",
-  "head": "87f04e47a712c68264848c186ae247b4fb3c007c",
+  "prev": "3a75fc75c1d12f0e198740a15ac61a33d841e7dc",
+  "head": "af40a9046767728e7f687d33a169000007272486",
   "applied": [
-    "hcal-barrel-overlap"
-  ],
-  "unapplied": [
+    "hcal-barrel-overlap",
     "cmakewarn",
     "segneighbours",
     "except",
@@ -23,58 +21,59 @@
     "timeout",
     "ci"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
-      "oid": "e8fcf8628902c86c15ea32f6ab32dc7a410da479"
+      "oid": "af40a9046767728e7f687d33a169000007272486"
     },
     "cmakewarn": {
-      "oid": "ef01610c5eef7650ece63a435ed289c27aa61d9e"
+      "oid": "463e8404b743cfdbbdadd06876672fee3527213c"
     },
     "danglewarn": {
-      "oid": "d303ef5c2e20c48980f055ee1a2e7a236657e797"
+      "oid": "adaeb7fb9432301f336aeb5e3e58a04865526c7a"
     },
     "ecal-pos-comment": {
-      "oid": "7484a313070c1bb9edb228d16ba4948efbb89cc4"
+      "oid": "efbc45ed7f6cd44610ee10370544f18d6835e067"
     },
     "except": {
-      "oid": "f0013cf19194065142306d8c9531b9ecd9055a50"
+      "oid": "71d1a639f2d9feff68c3d4109dde6a8b0708fd1d"
     },
     "hcal-barrel-overlap": {
       "oid": "87f04e47a712c68264848c186ae247b4fb3c007c"
     },
     "hcal-edge-vector": {
-      "oid": "9fefa39287b820cb3155ea9b20952fa04bf822d3"
+      "oid": "4f486333d43eea6425676188e909aa59a925c22f"
     },
     "hcal-mutable": {
-      "oid": "36f0d0deeb09e8e691b15f2b4d97cf808665bbca"
+      "oid": "471bb31fb11a768fd15332b36692b65ac20d2387"
     },
     "hcal-row-pos": {
-      "oid": "42915693fb628a8fda81bc35ebcdbb36cc3eccdd"
+      "oid": "7e2eb879e0722c02f1ddb9f310dd0d1cf8713eaa"
     },
     "hcal-row-pos-debugprint": {
-      "oid": "6474c428d975c50379d69af78b03268dcceb87d6"
+      "oid": "6ced37e340ba173de7bde1acc97cb098cfbc406b"
     },
     "hcal-theta-pos": {
-      "oid": "5b2d2a7ceed34f85f7d8c9689512b9bf2e0bbf98"
+      "oid": "ca209ff6b1baeea5b06e8c3f2ea24525758bec68"
     },
     "hcal-theta-pos-debugprint": {
-      "oid": "8d873a2489215aa8e1ccc6d961cf5f8260a2f070"
+      "oid": "46e78565ca4087729bdc0a4e124dc4cb752d480a"
     },
     "neighbor-dump-wip": {
-      "oid": "b3e507192107d2224ecb0a993d02c3bf2c85dadd"
+      "oid": "7a8d30cb53c2becd505798c381e70eba418f8067"
     },
     "nosystem": {
-      "oid": "a00a5dbc06284518653964483a727d90316f2abb"
+      "oid": "ead2a212f3559c6cbfe5107e1a2274c9fc7137ad"
     },
     "segCleanup1": {
-      "oid": "56aa8f3a8fbbddceae02cf7777b5bb1af3a92f46"
+      "oid": "fcf27d6cf4b40aff2706a83c9399713149411c29"
     },
     "segneighbours": {
-      "oid": "1fa65d6e24a2cdaf8a0b1e19b384eb4d78b06653"
+      "oid": "2ff7f4f3119957f8ce37f2aac093a624d82692c9"
     },
     "timeout": {
-      "oid": "599835094dcf5160a451641e7332e93f0ab62fb2"
+      "oid": "cae7b516b6796b92528f2c8dc8becab80b911af0"
     }
   }
 }
