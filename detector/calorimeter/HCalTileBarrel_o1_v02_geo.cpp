@@ -60,7 +60,7 @@ static dd4hep::Ref_t createHCal(dd4hep::Detector& lcdd, xml_det_t xmlDet, dd4hep
   dd4hep::printout(dd4hep::DEBUG, "HCalTileBarrel_o1_v02", "sequence thickness %.2f", dzSequence);
 
   // number of sequences fitting in Z
-  unsigned int numSequencesZ = lcdd.constant<unsigned> ("BarHCal_numSequencesZ");
+  unsigned int numSequencesZ = lcdd.constant<unsigned>("BarHCal_numSequencesZ");
 
   // get all 'layer' children of the 'layers' tag
   std::vector<xml_comp_t> Layers;
