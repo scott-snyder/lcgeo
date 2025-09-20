@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "60e3b4a0be582a06a1b90b6a1d3b16d0354c1232",
-  "head": "2e38dc40f20e4876c205dad06b60a9022fa5e43d",
+  "prev": "562fb53787cda2ca190d1103ab3f81c43dff45de",
+  "head": "b1144b14c2ac788958431a205c0071d6aba4af1e",
   "applied": [
     "hcal-barrel-nsegxml",
     "cmakewarn",
@@ -9,7 +9,9 @@
     "hcal-mutable",
     "hcal-edge-vector",
     "hcal-theta-pos",
-    "hcal-row-pos",
+    "hcal-row-pos"
+  ],
+  "unapplied": [
     "neighbor-dump-wip",
     "hcal-theta-pos-debugprint",
     "hcal-row-pos-debugprint",
@@ -18,7 +20,6 @@
     "timeout",
     "ci"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
