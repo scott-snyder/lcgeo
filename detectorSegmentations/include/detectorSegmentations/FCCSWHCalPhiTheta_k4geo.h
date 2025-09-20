@@ -3,9 +3,9 @@
 
 // FCCSW
 #include "detectorSegmentations/GridTheta_k4geo.h"
-#include <atomic>
 
 #include <array>
+#include <atomic>
 #include <string>
 #include <unordered_map>
 #include <vector>

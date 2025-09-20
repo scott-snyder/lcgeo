@@ -5,10 +5,10 @@
 #include "DDSegmentation/SegmentationUtil.h"
 
 #include <array>
+#include <atomic>
 #include <string>
 #include <unordered_map>
 #include <vector>
-#include <atomic>
 
 /** FCCSWHCalPhiRow_k4geo Detector/detectorSegmentations/detectorSegmentations/FCCSWHCalPhiRow_k4geo.h
  * FCCSWHCalPhiRow_k4geo.h
