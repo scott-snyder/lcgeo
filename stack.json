@@ -1,14 +1,15 @@
 {
   "version": 5,
-  "prev": "b0ba1bb425264f07e8f44d63559b8916c5904723",
-  "head": "0bd52fae6ed436eef9cb49b6f05701e0c2a9bc0e",
+  "prev": "a1083c29343a597991c11227fad9531020fe1c38",
+  "head": "2dc9eaa30244bd04b17e80aa39f90d8ffa8fceef",
   "applied": [
     "hcal-barrel-overlap",
     "cmakewarn",
     "segneighbours",
     "except",
     "ecal-pos-comment",
-    "segCleanup1"
+    "segCleanup1",
+    "refresh-temp"
   ],
   "unapplied": [
     "hcal-mutable",
@@ -66,6 +67,9 @@
     },
     "nosystem": {
       "oid": "ead2a212f3559c6cbfe5107e1a2274c9fc7137ad"
+    },
+    "refresh-temp": {
+      "oid": "2dc9eaa30244bd04b17e80aa39f90d8ffa8fceef"
     },
     "segCleanup1": {
       "oid": "0bd52fae6ed436eef9cb49b6f05701e0c2a9bc0e"
