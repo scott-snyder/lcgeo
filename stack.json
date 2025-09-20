@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "95b8eb52f63d1e1f40534c20eb8c2267eb3bd680",
-  "head": "d7bd90cd8e6f868bbbe44949058bdebacf943d07",
+  "prev": "21d85d4918c463ce2e0828962e56911bce5c8db8",
+  "head": "083961b89f5f06155d506c11048a4bc05bdd0e24",
   "applied": [
     "hcal-barrel-nsegxml",
     "cmakewarn",
@@ -9,8 +9,7 @@
     "hcal-mutable",
     "hcal-edge-vector",
     "hcal-theta-pos",
-    "hcal-row-pos",
-    "refresh-temp"
+    "hcal-row-pos"
   ],
   "unapplied": [
     "neighbor-dump-wip",
@@ -36,19 +35,19 @@
       "oid": "605138967c70000293ebe56db0783b564894b394"
     },
     "hcal-edge-vector": {
-      "oid": "12ae6f21ee28b21f2ae7c74ff0d9a6d577f9e75d"
+      "oid": "a0b3ea224c5fec1eeac91834c9feaa315ab3d5a6"
     },
     "hcal-mutable": {
-      "oid": "7f280c2302d4fef38c43f6773d2341354ef9883e"
+      "oid": "3b38f7472f45141c623597118f0f6e512ccc30da"
     },
     "hcal-row-pos": {
-      "oid": "b1144b14c2ac788958431a205c0071d6aba4af1e"
+      "oid": "083961b89f5f06155d506c11048a4bc05bdd0e24"
     },
     "hcal-row-pos-debugprint": {
       "oid": "9d2529c5e422da9fa16dfdcc851575f900fec7a7"
     },
     "hcal-theta-pos": {
-      "oid": "75541492b87277f23d5fdd5277d249b6d2919b8c"
+      "oid": "8d489619b146f8ca004b595859bab4d8cf468352"
     },
     "hcal-theta-pos-debugprint": {
       "oid": "7265688742ebf78afb0ebd36b31acdbc2830b14a"
@@ -58,9 +57,6 @@
     },
     "nosystem": {
       "oid": "6e6fc294de2b34bff4c216c8affd6627e5fc6119"
-    },
-    "refresh-temp": {
-      "oid": "d7bd90cd8e6f868bbbe44949058bdebacf943d07"
     },
     "segCleanup1": {
       "oid": "e79350944257acc1d35595aa916224b11c23f49d"

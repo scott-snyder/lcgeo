@@ -1,7 +1,7 @@
 Bottom: 5c600155a26a995070e690abab8ee43006425875
-Top:    454ca603730deaa9501ae8a9687881c745b38f35
+Top:    4c5ab2fc2d7d652ce3c293586936c23dd100b82c
 Author: sss <sss@karma>
-Date:   2025-09-19 22:13:36 -0400
+Date:   2025-09-19 22:30:13 -0400
 
 Update HCal segmentation classes to avoid mutable members.
 
