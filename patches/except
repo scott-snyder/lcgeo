@@ -1,9 +1,0 @@
-Bottom: 8baddcb54b2d1cb9a5913921200976d245cc69bb
-Top:    8baddcb54b2d1cb9a5913921200976d245cc69bb
-Author: sss <sss@karma>
-Date:   2025-09-19 21:51:04 -0400
-
-Don't use exceptions to test for the presence of an attribute.
-
-Exceptions should be exceptional: don't rely on exceptions for control flow
-for cases which are not actually errors.
