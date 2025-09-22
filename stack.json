@@ -1,12 +1,12 @@
 {
   "version": 5,
-  "prev": "9abf49905311b4be906384aa1f8d89949835c64b",
-  "head": "0f4e701a2e31bd06302b5265e9779a4747e5696d",
+  "prev": "017d370b1bab65796a274546bffe91f96187d9f4",
+  "head": "d3c7a3488b84e4c2ed716eb13fabd6f23b53a30a",
   "applied": [
-    "segCleanup1",
     "ci"
   ],
   "unapplied": [
+    "segCleanup1",
     "hcal-barrel-nsegxml",
     "cmakewarn",
     "hcal-mutable",
@@ -23,7 +23,7 @@
   "hidden": [],
   "patches": {
     "ci": {
-      "oid": "0f4e701a2e31bd06302b5265e9779a4747e5696d"
+      "oid": "d3c7a3488b84e4c2ed716eb13fabd6f23b53a30a"
     },
     "cmakewarn": {
       "oid": "347a4a4d3f9159f73c7a5a5364e7f7edf906d410"
