@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "020eedba6c930e00e75db64000e5839d231ae023",
-  "head": "84c7ef4b9e660fa5c154b24bf4d25c82d9e8b8ec",
+  "prev": "6acecbf193160e620b7bd7e2c38b2a6cb3d42145",
+  "head": "e4990a3432251857f3895686b8fea9df5614978b",
   "applied": [
     "hcal-barrel-nsegxml",
-    "segCleanup1"
+    "segCleanup1",
+    "refresh-temp"
   ],
   "unapplied": [
     "ci",
@@ -57,6 +58,9 @@
     },
     "nosystem": {
       "oid": "6e6fc294de2b34bff4c216c8affd6627e5fc6119"
+    },
+    "refresh-temp": {
+      "oid": "e4990a3432251857f3895686b8fea9df5614978b"
     },
     "segCleanup1": {
       "oid": "84c7ef4b9e660fa5c154b24bf4d25c82d9e8b8ec"
