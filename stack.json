@@ -1,11 +1,10 @@
 {
   "version": 5,
-  "prev": "6acecbf193160e620b7bd7e2c38b2a6cb3d42145",
-  "head": "e4990a3432251857f3895686b8fea9df5614978b",
+  "prev": "865ca98b1443d9e9292fee76005ea655d02c0ef9",
+  "head": "8616f29fd783558b99c7e45d891809599738c565",
   "applied": [
     "hcal-barrel-nsegxml",
-    "segCleanup1",
-    "refresh-temp"
+    "segCleanup1"
   ],
   "unapplied": [
     "ci",
@@ -59,11 +58,8 @@
     "nosystem": {
       "oid": "6e6fc294de2b34bff4c216c8affd6627e5fc6119"
     },
-    "refresh-temp": {
-      "oid": "e4990a3432251857f3895686b8fea9df5614978b"
-    },
     "segCleanup1": {
-      "oid": "84c7ef4b9e660fa5c154b24bf4d25c82d9e8b8ec"
+      "oid": "8616f29fd783558b99c7e45d891809599738c565"
     },
     "timeout": {
       "oid": "05ec7f00f8462bbced250a95fdc41f8a26264df8"
