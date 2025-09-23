@@ -1,12 +1,13 @@
 {
   "version": 5,
-  "prev": "9fa60b3bf0fa148c4eea68e1cf5942b6af3008b3",
-  "head": "eb367755bf76e48ff567d296c689af0ebac145f3",
-  "applied": [],
-  "unapplied": [
-    "ci",
-    "segCleanup1",
+  "prev": "b943b125c7766d74a17c632ad42110d2e66a98e9",
+  "head": "60ced02f0cbee58831da14ddfa4de68f7ef075b1",
+  "applied": [
     "hcal-barrel-nsegxml",
+    "segCleanup1",
+    "ci"
+  ],
+  "unapplied": [
     "cmakewarn",
     "hcal-mutable",
     "hcal-edge-vector",
@@ -22,7 +23,7 @@
   "hidden": [],
   "patches": {
     "ci": {
-      "oid": "d3c7a3488b84e4c2ed716eb13fabd6f23b53a30a"
+      "oid": "60ced02f0cbee58831da14ddfa4de68f7ef075b1"
     },
     "cmakewarn": {
       "oid": "347a4a4d3f9159f73c7a5a5364e7f7edf906d410"
@@ -58,7 +59,7 @@
       "oid": "6e6fc294de2b34bff4c216c8affd6627e5fc6119"
     },
     "segCleanup1": {
-      "oid": "3f4e9b8b05c8cb394ca65479960e342efe15e6e1"
+      "oid": "290e5d56e300a333cb95e93f1b28fa7381c548fa"
     },
     "timeout": {
       "oid": "05ec7f00f8462bbced250a95fdc41f8a26264df8"
