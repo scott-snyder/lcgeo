@@ -1,12 +1,12 @@
 {
   "version": 5,
-  "prev": "9bc03694d0c68834cbdf8acc6b25c549550ad6c2",
-  "head": "b34bb3bf6ca210a83197a969468dce1afbf8df3b",
+  "prev": "88d6a3da4a37d2fd98e9d036c5995d1daaa1814e",
+  "head": "605138967c70000293ebe56db0783b564894b394",
   "applied": [
-    "hcal-barrel-nsegxml",
-    "ci"
+    "hcal-barrel-nsegxml"
   ],
   "unapplied": [
+    "ci",
     "segCleanup1",
     "cmakewarn",
     "hcal-mutable",
