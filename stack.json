@@ -1,13 +1,13 @@
 {
   "version": 5,
-  "prev": "a2f78034bbed7a4b501cb465be6dbe12fe095296",
-  "head": "605138967c70000293ebe56db0783b564894b394",
+  "prev": "e458e006450a83ccc16ff447d839426df930b627",
+  "head": "290e5d56e300a333cb95e93f1b28fa7381c548fa",
   "applied": [
-    "hcal-barrel-nsegxml"
+    "hcal-barrel-nsegxml",
+    "segCleanup1"
   ],
   "unapplied": [
     "ci",
-    "segCleanup1",
     "cmakewarn",
     "hcal-mutable",
     "hcal-edge-vector",
