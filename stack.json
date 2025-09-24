@@ -1,12 +1,13 @@
 {
   "version": 5,
-  "prev": "473beca73d8838c50cc1efac409b1f3fdb25d9fc",
-  "head": "eb367755bf76e48ff567d296c689af0ebac145f3",
-  "applied": [],
-  "unapplied": [
-    "hcal-barrel-nsegxml",
+  "prev": "222b48ebb1821433d4ae8231a2d9a296ed7b55b9",
+  "head": "30b8e1dacf2a24d3e4b1fb847154e61b9f14b465",
+  "applied": [
     "segCleanup1",
-    "ci",
+    "hcal-barrel-nsegxml",
+    "ci"
+  ],
+  "unapplied": [
     "cmakewarn",
     "hcal-mutable",
     "hcal-edge-vector",
@@ -22,7 +23,7 @@
   "hidden": [],
   "patches": {
     "ci": {
-      "oid": "d3e191f10ba3552fa8b93e0efa4f18fa4903d1b4"
+      "oid": "30b8e1dacf2a24d3e4b1fb847154e61b9f14b465"
     },
     "cmakewarn": {
       "oid": "347a4a4d3f9159f73c7a5a5364e7f7edf906d410"
@@ -31,7 +32,7 @@
       "oid": "459a6aa37af7b21f559e71cbb9e99a78b72fef8e"
     },
     "hcal-barrel-nsegxml": {
-      "oid": "605138967c70000293ebe56db0783b564894b394"
+      "oid": "98bf4e5e7e9e095a4c6d145d7fd959fe5c29e7c0"
     },
     "hcal-edge-vector": {
       "oid": "a0b3ea224c5fec1eeac91834c9feaa315ab3d5a6"
@@ -58,7 +59,7 @@
       "oid": "6e6fc294de2b34bff4c216c8affd6627e5fc6119"
     },
     "segCleanup1": {
-      "oid": "290e5d56e300a333cb95e93f1b28fa7381c548fa"
+      "oid": "4b1cd6985e3ae881f81a9e1994c954640cd66162"
     },
     "timeout": {
       "oid": "05ec7f00f8462bbced250a95fdc41f8a26264df8"
