@@ -9,13 +9,12 @@ namespace dd4hep {
 namespace DDSegmentation {
   class DRparamEndcap_k4geo : public DRparamBase_k4geo {
   public:
-    DRparamEndcap_k4geo();
-    virtual ~DRparamEndcap_k4geo();
+    DRparamEndcap_k4geo() = default;
+    virtual ~DRparamEndcap_k4geo() = default;
 
-    virtual void SetDeltaThetaByTowerNo(int signedTowerNo, int BEtrans) override;
-    virtual void SetThetaOfCenterByTowerNo(int signedTowerNo, int BEtrans) override;
-
-    virtual void init() override;
+  protected:
+    virtual double currentInnerR (double innerX, double thetaOfCenter) const override;
+    virtual int getBETowerNo (int signedTowerNo, int BEtrans) const override;
   };
 } // namespace DDSegmentation
 } // namespace dd4hep
