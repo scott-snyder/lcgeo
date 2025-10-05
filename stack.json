@@ -1,11 +1,10 @@
 {
   "version": 5,
-  "prev": "096ae572806ac88c50106b93a55f4d567cd9f40e",
-  "head": "6161d79e9f412189718ee7f5244004f8dee41b78",
+  "prev": "7dc46386791d2ddd5dd735f74b6479f01edfa137",
+  "head": "06c9a63e202cf09adf5d7dfcea6602024311e933",
   "applied": [
     "segCleanup1",
-    "drparamCleanup1",
-    "refresh-temp"
+    "drparamCleanup1"
   ],
   "unapplied": [
     "hcal-barrel-nsegxml",
@@ -34,7 +33,7 @@
       "oid": "1d440adc6bcbbb53aea794633cc91c5842800d49"
     },
     "drparamCleanup1": {
-      "oid": "2131f1cca4ffa7aa0e66adf8b122f8ccbee5cd28"
+      "oid": "06c9a63e202cf09adf5d7dfcea6602024311e933"
     },
     "hcal-barrel-nsegxml": {
       "oid": "98bf4e5e7e9e095a4c6d145d7fd959fe5c29e7c0"
@@ -62,9 +61,6 @@
     },
     "nosystem": {
       "oid": "e5608fb3b8a877bf5b53a2171d86cc6bc879f260"
-    },
-    "refresh-temp": {
-      "oid": "6161d79e9f412189718ee7f5244004f8dee41b78"
     },
     "segCleanup1": {
       "oid": "4b1cd6985e3ae881f81a9e1994c954640cd66162"
