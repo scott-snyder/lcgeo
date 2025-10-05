@@ -1,9 +1,10 @@
 {
   "version": 5,
-  "prev": "d9bbe3b4a831717ddf896f6dde1e1d6d97964c9a",
-  "head": "4b1cd6985e3ae881f81a9e1994c954640cd66162",
+  "prev": "1052bd87fb3a69475e7fa28611f41ab3a88ccd12",
+  "head": "2131f1cca4ffa7aa0e66adf8b122f8ccbee5cd28",
   "applied": [
-    "segCleanup1"
+    "segCleanup1",
+    "drparamCleanup1"
   ],
   "unapplied": [
     "hcal-barrel-nsegxml",
@@ -30,6 +31,9 @@
     },
     "danglewarn": {
       "oid": "1d440adc6bcbbb53aea794633cc91c5842800d49"
+    },
+    "drparamCleanup1": {
+      "oid": "2131f1cca4ffa7aa0e66adf8b122f8ccbee5cd28"
     },
     "hcal-barrel-nsegxml": {
       "oid": "98bf4e5e7e9e095a4c6d145d7fd959fe5c29e7c0"
