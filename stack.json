@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "1052bd87fb3a69475e7fa28611f41ab3a88ccd12",
-  "head": "2131f1cca4ffa7aa0e66adf8b122f8ccbee5cd28",
+  "prev": "096ae572806ac88c50106b93a55f4d567cd9f40e",
+  "head": "6161d79e9f412189718ee7f5244004f8dee41b78",
   "applied": [
     "segCleanup1",
-    "drparamCleanup1"
+    "drparamCleanup1",
+    "refresh-temp"
   ],
   "unapplied": [
     "hcal-barrel-nsegxml",
@@ -61,6 +62,9 @@
     },
     "nosystem": {
       "oid": "e5608fb3b8a877bf5b53a2171d86cc6bc879f260"
+    },
+    "refresh-temp": {
+      "oid": "6161d79e9f412189718ee7f5244004f8dee41b78"
     },
     "segCleanup1": {
       "oid": "4b1cd6985e3ae881f81a9e1994c954640cd66162"
