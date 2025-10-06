@@ -1,12 +1,11 @@
 {
   "version": 5,
-  "prev": "7dc46386791d2ddd5dd735f74b6479f01edfa137",
-  "head": "06c9a63e202cf09adf5d7dfcea6602024311e933",
-  "applied": [
-    "segCleanup1",
-    "drparamCleanup1"
-  ],
+  "prev": "727d8f548a1a9e4a192406f1f43335edc5eff780",
+  "head": "eb367755bf76e48ff567d296c689af0ebac145f3",
+  "applied": [],
   "unapplied": [
+    "segCleanup1",
+    "drparamCleanup1",
     "hcal-barrel-nsegxml",
     "ci",
     "cmakewarn",
