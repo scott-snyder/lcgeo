@@ -1,11 +1,9 @@
 {
   "version": 5,
-  "prev": "7ca3a230c7fe7be9d993507762c3b02af52dd5a3",
-  "head": "3a2cd7bf13649249405a136fc72cd8ec27445ae9",
+  "prev": "546168615ca827a27162b3ed7a7760520d0a9614",
+  "head": "db8dde15b71c4e8ace81a02ba657921d495373f1",
   "applied": [
-    "segCleanup1"
-  ],
-  "unapplied": [
+    "segCleanup1",
     "drparamCleanup1",
     "hcal-barrel-nsegxml",
     "ci",
@@ -21,52 +19,53 @@
     "nosystem",
     "timeout"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
-      "oid": "30b8e1dacf2a24d3e4b1fb847154e61b9f14b465"
+      "oid": "539b7e5384a42049fd44259b419982f88a596785"
     },
     "cmakewarn": {
-      "oid": "8f21ce1c1e2eed1de03d38070becb140ea25a38e"
+      "oid": "868b91edbe211cfa668a7779485330d83cbfaebc"
     },
     "danglewarn": {
-      "oid": "1d440adc6bcbbb53aea794633cc91c5842800d49"
+      "oid": "7ee5da9a058359f04c5a74b2967498a302f8f920"
     },
     "drparamCleanup1": {
-      "oid": "06c9a63e202cf09adf5d7dfcea6602024311e933"
+      "oid": "cb4d7711dcedd7259e2e559c3414bf0f025aa477"
     },
     "hcal-barrel-nsegxml": {
-      "oid": "98bf4e5e7e9e095a4c6d145d7fd959fe5c29e7c0"
+      "oid": "44c9a81bf2ae339ce2b830081ee1c6eb0858adf9"
     },
     "hcal-edge-vector": {
-      "oid": "40326c4e840235da44a6bb7b039e65b902e0ef7e"
+      "oid": "a3679b79f7a023fd6c9266466f53c6f026454276"
     },
     "hcal-mutable": {
-      "oid": "1cd3b3eb851d872f37be35ba75eb1e3bbb3207da"
+      "oid": "3c541d08c1e6d25c616089c099dac71593d80a39"
     },
     "hcal-row-pos": {
-      "oid": "39f00f3deff2ee2e226255847c6a2028c5c393a5"
+      "oid": "5fd951a20b58b95da3500c0d7c18ca6f06e74876"
     },
     "hcal-row-pos-debugprint": {
-      "oid": "5f97e3e9f128a7329ea4986fe52ddb127ed95da5"
+      "oid": "e833146dbdf6829ee1fdec77d96e683b72c20073"
     },
     "hcal-theta-pos": {
-      "oid": "e2c928cc37dd939651bc7d7a2c94457b5446ba84"
+      "oid": "5ba4c41019d9d36783c5d5101c2183710c8c02d3"
     },
     "hcal-theta-pos-debugprint": {
-      "oid": "7b8188331ceae171bed9b9139e2ba3c8c6d492db"
+      "oid": "58ffdef28813865af07971b0e8fa13247fc3b9b4"
     },
     "neighbor-dump-wip": {
-      "oid": "f518dcf730542afbb6323c1d2e58f824e9d68849"
+      "oid": "b6caaf200c2c7eb0764c416c002482171fcc9c19"
     },
     "nosystem": {
-      "oid": "e5608fb3b8a877bf5b53a2171d86cc6bc879f260"
+      "oid": "6094e8e221ef3f64f94a22bdc31cc6501bba51bb"
     },
     "segCleanup1": {
       "oid": "3a2cd7bf13649249405a136fc72cd8ec27445ae9"
     },
     "timeout": {
-      "oid": "9ee23da1ffa299fa0e0eb85b286b8ccc631fe752"
+      "oid": "db8dde15b71c4e8ace81a02ba657921d495373f1"
     }
   }
 }
