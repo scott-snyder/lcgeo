@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "35abf326098ece53eaf1fdb1bdf6d23254705292",
-  "head": "fe6c4bc624330afc402920875ad6e80e1a0be24c",
+  "prev": "ae51d5ef8b1ac794d421dc1c4b4013f7df6caa5f",
+  "head": "c5e2eec4aa387c357fea78714bf6085bd944419a",
   "applied": [
-    "hcal-mutable"
+    "hcal-mutable",
+    "ci"
   ],
   "unapplied": [
     "neighbor-dump-wip",
     "drparamCleanup1",
-    "ci",
     "cmakewarn",
     "hcal-edge-vector",
     "hcal-theta-pos",
@@ -22,7 +22,7 @@
   "hidden": [],
   "patches": {
     "ci": {
-      "oid": "f64a9cb52e0d34413f7a8425fddbd4f9ebd41dd9"
+      "oid": "c5e2eec4aa387c357fea78714bf6085bd944419a"
     },
     "cmakewarn": {
       "oid": "194d091be0a96e148bff65b1007a30d16636cc5c"
