@@ -1,7 +1,7 @@
 Bottom: 7c8d1986f8932445e33e6f50a13fdd7a822dea11
 Top:    f9a617902c82315325364328fabaa871c10743cd
 Author: sss <sss@karma>
-Date:   2025-10-29 09:23:42 -0400
+Date:   2025-10-29 09:24:07 -0400
 
 Update HCal segmentation classes to use vectors to store cell edge information.
 
