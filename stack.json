@@ -1,12 +1,12 @@
 {
   "version": 5,
-  "prev": "2c5e2c5403a8132798bbf6dbc02429f6d9f8cf94",
-  "head": "66932578733b167e958468b814e91bc01b1c278a",
+  "prev": "7c58e9d5c611412ff147796a0220e2e631a08fec",
+  "head": "d5e631951dc5d9e9ea5baa833dedd6fc91e88dd0",
   "applied": [
-    "cmakewarn",
-    "hcal-edge-vector"
+    "cmakewarn"
   ],
   "unapplied": [
+    "hcal-edge-vector",
     "ci",
     "timeout",
     "neighbor-dump-wip",
