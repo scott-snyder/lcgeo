@@ -1,10 +1,12 @@
 {
   "version": 5,
-  "prev": "bad4c0879cb8842e95450311259b696ffed3b4e5",
-  "head": "57f7cbb035d5aa7000fcd3c22ee6227ec1ebe8b1",
+  "prev": "4059b41cda77ccba5a165148cb6d0f88a14f2df2",
+  "head": "c46c683ed75b1bc9ee0b52a6ba9022778fa71d7a",
   "applied": [
     "cmakewarn",
-    "hcal-edge-vector",
+    "hcal-edge-vector"
+  ],
+  "unapplied": [
     "ci",
     "timeout",
     "neighbor-dump-wip",
@@ -16,7 +18,6 @@
     "danglewarn",
     "nosystem"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
