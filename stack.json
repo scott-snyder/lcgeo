@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "d4b7966b09e30df51f4652da2e621fc315e5ba1c",
-  "head": "6e45170bf12aa32a16855540bb13b77b756524ac",
+  "prev": "cf6800838e7b373f0b19f1940b67f7f2fb04c243",
+  "head": "2f120d772d8e8f2d4684c2ab818d52cb413e0c0b",
   "applied": [
     "cmakewarn",
     "hcal-edge-vector",
@@ -10,8 +10,7 @@
     "timeout",
     "neighbor-dump-wip",
     "drparamCleanup1",
-    "hcal-theta-pos",
-    "refresh-temp"
+    "hcal-theta-pos"
   ],
   "unapplied": [
     "hcal-row-pos",
@@ -47,7 +46,7 @@
       "oid": "c11d386a12eed4daab0e4c00691c1662ca7f7adf"
     },
     "hcal-theta-pos": {
-      "oid": "24ba93b1589e38b6ffd63dbbba49437e0db407e9"
+      "oid": "2f120d772d8e8f2d4684c2ab818d52cb413e0c0b"
     },
     "hcal-theta-pos-debugprint": {
       "oid": "901ba2326557ed2182ab846b44d8cff6f443b196"
@@ -57,9 +56,6 @@
     },
     "nosystem": {
       "oid": "57f7cbb035d5aa7000fcd3c22ee6227ec1ebe8b1"
-    },
-    "refresh-temp": {
-      "oid": "6e45170bf12aa32a16855540bb13b77b756524ac"
     },
     "timeout": {
       "oid": "97f3fb46227b8d59a6ee67d911e7591bf6ce5fab"
