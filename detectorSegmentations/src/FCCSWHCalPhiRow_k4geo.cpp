@@ -192,9 +192,9 @@ namespace DDSegmentation {
               << this->fieldDescription() << "\n";
     for (int idx : li.cellIndexes) {
       if (idx < 0) break;
-      const auto& edges = li.m_cellEdges.at(idx-li.m_ibin);
-      std::cout << "  " << idx << " " << edges.first << " " << edges.second
-                << " " << (edges.first+edges.second)/2 << "\n";
+      const auto& edge = li.m_cellEdge.at(idx-li.m_ibin);
+      std::cout << "  " << idx << " " << edge.low << " " << edge.high
+                << " " << (edge.low+edge.high)/2 << "\n";
     }
 
     dd4hep::Detector* dd4hepgeo = &(dd4hep::Detector::getInstance());
