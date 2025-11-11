@@ -67,7 +67,7 @@ namespace DDSegmentation {
     std::cout << "aaa " << m_detLayout << " " << decoder()->get(cID, m_systemIndex)
               << " " << layer << " " << thetaID << " " <<
       li.radius << " " << pos.x() << " " << pos.y() << " " << zpos << " "
-              << ci.volumeZ << " " << ci.edges.first << " " << ci.edges.second << "\n";
+              << ci.volumeZ << " " << ci.edge.low << " " << ci.edge.high << "\n";
 
     return Vector3D(pos.x(), pos.y(), zpos);
   }
@@ -339,7 +339,7 @@ namespace DDSegmentation {
         zpos = wpos.Z();
       }
       std::cout << "vvv2   " << layer << " " << jbin << " " << " "
-                << li.cellInfo(jbin).edges.first << " " << li.cellInfo(jbin).edges.second
+                << li.cellInfo(jbin).edge.low << " " << li.cellInfo(jbin).edge.high
                 << " 0x" << std::hex << xid << std::dec
                 << " " << decoder()->get(xid, m_rowIndex) << " " << zpos << "\n";
     }
