@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "58fb4cb1a85e41474fec216d7c440b676ef40134",
-  "head": "eec1d2eaf436afd387f65f9a405bd5aa300430e4",
+  "prev": "78d394c75ff7ed354b9f9e375fda08f81f6dfe83",
+  "head": "84f474ad107b586015a242734f309a5ce0ed8096",
   "applied": [
     "cmakewarn",
     "hcal-edge-vector",
@@ -12,10 +12,10 @@
     "drparamCleanup1",
     "hcal-theta-pos",
     "hcal-row-pos",
-    "hcal-theta-pos-debugprint"
+    "hcal-theta-pos-debugprint",
+    "hcal-row-pos-debugprint"
   ],
   "unapplied": [
-    "hcal-row-pos-debugprint",
     "danglewarn",
     "nosystem"
   ],
@@ -43,7 +43,7 @@
       "oid": "0a6b8f6e833068e03d7b5d9f852920033a445c58"
     },
     "hcal-row-pos-debugprint": {
-      "oid": "c11d386a12eed4daab0e4c00691c1662ca7f7adf"
+      "oid": "84f474ad107b586015a242734f309a5ce0ed8096"
     },
     "hcal-theta-pos": {
       "oid": "2f120d772d8e8f2d4684c2ab818d52cb413e0c0b"
