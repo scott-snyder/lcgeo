@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "cf6800838e7b373f0b19f1940b67f7f2fb04c243",
-  "head": "2f120d772d8e8f2d4684c2ab818d52cb413e0c0b",
+  "prev": "31a44cb51de224edb0eaa49831faaf04cbcf9815",
+  "head": "0a6b8f6e833068e03d7b5d9f852920033a445c58",
   "applied": [
     "cmakewarn",
     "hcal-edge-vector",
@@ -10,10 +10,10 @@
     "timeout",
     "neighbor-dump-wip",
     "drparamCleanup1",
-    "hcal-theta-pos"
+    "hcal-theta-pos",
+    "hcal-row-pos"
   ],
   "unapplied": [
-    "hcal-row-pos",
     "hcal-theta-pos-debugprint",
     "hcal-row-pos-debugprint",
     "danglewarn",
@@ -40,7 +40,7 @@
       "oid": "c46c683ed75b1bc9ee0b52a6ba9022778fa71d7a"
     },
     "hcal-row-pos": {
-      "oid": "ee573362511a52710b9b4200e114ef5f991c02c5"
+      "oid": "0a6b8f6e833068e03d7b5d9f852920033a445c58"
     },
     "hcal-row-pos-debugprint": {
       "oid": "c11d386a12eed4daab0e4c00691c1662ca7f7adf"
