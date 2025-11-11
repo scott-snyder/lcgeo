@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "4059b41cda77ccba5a165148cb6d0f88a14f2df2",
-  "head": "c46c683ed75b1bc9ee0b52a6ba9022778fa71d7a",
+  "prev": "bdaf566bb05087f6c420cb62c3acfa4a2ce4c74d",
+  "head": "a5b8b90825cc490d45dd2b7d2bb6f6d2f16a6b92",
   "applied": [
     "cmakewarn",
-    "hcal-edge-vector"
+    "hcal-edge-vector",
+    "edgestruct"
   ],
   "unapplied": [
     "ci",
@@ -31,6 +32,9 @@
     },
     "drparamCleanup1": {
       "oid": "8e9ceda3217d1246759597cb343236d86ee233df"
+    },
+    "edgestruct": {
+      "oid": "a5b8b90825cc490d45dd2b7d2bb6f6d2f16a6b92"
     },
     "hcal-edge-vector": {
       "oid": "c46c683ed75b1bc9ee0b52a6ba9022778fa71d7a"
