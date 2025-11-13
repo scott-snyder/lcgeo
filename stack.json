@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "2ee8c1d8f37c72569d895537ded3ebca9c48392a",
-  "head": "c09ca8cc2c1654969c13f3e40e8302f42c3da5b1",
-  "applied": [],
+  "prev": "679cdbaca7e12b6c1338a79a10c35334bcc0c37d",
+  "head": "7d8f73cd96aa13ef3f06110ff934b54b139244c2",
+  "applied": [
+    "cmakewarn"
+  ],
   "unapplied": [
-    "cmakewarn",
     "hcal-edge-vector",
     "edgestruct",
     "ci",
