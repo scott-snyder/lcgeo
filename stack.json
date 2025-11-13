@@ -1,11 +1,10 @@
 {
   "version": 5,
-  "prev": "cad7b363c67443da1d0872cf7b354e23f80c462f",
-  "head": "437ea5b3a417b5d2c6deaf0df9d2ff676d95287c",
+  "prev": "dfd1b0e265ef1c80b41b7083fff5c0cf59b08b40",
+  "head": "326ab90bbf0f1e6e3437b2d726d4589a67fcb25c",
   "applied": [
     "cmakewarn",
-    "camkewarn2",
-    "refresh-temp"
+    "camkewarn2"
   ],
   "unapplied": [
     "hcal-edge-vector",
@@ -24,7 +23,7 @@
   "hidden": [],
   "patches": {
     "camkewarn2": {
-      "oid": "565248386596978881792c030af9b4da0cbd1276"
+      "oid": "326ab90bbf0f1e6e3437b2d726d4589a67fcb25c"
     },
     "ci": {
       "oid": "e76335e92051f9fd2f620ad9b2129a23cec20a1e"
@@ -61,9 +60,6 @@
     },
     "nosystem": {
       "oid": "335b8e93245e71841330e0796e46789f79e07d3d"
-    },
-    "refresh-temp": {
-      "oid": "437ea5b3a417b5d2c6deaf0df9d2ff676d95287c"
     },
     "timeout": {
       "oid": "97f3fb46227b8d59a6ee67d911e7591bf6ce5fab"
