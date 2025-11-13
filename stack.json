@@ -1,8 +1,9 @@
 {
   "version": 5,
-  "prev": "faee37cb0d4abd696cc3ad66fd8399b941dbcfbe",
-  "head": "335b8e93245e71841330e0796e46789f79e07d3d",
-  "applied": [
+  "prev": "2ee8c1d8f37c72569d895537ded3ebca9c48392a",
+  "head": "c09ca8cc2c1654969c13f3e40e8302f42c3da5b1",
+  "applied": [],
+  "unapplied": [
     "cmakewarn",
     "hcal-edge-vector",
     "edgestruct",
@@ -17,7 +18,6 @@
     "danglewarn",
     "nosystem"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
