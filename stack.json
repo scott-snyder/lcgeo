@@ -1,10 +1,10 @@
 {
   "version": 5,
-  "prev": "d3e54a90f4a2f3e36c00623a557688a838a4de9d",
+  "prev": "a43c523f5f139dfbeac3ac2624d1441bae65f9f6",
   "head": "f194c38d7d341e47c8f018c8a02f43006b045d7c",
   "applied": [
     "cmakewarn",
-    "camkewarn2",
+    "cmakewarn2",
     "hcal-edge-vector",
     "edgestruct",
     "ci",
@@ -21,14 +21,14 @@
   "unapplied": [],
   "hidden": [],
   "patches": {
-    "camkewarn2": {
-      "oid": "326ab90bbf0f1e6e3437b2d726d4589a67fcb25c"
-    },
     "ci": {
       "oid": "269ebc7ee959caadd14fe1674630e70bb563225c"
     },
     "cmakewarn": {
       "oid": "7d8f73cd96aa13ef3f06110ff934b54b139244c2"
+    },
+    "cmakewarn2": {
+      "oid": "326ab90bbf0f1e6e3437b2d726d4589a67fcb25c"
     },
     "danglewarn": {
       "oid": "84074e80dd2f4fc697ba9323ab4e31e57dcbcdef"
