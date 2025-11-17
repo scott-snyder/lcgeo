@@ -669,5 +669,37 @@ namespace DDSegmentation {
     return (M_PI - thetaMin); // theta max
   }
 
+  // Determine the volume ID containing a cellID.
+  VolumeID FCCSWHCalPhiRow_k4geo::volumeID(const CellID& cID) const {
+    VolumeID vID = cID;
+
+    // Null out the phi index.
+    decoder()->set(vID, m_phiIndex, 0);
+
+    // Get layer and row.
+    uint layer = decoder()->get(cID, m_layerIndex);
+    int irow = decoder()->get(vID, m_rowIndex);
+
+    // For the endcap, we need to fill in the type field.  For the negative
+    // endcap, types are offset by three, and we also need to make the row
+    // index positive.
+    if (m_detLayout == 1) {
+      const LayerInfo& li = getLayerInfo(layer);
+      int type = li.type;
+      if (irow < 0) {
+        irow = -irow;
+        type += 3;
+      }
+      decoder()->set(vID, m_typeIndex, type);
+    }
+
+    // Calculate the row.  Careful --- cell indices start with 1,
+    // volume indices start with 0!
+    decoder()->set(vID, m_rowIndex, (irow - 1) * m_gridSizeRow[layer]);
+
+    return vID;
+  }
+
+
 } // namespace DDSegmentation
 } // namespace dd4hep
