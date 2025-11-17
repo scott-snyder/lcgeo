@@ -1,9 +1,15 @@
 {
   "version": 5,
-  "prev": null,
-  "head": "d0924506f2cb4832aa2983923d063019018d48d8",
-  "applied": [],
+  "prev": "561f9d38d7bd26d900c0b2aec1eedf49c2e632f9",
+  "head": "80f11f2eefd8473a506fef2799b6914d83c03ee6",
+  "applied": [
+    "hcal-edge-vector"
+  ],
   "unapplied": [],
   "hidden": [],
-  "patches": {}
+  "patches": {
+    "hcal-edge-vector": {
+      "oid": "80f11f2eefd8473a506fef2799b6914d83c03ee6"
+    }
+  }
 }
