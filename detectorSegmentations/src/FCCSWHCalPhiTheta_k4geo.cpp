@@ -893,5 +893,14 @@ namespace DDSegmentation {
     return cTheta;
   }
 
+  // Determine the volume ID containing a cellID.
+  VolumeID FCCSWHCalPhiTheta_k4geo::volumeID(const CellID& cID) const {
+    uint layer = decoder()->get(cID, m_layerIndex);
+    int thetaID = decoder()->get(cID, m_thetaIndex);
+    const LayerInfo& li = getLayerInfo(layer);
+    return li.cellInfo(thetaID).volumeID;
+  }
+
+
 } // namespace DDSegmentation
 } // namespace dd4hep
