@@ -1,15 +1,19 @@
 {
   "version": 5,
-  "prev": "561f9d38d7bd26d900c0b2aec1eedf49c2e632f9",
-  "head": "80f11f2eefd8473a506fef2799b6914d83c03ee6",
+  "prev": "dc6626dd5881e2fc5e8ebdd1132ea1034d21a616",
+  "head": "c675a158258ceeba979d40f273657ff1bf0d1416",
   "applied": [
-    "hcal-edge-vector"
+    "hcal-edge-vector",
+    "edgestruct"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
     "hcal-edge-vector": {
       "oid": "80f11f2eefd8473a506fef2799b6914d83c03ee6"
+    },
+    "edgestruct": {
+      "oid": "c675a158258ceeba979d40f273657ff1bf0d1416"
     }
   }
 }
