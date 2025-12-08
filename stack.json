@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "56dbecd647d86fa220999b64802252c64c0771d2",
-  "head": "b0087c8cbda29cc8c69172581b6df033c644d0cf",
-  "applied": [],
+  "prev": "0c050100f611e95047b05c2623f4524fdbdf839f",
+  "head": "eed7f828a64452b5b2f5905de693c3635d1f5085",
+  "applied": [
+    "hcal-edge-vector"
+  ],
   "unapplied": [
-    "hcal-edge-vector",
     "edgestruct",
     "hcal-theta-pos",
     "hcal-row-pos"
@@ -12,7 +13,7 @@
   "hidden": [],
   "patches": {
     "hcal-edge-vector": {
-      "oid": "80f11f2eefd8473a506fef2799b6914d83c03ee6"
+      "oid": "eed7f828a64452b5b2f5905de693c3635d1f5085"
     },
     "edgestruct": {
       "oid": "c675a158258ceeba979d40f273657ff1bf0d1416"
