@@ -1,12 +1,13 @@
 {
   "version": 5,
-  "prev": "78dd256617f4507c668e182b55816d05d1cb0b5e",
-  "head": "b0087c8cbda29cc8c69172581b6df033c644d0cf",
-  "applied": [],
-  "unapplied": [
+  "prev": "984b45010d0775bac2e744c51c8368b9e4db4b47",
+  "head": "2067c9a9d366c61919a6edde3ae389116a69ccff",
+  "applied": [
     "cmakewarn",
     "cmakewarn2",
-    "hcal-edge-vector",
+    "hcal-edge-vector"
+  ],
+  "unapplied": [
     "edgestruct",
     "ci",
     "timeout",
@@ -25,10 +26,10 @@
       "oid": "269ebc7ee959caadd14fe1674630e70bb563225c"
     },
     "cmakewarn": {
-      "oid": "7d8f73cd96aa13ef3f06110ff934b54b139244c2"
+      "oid": "d21647b52d145133b91c11ad8f18b07b9937a1ac"
     },
     "cmakewarn2": {
-      "oid": "326ab90bbf0f1e6e3437b2d726d4589a67fcb25c"
+      "oid": "adb6318b2e9a0a3d9d1e0782dee2cae110e022c3"
     },
     "danglewarn": {
       "oid": "84074e80dd2f4fc697ba9323ab4e31e57dcbcdef"
@@ -40,7 +41,7 @@
       "oid": "4365bfa1c459dab8548a88c167f0948e2ef7c845"
     },
     "hcal-edge-vector": {
-      "oid": "f59cf2eb83a66c13f38363e8eb4de5b7c530d200"
+      "oid": "2067c9a9d366c61919a6edde3ae389116a69ccff"
     },
     "hcal-row-pos": {
       "oid": "c5e5461d3e99151389f5cc3cce9956854d97b7d2"
