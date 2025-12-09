@@ -269,7 +269,7 @@ static Ref_t create_detector(Detector& theDetector, xml_h element, SensitiveDete
   */
 
   const Position bcForwardPos(0, 0, 0);
-  const Position bcBackwardPos(0, 0, 0);
+  //const Position bcBackwardPos(0, 0, 0);
   const Rotation3D bcForwardRot(RotationY(0));
   const Rotation3D bcBackwardRot(RotationY(0));
 
