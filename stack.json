@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "984b45010d0775bac2e744c51c8368b9e4db4b47",
-  "head": "2067c9a9d366c61919a6edde3ae389116a69ccff",
+  "prev": "3cb3632bb8227005d84ba824372039a3bf71b4e5",
+  "head": "64723b6a0eca12f49bfe9025f0ef9ff6bb3ff4fb",
   "applied": [
     "cmakewarn",
     "cmakewarn2",
-    "hcal-edge-vector"
+    "hcal-edge-vector",
+    "edgestruct"
   ],
   "unapplied": [
-    "edgestruct",
     "ci",
     "timeout",
     "neighbor-dump-wip",
@@ -38,7 +38,7 @@
       "oid": "338068daa4984a2d39d861d123d5a893835a6651"
     },
     "edgestruct": {
-      "oid": "4365bfa1c459dab8548a88c167f0948e2ef7c845"
+      "oid": "64723b6a0eca12f49bfe9025f0ef9ff6bb3ff4fb"
     },
     "hcal-edge-vector": {
       "oid": "2067c9a9d366c61919a6edde3ae389116a69ccff"
