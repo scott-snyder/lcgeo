@@ -9,6 +9,7 @@
 #include "Math/Vector3D.h"
 #include <cmath>
 #include <vector>
+#include <climits>  // For CHAR_BIT
 
 namespace dd4hep {
 namespace DDSegmentation {
