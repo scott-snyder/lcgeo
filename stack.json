@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "29bf96cc5c36e10cd640878443a29297a071288e",
-  "head": "d5a0c38ac2327eaae886268a80529c6149837979",
+  "prev": "74500293d40ffa3cdcaed63c023e5987cb3938d2",
+  "head": "e8d241ec5e8f306647943e27a69e64012c1698d1",
   "applied": [
     "ci",
     "timeout",
@@ -14,13 +14,17 @@
     "nosystem",
     "warn",
     "include",
-    "gcc16warn"
+    "gcc16warn",
+    "cxx26"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
       "oid": "c2b0ebf652a15df5cee683c07bee23f5e58d899f"
+    },
+    "cxx26": {
+      "oid": "e8d241ec5e8f306647943e27a69e64012c1698d1"
     },
     "drparamCleanup1": {
       "oid": "8b89c43fe5646233551acb8c0327b3a2ac195854"
