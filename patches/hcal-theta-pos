@@ -1,0 +1,13 @@
+Bottom: 278b5abe1b6ecc65c0387152e017ee9466d33e3f
+Top:    278b5abe1b6ecc65c0387152e017ee9466d33e3f
+Author: sss <sss@karma>
+Date:   2025-09-01 15:25:55 -0400
+
+Fix position calculation for FCCSWHCalPhiTheta_k4geo.
+
+The position() method for a segmentation should return a position in the
+local coordinate system of the associated dd4hep volume in order for ddsim
+to set the position properly.  Do this for FCCSWHCalPhiTheta_k4geo.
+It's a little complicated because the theta cell binning doesn't
+correspond in any simple way with the dd4hep volumes, add information
+on the correspondence to the CellInfo structure.
