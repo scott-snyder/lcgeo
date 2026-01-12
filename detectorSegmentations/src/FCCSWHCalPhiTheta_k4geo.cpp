@@ -226,8 +226,9 @@ namespace DDSegmentation {
   void FCCSWHCalPhiTheta_k4geo::defineVolIDMappings(LayerInfo& li, const unsigned int layer) const {
     // Get information from dd4hep.
     dd4hep::Detector* dd4hepgeo = &(dd4hep::Detector::getInstance());
-    VolumeManager vman = VolumeManager::getVolumeManager(*dd4hepgeo);
     const DetElementObject& de = *dd4hepgeo->readout(this->name()).segmentation().detector();
+    VolumeManager vman_glob = VolumeManager::getVolumeManager(*dd4hepgeo);
+    VolumeManager vman = vman_glob.subdetector (de.id);
 
     std::cout << "vvvx " << m_detLayout << " " << de.id << " "
               << li.zmin << " " << li.zmax << "\n";
