@@ -251,7 +251,8 @@ namespace DDSegmentation {
       // Fill in the fields of a VolumeID.
       VolumeID vID = 0;
       decoder()->set(vID, m_systemIndex, de.id);
-      for (const auto& [name, val] : layer_it->second.placement().volIDs()) {
+      dd4hep::PlacedVolume placement = layer_it->second.placement();
+      for (const auto& [name, val] : placement.volIDs()) {
         decoder()->set(vID, name, val);
       }
 
