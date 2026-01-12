@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "fbfa4165c36d79ef7ae22e3a21f95c4ff6c84472",
-  "head": "95f953508e976125ce2181f07721782249f1ab1c",
+  "prev": "3ff362a97f179fe205897edbf1219762c8fae6cf",
+  "head": "0e1da687f76e10c7260ad94d4a36a7b7edf9c9c7",
   "applied": [
     "ci",
     "timeout",
@@ -15,7 +15,8 @@
     "warn",
     "include",
     "gcc16warn",
-    "cxx26"
+    "cxx26",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
@@ -52,6 +53,9 @@
     },
     "nosystem": {
       "oid": "443eb92af880a7a2bf9cdfdb78a9e43a92e496a0"
+    },
+    "refresh-temp": {
+      "oid": "0e1da687f76e10c7260ad94d4a36a7b7edf9c9c7"
     },
     "timeout": {
       "oid": "679d40852e63640d9f5a70d7a732f48a702392ed"
