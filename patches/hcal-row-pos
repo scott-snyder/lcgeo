@@ -1,0 +1,10 @@
+Bottom: 198db002471bc05f07bd14807db0ac181d256100
+Top:    198db002471bc05f07bd14807db0ac181d256100
+Author: sss <sss@karma>
+Date:   2025-09-03 15:57:18 -0400
+
+Fix position calculation for FCCSWHCalPhiRow_k4geo.
+
+The position() method for a segmentation should return a position in the
+local coordinate system of the associated dd4hep volume in order for ddsim
+to set the position properly.  Do this for FCCSWHCalPhiRow_k4geo.
