@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "5dee533831ee0d5099616444de5ed46eaa10b4be",
-  "head": "54878afcd04e76935f925144ccc3c5f3ac7c8753",
+  "prev": "a495f541d3adbaee827da7adb851618927e02299",
+  "head": "347f6bbf1db3b085fa71bf363af2cf4e3f870980",
   "applied": [
     "ci",
     "timeout",
@@ -16,7 +16,8 @@
     "include",
     "gcc16warn",
     "cxx26",
-    "ecal-subdet-volman"
+    "ecal-subdet-volman",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
@@ -56,6 +57,9 @@
     },
     "nosystem": {
       "oid": "ac5a2897ab9c357d3ccbc81b43772015452672ed"
+    },
+    "refresh-temp": {
+      "oid": "347f6bbf1db3b085fa71bf363af2cf4e3f870980"
     },
     "timeout": {
       "oid": "679d40852e63640d9f5a70d7a732f48a702392ed"
