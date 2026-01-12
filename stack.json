@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "63fd4206907d5d3ae6abb9923d93f983b968a3f9",
-  "head": "8ba4ea1b3e6cccbfcdd976a8cbd1502e2ce9d95b",
+  "prev": "585f02cdfa00c3e0206a5271df289bc3c850b33e",
+  "head": "37f9375cb6406e159ee9c88bcd9fb478de50439e",
   "applied": [
     "ci",
     "timeout",
@@ -16,8 +16,7 @@
     "include",
     "gcc16warn",
     "cxx26",
-    "ecal-subdet-volman",
-    "refresh-temp"
+    "ecal-subdet-volman"
   ],
   "unapplied": [],
   "hidden": [],
@@ -26,46 +25,43 @@
       "oid": "c2b0ebf652a15df5cee683c07bee23f5e58d899f"
     },
     "cxx26": {
-      "oid": "8df1e0c99be1dffe16008c6394f1aee6e4fd2fcd"
+      "oid": "ed2e56db261d75b67b06ec129ccbe066bc338c37"
     },
     "drparamCleanup1": {
       "oid": "8b89c43fe5646233551acb8c0327b3a2ac195854"
     },
     "ecal-subdet-volman": {
-      "oid": "1e5ea81aa56b3a3db0ee849b6f5ef47f2764507e"
+      "oid": "37f9375cb6406e159ee9c88bcd9fb478de50439e"
     },
     "gcc16warn": {
-      "oid": "e9ad3bd8b26c0f53f8e4feb5d8e8b259c3770715"
+      "oid": "4db757ac7c2b8f2af46d9a998aa67b4464f1aa71"
     },
     "hcal-row-pos": {
-      "oid": "2e9bb4a28680938040e85ead20c1bbb6b0b99d88"
+      "oid": "7e56a8c6c69232d2a00416d4722836e66b99237c"
     },
     "hcal-row-pos-debugprint": {
-      "oid": "087e9b9b4d87fd7eaeead31f6b82ead9a71b6586"
+      "oid": "c15ec55a48ffba4610d7c3189e292b5cf478ef91"
     },
     "hcal-theta-pos": {
-      "oid": "0727f436f40d1888c49e4d83e2d15c4973e7f173"
+      "oid": "cb6bd1623614d81cebc6b7bca3b87dc3d0285a36"
     },
     "hcal-theta-pos-debugprint": {
-      "oid": "9c451d158fd3f357012a0adbf4787ea57b6dd2f4"
+      "oid": "78a067946454b706931d414db915f0dee87ce967"
     },
     "include": {
-      "oid": "f8bb015cb5552c7840ad6cb2718fa23e3cb0049f"
+      "oid": "7b2041fc9b0b342e72d44b465aa2f3abe0709d6e"
     },
     "neighbor-dump-wip": {
       "oid": "d24f5be872060edd928da3db561c91cbc45dd726"
     },
     "nosystem": {
-      "oid": "ac5a2897ab9c357d3ccbc81b43772015452672ed"
-    },
-    "refresh-temp": {
-      "oid": "8ba4ea1b3e6cccbfcdd976a8cbd1502e2ce9d95b"
+      "oid": "7ff4f356262cac629918f6746bb672dbb603c40d"
     },
     "timeout": {
       "oid": "679d40852e63640d9f5a70d7a732f48a702392ed"
     },
     "warn": {
-      "oid": "c9c4aad7f4593a30caeadb3fbace9f624b4c94a8"
+      "oid": "001950e5f489425cdd49763e1a1cdf01ff6abbfe"
     }
   }
 }
