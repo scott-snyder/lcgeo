@@ -1,27 +1,23 @@
 {
   "version": 5,
-  "prev": "02d2add998b976fe0f861f807f944e398b2f2485",
-  "head": "d8b1e16fd8d1d4ccfb4003b7de080967013a78fa",
+  "prev": "316d9fa6948e220f2d37ae31844bbe0ecaffe0ee",
+  "head": "363a29c2736d084593d79eaf2de65471e3b313dc",
   "applied": [
     "hcal-theta-pos",
     "hcal-row-pos",
-    "ecal-subdet-volman",
-    "refresh-temp"
+    "ecal-subdet-volman"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
     "hcal-theta-pos": {
-      "oid": "842b7e808fe5be651611ed669e78074f044a5a90"
+      "oid": "47ed4da6660e4dc37ec5b29f7a18957f0bdab939"
     },
     "hcal-row-pos": {
-      "oid": "0b3679fdc10a083164c657bdbb70255f1919cfe0"
+      "oid": "0a5c8608d284035157ba67482e429181e15c5531"
     },
     "ecal-subdet-volman": {
-      "oid": "e4f097d16e264d8032bb3a0a362958bd168f3dd6"
-    },
-    "refresh-temp": {
-      "oid": "d8b1e16fd8d1d4ccfb4003b7de080967013a78fa"
+      "oid": "363a29c2736d084593d79eaf2de65471e3b313dc"
     }
   }
 }
