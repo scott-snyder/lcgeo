@@ -198,8 +198,9 @@ namespace DDSegmentation {
     }
 
     dd4hep::Detector* dd4hepgeo = &(dd4hep::Detector::getInstance());
-    VolumeManager vman = VolumeManager::getVolumeManager(*dd4hepgeo);
     const DetElementObject& de = *dd4hepgeo->readout (this->name()).segmentation().detector();
+    VolumeManager vman_glob = VolumeManager::getVolumeManager(*dd4hepgeo);
+    VolumeManager vman = vman_glob.subdetector (de.id);
 
     int ilayer = layer;
     if (m_detLayout == 1) ilayer = layer + 1;
