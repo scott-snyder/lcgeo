@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "985f0a3664181d78b6f0fffa7eed2aaa90015a6b",
-  "head": "8df1e0c99be1dffe16008c6394f1aee6e4fd2fcd",
+  "prev": "5dee533831ee0d5099616444de5ed46eaa10b4be",
+  "head": "54878afcd04e76935f925144ccc3c5f3ac7c8753",
   "applied": [
     "ci",
     "timeout",
@@ -15,7 +15,8 @@
     "warn",
     "include",
     "gcc16warn",
-    "cxx26"
+    "cxx26",
+    "ecal-subdet-volman"
   ],
   "unapplied": [],
   "hidden": [],
@@ -28,6 +29,9 @@
     },
     "drparamCleanup1": {
       "oid": "8b89c43fe5646233551acb8c0327b3a2ac195854"
+    },
+    "ecal-subdet-volman": {
+      "oid": "54878afcd04e76935f925144ccc3c5f3ac7c8753"
     },
     "gcc16warn": {
       "oid": "e9ad3bd8b26c0f53f8e4feb5d8e8b259c3770715"

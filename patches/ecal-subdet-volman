@@ -1,0 +1,22 @@
+Bottom: 51a748db538e2a820fb1fbead98de179d3b118d2
+Top:    51a748db538e2a820fb1fbead98de179d3b118d2
+Author: sss <sss@karma>
+Date:   2026-01-12 13:04:32 -0500
+
+Use subdetector-specific VolumeManager in FCCSWGridModuleThetaMerged_k4geo.
+
+Different subsystems use different bit-widths for the system field of
+identifiers.  This implies that volume IDs are not necessarily globally
+unique.  For example, volume IDs for the ALLEGRO HCAL barrel
+(detid=8, system bit width=4) have been observed to collide with those
+from the silicon wrapper (detid=24 [SiWr_disks], system bit width=5).
+This can be avoided by doing the lookup in the system-specific VolumeManager,
+rather than from the global instance.
+
+Although i have not observed an issue with the ALLEGRO ECal, implement this
+change to avoid potential issues in the future.
+
+Comments in VolumeManager imply that allowing different bit widths for the
+system field is intentional.  But it would probably be better to adopt
+a uniform width to avoid ambiguities.  However, this changes all cellids
+and invalidates existing data files.
