@@ -67,7 +67,9 @@ namespace DDSegmentation {
   std::vector<FCCSWGridModuleThetaMerged_k4geo::LayerInfo>
   FCCSWGridModuleThetaMerged_k4geo::initLayerInfo(const CellID& cID) const {
     dd4hep::Detector* dd4hepgeo = &(dd4hep::Detector::getInstance());
-    VolumeManager vman = VolumeManager::getVolumeManager(*dd4hepgeo);
+    const DetElementObject& de = *dd4hepgeo->readout(this->name()).segmentation().detector();
+    VolumeManager vman_glob = VolumeManager::getVolumeManager(*dd4hepgeo);
+    VolumeManager vman = vman_glob.subdetector (de.id);
 
     std::vector<LayerInfo> out;
     out.reserve(m_nLayers);
