@@ -1,19 +1,9 @@
 {
   "version": 5,
-  "prev": "3bd7d35a5f2ad6bcfdd995b888ac9950b1fcb257",
+  "prev": "d9c3dad1c80439574283ec2c4da478a1ee28410d",
   "head": "72a0c9b3be2b36878450a68fa5eb9e55997dab0e",
   "applied": [],
-  "unapplied": [
-    "hcal-theta-pos",
-    "hcal-row-pos"
-  ],
+  "unapplied": [],
   "hidden": [],
-  "patches": {
-    "hcal-theta-pos": {
-      "oid": "bd1d2b6d08922392a41079beb6865c5f61e61467"
-    },
-    "hcal-row-pos": {
-      "oid": "4ec9fe2c756ed5060640dd36276410e29d3f36fd"
-    }
-  }
+  "patches": {}
 }
