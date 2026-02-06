@@ -1,9 +1,8 @@
 {
   "version": 5,
-  "prev": "88357c74895c64be053aa0237f3737ae1111fe12",
-  "head": "b0087c8cbda29cc8c69172581b6df033c644d0cf",
-  "applied": [],
-  "unapplied": [
+  "prev": "8cf0cb7333e290ac1066b572330565099ac6ebc5",
+  "head": "37f9375cb6406e159ee9c88bcd9fb478de50439e",
+  "applied": [
     "ci",
     "timeout",
     "neighbor-dump-wip",
@@ -19,6 +18,7 @@
     "cxx26",
     "ecal-subdet-volman"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
