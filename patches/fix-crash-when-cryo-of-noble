@@ -1,0 +1,16 @@
+Bottom: 83637dad398552edebe11e580346381088006387
+Top:    427dd6283e21e790a9c78217c6eb080e808f95f8
+Author: Giovanni Marchiori <39376142+giovannimarchiori@users.noreply.github.com>
+Date:   2026-02-03 20:46:50 +0100
+
+fix crash when cryo of noble liquid calorimeter  is made active (#556)
+
+* fix crash when cryo of noble liquid calorimeter  is made active, improve printout
+
+* pre-commit fix
+
+* fix precommit
+
+* cache cryo index, remove debug printout
+
+* pre-commit fix
