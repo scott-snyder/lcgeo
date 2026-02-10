@@ -1,27 +1,27 @@
 {
   "version": 5,
-  "prev": "1e63c4ed72d0a727dde883b1e28a804330d46150",
-  "head": "0f8a4bd76f7df62981691a32e691ecf3314e519d",
-  "applied": [],
-  "unapplied": [
+  "prev": "71252d98c3e05f3ecd06f4aa798c597a07b1a3de",
+  "head": "9f06c2a721ec6ae436c335c6767b638754ca38d8",
+  "applied": [
     "hcal-theta-pos",
     "hcal-row-pos",
     "ecal-subdet-volman",
     "fix-crash-when-cryo-of-noble"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "hcal-theta-pos": {
-      "oid": "47ed4da6660e4dc37ec5b29f7a18957f0bdab939"
+      "oid": "a43d59e4881c0300ee0e0eb27119c6d8e2fd7332"
     },
     "hcal-row-pos": {
-      "oid": "0a5c8608d284035157ba67482e429181e15c5531"
+      "oid": "7e105c711b9289d395254fa0167545112916f6c8"
     },
     "ecal-subdet-volman": {
-      "oid": "363a29c2736d084593d79eaf2de65471e3b313dc"
+      "oid": "fc382d73d3c892d32c823db857b7d6376ef6849e"
     },
     "fix-crash-when-cryo-of-noble": {
-      "oid": "18fc9c547ce26ce3b4e6e2959b81979e6e92f6dc"
+      "oid": "9f06c2a721ec6ae436c335c6767b638754ca38d8"
     }
   }
 }
