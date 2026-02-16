@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "8cf0cb7333e290ac1066b572330565099ac6ebc5",
-  "head": "37f9375cb6406e159ee9c88bcd9fb478de50439e",
+  "prev": "283a8298f6924a7c228220637b9734a4078d3457",
+  "head": "dfa25aa546ec47b64eb1c5236e2fbcaf1bb3ddce",
   "applied": [
     "ci",
     "timeout",
@@ -16,7 +16,8 @@
     "include",
     "gcc16warn",
     "cxx26",
-    "ecal-subdet-volman"
+    "ecal-subdet-volman",
+    "turbineSeg"
   ],
   "unapplied": [],
   "hidden": [],
@@ -59,6 +60,9 @@
     },
     "timeout": {
       "oid": "679d40852e63640d9f5a70d7a732f48a702392ed"
+    },
+    "turbineSeg": {
+      "oid": "dfa25aa546ec47b64eb1c5236e2fbcaf1bb3ddce"
     },
     "warn": {
       "oid": "001950e5f489425cdd49763e1a1cdf01ff6abbfe"
