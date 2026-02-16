@@ -1,0 +1,9 @@
+Bottom: dc1bbb2ef475237a6d9029a2d8108d5b83803ec5
+Top:    6c5132bed668327300f2aee384db329ae80fa054
+Author: sss <sss@karma>
+Date:   2026-02-16 11:42:41 -0500
+
+Some additions to FCCSWEndcapTurbine_k4geo.
+
+Add some missing FieldName methods.
+nModules() shoud be const.
