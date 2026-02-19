@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "1b9bbaa22c8238fcb8020d669169e55ff429fcc2",
-  "head": "911cdaf19b990cdaca0cb37b10a5e5d0e6c6a124",
+  "prev": "dd019485a5e9e52cc10822097601667259bae176",
+  "head": "90b437e5c1b98438659546a63bd60e9607b41a52",
   "applied": [
     "include",
     "gcc16warn",
@@ -10,7 +10,6 @@
     "turbineSeg",
     "hcal-theta-pos",
     "hcal-row-pos",
-    "ci",
     "neighbor-dump-wip",
     "hcal-theta-pos-debugprint",
     "hcal-row-pos-debugprint",
@@ -18,7 +17,9 @@
     "drparamCleanup1",
     "nosystem"
   ],
-  "unapplied": [],
+  "unapplied": [
+    "ci"
+  ],
   "hidden": [],
   "patches": {
     "ci": {
@@ -28,7 +29,7 @@
       "oid": "76eba30760bdee94dd22fad65c63d31106f3cf13"
     },
     "drparamCleanup1": {
-      "oid": "3c97ca98cec241dc6eb00de43bcd72cb9846f228"
+      "oid": "c23a40b57df749a6bbd283d82c7129aef838cb4b"
     },
     "ecal-subdet-volman": {
       "oid": "260f9fc9ba57810ce208b843bc71dabfa015b98c"
@@ -40,25 +41,25 @@
       "oid": "f5abbe284bc3a64b147b98e715b556d7b434f0e4"
     },
     "hcal-row-pos-debugprint": {
-      "oid": "7f57c535634ea8a676410c32a8f54ea0775ea5bd"
+      "oid": "e2807aa5ae7659399e5a31ffb2e29e7709399d8e"
     },
     "hcal-theta-pos": {
       "oid": "602783592e48c7a6583c95091299f4b9c86aa796"
     },
     "hcal-theta-pos-debugprint": {
-      "oid": "916cdbdf981db2a37efc9a1672f3c9ca5d9e5149"
+      "oid": "b82c42ea3017dba1dd3ec9922a83badbbbf54b3d"
     },
     "include": {
       "oid": "0e09bc738326c23fdeae449695c5d9ee49c21880"
     },
     "neighbor-dump-wip": {
-      "oid": "256677aebb6efe2eb1a1f634bacf9c4489bbaa3b"
+      "oid": "ef10b106a936b8b4571383833a52bc2b8e994bc5"
     },
     "nosystem": {
-      "oid": "911cdaf19b990cdaca0cb37b10a5e5d0e6c6a124"
+      "oid": "90b437e5c1b98438659546a63bd60e9607b41a52"
     },
     "timeout": {
-      "oid": "0a1e93f4cc0f89a54775d99676920f3e6ff05d69"
+      "oid": "0c7728bdecac0cd4328f7c1456b46bf4368a4d54"
     },
     "turbineSeg": {
       "oid": "4bb13084d46339928106e7e519322a1970bde10a"
