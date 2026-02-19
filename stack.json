@@ -1,12 +1,14 @@
 {
   "version": 5,
-  "prev": "a675015974ba1beae2cec455156b4ed332bb98b9",
-  "head": "641937faa69cb99f7d19210bbde1e033785c3ef3",
+  "prev": "380c1e7cca3fed4e3b4762d88f6617390f8b3018",
+  "head": "8c6959d0eddf8d818069392b2486d756f67679d0",
   "applied": [
     "timeout",
-    "neighbor-dump-wip",
     "drparamCleanup1",
-    "hcal-theta-pos",
+    "hcal-theta-pos"
+  ],
+  "unapplied": [
+    "neighbor-dump-wip",
     "hcal-row-pos",
     "hcal-theta-pos-debugprint",
     "hcal-row-pos-debugprint",
@@ -16,9 +18,7 @@
     "gcc16warn",
     "cxx26",
     "ecal-subdet-volman",
-    "turbineSeg"
-  ],
-  "unapplied": [
+    "turbineSeg",
     "ci"
   ],
   "hidden": [],
@@ -30,7 +30,7 @@
       "oid": "5f8f7710f32f677ac726b13b95d393d6633a7579"
     },
     "drparamCleanup1": {
-      "oid": "9aedf690a349d098ccc4bd673a38c3ddde8e04d5"
+      "oid": "3cabe41451ee92117c139c891aa404fde4109c00"
     },
     "ecal-subdet-volman": {
       "oid": "52647d1e0243d7129d6cf39d7e505d8866a6dd81"
@@ -45,7 +45,7 @@
       "oid": "16d18e8f3d9ef0a51825175e4d261d2d53ed4f79"
     },
     "hcal-theta-pos": {
-      "oid": "9d2fe96fb30ccde6a32873092482eece7750510a"
+      "oid": "8c6959d0eddf8d818069392b2486d756f67679d0"
     },
     "hcal-theta-pos-debugprint": {
       "oid": "21adacb690cd0bb241819b6a1033467fd488c92d"
