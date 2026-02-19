@@ -1,12 +1,11 @@
 {
   "version": 5,
-  "prev": "3acde17c3726108cd07a2204e2c2e304baad9b9a",
-  "head": "e7896151e59949ce85c59b4add32b3ce1b218901",
+  "prev": "638ada6014be373f14c6947845e978db6ab1cf9c",
+  "head": "166c7b3404d9b52446abb06e57cf5af0023cc23b",
   "applied": [
     "timeout",
     "drparamCleanup1",
-    "hcal-theta-pos",
-    "refresh-temp"
+    "hcal-theta-pos"
   ],
   "unapplied": [
     "neighbor-dump-wip",
@@ -46,7 +45,7 @@
       "oid": "16d18e8f3d9ef0a51825175e4d261d2d53ed4f79"
     },
     "hcal-theta-pos": {
-      "oid": "8c6959d0eddf8d818069392b2486d756f67679d0"
+      "oid": "166c7b3404d9b52446abb06e57cf5af0023cc23b"
     },
     "hcal-theta-pos-debugprint": {
       "oid": "21adacb690cd0bb241819b6a1033467fd488c92d"
@@ -59,9 +58,6 @@
     },
     "nosystem": {
       "oid": "8b68b639eec8a74354565a552e0a1790171f866c"
-    },
-    "refresh-temp": {
-      "oid": "e7896151e59949ce85c59b4add32b3ce1b218901"
     },
     "timeout": {
       "oid": "46041b41db6f85906edebaf82ed643e66fb8dd8f"
