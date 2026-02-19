@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "2391fa5d25adf320bb19d4c18730373e6edc177f",
-  "head": "e532720a8305773c7ab23b24d2704d7568e955d8",
-  "applied": [],
+  "prev": "830833375a433df25ec723b150959d40c1482c39",
+  "head": "db9f96baec506c9c92deff73c4f0883b6ceeae10",
+  "applied": [
+    "warn"
+  ],
   "unapplied": [
-    "warn",
     "include",
     "gcc16warn",
     "cxx26",
@@ -65,7 +66,7 @@
       "oid": "215a7b699e6b93b299bacf64d56dfd1d807c6ece"
     },
     "warn": {
-      "oid": "c3c0ad87604a93de32985f71b7f5c5954d788e4f"
+      "oid": "db9f96baec506c9c92deff73c4f0883b6ceeae10"
     }
   }
 }
