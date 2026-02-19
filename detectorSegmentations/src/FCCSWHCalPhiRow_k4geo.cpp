@@ -702,28 +702,5 @@ namespace DDSegmentation {
 
 
 
-std::vector<CellID> FCCSWHCalPhiRow_k4geo::allCells() const
-{
-  dd4hep::DDSegmentation::CellID cID = 0;
-  int id = m_detLayout == 0 ? 8 : 9;
-  decoder()->set(cID, "system", id);
-
-  std::vector<CellID> out;
-  int nl = std::ranges::fold_left (m_numLayers, 0, std::plus<int>());
-
-  for (int layer = 0; layer < nl; ++layer) {
-    const LayerInfo& li = getLayerInfo(layer);
-    decoder()->set(cID, m_layerIndex, layer);
-    for (int row : li.cellIndexes) {
-      decoder()->set(cID, m_rowIndex, row);
-      for (int phi = 0; phi < m_phiBins; ++phi) {
-        decoder()->set(cID, m_phiIndex, phi);
-        out.push_back(cID);
-      }
-    }
-  }
-  return out;
-}
-
 } // namespace DDSegmentation
 } // namespace dd4hep
