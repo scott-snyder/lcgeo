@@ -1,16 +1,16 @@
 {
   "version": 5,
-  "prev": "98cc0bffecb7bf1cad79586352d76d968345c055",
-  "head": "bf2e4edbdfa2985d2f45f63e40471acfbe1649cc",
+  "prev": "cc7a4e8e5b6fd1320454bfb2d28024fd6ee0cd33",
+  "head": "cfae8ca8e7df7e600c2384c36fbaaf90327c2822",
   "applied": [
-    "hcal-theta-pos",
-    "hcal-row-pos",
     "warn",
     "include",
     "gcc16warn",
     "cxx26",
     "ecal-subdet-volman",
-    "turbineSeg"
+    "turbineSeg",
+    "hcal-theta-pos",
+    "hcal-row-pos"
   ],
   "unapplied": [
     "timeout",
@@ -27,31 +27,31 @@
       "oid": "c2b0ebf652a15df5cee683c07bee23f5e58d899f"
     },
     "cxx26": {
-      "oid": "7be0ef3e29bf4759b4450b781146e756455ec9e9"
+      "oid": "e84e9f8e10bf7f8a34cc2cb8acbe79ae57cd85b4"
     },
     "drparamCleanup1": {
       "oid": "3cabe41451ee92117c139c891aa404fde4109c00"
     },
     "ecal-subdet-volman": {
-      "oid": "8d431571090306c7be0acf6847b9c3828e5ff199"
+      "oid": "b1c091333e73f2cbc0d7fa6669f691453ad3e978"
     },
     "gcc16warn": {
-      "oid": "7b2d6e890dbe22359af3f37185266364aae1a177"
+      "oid": "40e40bb8d4153c82d97a4567e4546effc69631b5"
     },
     "hcal-row-pos": {
-      "oid": "61c02797c24aef0729bce9c14a334d04b4a13307"
+      "oid": "cfae8ca8e7df7e600c2384c36fbaaf90327c2822"
     },
     "hcal-row-pos-debugprint": {
       "oid": "16d18e8f3d9ef0a51825175e4d261d2d53ed4f79"
     },
     "hcal-theta-pos": {
-      "oid": "911f92aa6b31fcbac10aaf2577d14fcc34d88d95"
+      "oid": "52204ecd1ad998d4735c5ae11fad7f64fbc8ced7"
     },
     "hcal-theta-pos-debugprint": {
       "oid": "21adacb690cd0bb241819b6a1033467fd488c92d"
     },
     "include": {
-      "oid": "23291b0378a7fcb02b61d21f3b35814d34d917e8"
+      "oid": "957e532b3588092b6c9f9bdc175ea7e710fdb66d"
     },
     "neighbor-dump-wip": {
       "oid": "3918e21e95f1676feb9e70af21830ad4be138d6d"
@@ -63,10 +63,10 @@
       "oid": "46041b41db6f85906edebaf82ed643e66fb8dd8f"
     },
     "turbineSeg": {
-      "oid": "bf2e4edbdfa2985d2f45f63e40471acfbe1649cc"
+      "oid": "215a7b699e6b93b299bacf64d56dfd1d807c6ece"
     },
     "warn": {
-      "oid": "047a4f2d6c8908f5599ec11cc328e6d344ef086e"
+      "oid": "c3c0ad87604a93de32985f71b7f5c5954d788e4f"
     }
   }
 }
