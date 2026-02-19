@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "1c0ba44c24755f127f3aacf31f07fdef1d3b858f",
-  "head": "f5abbe284bc3a64b147b98e715b556d7b434f0e4",
+  "prev": "1b9bbaa22c8238fcb8020d669169e55ff429fcc2",
+  "head": "911cdaf19b990cdaca0cb37b10a5e5d0e6c6a124",
   "applied": [
     "include",
     "gcc16warn",
@@ -9,9 +9,7 @@
     "ecal-subdet-volman",
     "turbineSeg",
     "hcal-theta-pos",
-    "hcal-row-pos"
-  ],
-  "unapplied": [
+    "hcal-row-pos",
     "ci",
     "neighbor-dump-wip",
     "hcal-theta-pos-debugprint",
@@ -20,6 +18,7 @@
     "drparamCleanup1",
     "nosystem"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
@@ -29,7 +28,7 @@
       "oid": "76eba30760bdee94dd22fad65c63d31106f3cf13"
     },
     "drparamCleanup1": {
-      "oid": "da822c19dfa4501ef9c04b5678f8810461eb9472"
+      "oid": "3c97ca98cec241dc6eb00de43bcd72cb9846f228"
     },
     "ecal-subdet-volman": {
       "oid": "260f9fc9ba57810ce208b843bc71dabfa015b98c"
@@ -41,25 +40,25 @@
       "oid": "f5abbe284bc3a64b147b98e715b556d7b434f0e4"
     },
     "hcal-row-pos-debugprint": {
-      "oid": "1d2670fe72d2b0ba583aaf33d0ebb93e158164ed"
+      "oid": "7f57c535634ea8a676410c32a8f54ea0775ea5bd"
     },
     "hcal-theta-pos": {
       "oid": "602783592e48c7a6583c95091299f4b9c86aa796"
     },
     "hcal-theta-pos-debugprint": {
-      "oid": "75f160028d9cfab9f9e7c8d77da0bbfec5000611"
+      "oid": "916cdbdf981db2a37efc9a1672f3c9ca5d9e5149"
     },
     "include": {
       "oid": "0e09bc738326c23fdeae449695c5d9ee49c21880"
     },
     "neighbor-dump-wip": {
-      "oid": "240a84b85931851fe39b271b9d9c565dae2d81ca"
+      "oid": "256677aebb6efe2eb1a1f634bacf9c4489bbaa3b"
     },
     "nosystem": {
-      "oid": "db2dddfa6abcff107b18e07cebb486150ceb1f3f"
+      "oid": "911cdaf19b990cdaca0cb37b10a5e5d0e6c6a124"
     },
     "timeout": {
-      "oid": "dcc7ab02a198679402743103e54ffdde44ad94be"
+      "oid": "0a1e93f4cc0f89a54775d99676920f3e6ff05d69"
     },
     "turbineSeg": {
       "oid": "4bb13084d46339928106e7e519322a1970bde10a"
