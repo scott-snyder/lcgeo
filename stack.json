@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "ec1f326d8641517bb93f2a15f9ee21dba52928ea",
-  "head": "9916da062be8642633f2b6709848a9a134585188",
+  "prev": "3295bd979d31276c7256ae210ec78b50435681b7",
+  "head": "f5abbe284bc3a64b147b98e715b556d7b434f0e4",
   "applied": [
     "include",
     "gcc16warn",
@@ -9,8 +9,7 @@
     "ecal-subdet-volman",
     "turbineSeg",
     "hcal-theta-pos",
-    "hcal-row-pos",
-    "refresh-temp"
+    "hcal-row-pos"
   ],
   "unapplied": [
     "neighbor-dump-wip",
@@ -27,31 +26,31 @@
       "oid": "c44ef78c3a4ceb0f00a3007bcccbe1ef46d653e6"
     },
     "cxx26": {
-      "oid": "128f798efe97a4c034607359d07ecd3c8b335041"
+      "oid": "76eba30760bdee94dd22fad65c63d31106f3cf13"
     },
     "drparamCleanup1": {
       "oid": "485601ac51a927a11fc27e62a2f0278b4ae3400a"
     },
     "ecal-subdet-volman": {
-      "oid": "73f19782d5f5a251924917702b29936c38e5f0ef"
+      "oid": "260f9fc9ba57810ce208b843bc71dabfa015b98c"
     },
     "gcc16warn": {
-      "oid": "811dcce0430e02d3eb9a7d2ebf73c6534e49cbf5"
+      "oid": "b92500aee2f8c302b5e9326eed6ca945a8b81efd"
     },
     "hcal-row-pos": {
-      "oid": "5cc5f02e847c8d591a3dd8fe74e8ce42feb13a4b"
+      "oid": "f5abbe284bc3a64b147b98e715b556d7b434f0e4"
     },
     "hcal-row-pos-debugprint": {
       "oid": "d3c47d616f2c5f97f297b03ca1aece8bba71a448"
     },
     "hcal-theta-pos": {
-      "oid": "11d068fc67a194a6e854bb632545cd56d8299e2a"
+      "oid": "602783592e48c7a6583c95091299f4b9c86aa796"
     },
     "hcal-theta-pos-debugprint": {
       "oid": "2dc56cb4c72fc4436a0b759922a959c0b9734646"
     },
     "include": {
-      "oid": "096117b078b57320d3a15113f6de648b2fb71384"
+      "oid": "0e09bc738326c23fdeae449695c5d9ee49c21880"
     },
     "neighbor-dump-wip": {
       "oid": "72df296383afe35e2b767854c0eb0a41980d64ef"
@@ -59,14 +58,11 @@
     "nosystem": {
       "oid": "db93bc65de779c5d0054c8009d92f43239bdcaa1"
     },
-    "refresh-temp": {
-      "oid": "9916da062be8642633f2b6709848a9a134585188"
-    },
     "timeout": {
       "oid": "f86926430a42b20cdfb8c1918dc5283da1a2d1b8"
     },
     "turbineSeg": {
-      "oid": "3f21c7a4787004637c4bc53c7c6a83cc963885dd"
+      "oid": "4bb13084d46339928106e7e519322a1970bde10a"
     }
   }
 }
