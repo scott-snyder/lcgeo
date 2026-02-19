@@ -1,9 +1,8 @@
 {
   "version": 5,
-  "prev": "9f42936f5cceb2c224ab5c1449a700f71ec82f82",
-  "head": "ff2c87f4dd34fa73dfcf01698b0b05c8822e1913",
+  "prev": "3d7cb7975c514a1fc363f37994c921697c47d72b",
+  "head": "c44ef78c3a4ceb0f00a3007bcccbe1ef46d653e6",
   "applied": [
-    "warn",
     "include",
     "gcc16warn",
     "cxx26",
@@ -23,49 +22,46 @@
   "hidden": [],
   "patches": {
     "ci": {
-      "oid": "ff2c87f4dd34fa73dfcf01698b0b05c8822e1913"
+      "oid": "c44ef78c3a4ceb0f00a3007bcccbe1ef46d653e6"
     },
     "cxx26": {
-      "oid": "d3efdea072921f5fa3d6a6119417496e680f6a21"
+      "oid": "02d5530bf9b8427b5a102dc6d78172fcecb9c82d"
     },
     "drparamCleanup1": {
-      "oid": "1c165a46ad846d438723dc46d0c8976b67676dbf"
+      "oid": "485601ac51a927a11fc27e62a2f0278b4ae3400a"
     },
     "ecal-subdet-volman": {
-      "oid": "b47b97db662ebc2293892a98b1358a708f73e3e6"
+      "oid": "14077af1bc0ff983497479a1c2f0c29977928b22"
     },
     "gcc16warn": {
-      "oid": "4b2aa6faf3ea0f93970839f8e1b2adf1860df52a"
+      "oid": "b062cede9e5e1996733f6a66a29faba33358cd0e"
     },
     "hcal-row-pos": {
-      "oid": "8cd0e52ffeaeb03990b578d95a1d43c2d42a9557"
+      "oid": "5dc3c9b023e02954c122d26d9e2562863d2c8938"
     },
     "hcal-row-pos-debugprint": {
-      "oid": "7ceb9b16773fa2b5792f1c18ebbdc72358fc1a1e"
+      "oid": "d3c47d616f2c5f97f297b03ca1aece8bba71a448"
     },
     "hcal-theta-pos": {
-      "oid": "4b2bfe55e0225abfbc7d160bdc97215f49c38c18"
+      "oid": "604fe05b60c92cd699c46d328ab13ad2a5a91fb7"
     },
     "hcal-theta-pos-debugprint": {
-      "oid": "e34fe4a5788459c674f5e9a97f7e536c5da0ecc5"
+      "oid": "2dc56cb4c72fc4436a0b759922a959c0b9734646"
     },
     "include": {
-      "oid": "32be6ba8ff4ec199b89185a26504ad8ec8f8e5b7"
+      "oid": "228d87edf7c049a80bed8290fcd657370b6b3ed3"
     },
     "neighbor-dump-wip": {
-      "oid": "8a60d6438623f5a0bc6b7d74b3528c4e56101ee8"
+      "oid": "72df296383afe35e2b767854c0eb0a41980d64ef"
     },
     "nosystem": {
-      "oid": "069aea4086af833bf2feb77599298be9e5cc3e5c"
+      "oid": "db93bc65de779c5d0054c8009d92f43239bdcaa1"
     },
     "timeout": {
-      "oid": "b9df2603406e34c66cc78c40c3a790e2108ec398"
+      "oid": "f86926430a42b20cdfb8c1918dc5283da1a2d1b8"
     },
     "turbineSeg": {
-      "oid": "d5f08fba4a1005aa32e2cd0025f935420ad1f3cf"
-    },
-    "warn": {
-      "oid": "db9f96baec506c9c92deff73c4f0883b6ceeae10"
+      "oid": "001ce1b66a06f23f8622544850c8592fbb406524"
     }
   }
 }

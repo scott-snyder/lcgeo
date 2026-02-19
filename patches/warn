@@ -1,6 +1,0 @@
-Bottom: 84d8e1572a76451aea94a33e4f0df869731e8dcc
-Top:    84d8e1572a76451aea94a33e4f0df869731e8dcc
-Author: sss <sss@karma>
-Date:   2026-02-19 06:19:06 -0500
-
-Fix unused variable warning.
