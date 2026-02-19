@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "53b3b5f6e832d78d9aa5262f3a7932249bc2eb11",
-  "head": "6fc6aecde89ececa0702a5acedf840ca78443ae0",
+  "prev": "fd6ad260e4ece0bb2e2fd53ab17982e4db291547",
+  "head": "deee62914866cbc48dac7721db07b74b4ccde11f",
   "applied": [
     "include",
     "gcc16warn",
@@ -16,14 +16,13 @@
     "timeout",
     "drparamCleanup1",
     "nosystem",
-    "ci",
-    "refresh-temp"
+    "ci"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
-      "oid": "81a0d83dcb12ea1a195772d5163d50ec3f099289"
+      "oid": "deee62914866cbc48dac7721db07b74b4ccde11f"
     },
     "cxx26": {
       "oid": "76eba30760bdee94dd22fad65c63d31106f3cf13"
@@ -57,9 +56,6 @@
     },
     "nosystem": {
       "oid": "db2dddfa6abcff107b18e07cebb486150ceb1f3f"
-    },
-    "refresh-temp": {
-      "oid": "6fc6aecde89ececa0702a5acedf840ca78443ae0"
     },
     "timeout": {
       "oid": "dcc7ab02a198679402743103e54ffdde44ad94be"
