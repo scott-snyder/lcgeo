@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "bc5b046d1b8004782a910f17405ee30dd741cc61",
-  "head": "902bff601719e85f4ef70965a10c03585a81d555",
+  "prev": "7b0f10885bbc28b57c122ebdfc9ffdf97356dca1",
+  "head": "927cc45c21c9a5530d29e2f61630ee63a37d3b80",
   "applied": [
     "include",
     "gcc16warn",
@@ -9,8 +9,7 @@
     "ecal-subdet-volman",
     "turbineSeg",
     "hcal-theta-pos",
-    "hcal-row-pos",
-    "refresh-temp"
+    "hcal-row-pos"
   ],
   "unapplied": [
     "neighbor-dump-wip",
@@ -27,25 +26,25 @@
       "oid": "c44ef78c3a4ceb0f00a3007bcccbe1ef46d653e6"
     },
     "cxx26": {
-      "oid": "7eda5fe967f4edf7744bc2b6cd1c900eb58d6bc9"
+      "oid": "77e03bb9333cb631185e85720c4323a0e7217aab"
     },
     "drparamCleanup1": {
       "oid": "485601ac51a927a11fc27e62a2f0278b4ae3400a"
     },
     "ecal-subdet-volman": {
-      "oid": "433d15840fda4396e7e9dad602f0e1f8e66cfe8d"
+      "oid": "64a485040629638b871d770f9b59373a0e03d1a0"
     },
     "gcc16warn": {
-      "oid": "c702837a286325f7de6823eff3944c0fa64b9076"
+      "oid": "7e3acef6952b742f0484f2a3aece641aa6691b44"
     },
     "hcal-row-pos": {
-      "oid": "a03497dd8b1dd5f0c0f4d237bdafb82ede22783c"
+      "oid": "927cc45c21c9a5530d29e2f61630ee63a37d3b80"
     },
     "hcal-row-pos-debugprint": {
       "oid": "d3c47d616f2c5f97f297b03ca1aece8bba71a448"
     },
     "hcal-theta-pos": {
-      "oid": "5b617ddb133671742ec49be9cd774109f6d78698"
+      "oid": "356b2f8f8a6476dfe7f980ef3b2d2e6dec93d8d6"
     },
     "hcal-theta-pos-debugprint": {
       "oid": "2dc56cb4c72fc4436a0b759922a959c0b9734646"
@@ -59,14 +58,11 @@
     "nosystem": {
       "oid": "db93bc65de779c5d0054c8009d92f43239bdcaa1"
     },
-    "refresh-temp": {
-      "oid": "902bff601719e85f4ef70965a10c03585a81d555"
-    },
     "timeout": {
       "oid": "f86926430a42b20cdfb8c1918dc5283da1a2d1b8"
     },
     "turbineSeg": {
-      "oid": "5c1f6b373e7bcd11bcf882ddf506538a07974bb4"
+      "oid": "f14aed92870adb2d6dc1b595137d3ead279b154f"
     }
   }
 }
