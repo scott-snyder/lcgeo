@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b11589295687b995cda595a8eab7204b6378608c",
-  "head": "f5abbe284bc3a64b147b98e715b556d7b434f0e4",
+  "prev": "c49f689840a27785a27cc1c764669c3189628e51",
+  "head": "12279b627e5bc1d48ffe5e5a57a1d6609afa883a",
   "applied": [
     "include",
     "gcc16warn",
@@ -9,7 +9,8 @@
     "ecal-subdet-volman",
     "turbineSeg",
     "hcal-theta-pos",
-    "hcal-row-pos"
+    "hcal-row-pos",
+    "ci"
   ],
   "unapplied": [
     "neighbor-dump-wip",
@@ -17,13 +18,12 @@
     "hcal-row-pos-debugprint",
     "timeout",
     "drparamCleanup1",
-    "nosystem",
-    "ci"
+    "nosystem"
   ],
   "hidden": [],
   "patches": {
     "ci": {
-      "oid": "deee62914866cbc48dac7721db07b74b4ccde11f"
+      "oid": "12279b627e5bc1d48ffe5e5a57a1d6609afa883a"
     },
     "cxx26": {
       "oid": "76eba30760bdee94dd22fad65c63d31106f3cf13"
