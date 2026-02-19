@@ -271,8 +271,7 @@ static dd4hep::Ref_t createHCalEC(dd4hep::Detector& lcdd, xml_h xmlElement, dd4h
       double tileZOffset = -0.5 * dzSequence;
 
       // first Z loop (tiles that make up a sequence)
-      for (xml_coll_t xCompColl(sequences[sequenceIdx], _Unicode(module_component)); xCompColl;
-           ++xCompColl) {
+      for (xml_coll_t xCompColl(sequences[sequenceIdx], _Unicode(module_component)); xCompColl; ++xCompColl) {
         xml_comp_t xComp = xCompColl;
         dd4hep::Tube tileShape(rminLayer, rmaxLayer, 0.5 * xComp.thickness());
 
@@ -332,8 +331,7 @@ static dd4hep::Ref_t createHCalEC(dd4hep::Detector& lcdd, xml_h xmlElement, dd4h
       double tileZOffset = -0.5 * dzSequence;
 
       // first Z loop (tiles that make up a sequence)
-      for (xml_coll_t xCompColl(sequences[sequenceIdx], _Unicode(module_component)); xCompColl;
-           ++xCompColl) {
+      for (xml_coll_t xCompColl(sequences[sequenceIdx], _Unicode(module_component)); xCompColl; ++xCompColl) {
         xml_comp_t xComp = xCompColl;
         dd4hep::Tube tileShape(rminLayer, rmaxLayer, 0.5 * xComp.thickness());
 
@@ -403,8 +401,7 @@ static dd4hep::Ref_t createHCalEC(dd4hep::Detector& lcdd, xml_h xmlElement, dd4h
       double tileZOffset = -0.5 * dzSequence;
 
       // first Z loop (tiles that make up a sequence)
-      for (xml_coll_t xCompColl(sequences[sequenceIdx], _Unicode(module_component)); xCompColl;
-           ++xCompColl) {
+      for (xml_coll_t xCompColl(sequences[sequenceIdx], _Unicode(module_component)); xCompColl; ++xCompColl) {
         xml_comp_t xComp = xCompColl;
         dd4hep::Tube tileShape(rminLayer, rmaxLayer, 0.5 * xComp.thickness());
 
