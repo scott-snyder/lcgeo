@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "3c4c9143b86a29c91a3b5548a701228254a618e0",
-  "head": "5d4b24093b67f429adbad97e54c427ad8a385c0f",
+  "prev": "e81df101c46ada5808dcb1d3a63099d96376dfb7",
+  "head": "b072e06b8ddfc9787c493c4ded9e603f85df4573",
   "applied": [
     "include",
     "gcc16warn",
@@ -9,8 +9,7 @@
     "ecal-subdet-volman",
     "turbineSeg",
     "hcal-theta-pos",
-    "hcal-row-pos",
-    "refresh-temp"
+    "hcal-row-pos"
   ],
   "unapplied": [
     "neighbor-dump-wip",
@@ -33,19 +32,19 @@
       "oid": "485601ac51a927a11fc27e62a2f0278b4ae3400a"
     },
     "ecal-subdet-volman": {
-      "oid": "c3f2ff2c5f3701660e7011948268cc65159d066b"
+      "oid": "73f19782d5f5a251924917702b29936c38e5f0ef"
     },
     "gcc16warn": {
       "oid": "811dcce0430e02d3eb9a7d2ebf73c6534e49cbf5"
     },
     "hcal-row-pos": {
-      "oid": "e419cc260d9ba2c7fc1aeabe8dad01d781e75c56"
+      "oid": "b072e06b8ddfc9787c493c4ded9e603f85df4573"
     },
     "hcal-row-pos-debugprint": {
       "oid": "d3c47d616f2c5f97f297b03ca1aece8bba71a448"
     },
     "hcal-theta-pos": {
-      "oid": "9e42840cfdd0e7996fd21618bdcff2e9e7701e95"
+      "oid": "426b304e84e32a7827899113d6771df8950dfb55"
     },
     "hcal-theta-pos-debugprint": {
       "oid": "2dc56cb4c72fc4436a0b759922a959c0b9734646"
@@ -59,14 +58,11 @@
     "nosystem": {
       "oid": "db93bc65de779c5d0054c8009d92f43239bdcaa1"
     },
-    "refresh-temp": {
-      "oid": "5d4b24093b67f429adbad97e54c427ad8a385c0f"
-    },
     "timeout": {
       "oid": "f86926430a42b20cdfb8c1918dc5283da1a2d1b8"
     },
     "turbineSeg": {
-      "oid": "5209de7a97949a895cd3f6760b7d98440ad28d7e"
+      "oid": "3f21c7a4787004637c4bc53c7c6a83cc963885dd"
     }
   }
 }
