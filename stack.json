@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "fd6ad260e4ece0bb2e2fd53ab17982e4db291547",
-  "head": "deee62914866cbc48dac7721db07b74b4ccde11f",
+  "prev": "b11589295687b995cda595a8eab7204b6378608c",
+  "head": "f5abbe284bc3a64b147b98e715b556d7b434f0e4",
   "applied": [
     "include",
     "gcc16warn",
@@ -9,7 +9,9 @@
     "ecal-subdet-volman",
     "turbineSeg",
     "hcal-theta-pos",
-    "hcal-row-pos",
+    "hcal-row-pos"
+  ],
+  "unapplied": [
     "neighbor-dump-wip",
     "hcal-theta-pos-debugprint",
     "hcal-row-pos-debugprint",
@@ -18,7 +20,6 @@
     "nosystem",
     "ci"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
