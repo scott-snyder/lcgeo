@@ -700,7 +700,5 @@ namespace DDSegmentation {
     return vID;
   }
 
-
-
 } // namespace DDSegmentation
 } // namespace dd4hep
