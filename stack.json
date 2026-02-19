@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "8ee0b564a01ded6830196d5cc4dfe1366c66c7af",
-  "head": "240a84b85931851fe39b271b9d9c565dae2d81ca",
+  "prev": "509a8543a8231f89b42b0e69037975e171f91d62",
+  "head": "81a0d83dcb12ea1a195772d5163d50ec3f099289",
   "applied": [
     "include",
     "gcc16warn",
@@ -10,9 +10,7 @@
     "turbineSeg",
     "hcal-theta-pos",
     "hcal-row-pos",
-    "neighbor-dump-wip"
-  ],
-  "unapplied": [
+    "neighbor-dump-wip",
     "hcal-theta-pos-debugprint",
     "hcal-row-pos-debugprint",
     "timeout",
@@ -20,16 +18,17 @@
     "nosystem",
     "ci"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
-      "oid": "c44ef78c3a4ceb0f00a3007bcccbe1ef46d653e6"
+      "oid": "81a0d83dcb12ea1a195772d5163d50ec3f099289"
     },
     "cxx26": {
       "oid": "76eba30760bdee94dd22fad65c63d31106f3cf13"
     },
     "drparamCleanup1": {
-      "oid": "485601ac51a927a11fc27e62a2f0278b4ae3400a"
+      "oid": "da822c19dfa4501ef9c04b5678f8810461eb9472"
     },
     "ecal-subdet-volman": {
       "oid": "260f9fc9ba57810ce208b843bc71dabfa015b98c"
@@ -41,13 +40,13 @@
       "oid": "f5abbe284bc3a64b147b98e715b556d7b434f0e4"
     },
     "hcal-row-pos-debugprint": {
-      "oid": "d3c47d616f2c5f97f297b03ca1aece8bba71a448"
+      "oid": "1d2670fe72d2b0ba583aaf33d0ebb93e158164ed"
     },
     "hcal-theta-pos": {
       "oid": "602783592e48c7a6583c95091299f4b9c86aa796"
     },
     "hcal-theta-pos-debugprint": {
-      "oid": "2dc56cb4c72fc4436a0b759922a959c0b9734646"
+      "oid": "75f160028d9cfab9f9e7c8d77da0bbfec5000611"
     },
     "include": {
       "oid": "0e09bc738326c23fdeae449695c5d9ee49c21880"
@@ -56,10 +55,10 @@
       "oid": "240a84b85931851fe39b271b9d9c565dae2d81ca"
     },
     "nosystem": {
-      "oid": "db93bc65de779c5d0054c8009d92f43239bdcaa1"
+      "oid": "db2dddfa6abcff107b18e07cebb486150ceb1f3f"
     },
     "timeout": {
-      "oid": "f86926430a42b20cdfb8c1918dc5283da1a2d1b8"
+      "oid": "dcc7ab02a198679402743103e54ffdde44ad94be"
     },
     "turbineSeg": {
       "oid": "4bb13084d46339928106e7e519322a1970bde10a"
