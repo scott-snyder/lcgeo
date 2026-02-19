@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "23d44be94fe61d84c419006b9b1acb9308f7f428",
-  "head": "e6e880034302f53979b70489bc421d7a51a194a5",
+  "prev": "9889f515547499804073aeadb4fed18cf6a0f708",
+  "head": "bfb7e59fe4a0d7a417c7da0d4f4a845acf2911c9",
   "applied": [
     "warn",
     "include",
@@ -13,24 +13,23 @@
     "hcal-row-pos",
     "neighbor-dump-wip",
     "hcal-theta-pos-debugprint",
-    "hcal-row-pos-debugprint"
-  ],
-  "unapplied": [
+    "hcal-row-pos-debugprint",
     "timeout",
     "drparamCleanup1",
     "nosystem",
     "ci"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
-      "oid": "c2b0ebf652a15df5cee683c07bee23f5e58d899f"
+      "oid": "bfb7e59fe4a0d7a417c7da0d4f4a845acf2911c9"
     },
     "cxx26": {
       "oid": "e84e9f8e10bf7f8a34cc2cb8acbe79ae57cd85b4"
     },
     "drparamCleanup1": {
-      "oid": "3cabe41451ee92117c139c891aa404fde4109c00"
+      "oid": "c8955b39c7c481f33d92b09ddfec1dc2248aed25"
     },
     "ecal-subdet-volman": {
       "oid": "b1c091333e73f2cbc0d7fa6669f691453ad3e978"
@@ -57,10 +56,10 @@
       "oid": "2e613f99b47da2663371f981bbc8fff936a72780"
     },
     "nosystem": {
-      "oid": "8b68b639eec8a74354565a552e0a1790171f866c"
+      "oid": "2cefe33ce073bb3fd45ef3a9f3a19982fa5abf88"
     },
     "timeout": {
-      "oid": "46041b41db6f85906edebaf82ed643e66fb8dd8f"
+      "oid": "05d2968aaa74cf8e7b65bce3ce91264be1c96c35"
     },
     "turbineSeg": {
       "oid": "215a7b699e6b93b299bacf64d56dfd1d807c6ece"
