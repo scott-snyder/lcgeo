@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "56239fc3f0249dd884272e60e7c8786adf9b78cb",
-  "head": "cc8e16045c3d0c534074ff9b46fa6e70d84b7663",
+  "prev": "dff9be8629f5ebf2b233db498bea706da7e2912d",
+  "head": "5cc5f02e847c8d591a3dd8fe74e8ce42feb13a4b",
   "applied": [
     "include",
     "gcc16warn",
@@ -9,8 +9,7 @@
     "ecal-subdet-volman",
     "turbineSeg",
     "hcal-theta-pos",
-    "hcal-row-pos",
-    "refresh-temp"
+    "hcal-row-pos"
   ],
   "unapplied": [
     "neighbor-dump-wip",
@@ -39,13 +38,13 @@
       "oid": "811dcce0430e02d3eb9a7d2ebf73c6534e49cbf5"
     },
     "hcal-row-pos": {
-      "oid": "66e9118134524dfeb3c2d8d53b0ed40447390fe0"
+      "oid": "5cc5f02e847c8d591a3dd8fe74e8ce42feb13a4b"
     },
     "hcal-row-pos-debugprint": {
       "oid": "d3c47d616f2c5f97f297b03ca1aece8bba71a448"
     },
     "hcal-theta-pos": {
-      "oid": "426b304e84e32a7827899113d6771df8950dfb55"
+      "oid": "11d068fc67a194a6e854bb632545cd56d8299e2a"
     },
     "hcal-theta-pos-debugprint": {
       "oid": "2dc56cb4c72fc4436a0b759922a959c0b9734646"
@@ -58,9 +57,6 @@
     },
     "nosystem": {
       "oid": "db93bc65de779c5d0054c8009d92f43239bdcaa1"
-    },
-    "refresh-temp": {
-      "oid": "cc8e16045c3d0c534074ff9b46fa6e70d84b7663"
     },
     "timeout": {
       "oid": "f86926430a42b20cdfb8c1918dc5283da1a2d1b8"
