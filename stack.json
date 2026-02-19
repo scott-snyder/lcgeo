@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "6c1f06ea4b724a7a603b487f64cf946f42a7e652",
-  "head": "16cbb2f94a90a934cf82fb59dbcff066a175d967",
+  "prev": "f4aa8e80302d11e617ec21068d6214ad94e36494",
+  "head": "b535332e3c3c86cb9923849f180cc150714a3f42",
   "applied": [
     "hcal-theta-pos",
     "hcal-row-pos",
@@ -10,8 +10,7 @@
     "gcc16warn",
     "cxx26",
     "ecal-subdet-volman",
-    "turbineSeg",
-    "refresh-temp"
+    "turbineSeg"
   ],
   "unapplied": [
     "timeout",
@@ -28,19 +27,19 @@
       "oid": "c2b0ebf652a15df5cee683c07bee23f5e58d899f"
     },
     "cxx26": {
-      "oid": "e70126cd0bbf2b48f3efc61cce1cc8e268ce32e1"
+      "oid": "d6de5fb78690158ba0a3a1f05b78385f2ea3b411"
     },
     "drparamCleanup1": {
       "oid": "3cabe41451ee92117c139c891aa404fde4109c00"
     },
     "ecal-subdet-volman": {
-      "oid": "90807717b34a65c518c368ed2e46df009326129c"
+      "oid": "c36fd5e6c3544be3a79d22af3b8a7038787f6c25"
     },
     "gcc16warn": {
-      "oid": "9622e3285f1e08ec3a9a6098951c269eadd5bb9d"
+      "oid": "c446ee8655fa332a99fe84f37f71d6732f2f3c84"
     },
     "hcal-row-pos": {
-      "oid": "6c452be7405763f9f701faf331084ed49b355bab"
+      "oid": "2fdcc69a4c9edcafa5880a67ba5297296e41b560"
     },
     "hcal-row-pos-debugprint": {
       "oid": "16d18e8f3d9ef0a51825175e4d261d2d53ed4f79"
@@ -52,7 +51,7 @@
       "oid": "21adacb690cd0bb241819b6a1033467fd488c92d"
     },
     "include": {
-      "oid": "4287d2bfd30ed2939db5e5023598c74f51770037"
+      "oid": "13e34e885af590c9c0a1a611404b7b8ac004d429"
     },
     "neighbor-dump-wip": {
       "oid": "3918e21e95f1676feb9e70af21830ad4be138d6d"
@@ -60,17 +59,14 @@
     "nosystem": {
       "oid": "8b68b639eec8a74354565a552e0a1790171f866c"
     },
-    "refresh-temp": {
-      "oid": "16cbb2f94a90a934cf82fb59dbcff066a175d967"
-    },
     "timeout": {
       "oid": "46041b41db6f85906edebaf82ed643e66fb8dd8f"
     },
     "turbineSeg": {
-      "oid": "ab044d8706f578dc477b891a905bd19587847803"
+      "oid": "b535332e3c3c86cb9923849f180cc150714a3f42"
     },
     "warn": {
-      "oid": "e7541fcc518c730c4ef318a7cf4bf90fc5b88bc4"
+      "oid": "26e979d7ee0f7c5d171f3086c07fd159267d1031"
     }
   }
 }
