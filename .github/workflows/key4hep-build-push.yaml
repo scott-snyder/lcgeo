@@ -2,15 +2,11 @@
 # The template file can be found in
 # https://github.com/key4hep/key4hep-actions/blob/main/workflows/key4hep-build.yaml
 
-name: Key4hep build
+name: Key4hep build (push)
 on:
   push:
-    branches:
-    - main
   pull_request:
   workflow_dispatch:
-  schedule:
-    - cron: '16 4 * * *'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
