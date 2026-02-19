@@ -1,11 +1,9 @@
 {
   "version": 5,
-  "prev": "830833375a433df25ec723b150959d40c1482c39",
-  "head": "db9f96baec506c9c92deff73c4f0883b6ceeae10",
+  "prev": "9f42936f5cceb2c224ab5c1449a700f71ec82f82",
+  "head": "ff2c87f4dd34fa73dfcf01698b0b05c8822e1913",
   "applied": [
-    "warn"
-  ],
-  "unapplied": [
+    "warn",
     "include",
     "gcc16warn",
     "cxx26",
@@ -21,49 +19,50 @@
     "nosystem",
     "ci"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
-      "oid": "bfb7e59fe4a0d7a417c7da0d4f4a845acf2911c9"
+      "oid": "ff2c87f4dd34fa73dfcf01698b0b05c8822e1913"
     },
     "cxx26": {
-      "oid": "e84e9f8e10bf7f8a34cc2cb8acbe79ae57cd85b4"
+      "oid": "d3efdea072921f5fa3d6a6119417496e680f6a21"
     },
     "drparamCleanup1": {
-      "oid": "c8955b39c7c481f33d92b09ddfec1dc2248aed25"
+      "oid": "1c165a46ad846d438723dc46d0c8976b67676dbf"
     },
     "ecal-subdet-volman": {
-      "oid": "b1c091333e73f2cbc0d7fa6669f691453ad3e978"
+      "oid": "b47b97db662ebc2293892a98b1358a708f73e3e6"
     },
     "gcc16warn": {
-      "oid": "40e40bb8d4153c82d97a4567e4546effc69631b5"
+      "oid": "4b2aa6faf3ea0f93970839f8e1b2adf1860df52a"
     },
     "hcal-row-pos": {
-      "oid": "cfae8ca8e7df7e600c2384c36fbaaf90327c2822"
+      "oid": "8cd0e52ffeaeb03990b578d95a1d43c2d42a9557"
     },
     "hcal-row-pos-debugprint": {
-      "oid": "e6e880034302f53979b70489bc421d7a51a194a5"
+      "oid": "7ceb9b16773fa2b5792f1c18ebbdc72358fc1a1e"
     },
     "hcal-theta-pos": {
-      "oid": "52204ecd1ad998d4735c5ae11fad7f64fbc8ced7"
+      "oid": "4b2bfe55e0225abfbc7d160bdc97215f49c38c18"
     },
     "hcal-theta-pos-debugprint": {
-      "oid": "1928f59ef9253b3e80647f9b6c5b2bbc4b06f76b"
+      "oid": "e34fe4a5788459c674f5e9a97f7e536c5da0ecc5"
     },
     "include": {
-      "oid": "957e532b3588092b6c9f9bdc175ea7e710fdb66d"
+      "oid": "32be6ba8ff4ec199b89185a26504ad8ec8f8e5b7"
     },
     "neighbor-dump-wip": {
-      "oid": "2e613f99b47da2663371f981bbc8fff936a72780"
+      "oid": "8a60d6438623f5a0bc6b7d74b3528c4e56101ee8"
     },
     "nosystem": {
-      "oid": "2cefe33ce073bb3fd45ef3a9f3a19982fa5abf88"
+      "oid": "069aea4086af833bf2feb77599298be9e5cc3e5c"
     },
     "timeout": {
-      "oid": "05d2968aaa74cf8e7b65bce3ce91264be1c96c35"
+      "oid": "b9df2603406e34c66cc78c40c3a790e2108ec398"
     },
     "turbineSeg": {
-      "oid": "215a7b699e6b93b299bacf64d56dfd1d807c6ece"
+      "oid": "d5f08fba4a1005aa32e2cd0025f935420ad1f3cf"
     },
     "warn": {
       "oid": "db9f96baec506c9c92deff73c4f0883b6ceeae10"
