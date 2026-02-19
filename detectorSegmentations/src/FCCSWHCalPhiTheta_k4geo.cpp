@@ -221,7 +221,7 @@ namespace DDSegmentation {
     dd4hep::Detector* dd4hepgeo = &(dd4hep::Detector::getInstance());
     const DetElementObject& de = *dd4hepgeo->readout(this->name()).segmentation().detector();
     VolumeManager vman_glob = VolumeManager::getVolumeManager(*dd4hepgeo);
-    VolumeManager vman = vman_glob.subdetector (de.id);
+    VolumeManager vman = vman_glob.subdetector(de.id);
 
     // Process a contiguous set of theta bins.
     // zmin is the minimum z-coordinate of the range.
@@ -902,8 +902,6 @@ namespace DDSegmentation {
     const LayerInfo& li = getLayerInfo(layer);
     return li.cellInfo(thetaID).volumeID;
   }
-
-
 
 } // namespace DDSegmentation
 } // namespace dd4hep
