@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a9ef2e64c6d30809418e01ee5f73a50e06d80f42",
-  "head": "48854153a64f7c7ca73edb56c6b0ac665eed487c",
+  "prev": "5ad50e1962d6c4ed8feb815f282b30d215a99717",
+  "head": "4bb0aa27718f209bc6b98f2f772a4ffc24dd9069",
   "applied": [
     "warn",
     "include",
@@ -11,7 +11,8 @@
     "turbineSeg",
     "hcal-theta-pos",
     "hcal-row-pos",
-    "neighbor-dump-wip"
+    "neighbor-dump-wip",
+    "refresh-temp"
   ],
   "unapplied": [
     "timeout",
@@ -58,6 +59,9 @@
     },
     "nosystem": {
       "oid": "8b68b639eec8a74354565a552e0a1790171f866c"
+    },
+    "refresh-temp": {
+      "oid": "4bb0aa27718f209bc6b98f2f772a4ffc24dd9069"
     },
     "timeout": {
       "oid": "46041b41db6f85906edebaf82ed643e66fb8dd8f"
