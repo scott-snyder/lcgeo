@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "db65a2773c824e530959f55884f5649a790fa173",
-  "head": "6848f6471a9b4240ae8b4fb24ca3ec5b163c48f2",
+  "prev": "13ea597b5eae73c09da92d9889013d34f63cd5d1",
+  "head": "5cd6a6e397668f09a8ecc1b705c8c89423bc6c55",
   "applied": [
     "ecal-subdet-volman",
     "turbineSeg",
-    "hcal-theta-pos"
+    "hcal-theta-pos",
+    "hcal-row-pos"
   ],
   "unapplied": [],
   "hidden": [],
@@ -18,6 +19,9 @@
     },
     "hcal-theta-pos": {
       "oid": "6848f6471a9b4240ae8b4fb24ca3ec5b163c48f2"
+    },
+    "hcal-row-pos": {
+      "oid": "5cd6a6e397668f09a8ecc1b705c8c89423bc6c55"
     }
   }
 }
