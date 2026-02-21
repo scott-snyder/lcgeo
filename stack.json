@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "cf8533bcf9681eff2c77cdd3b0d6979c32762b0d",
+  "prev": "063818eab99b8874ee14d59cd0aaceadd9b5bc35",
   "head": "c4c4d0cd9096cdf66f6f1ba8239d65c5219e78fc",
   "applied": [
     "ecal-subdet-volman"
   ],
   "unapplied": [
     "hcal-theta-pos",
-    "hcal-row-pos",
-    "turbineSeg"
+    "hcal-row-pos"
   ],
   "hidden": [],
   "patches": {
@@ -20,9 +19,6 @@
     },
     "hcal-row-pos": {
       "oid": "7e105c711b9289d395254fa0167545112916f6c8"
-    },
-    "turbineSeg": {
-      "oid": "57e8771f6ea73478b58a36f14c4b26d6c2bf224d"
     }
   }
 }
