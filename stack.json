@@ -1,9 +1,10 @@
 {
   "version": 5,
-  "prev": "063818eab99b8874ee14d59cd0aaceadd9b5bc35",
-  "head": "c4c4d0cd9096cdf66f6f1ba8239d65c5219e78fc",
+  "prev": "911c66a479df2d2e276d4267828ca77a5dcc22c2",
+  "head": "9d7f1b55161d9ba217f26a2a83eb020fad3043be",
   "applied": [
-    "ecal-subdet-volman"
+    "ecal-subdet-volman",
+    "turbineSeg"
   ],
   "unapplied": [
     "hcal-theta-pos",
@@ -13,6 +14,9 @@
   "patches": {
     "ecal-subdet-volman": {
       "oid": "c4c4d0cd9096cdf66f6f1ba8239d65c5219e78fc"
+    },
+    "turbineSeg": {
+      "oid": "9d7f1b55161d9ba217f26a2a83eb020fad3043be"
     },
     "hcal-theta-pos": {
       "oid": "a43d59e4881c0300ee0e0eb27119c6d8e2fd7332"
