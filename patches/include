@@ -1,9 +1,0 @@
-Bottom: ed57b3ffe2a504adf7d0ad29ac35e94b9b4d3c22
-Top:    ed57b3ffe2a504adf7d0ad29ac35e94b9b4d3c22
-Author: sss <sss@karma>
-Date:   2026-02-25 14:28:09 -0500
-
-Missing #include.
-
-Need to include <climits> for CHAR_BIT.
-Fixes compilation failure seen with gcc16.
