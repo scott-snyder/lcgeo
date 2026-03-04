@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "7f1d4878e65b75f9830a086323a283799b06a533",
-  "head": "9cd5b1fd80501b60ddbab4c9fe83d9b90ed289c9",
-  "applied": [],
+  "prev": "eede5b22c39a783dd7e5898323260901bea02e7d",
+  "head": "314eaa98ac6d7f51378fe915ce6a68f14b58b21a",
+  "applied": [
+    "cxx26"
+  ],
   "unapplied": [
-    "cxx26",
     "nosystem",
     "timeout",
     "ecal-subdet-volman",
