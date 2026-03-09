@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "d2d7f7922a939562a56b3d918877383e6ae9e220",
-  "head": "b46bd44cde0a5fa95df52469b2c6149d48566403",
-  "applied": [],
-  "unapplied": [
+  "prev": "b1f768b570aa966b6a935a44224ad15206276b47",
+  "head": "96fd624883b24db0ffc8783b0ca91ff7b6e9faa5",
+  "applied": [
     "ecal-subdet-volman",
-    "turbineSeg",
+    "turbineSeg"
+  ],
+  "unapplied": [
     "hcal-theta-pos",
     "hcal-row-pos",
     "timeout"
@@ -13,10 +14,10 @@
   "hidden": [],
   "patches": {
     "ecal-subdet-volman": {
-      "oid": "d3dc900a5a93a63531b5d2718e189ff259c1cd4f"
+      "oid": "4fec7a07d7824268aeac9acf495bccfa30e7af47"
     },
     "turbineSeg": {
-      "oid": "8b1a41068081e592bb6aa4da2938d481c65162ba"
+      "oid": "96fd624883b24db0ffc8783b0ca91ff7b6e9faa5"
     },
     "hcal-theta-pos": {
       "oid": "7907647dd05bff7fb7c77727412f7a59881da1b3"
