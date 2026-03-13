@@ -246,9 +246,11 @@ namespace DDSegmentation {
         decoder()->set(vID, name, val);
       }
 
-      // We are going to step through each volume, in order of increasing
-      // row index; that is, increasing z.  We are going to match them
-      // with cells.  However, increasing cell indexes correspond to decreasing
+      // We are going to step through each volume in order of increasing z.
+      // In the barrel and positive endcap, this corresponds to increasing
+      // row index, but the other way around in the negative endcap.
+      // We are going to match the volumes with cells.  However, increasing
+      // cell indexes correspond to decreasing
       // z position, so we step through the cell list in reverse order,
       // to also get them in order of increasing z.
       // We keep track of the cell we're looking at in itbin and its edges
@@ -266,8 +268,13 @@ namespace DDSegmentation {
       // center of the cell.
       double last_zpos = zmin - 100;
 
-      // Step through rows.
-      for (size_t ir = 0; ir < nrows; ir++) {
+      // Step through rows.  In increasing order in the barrel/positive endcap,
+      // in decreasing order in the negative endcap.  In all cases, this
+      // corresponds to increasing z.
+      for (size_t ir0 = 0; ir0 < nrows; ++ir0) {
+        int ir = ir0;
+        if (m_detLayout == 1 && zmin < 0) ir = nrows-1-ir;
+
         // Make the volume ID for this row and find the position of its center.
         decoder()->set(vID, m_rowIndex, ir);
         VolumeManagerContext* vc = vman.lookupContext(vID);
