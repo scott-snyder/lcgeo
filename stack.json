@@ -1,17 +1,17 @@
 {
   "version": 5,
-  "prev": "a09df5961cfa2b78763964144b11c7f309f12323",
-  "head": "0dfd536de4f02853ef13d445b2e1ac762e472175",
+  "prev": "3ce608399d2fb071d87fcae5331fe2177d58a8bd",
+  "head": "ed38488043f8627d0fafb289c98128cf8fedf47f",
   "applied": [
     "nosystem",
     "timeout",
     "ecal-subdet-volman",
     "turbineSeg",
     "warn",
-    "hcal-theta-pos"
+    "hcal-theta-pos",
+    "hcal-row-pos"
   ],
   "unapplied": [
-    "hcal-row-pos",
     "neighbor-dump-wip",
     "hcal-theta-pos-debugprint",
     "hcal-row-pos-debugprint",
