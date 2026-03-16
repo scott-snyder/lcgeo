@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "c214aef276d87902cbf7af6e527775a184e0b597",
-  "head": "3c4344bf673e6031c1dec4b2b0d0e5f2146b34ca",
+  "prev": "1af69932776ebb7c00f4db0afce5045d42c0b4ab",
+  "head": "ed38488043f8627d0fafb289c98128cf8fedf47f",
   "applied": [
     "nosystem",
     "timeout",
@@ -9,8 +9,7 @@
     "turbineSeg",
     "warn",
     "hcal-theta-pos",
-    "hcal-row-pos",
-    "refresh-temp"
+    "hcal-row-pos"
   ],
   "unapplied": [
     "neighbor-dump-wip",
@@ -32,7 +31,7 @@
       "oid": "78c38e70a0ae228b3b0872f8efd9353da00a7a27"
     },
     "hcal-row-pos": {
-      "oid": "e282813d26bd1aa1f25f3cd268715defd1ca8bf6"
+      "oid": "ed38488043f8627d0fafb289c98128cf8fedf47f"
     },
     "hcal-row-pos-debugprint": {
       "oid": "ea5f8a67e29d75a0aa7a582ce32b81465a8fc6bf"
@@ -48,9 +47,6 @@
     },
     "nosystem": {
       "oid": "facadc360b61beee353a3d1175f48754fe60f9b2"
-    },
-    "refresh-temp": {
-      "oid": "3c4344bf673e6031c1dec4b2b0d0e5f2146b34ca"
     },
     "timeout": {
       "oid": "ebfb6b1a4a78419384a83d134ca7ca8e0f7faec5"
