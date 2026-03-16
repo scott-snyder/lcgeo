@@ -67,6 +67,7 @@ namespace DDSegmentation {
       zpos = -zpos;
     }
 
+#if 0    // xxx
     // If this is the Endcap and m_groupedRows is provided from the xml file, then rows are grouped to the
     // pseudo-layers. Need to recalculate the cell position:
     if (m_detLayout == 1 && !m_groupedRows.empty()) {
@@ -77,6 +78,7 @@ namespace DDSegmentation {
       if (idx < 0)
         zpos = -zpos;
     }
+#endif
 
     return Vector3D(radius * std::cos(phi(cID)), radius * std::sin(phi(cID)), zpos);
   }
