@@ -1,10 +1,9 @@
 {
   "version": 5,
-  "prev": "feeb3ecb60669d20ae8bae7b5afa1ec8100815e0",
-  "head": "8dabe8f35e59eb192083088679381fb68c585925",
+  "prev": "812da66f16bb41f46309f5346a7e865025335d55",
+  "head": "0d14a8e2be83a7359e0e10c91657a52e333b4763",
   "applied": [
     "ecal-subdet-volman",
-    "turbineSeg",
     "timeout"
   ],
   "unapplied": [
@@ -16,11 +15,8 @@
     "ecal-subdet-volman": {
       "oid": "9122c25c68d2d34dcb6893f0d95827bfefafa874"
     },
-    "turbineSeg": {
-      "oid": "765ce038c40015ca3cfcc8de670f3b5f86f6b7ea"
-    },
     "timeout": {
-      "oid": "8dabe8f35e59eb192083088679381fb68c585925"
+      "oid": "0d14a8e2be83a7359e0e10c91657a52e333b4763"
     },
     "hcal-theta-pos": {
       "oid": "7907647dd05bff7fb7c77727412f7a59881da1b3"
