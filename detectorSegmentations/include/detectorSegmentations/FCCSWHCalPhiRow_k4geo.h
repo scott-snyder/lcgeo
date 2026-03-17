@@ -310,6 +310,12 @@ namespace DDSegmentation {
     std::vector<int> m_numLayers;
     /// dR of the layer
     std::vector<double> m_dRlayer;
+    /// Offset in z of the center of the sensitive volume within a row
+    /// for even layers.  (sequence_a for barrel, sequence_b for endcap.)
+    double m_evenVolOffset;
+    /// Offset in z of the center of the sensitive volume within a row
+    /// for odd layers.  (sequence_b for barrel, sequence_a for endcap.)
+    double m_oddVolOffset;
 
     /// Initialization common to all ctors.
     void commonSetup();
@@ -338,6 +344,9 @@ namespace DDSegmentation {
       /// z-min and z-max of the layer
       double zmin = 0;
       double zmax = 0;
+
+      /// z-offset between cell centers and volume centers.
+      double zOffset = 0;
 
       /// cell indexes in each layer
       std::vector<int> cellIndexes{};

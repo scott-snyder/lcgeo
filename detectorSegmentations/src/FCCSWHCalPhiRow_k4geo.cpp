@@ -29,6 +29,9 @@ namespace DDSegmentation {
     registerParameter("numLayers", "Number of layers", m_numLayers, std::vector<int>());
     registerParameter("dRlayer", "dR of the layer", m_dRlayer, std::vector<double>());
     registerParameter("grouped_rows", "Number of rows combined in a pseudo-layer", m_groupedRows, std::vector<int>());
+    registerParameter("even_vol_offset", "Offset in z of the center of the sensitive volume within a row for even layers", m_evenVolOffset, 0.);
+    registerParameter("odd_vol_offset", "Offset in z of the center of the sensitive volume within a row for odd layers", m_oddVolOffset, 0.);
+
     registerIdentifier("identifier_phi", "Cell ID identifier for phi", m_phiID, "phi");
     registerIdentifier("identifier_row", "Cell ID identifier for row", m_rowID, "row");
     registerIdentifier("identifier_layer", "Cell ID identifier for layer", m_layerID, "layer");
@@ -61,7 +64,7 @@ namespace DDSegmentation {
     int idx = decoder()->get(cID, m_rowIndex);
     // calculate z-coordinate of the cell center
     // Should be relative to the center of the first volume of the row.
-    double zpos = (m_gridSizeRow[layer] - 1) * m_dz_row * 0.5;
+    double zpos = li.zOffset;
     if (idx < 0) {
       // for negative-z Endcap, the index is negative (starts from -1!)
       zpos = -zpos;
@@ -132,18 +135,27 @@ namespace DDSegmentation {
         groupedRows_end = (i_section == m_offsetZ.size() - 1) ? m_groupedRows.end() : groupedRows_start + nGroupedRows;
       }
 
+      int layerInSection = 0;
+
       // Loop over groups of layers.
       for (uint i_dR = 0; i_dR < N_dR; i_dR++) {
         // Loop over individual layers.
         for (int i_lay = 0; i_lay < m_numLayers[i_dR + i_section * N_dR]; i_lay++) {
+
+          double volOffset = (layerInSection%2) ? m_oddVolOffset : m_evenVolOffset;
+          double zOffset = m_dz_row * m_gridSizeRow.at(out.size()) * 0.5 - volOffset;
+
+
           moduleDepth[i_section] += m_dRlayer[i_dR];
           out.push_back(LayerInfo{.type = i_section,
                                   .radius = moduleDepth[i_section] - m_dRlayer[i_dR] * 0.5,
                                   .halfDepth = m_dRlayer[i_dR] / 2,
                                   .zmin = zmin,
                                   .zmax = zmax,
+                                  .zOffset = zOffset,
                                   .groupedRows = std::span<const int>(std::to_address(groupedRows_start),
                                                                       std::to_address(groupedRows_end))});
+          ++layerInSection;
         }
       }
     }
