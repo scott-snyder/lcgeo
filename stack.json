@@ -1,12 +1,11 @@
 {
   "version": 5,
-  "prev": "f67efe55199114da9facee51ec6d9d6611a8f3b1",
-  "head": "835ae2808e840d9bfec8fe8982930076f727fb60",
+  "prev": "f1450c33d50bb0c1ef57410e56dbad7185b09fa2",
+  "head": "633797cb60bc1fddeb2f4486d5979ad2df90e247",
   "applied": [
     "nosystem",
     "timeout",
     "ecal-subdet-volman",
-    "turbineSeg",
     "warn"
   ],
   "unapplied": [
@@ -51,11 +50,8 @@
     "timeout": {
       "oid": "6a3032fedc120bb6af1414119d14372d8e1e988b"
     },
-    "turbineSeg": {
-      "oid": "81e48b6a50d46e1b18c3949cf8f5d9ae3e3f127a"
-    },
     "warn": {
-      "oid": "835ae2808e840d9bfec8fe8982930076f727fb60"
+      "oid": "633797cb60bc1fddeb2f4486d5979ad2df90e247"
     }
   }
 }
