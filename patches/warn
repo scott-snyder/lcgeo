@@ -1,8 +1,0 @@
-Bottom: 307f805156edf8622d46cb762e6151f2117f98b8
-Top:    307f805156edf8622d46cb762e6151f2117f98b8
-Author: sss <sss@karma>
-Date:   2026-03-18 15:55:49 -0400
-
-Fix compilation warning seen with clang.
-
-Signed/unsigned comparison.
