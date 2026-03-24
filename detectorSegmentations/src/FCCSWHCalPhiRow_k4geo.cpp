@@ -65,23 +65,21 @@ namespace DDSegmentation {
     // calculate z-coordinate of the cell center
     // Should be relative to the center of the first volume of the row.
     double zpos = li.zOffset;
-    if (idx < 0) {
-      // for negative-z Endcap, the index is negative (starts from -1!)
-      zpos = -zpos;
-    }
 
-#if 0    // xxx
     // If this is the Endcap and m_groupedRows is provided from the xml file, then rows are grouped to the
-    // pseudo-layers. Need to recalculate the cell position:
+    // pseudo-layers. Need to adjust the cell position:
     if (m_detLayout == 1 && !m_groupedRows.empty()) {
       int nrows = 0;
       for (size_t i = 0; i < static_cast<size_t>(std::abs(idx)); i++)
         nrows += li.groupedRows[i];
-      zpos = minLayerZ + nrows * m_dz_row - 0.5 * li.groupedRows[abs(idx) - 1] * m_dz_row;
-      if (idx < 0)
-        zpos = -zpos;
+      int aidx = std::abs(idx);
+      zpos += m_dz_row * (nrows - 0.5 * li.groupedRows[aidx-1] - (aidx - 0.5) * m_gridSizeRow[layer]);
     }
-#endif
+
+    if (idx < 0) {
+      // for negative-z Endcap, the index is negative (starts from -1!)
+      zpos = -zpos;
+    }
 
     return Vector3D(radius * std::cos(phi(cID)), radius * std::sin(phi(cID)), zpos);
   }
