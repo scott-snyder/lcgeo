@@ -70,11 +70,8 @@ namespace DDSegmentation {
     // If this is the Endcap and m_groupedRows is provided from the xml file, then rows are grouped to the
     // pseudo-layers. Need to adjust the cell position:
     if (m_detLayout == 1 && !m_groupedRows.empty()) {
-      int nrows = 0;
-      for (size_t i = 0; i < static_cast<size_t>(std::abs(idx)); i++)
-        nrows += li.groupedRows[i];
       int aidx = std::abs(idx);
-      zpos += m_dz_row * (nrows - 0.5 * li.groupedRows[aidx-1] - (aidx - 0.5) * m_gridSizeRow[layer]);
+      zpos += 0.5 * m_dz_row * (li.groupedRows[aidx-1] - m_gridSizeRow[layer]);
     }
 
     if (idx < 0) {
@@ -808,9 +805,21 @@ namespace DDSegmentation {
       decoder()->set(vID, m_typeIndex, type);
     }
 
-    // Calculate the row.  Careful --- cell indices start with 1,
+    // Calculate the volume row.  Careful --- cell indices start with 1,
     // volume indices start with 0!
-    decoder()->set(vID, m_rowIndex, (irow - 1) * m_gridSizeRow[layer]);
+    int vrow = 0;
+    if (m_detLayout == 1 && !m_groupedRows.empty()) {
+      const LayerInfo& li = getLayerInfo(layer);
+
+      // Rows grouped according to groupedRows rather than by grid_size_row
+      for (size_t i = 1; i < static_cast<size_t>(irow); i++)
+        vrow += li.groupedRows.at(i-1);
+    }
+    else {
+      // Normal case.
+      vrow = (irow - 1) * m_gridSizeRow.at(layer);
+    }
+    decoder()->set(vID, m_rowIndex, vrow);
 
     return vID;
   }
