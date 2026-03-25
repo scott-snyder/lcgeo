@@ -1,12 +1,13 @@
 {
   "version": 5,
-  "prev": "3556723938bcacb8d88b7809c0d7041e7ab1e78b",
-  "head": "c6fde2534b54e5b71d455fc48c7cad03ba0fa4e0",
+  "prev": "b00ecd35ab6605341c848f2dd41efde6deb5fa39",
+  "head": "9404d8e44617e1f3295cffb8d52b721777ccf4e1",
   "applied": [
     "nosystem",
     "timeout",
     "ecal-subdet-volman",
-    "rowxml"
+    "rowxml",
+    "dbg-wip"
   ],
   "unapplied": [
     "hcal-theta-pos",
@@ -22,6 +23,9 @@
   "patches": {
     "ci": {
       "oid": "12279b627e5bc1d48ffe5e5a57a1d6609afa883a"
+    },
+    "dbg-wip": {
+      "oid": "9404d8e44617e1f3295cffb8d52b721777ccf4e1"
     },
     "drparamCleanup1": {
       "oid": "c3cbe04507a178415a031a54cbbfd3061339dd12"
