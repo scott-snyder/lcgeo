@@ -1,3 +1,4 @@
+#pragma GCC optimize "-O0"
 #include "detectorSegmentations/FCCSWHCalPhiRow_k4geo.h"
 #include "DD4hep/Printout.h"
 
