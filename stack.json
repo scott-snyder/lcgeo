@@ -1,15 +1,15 @@
 {
   "version": 5,
-  "prev": "fa96175e6072d7614e4da8747a1ee9777138534b",
-  "head": "c6fde2534b54e5b71d455fc48c7cad03ba0fa4e0",
+  "prev": "476c03fa03ffc0d919f4ced22191a7c329051cc0",
+  "head": "2b7ac8eaaf0ab42f71857bada52c6bed3586d119",
   "applied": [
     "nosystem",
     "timeout",
     "ecal-subdet-volman",
-    "rowxml"
+    "rowxml",
+    "hcalEndcapEdges"
   ],
   "unapplied": [
-    "hcalEndcapEdges",
     "hcal-theta-pos",
     "hcal-row-pos",
     "neighbor-dump-wip",
