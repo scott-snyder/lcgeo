@@ -1,4 +1,3 @@
-#pragma GCC optimize "-O0"
 #include "detectorSegmentations/FCCSWHCalPhiRow_k4geo.h"
 #include "DD4hep/Printout.h"
 
@@ -30,8 +29,11 @@ namespace DDSegmentation {
     registerParameter("numLayers", "Number of layers", m_numLayers, std::vector<int>());
     registerParameter("dRlayer", "dR of the layer", m_dRlayer, std::vector<double>());
     registerParameter("grouped_rows", "Number of rows combined in a pseudo-layer", m_groupedRows, std::vector<int>());
-    registerParameter("even_vol_offset", "Offset in z of the center of the sensitive volume within a row for even layers", m_evenVolOffset, 0.);
-    registerParameter("odd_vol_offset", "Offset in z of the center of the sensitive volume within a row for odd layers", m_oddVolOffset, 0.);
+    registerParameter("even_vol_offset",
+                      "Offset in z of the center of the sensitive volume within a row for even layers", m_evenVolOffset,
+                      0.);
+    registerParameter("odd_vol_offset",
+                      "Offset in z of the center of the sensitive volume within a row for odd layers", m_oddVolOffset, 0.);
 
     registerIdentifier("identifier_phi", "Cell ID identifier for phi", m_phiID, "phi");
     registerIdentifier("identifier_row", "Cell ID identifier for row", m_rowID, "row");
@@ -71,7 +73,7 @@ namespace DDSegmentation {
     // pseudo-layers. Need to adjust the cell position:
     if (m_detLayout == 1 && !m_groupedRows.empty()) {
       int aidx = std::abs(idx);
-      zpos += 0.5 * m_dz_row * (li.groupedRows[aidx-1] - m_gridSizeRow[layer]);
+      zpos += 0.5 * m_dz_row * (li.groupedRows.at(aidx - 1) - m_gridSizeRow.at(layer));
     }
 
     if (idx < 0) {
@@ -136,16 +138,16 @@ namespace DDSegmentation {
       // Loop over groups of layers.
       for (uint i_dR = 0; i_dR < N_dR; i_dR++) {
         // Loop over individual layers.
-        for (int i_lay = 0; i_lay < m_numLayers[i_dR + i_section * N_dR]; i_lay++) {
+        for (int i_lay = 0; i_lay < m_numLayers.at(i_dR + i_section * N_dR); i_lay++) {
 
-          double volOffset = (layerInSection%2) ? m_oddVolOffset : m_evenVolOffset;
+          double volOffset = (layerInSection % 2) ? m_oddVolOffset : m_evenVolOffset;
           double zOffset = m_dz_row * m_gridSizeRow.at(out.size()) * 0.5 - volOffset;
 
 
-          moduleDepth[i_section] += m_dRlayer[i_dR];
+          moduleDepth[i_section] += m_dRlayer.at(i_dR);
           out.push_back(LayerInfo{.type = i_section,
-                                  .radius = moduleDepth[i_section] - m_dRlayer[i_dR] * 0.5,
-                                  .halfDepth = m_dRlayer[i_dR] / 2,
+                                  .radius = moduleDepth.at(i_section) - m_dRlayer.at(i_dR) * 0.5,
+                                  .halfDepth = m_dRlayer.at(i_dR) / 2,
                                   .zmin = zmin,
                                   .zmax = zmax,
                                   .zOffset = zOffset,
@@ -822,9 +824,8 @@ namespace DDSegmentation {
 
       // Rows grouped according to groupedRows rather than by grid_size_row
       for (size_t i = 1; i < static_cast<size_t>(irow); i++)
-        vrow += li.groupedRows.at(i-1);
-    }
-    else {
+        vrow += li.groupedRows.at(i - 1);
+    } else {
       // Normal case.
       vrow = (irow - 1) * m_gridSizeRow.at(layer);
     }
