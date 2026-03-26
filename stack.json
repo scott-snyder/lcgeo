@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "31fd6cd1d077b66d8a7d3769fdf212f90c17d4bc",
+  "prev": "0ab7afb3e2ceb4214c6cc09d0e8463fb8850a5c5",
   "head": "77f09a248b526bda264a3d41a5eaace5f61df3f2",
   "applied": [
     "nosystem",
@@ -10,8 +10,6 @@
     "ecal-subdet-volman"
   ],
   "unapplied": [
-    "hcal-theta-pos",
-    "hcal-row-pos",
     "neighbor-dump-wip",
     "hcal-theta-pos-debugprint",
     "hcal-row-pos-debugprint",
@@ -30,14 +28,8 @@
     "ecal-subdet-volman": {
       "oid": "77f09a248b526bda264a3d41a5eaace5f61df3f2"
     },
-    "hcal-row-pos": {
-      "oid": "1dd42bf63263b9ef9201db0c52d489328f07de15"
-    },
     "hcal-row-pos-debugprint": {
       "oid": "07b17a88635435d428f68d1e5edf5ad7d3925a84"
-    },
-    "hcal-theta-pos": {
-      "oid": "84352abc300d2b7f4abe100bf7338d26d4306cfd"
     },
     "hcal-theta-pos-debugprint": {
       "oid": "1a61e65d7b2dea0bcd608a393e0c1911aa67a99d"
