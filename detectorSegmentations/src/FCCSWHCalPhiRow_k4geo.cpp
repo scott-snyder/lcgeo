@@ -185,7 +185,7 @@ namespace DDSegmentation {
       if (m_detLayout == 1 && !m_groupedRows.empty()) {
         int nrows = 0;
         for (size_t i = 0; i < li.groupedRows.size(); i++) {
-          nrows += li.groupedRows.at(i);
+          nrows += li.groupedRows[i];
           if (irow < nrows) {
             idx = (i + 1);
             break;
@@ -226,9 +226,9 @@ namespace DDSegmentation {
       if (m_detLayout == 1 && !m_groupedRows.empty()) {
         int nrows = 0;
         for (int i = 0; i < idx - 1; i++)
-          nrows += li.groupedRows.at(i);
+          nrows += li.groupedRows[i];
         z1 = minLayerZ + nrows * m_dz_row;
-        z2 = z1 + m_dz_row * li.groupedRows.at(idx - 1);
+        z2 = z1 + m_dz_row * li.groupedRows[idx - 1];
       } else {
         z1 = minLayerZ + (idx - 1) * m_dz_row * m_gridSizeRow.at(layer); // lower edge
         z2 = z1 + m_dz_row * m_gridSizeRow.at(layer);                    // upper edge
