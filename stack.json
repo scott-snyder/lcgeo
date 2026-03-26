@@ -1,13 +1,14 @@
 {
   "version": 5,
-  "prev": "318630636555152d5518ab98117b0459920f8464",
-  "head": "6fe29194e07eb850bb340c3ddf0f918c79ff6a1a",
+  "prev": "04e9b2a637374c8060c4692f4dfd4b14495b5a34",
+  "head": "ac9b4b9a055dbee1cbc445490f8fd4c5b20b50e4",
   "applied": [
     "ecal-subdet-volman",
     "timeout",
     "hcalEndcapEdges",
     "hcal-theta-pos",
-    "hcal-row-pos"
+    "hcal-row-pos",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
@@ -26,6 +27,9 @@
     },
     "hcal-row-pos": {
       "oid": "6fe29194e07eb850bb340c3ddf0f918c79ff6a1a"
+    },
+    "refresh-temp": {
+      "oid": "ac9b4b9a055dbee1cbc445490f8fd4c5b20b50e4"
     }
   }
 }
