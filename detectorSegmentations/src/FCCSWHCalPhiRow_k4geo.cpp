@@ -73,7 +73,7 @@ namespace DDSegmentation {
     // pseudo-layers. Need to adjust the cell position:
     if (m_detLayout == 1 && !m_groupedRows.empty()) {
       int aidx = std::abs(idx);
-      zpos += 0.5 * m_dz_row * (li.groupedRows.at(aidx - 1) - m_gridSizeRow.at(layer));
+      zpos += 0.5 * m_dz_row * (li.groupedRows[aidx - 1] - m_gridSizeRow.at(layer));
     }
 
     if (idx < 0) {
@@ -823,7 +823,7 @@ namespace DDSegmentation {
 
       // Rows grouped according to groupedRows rather than by grid_size_row
       for (size_t i = 1; i < static_cast<size_t>(irow); i++)
-        vrow += li.groupedRows.at(i - 1);
+        vrow += li.groupedRows[i - 1];
     } else {
       // Normal case.
       vrow = (irow - 1) * m_gridSizeRow.at(layer);
