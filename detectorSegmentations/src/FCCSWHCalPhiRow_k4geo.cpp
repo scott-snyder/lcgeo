@@ -32,8 +32,8 @@ namespace DDSegmentation {
     registerParameter("even_vol_offset",
                       "Offset in z of the center of the sensitive volume within a row for even layers", m_evenVolOffset,
                       0.);
-    registerParameter("odd_vol_offset",
-                      "Offset in z of the center of the sensitive volume within a row for odd layers", m_oddVolOffset, 0.);
+    registerParameter("odd_vol_offset", "Offset in z of the center of the sensitive volume within a row for odd layers",
+                      m_oddVolOffset, 0.);
 
     registerIdentifier("identifier_phi", "Cell ID identifier for phi", m_phiID, "phi");
     registerIdentifier("identifier_row", "Cell ID identifier for row", m_rowID, "row");
@@ -142,7 +142,6 @@ namespace DDSegmentation {
 
           double volOffset = (layerInSection % 2) ? m_oddVolOffset : m_evenVolOffset;
           double zOffset = m_dz_row * m_gridSizeRow.at(out.size()) * 0.5 - volOffset;
-
 
           moduleDepth[i_section] += m_dRlayer.at(i_dR);
           out.push_back(LayerInfo{.type = i_section,
