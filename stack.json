@@ -1,15 +1,16 @@
 {
   "version": 5,
-  "prev": "f492504b5e9fe3bb988ec797b412c397877a6ff8",
-  "head": "7fce6b63a577e0924a6fbbc5e157c48c47b56334",
+  "prev": "89056d35dc2a3b0d866af681fb50c5a953560d91",
+  "head": "36efc00186d748e46e1a9dfcbca2ad2d64460736",
   "applied": [
     "ecal-subdet-volman",
     "timeout",
-    "hcalEndcapEdges",
+    "hcalEndcapEdges"
+  ],
+  "unapplied": [
     "hcal-theta-pos",
     "hcal-row-pos"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "ecal-subdet-volman": {
