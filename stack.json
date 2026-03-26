@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "2b902595eada89a7d3f462d9170e74dd0edb08ee",
-  "head": "42649c811c51322a9409717ab66e955bbb3c207f",
+  "prev": "618d6d3a19b4b1d9c1663f8ba21a4e5d3d38c820",
+  "head": "b868aabd0c51e401562837d3d7ca2dd38e8994f5",
   "applied": [
     "nosystem",
     "timeout",
-    "hcalEndcapEdges",
-    "ci"
+    "hcalEndcapEdges"
   ],
   "unapplied": [
+    "ci",
     "ecal-subdet-volman",
     "rowxml",
     "hcal-theta-pos",
