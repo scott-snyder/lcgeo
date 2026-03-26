@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "09592c3cccf83a5446bf362344bb4ed2b7b7be39",
+  "prev": "12a254db9c1e12ee6ebd2f4b2258647043470963",
   "head": "ef1925e50128738e967295eaa1a0e2e7ea7e69ad",
   "applied": [
     "nosystem",
@@ -8,7 +8,6 @@
     "hcalEndcapEdges"
   ],
   "unapplied": [
-    "ci",
     "rowxml",
     "ecal-subdet-volman",
     "hcal-theta-pos",
@@ -18,7 +17,9 @@
     "hcal-row-pos-debugprint",
     "drparamCleanup1"
   ],
-  "hidden": [],
+  "hidden": [
+    "ci"
+  ],
   "patches": {
     "ci": {
       "oid": "1945b36243be018a5505fab9af7f3419ca26d12b"
