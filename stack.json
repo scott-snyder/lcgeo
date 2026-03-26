@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "cd79686659313387a48cf68ce38c0587efec5553",
-  "head": "69c8174cc0d510782a82b293b0db7e52660288d9",
+  "prev": "fda7f0d87c04405a81b8debeb6bd8d81c265e8e2",
+  "head": "a9deb22cf4938b86a65e7e3aaa2eab55b54a77a2",
   "applied": [
     "nosystem",
     "timeout",
@@ -9,8 +9,7 @@
     "rowxml",
     "hcalEndcapEdges",
     "hcal-theta-pos",
-    "hcal-row-pos",
-    "refresh-temp"
+    "hcal-row-pos"
   ],
   "unapplied": [
     "neighbor-dump-wip",
@@ -32,7 +31,7 @@
       "oid": "b2e40fe9a4156a6df04da8331a133a78905939e3"
     },
     "hcal-row-pos": {
-      "oid": "264346b8d4e89d176b9ea9dd1cf6308576ee6c25"
+      "oid": "a9deb22cf4938b86a65e7e3aaa2eab55b54a77a2"
     },
     "hcal-row-pos-debugprint": {
       "oid": "07b17a88635435d428f68d1e5edf5ad7d3925a84"
@@ -51,9 +50,6 @@
     },
     "nosystem": {
       "oid": "3d98294c1e586e23cd2b640b9646e9cab953d6b8"
-    },
-    "refresh-temp": {
-      "oid": "69c8174cc0d510782a82b293b0db7e52660288d9"
     },
     "rowxml": {
       "oid": "c6fde2534b54e5b71d455fc48c7cad03ba0fa4e0"
