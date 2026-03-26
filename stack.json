@@ -1,15 +1,19 @@
 {
   "version": 5,
-  "prev": "3299fb694c0077d858419aa95d76b5323190c1ad",
-  "head": "ac4a77f0462d7702ae06a29a6b7126ce4339562c",
+  "prev": "0ff4c45a304a0f35dfb3a43f6b85cd5ca53b5472",
+  "head": "caf86386439215480870f4316206faa577c03862",
   "applied": [
-    "ecal-subdet-volman"
+    "ecal-subdet-volman",
+    "timeout"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
     "ecal-subdet-volman": {
       "oid": "ac4a77f0462d7702ae06a29a6b7126ce4339562c"
+    },
+    "timeout": {
+      "oid": "caf86386439215480870f4316206faa577c03862"
     }
   }
 }
