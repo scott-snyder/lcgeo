@@ -31,7 +31,7 @@ namespace DDSegmentation {
     /// Default constructor used by derived classes passing an existing decoder
     FCCSWHCalPhiTheta_k4geo(const BitFieldCoder* decoder);
 
-    /**  Get the postion of the geometric center of the cell based on the cellID
+    /**  Get the position of the geometric center of the cell based on the cellID
      *   @param[in] aCellID
      *   return the cell center in the local coordinate system of the
      *   associated dd4hep volume

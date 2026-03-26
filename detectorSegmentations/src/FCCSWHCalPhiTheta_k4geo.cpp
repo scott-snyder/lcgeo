@@ -141,7 +141,7 @@ namespace DDSegmentation {
     // <--- start from theta bin outside the HCal theta range
     int ibin = positionToBin(0.02, gridSizeTheta(), offsetTheta());
     // Go in increasing theta bin number, which corresponds to a
-    // decreasing z-coordinate.  So we start remembering bin numbesr
+    // decreasing z-coordinate.  So we start remembering bin numbers
     // once the z-coordinate is less than the maximum and stop once the
     // z-coordinate is less than the minimum.
     for (;; ++ibin) {
