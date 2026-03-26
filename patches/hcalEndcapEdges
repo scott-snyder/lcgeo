@@ -1,0 +1,9 @@
+Bottom: 7489611fc50783b8b491678215e4d78442f1ebe0
+Top:    1d530b3f2400d206fa3ef1c738e2631a005db0c3
+Author: sss <sss@karma>
+Date:   2026-03-26 18:00:28 -0400
+
+Fix cell edge calculation for FCC endcap grouped row segmentation.
+
+For FCCSWHCalPhiRow_k4geo, the calculation of cell edges needs to take
+into account the setting of grouped_rows.
