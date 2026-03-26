@@ -225,12 +225,11 @@ namespace DDSegmentation {
       double z1, z2;
       if (m_detLayout == 1 && !m_groupedRows.empty()) {
         int nrows = 0;
-        for (int i = 0; i < idx-1; i++)
+        for (int i = 0; i < idx - 1; i++)
           nrows += li.groupedRows.at(i);
         z1 = minLayerZ + nrows * m_dz_row;
         z2 = z1 + m_dz_row * li.groupedRows.at(idx - 1);
-      }
-      else {
+      } else {
         z1 = minLayerZ + (idx - 1) * m_dz_row * m_gridSizeRow.at(layer); // lower edge
         z2 = z1 + m_dz_row * m_gridSizeRow.at(layer);                    // upper edge
       }
