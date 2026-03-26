@@ -1,3 +1,4 @@
+#include "detectorSegmentations/FCCSWHCalPhiRow_k4geo.h"
 #include "DD4hep/Printout.h"
 
 namespace dd4hep {
