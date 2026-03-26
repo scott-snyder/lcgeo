@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "fae0c38e363e32effdba196962fc74de76840deb",
-  "head": "a1269b7add0ab9d9da587c0f7f53598c39c76525",
+  "prev": "9c0772ac73e73e6fcf6b11b983784bb1072fc165",
+  "head": "3f924532ed0751dfe9896e66224446fb79df913e",
   "applied": [
     "ecal-subdet-volman",
     "timeout",
-    "hcalEndcapEdges"
+    "hcalEndcapEdges",
+    "refresh-temp"
   ],
   "unapplied": [
     "hcal-theta-pos",
@@ -21,6 +22,9 @@
     },
     "hcalEndcapEdges": {
       "oid": "a1269b7add0ab9d9da587c0f7f53598c39c76525"
+    },
+    "refresh-temp": {
+      "oid": "3f924532ed0751dfe9896e66224446fb79df913e"
     },
     "hcal-theta-pos": {
       "oid": "f1a7049040dd7fee48cc0b3d8355892e1804e56f"
