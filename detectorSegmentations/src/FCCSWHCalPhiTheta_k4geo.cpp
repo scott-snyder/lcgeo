@@ -273,7 +273,8 @@ namespace DDSegmentation {
       // corresponds to increasing z.
       for (size_t ir0 = 0; ir0 < nrows; ++ir0) {
         int ir = ir0;
-        if (m_detLayout == 1 && zmin < 0) ir = nrows-1-ir;
+        if (m_detLayout == 1 && zmin < 0)
+          ir = nrows - 1 - ir;
 
         // Make the volume ID for this row and find the position of its center.
         decoder()->set(vID, m_rowIndex, ir);
