@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "1c6d771d7d18aded83baa772906307366394735c",
+  "prev": "460756a90c98cca6675344c190e14d78ee6f5349",
   "head": "cc28abdae4c4c485a4f65d0cb8cacd9b31802ca6",
   "applied": [
     "nosystem",
@@ -9,7 +9,6 @@
     "rowxml"
   ],
   "unapplied": [
-    "ci",
     "ecal-subdet-volman",
     "hcal-theta-pos",
     "hcal-row-pos",
@@ -18,7 +17,9 @@
     "hcal-row-pos-debugprint",
     "drparamCleanup1"
   ],
-  "hidden": [],
+  "hidden": [
+    "ci"
+  ],
   "patches": {
     "ci": {
       "oid": "1ac4762213d524741d73ba71b9f52adbc5ce5b74"
