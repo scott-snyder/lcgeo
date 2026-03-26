@@ -1,12 +1,11 @@
 {
   "version": 5,
-  "prev": "9c0772ac73e73e6fcf6b11b983784bb1072fc165",
-  "head": "3f924532ed0751dfe9896e66224446fb79df913e",
+  "prev": "02aaa54f17fca6e76c80fef9613f84a6682fdc7a",
+  "head": "357a3c6f1941808449e82966bd1128048af6097f",
   "applied": [
     "ecal-subdet-volman",
     "timeout",
-    "hcalEndcapEdges",
-    "refresh-temp"
+    "hcalEndcapEdges"
   ],
   "unapplied": [
     "hcal-theta-pos",
@@ -21,10 +20,7 @@
       "oid": "caf86386439215480870f4316206faa577c03862"
     },
     "hcalEndcapEdges": {
-      "oid": "a1269b7add0ab9d9da587c0f7f53598c39c76525"
-    },
-    "refresh-temp": {
-      "oid": "3f924532ed0751dfe9896e66224446fb79df913e"
+      "oid": "357a3c6f1941808449e82966bd1128048af6097f"
     },
     "hcal-theta-pos": {
       "oid": "f1a7049040dd7fee48cc0b3d8355892e1804e56f"
