@@ -1,17 +1,17 @@
 {
   "version": 5,
-  "prev": "5f52e1292fef826f60e57a2f30b60b4a1c69581c",
-  "head": "2035cf538df3a67f1048050d0a6c9a3daae5173a",
+  "prev": "1d56abb48c4856c612f5de8af0e3049716c6563c",
+  "head": "69320848296bdce8e67be53c40f2db124716b6b4",
   "applied": [
     "nosystem",
     "timeout",
     "hcalEndcapEdges",
     "rowxml",
     "ecal-subdet-volman",
-    "FCChh",
-    "ci"
+    "FCChh"
   ],
   "unapplied": [
+    "ci",
     "hcal-theta-pos",
     "hcal-row-pos",
     "neighbor-dump-wip",
