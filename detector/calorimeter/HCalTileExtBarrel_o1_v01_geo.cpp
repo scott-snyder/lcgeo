@@ -102,7 +102,7 @@ static void buildEB(dd4hep::Detector& aLcdd, dd4hep::SensitiveDetector& aSensDet
   // Calculate correction along z based on the module size (can only have natural number of modules)
   double dzDetector1 = (numSequencesZ1 * dzSequence) / 2 + 2 * dZEndPlate + space;
   lLog << MSG::INFO
-       << "correction of dz (negative = size reduced) first part EB :" << dzDetector1*2 - dimensions.width() * 2
+       << "correction of dz (negative = size reduced) first part EB :" << dzDetector1 * 2 - dimensions.width() * 2
        << endmsg;
   double dzDetector2 = (numSequencesZ2 * dzSequence) / 2 + 2 * dZEndPlate + space;
   lLog << MSG::INFO << "dz second part EB:" << dzDetector2 * 2 << endmsg;
@@ -173,7 +173,7 @@ static void buildEB(dd4hep::Detector& aLcdd, dd4hep::SensitiveDetector& aSensDet
     Volume tileSequenceVolume("HCalEBTileSequenceVol1", tileSequenceShape, aLcdd.air());
 
     lLog << MSG::DEBUG << "layer radii:  " << rminLayer << " - " << rmaxLayer << " [cm]" << endmsg;
-    
+
     dd4hep::Tube layerShape(rminLayer, rmaxLayer, dzDetector1);
     Volume layerVolume("HCalEBLayerVol1", layerShape, aLcdd.air());
 
@@ -288,12 +288,12 @@ static void buildEB(dd4hep::Detector& aLcdd, dd4hep::SensitiveDetector& aSensDet
   for (uint iLayer = 0; iLayer < (layerDepths1.size() + layerDepths2.size()); iLayer++) {
     DetElement layerDet(aHCal, dd4hep::xml::_toString(sign * (iLayer + 1), "layer%d"), sign * (iLayer + 1));
     layerDet.setPlacement(layers[iLayer]);
-    
+
     for (uint iSeq = 0; iSeq < seqInLayers[iLayer].size(); iSeq++) {
       DetElement seqDet(layerDet, dd4hep::xml::_toString(iSeq, "seq%d"), sign * (iSeq + 1));
       seqDet.setPlacement(seqInLayers[iLayer][iSeq]);
 
-      DetElement tileDet(seqDet, dd4hep::xml::_toString(iSeq, "tile%d"), sign * (iSeq+1));
+      DetElement tileDet(seqDet, dd4hep::xml::_toString(iSeq, "tile%d"), sign * (iSeq + 1));
       tileDet.setPlacement(tilesPerLayer[iLayer]);
     }
   }
