@@ -1,14 +1,15 @@
 {
   "version": 5,
-  "prev": "28d9bbc8f2a355d94c811eab26d5e5734636de15",
-  "head": "69320848296bdce8e67be53c40f2db124716b6b4",
+  "prev": "5f52e1292fef826f60e57a2f30b60b4a1c69581c",
+  "head": "2035cf538df3a67f1048050d0a6c9a3daae5173a",
   "applied": [
     "nosystem",
     "timeout",
     "hcalEndcapEdges",
     "rowxml",
     "ecal-subdet-volman",
-    "FCChh"
+    "FCChh",
+    "ci"
   ],
   "unapplied": [
     "hcal-theta-pos",
@@ -16,8 +17,7 @@
     "neighbor-dump-wip",
     "hcal-theta-pos-debugprint",
     "hcal-row-pos-debugprint",
-    "drparamCleanup1",
-    "ci"
+    "drparamCleanup1"
   ],
   "hidden": [],
   "patches": {
@@ -25,7 +25,7 @@
       "oid": "69320848296bdce8e67be53c40f2db124716b6b4"
     },
     "ci": {
-      "oid": "1945b36243be018a5505fab9af7f3419ca26d12b"
+      "oid": "2035cf538df3a67f1048050d0a6c9a3daae5173a"
     },
     "drparamCleanup1": {
       "oid": "c3cbe04507a178415a031a54cbbfd3061339dd12"
