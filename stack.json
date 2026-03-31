@@ -1,13 +1,14 @@
 {
   "version": 5,
-  "prev": "2491ceb1f121c98e1951d959ee351947c4e35330",
-  "head": "77f09a248b526bda264a3d41a5eaace5f61df3f2",
+  "prev": "1fd8b000b9f426aab23de1cb47483ec7582537eb",
+  "head": "946020b7b992026c7e8734a4f5f2d62c7e5f0e21",
   "applied": [
     "nosystem",
     "timeout",
     "hcalEndcapEdges",
     "rowxml",
-    "ecal-subdet-volman"
+    "ecal-subdet-volman",
+    "FCChh"
   ],
   "unapplied": [
     "hcal-theta-pos",
@@ -21,6 +22,9 @@
     "ci"
   ],
   "patches": {
+    "FCChh": {
+      "oid": "946020b7b992026c7e8734a4f5f2d62c7e5f0e21"
+    },
     "ci": {
       "oid": "1945b36243be018a5505fab9af7f3419ca26d12b"
     },

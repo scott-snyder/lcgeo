@@ -1,0 +1,8 @@
+Bottom: 523021e3ba5c21770744b56312929fbab9fb7f59
+Top:    523021e3ba5c21770744b56312929fbab9fb7f59
+Author: sss <sss@karma>
+Date:   2026-03-30 22:18:23 -0400
+
+Add FCChh configuration.
+
+Copy FCChh configuration from FCCDetectors, adjusting it to work with k4geo.
