@@ -1,14 +1,15 @@
 {
   "version": 5,
-  "prev": "1fd8b000b9f426aab23de1cb47483ec7582537eb",
-  "head": "946020b7b992026c7e8734a4f5f2d62c7e5f0e21",
+  "prev": "dbeb45da9bcadf1883ff7964f2733854f6572038",
+  "head": "5460f8b66bd51b0e9c2651057ab1211f6bba3a3c",
   "applied": [
     "nosystem",
     "timeout",
     "hcalEndcapEdges",
     "rowxml",
     "ecal-subdet-volman",
-    "FCChh"
+    "FCChh",
+    "refresh-temp"
   ],
   "unapplied": [
     "hcal-theta-pos",
@@ -54,6 +55,9 @@
     },
     "nosystem": {
       "oid": "08ceb96d036945944d8e18ffd99cdc056518c47a"
+    },
+    "refresh-temp": {
+      "oid": "5460f8b66bd51b0e9c2651057ab1211f6bba3a3c"
     },
     "rowxml": {
       "oid": "60e9fa41b2cfa03f934064ffe2df591a01b7abb2"
