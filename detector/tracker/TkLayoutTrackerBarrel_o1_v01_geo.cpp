@@ -1,6 +1,5 @@
 
 
-
 #include "DD4hep/DetFactoryHelper.h"
 
 using dd4hep::DetElement;
@@ -9,7 +8,6 @@ using dd4hep::Volume;
 using dd4hep::xml::Dimension;
 
 namespace det {
-
 
 static dd4hep::Ref_t createTkLayoutTrackerBarrel(dd4hep::Detector& lcdd, dd4hep::xml::Handle_t xmlElement,
                                                  dd4hep::SensitiveDetector sensDet) {

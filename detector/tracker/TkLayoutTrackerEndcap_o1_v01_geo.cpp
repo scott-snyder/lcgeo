@@ -9,7 +9,6 @@ using dd4hep::xml::Dimension;
 
 namespace det {
 
-
 static dd4hep::Ref_t createTkLayoutTrackerEndcap(dd4hep::Detector& lcdd, dd4hep::xml::Handle_t xmlElement,
                                                  dd4hep::SensitiveDetector sensDet) {
   // shorthands
@@ -46,8 +45,7 @@ static dd4hep::Ref_t createTkLayoutTrackerEndcap(dd4hep::Detector& lcdd, dd4hep:
     double discThickness = 0.5 * (xDisc.zmax() - xDisc.zmin());
     currentZ = xDisc.z() - dimensions.zmin() - envelopeThickness;
     if (xCurrentRings.hasChild(_Unicode(ring))) { // we have information to construct a new volume
-      dd4hep::Tube discShape(xDisc.rmin() - l_overlapMargin,
-                             xDisc.rmax() + l_overlapMargin,
+      dd4hep::Tube discShape(xDisc.rmin() - l_overlapMargin, xDisc.rmax() + l_overlapMargin,
                              discThickness + l_overlapMargin);
 
       discVolumeVec.emplace_back("disc", discShape, lcdd.air());
