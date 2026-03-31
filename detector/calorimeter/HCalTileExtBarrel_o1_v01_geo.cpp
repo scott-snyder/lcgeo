@@ -7,17 +7,16 @@
 namespace MSG {
 const std::string ERROR = " Error: ";
 const std::string DEBUG = " Debug: ";
-const std::string INFO  = " Info: ";
-}
+const std::string INFO = " Info: ";
+} // namespace MSG
 
-using dd4hep::Volume;
 using dd4hep::DetElement;
-using dd4hep::xml::Dimension;
 using dd4hep::PlacedVolume;
+using dd4hep::Volume;
+using dd4hep::xml::Dimension;
 
-static
-void buildEB(dd4hep::Detector& aLcdd, dd4hep::SensitiveDetector& aSensDet, dd4hep::Volume& aEnvelope,
-             dd4hep::DetElement& aHCal, xml_det_t aXmlElement, int sign) {
+static void buildEB(dd4hep::Detector& aLcdd, dd4hep::SensitiveDetector& aSensDet, dd4hep::Volume& aEnvelope,
+                    dd4hep::DetElement& aHCal, xml_det_t aXmlElement, int sign) {
 
   dd4hep::SensitiveDetector sensDet = aSensDet;
   Dimension sensDetType = aXmlElement.child(_Unicode(sensitive));
@@ -28,7 +27,7 @@ void buildEB(dd4hep::Detector& aLcdd, dd4hep::SensitiveDetector& aSensDet, dd4he
   double dZEndPlate = xEndPlate.thickness() / 2.;
   xml_comp_t xFacePlate = aXmlElement.child(_Unicode(face_plate));
   double dRhoFacePlate = xFacePlate.thickness() / 2.;
-  xml_comp_t xSpace = aXmlElement.child(_Unicode(plate_space));  // to avoid overlaps
+  xml_comp_t xSpace = aXmlElement.child(_Unicode(plate_space)); // to avoid overlaps
   double space = xSpace.thickness();
   xml_comp_t xSteelSupport = aXmlElement.child(_Unicode(steel_support));
   double dSteelSupport = xSteelSupport.thickness();
@@ -43,7 +42,8 @@ void buildEB(dd4hep::Detector& aLcdd, dd4hep::SensitiveDetector& aSensDet, dd4he
   double extBarrelOffset2 = dimensions.z_offset();
 
   // Hard-coded assumption that we have two different sequences for the modules
-  std::vector<xml_comp_t> sequences = {aXmlElement.child(_Unicode(sequence_a)), aXmlElement.child(_Unicode(sequence_b))};
+  std::vector<xml_comp_t> sequences = {aXmlElement.child(_Unicode(sequence_a)),
+                                       aXmlElement.child(_Unicode(sequence_b))};
   // NOTE: This assumes that both have the same dimensions!
   Dimension sequenceDimensions(sequences[1].dimensions());
   double dzSequence = sequenceDimensions.dz();
@@ -62,11 +62,10 @@ void buildEB(dd4hep::Detector& aLcdd, dd4hep::SensitiveDetector& aSensDet, dd4he
 
   // get all 'layer' children of the 'layers' tag
   std::vector<xml_comp_t> Layers;
-  for (xml_coll_t xCompColl(aXmlElement.child(_Unicode(layers)), _Unicode(layer)); xCompColl;
-       ++xCompColl) {
+  for (xml_coll_t xCompColl(aXmlElement.child(_Unicode(layers)), _Unicode(layer)); xCompColl; ++xCompColl) {
     Layers.push_back(xCompColl);
   }
-  
+
   for (std::vector<xml_comp_t>::iterator it = Layers.begin(); it != Layers.end(); ++it) {
     xml_comp_t layer = *it;
     Dimension layerDimension(layer.dimensions());
@@ -89,16 +88,15 @@ void buildEB(dd4hep::Detector& aLcdd, dd4hep::SensitiveDetector& aSensDet, dd4he
        << " , which end up to a full module depth in rho of " << moduleDepth2 << endmsg;
   lLog << MSG::DEBUG << "retrieved number of layers in second ExtBarrel part:  " << layerDepths2.size() << endmsg;
 
-  lLog << MSG::INFO << "constructing first part EB: with offset " << extBarrelOffset1 << ": "<< numSequencesZ1
-       << " rings in Z, " << numSequencesR1 << " layers in Rho, " << numSequencesR1 * numSequencesZ1
-       << " tiles" << endmsg;
+  lLog << MSG::INFO << "constructing first part EB: with offset " << extBarrelOffset1 << ": " << numSequencesZ1
+       << " rings in Z, " << numSequencesR1 << " layers in Rho, " << numSequencesR1 * numSequencesZ1 << " tiles"
+       << endmsg;
 
   lLog << MSG::INFO << "constructing second part EB: with offset " << extBarrelOffset2 << ": " << numSequencesZ2
-       << " rings in Z, " << numSequencesR2 << " layers in Rho, "
-       << layerDepths2.size() * numSequencesZ2 << " tiles" << endmsg;
+       << " rings in Z, " << numSequencesR2 << " layers in Rho, " << layerDepths2.size() * numSequencesZ2 << " tiles"
+       << endmsg;
 
-  lLog << MSG::INFO << "number of channels: "
-       << (numSequencesR2 * numSequencesZ2) + (numSequencesR1 * numSequencesZ1)
+  lLog << MSG::INFO << "number of channels: " << (numSequencesR2 * numSequencesZ2) + (numSequencesR1 * numSequencesZ1)
        << endmsg;
 
   // Calculate correction along z based on the module size (can only have natural number of modules)
@@ -107,11 +105,10 @@ void buildEB(dd4hep::Detector& aLcdd, dd4hep::SensitiveDetector& aSensDet, dd4he
        << "correction of dz (negative = size reduced) first part EB :" << dzDetector1*2 - dimensions.width()*2
        << endmsg;
   double dzDetector2 = (numSequencesZ2 * dzSequence) / 2 + 2 * dZEndPlate + space;
-  lLog << MSG::INFO << "dz second part EB:" << dzDetector2 * 2
-       << endmsg;
-  lLog << MSG::INFO << "width second part EB:" << dimensions.dz() * 2
-       << endmsg;
-  lLog << MSG::INFO << "correction of dz (negative = size reduced) second part EB:" << dzDetector2*2 - dimensions.dz()*2
+  lLog << MSG::INFO << "dz second part EB:" << dzDetector2 * 2 << endmsg;
+  lLog << MSG::INFO << "width second part EB:" << dimensions.dz() * 2 << endmsg;
+  lLog << MSG::INFO
+       << "correction of dz (negative = size reduced) second part EB:" << dzDetector2*2 - dimensions.dz()*2
        << endmsg;
 
   // Add structural support made of steel inside of HCal
@@ -155,11 +152,11 @@ void buildEB(dd4hep::Detector& aLcdd, dd4hep::SensitiveDetector& aSensDet, dd4he
   endPlateNeg.setPlacement(placedEndPlateNeg);
 
   std::vector<dd4hep::PlacedVolume> layers;
-  layers.reserve(layerDepths1.size()+layerDepths2.size());
-  std::vector<std::vector<dd4hep::PlacedVolume> > seqInLayers;
-  seqInLayers.reserve(layerDepths1.size()+layerDepths2.size());
+  layers.reserve(layerDepths1.size() + layerDepths2.size());
+  std::vector<std::vector<dd4hep::PlacedVolume>> seqInLayers;
+  seqInLayers.reserve(layerDepths1.size() + layerDepths2.size());
   std::vector<dd4hep::PlacedVolume> tilesPerLayer;
-  tilesPerLayer.reserve(layerDepths1.size()+layerDepths2.size());
+  tilesPerLayer.reserve(layerDepths1.size() + layerDepths2.size());
 
   // loop over R ("layers")
   double layerR = 0.;
@@ -169,44 +166,41 @@ void buildEB(dd4hep::Detector& aLcdd, dd4hep::SensitiveDetector& aSensDet, dd4he
     double rmaxLayer = sensitiveBarrel1Rmin + layerR + layerDepths1.at(idxLayer);
     layerR += layerDepths1.at(idxLayer);
 
-    //alternate: even layers consist of tile sequence b, odd layer of tile sequence a
-    unsigned int sequenceIdx = (idxLayer+1) % 2;
+    // alternate: even layers consist of tile sequence b, odd layer of tile sequence a
+    unsigned int sequenceIdx = (idxLayer + 1) % 2;
     
-    dd4hep::Tube tileSequenceShape(rminLayer, rmaxLayer, 0.5*dzSequence);
+    dd4hep::Tube tileSequenceShape(rminLayer, rmaxLayer, 0.5 * dzSequence);
     Volume tileSequenceVolume("HCalEBTileSequenceVol1", tileSequenceShape, aLcdd.air());
 
     lLog << MSG::DEBUG << "layer radii:  " << rminLayer << " - " << rmaxLayer << " [cm]" << endmsg;
     
 
-    dd4hep::Tube layerShape(rminLayer, rmaxLayer, dzDetector1 );
+    dd4hep::Tube layerShape(rminLayer, rmaxLayer, dzDetector1);
     Volume layerVolume("HCalEBLayerVol1", layerShape, aLcdd.air());
 
   
     layerVolume.setVisAttributes(aLcdd.invisible());
 
-    dd4hep::Position moduleOffset1 (0,0,sign * extBarrelOffset1);
+    dd4hep::Position moduleOffset1 (0, 0, sign * extBarrelOffset1);
 
     dd4hep::PlacedVolume placedLayerVolume = aEnvelope.placeVolume(layerVolume, moduleOffset1);
-    placedLayerVolume.addPhysVolID("type", 1 - sign);  // First module type=0,2 in front of second +/-
+    placedLayerVolume.addPhysVolID("type", 1 - sign); // First module type=0,2 in front of second +/-
     placedLayerVolume.addPhysVolID("layer", idxLayer);
     layers.push_back(placedLayerVolume);
    
-    double tileZOffset = - 0.5* dzSequence;
+    double tileZOffset = - 0.5 * dzSequence;
 
     // first Z loop (tiles that make up a sequence)
-    for (xml_coll_t xCompColl(sequences[sequenceIdx], _Unicode(module_component)); xCompColl;
-	 ++xCompColl) {
+    for (xml_coll_t xCompColl(sequences[sequenceIdx], _Unicode(module_component)); xCompColl; ++xCompColl) {
       xml_comp_t xComp = xCompColl;
       dd4hep::Tube tileShape(rminLayer, rmaxLayer, 0.5 * xComp.thickness());
       
-      Volume tileVol("HCalEBTileVol_"+ xComp.materialStr()
-		     , tileShape,
-		     aLcdd.material(xComp.materialStr()));
+      Volume tileVol("HCalEBTileVol_"+ xComp.materialStr(), tileShape, aLcdd.material(xComp.materialStr()));
       tileVol.setVisAttributes(aLcdd, xComp.visStr());
       
-      dd4hep::Position tileOffset(0, 0, tileZOffset + 0.5 * xComp.thickness() );
+      dd4hep::Position tileOffset(0, 0, tileZOffset + 0.5 * xComp.thickness());
       dd4hep::PlacedVolume placedTileVol = tileSequenceVolume.placeVolume(tileVol, tileOffset);
-      
+
       if (xComp.isSensitive()) {
         tileVol.setSensitiveDetector(sensDet);
         tilesPerLayer.push_back(placedTileVol);
@@ -215,10 +209,10 @@ void buildEB(dd4hep::Detector& aLcdd, dd4hep::SensitiveDetector& aSensDet, dd4he
     }
 
     // second z loop (place sequences in layer)
-    std::vector<dd4hep::PlacedVolume> seqs; 
-    double zOffset = - dzDetector1 + 0.5 * dzSequence; //2*dZEndPlate + space + 0.5 * dzSequence;
+    std::vector<dd4hep::PlacedVolume> seqs;
+    double zOffset = -dzDetector1 + 0.5 * dzSequence; //2*dZEndPlate + space + 0.5 * dzSequence;
     
-    for (uint numSeq=0; numSeq < numSequencesZ1; numSeq++){
+    for (uint numSeq = 0; numSeq < numSequencesZ1; numSeq++){
       dd4hep::Position tileSequencePosition(0, 0, zOffset);
       dd4hep::PlacedVolume placedTileSequenceVolume = layerVolume.placeVolume(tileSequenceVolume, tileSequencePosition);
       placedTileSequenceVolume.addPhysVolID("row", numSeq);
@@ -231,15 +225,15 @@ void buildEB(dd4hep::Detector& aLcdd, dd4hep::SensitiveDetector& aSensDet, dd4he
   layerR = 0.;
   // Placement of subWedges in Wedge, 2nd part
   for (unsigned int idxLayer = 0; idxLayer < layerDepths2.size(); ++idxLayer) {
-    // in Module rmin = 0  for first wedge, changed radius to the full radius starting at (0,0,0)                                                                      
+    // in Module rmin = 0  for first wedge, changed radius to the full radius starting at (0,0,0)
     double rminLayer = sensitiveBarrel2Rmin + layerR;
     double rmaxLayer = sensitiveBarrel2Rmin + layerR + layerDepths2.at(idxLayer);
     layerR += layerDepths2.at(idxLayer);
 
-    //alternate: even layers consist of tile sequence b, odd layer of tile sequence a                                                                                  
-    unsigned int sequenceIdx = (idxLayer+1) % 2;
+    //alternate: even layers consist of tile sequence b, odd layer of tile sequence a
+    unsigned int sequenceIdx = (idxLayer + 1) % 2;
 
-    dd4hep::Tube tileSequenceShape(rminLayer, rmaxLayer, 0.5*dzSequence);
+    dd4hep::Tube tileSequenceShape(rminLayer, rmaxLayer, 0.5 * dzSequence);
     Volume tileSequenceVolume("HCalEBTileSequenceVol2", tileSequenceShape, aLcdd.air());
 
     lLog << MSG::DEBUG << "layer radii:  " << rminLayer << " - " << rmaxLayer << " [cm]" << endmsg;
@@ -250,17 +244,14 @@ void buildEB(dd4hep::Detector& aLcdd, dd4hep::SensitiveDetector& aSensDet, dd4he
 
     layerVolume.setVisAttributes(aLcdd.invisible());
 
-    double tileZOffset = - 0.5* dzSequence;
+    double tileZOffset = - 0.5 * dzSequence;
 
-    // first Z loop (tiles that make up a sequence)                                                                                                                    
-    for (xml_coll_t xCompColl(sequences[sequenceIdx], _Unicode(module_component)); xCompColl;
-         ++xCompColl) {
+    // first Z loop (tiles that make up a sequence)
+    for (xml_coll_t xCompColl(sequences[sequenceIdx], _Unicode(module_component)); xCompColl; ++xCompColl) {
       xml_comp_t xComp = xCompColl;
       dd4hep::Tube tileShape(rminLayer, rmaxLayer, 0.5 * xComp.thickness());
 
-      Volume tileVol("HCalEBTileVol_"
-		     , tileShape,
-                     aLcdd.material(xComp.materialStr()));
+      Volume tileVol("HCalEBTileVol_", tileShape, aLcdd.material(xComp.materialStr()));
       tileVol.setVisAttributes(aLcdd, xComp.visStr());
 
       dd4hep::Position tileOffset(0, 0, tileZOffset + 0.5 * xComp.thickness() );
@@ -273,11 +264,11 @@ void buildEB(dd4hep::Detector& aLcdd, dd4hep::SensitiveDetector& aSensDet, dd4he
       tileZOffset += xComp.thickness();
     }
 
-    // second z loop (place sequences in layer)                                                                                                                        
+    // second z loop (place sequences in layer)
     std::vector<dd4hep::PlacedVolume> seqs;
-    double zOffset = - dzDetector2 + 0.5 * dzSequence; //2*dZEndPlate + space + (dzSequence * 0.5);
+    double zOffset = -dzDetector2 + 0.5 * dzSequence; //2*dZEndPlate + space + (dzSequence * 0.5);
 
-    for (uint numSeq=0; numSeq < numSequencesZ2; numSeq++){
+    for (uint numSeq = 0; numSeq < numSequencesZ2; numSeq++) {
       dd4hep::Position tileSequencePosition(0, 0, zOffset);
       dd4hep::PlacedVolume placedTileSequenceVolume = layerVolume.placeVolume(tileSequenceVolume, tileSequencePosition);
       placedTileSequenceVolume.addPhysVolID("row", numSeq);
@@ -286,24 +277,23 @@ void buildEB(dd4hep::Detector& aLcdd, dd4hep::SensitiveDetector& aSensDet, dd4he
     }
     seqInLayers.push_back(seqs);
 
-    dd4hep::Position moduleOffset2 (0, 0, sign * extBarrelOffset2);
+    dd4hep::Position moduleOffset2(0, 0, sign * extBarrelOffset2);
     dd4hep::PlacedVolume placedLayerVolume = aEnvelope.placeVolume(layerVolume, moduleOffset2);
-    placedLayerVolume.addPhysVolID("type", 2 - sign);  // Second module type=1,3 behind the first +/-
+    placedLayerVolume.addPhysVolID("type", 2 - sign); // Second module type=1,3 behind the first +/-
     placedLayerVolume.addPhysVolID("layer", layerDepths1.size() + idxLayer);
     layers.push_back(placedLayerVolume);
-
   }
 
   // Placement of DetElements
   lLog << MSG::DEBUG << "Layers in r :    " << layers.size() << std::endl;
   lLog << MSG::DEBUG << "Tiles in layers :" << tilesPerLayer.size() << std::endl;
   
-  for (uint iLayer = 0; iLayer < (layerDepths1.size()+layerDepths2.size()); iLayer++) {
-    DetElement layerDet(aHCal, dd4hep::xml::_toString(sign*(iLayer+1), "layer%d"), sign*(iLayer+1));
+  for (uint iLayer = 0; iLayer < (layerDepths1.size() + layerDepths2.size()); iLayer++) {
+    DetElement layerDet(aHCal, dd4hep::xml::_toString(sign*(iLayer+1), "layer%d"), sign * (iLayer + 1));
     layerDet.setPlacement(layers[iLayer]);
     
-    for (uint iSeq = 0; iSeq < seqInLayers[iLayer].size(); iSeq++){
-      DetElement seqDet(layerDet, dd4hep::xml::_toString(iSeq, "seq%d"), sign*(iSeq+1));
+    for (uint iSeq = 0; iSeq < seqInLayers[iLayer].size(); iSeq++) {
+      DetElement seqDet(layerDet, dd4hep::xml::_toString(iSeq, "seq%d"), sign*(iSeq + 1));
       seqDet.setPlacement(seqInLayers[iLayer][iSeq]);
 
       DetElement tileDet(seqDet, dd4hep::xml::_toString(iSeq, "tile%d"), sign*(iSeq+1));
@@ -314,7 +304,6 @@ void buildEB(dd4hep::Detector& aLcdd, dd4hep::SensitiveDetector& aSensDet, dd4he
 }
 
 static dd4hep::Ref_t createHCalEB(dd4hep::Detector& lcdd, xml_h xmlElement, dd4hep::SensitiveDetector sensDet) {
-
 
   xml_det_t xmlDet = xmlElement;
   std::string detName = xmlDet.nameStr();

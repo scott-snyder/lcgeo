@@ -5,8 +5,7 @@ namespace det {
   Simple cone using dimensions to be used to define cone composed of 1 single material
   @author Clement Helsens
 **/
-static dd4hep::Ref_t
-createSimpleCone(dd4hep::Detector& lcdd, xml_h e, dd4hep::SensitiveDetector sensDet) {
+static dd4hep::Ref_t createSimpleCone(dd4hep::Detector& lcdd, xml_h e, dd4hep::SensitiveDetector sensDet) {
   xml_det_t x_det = e;
   std::string name = x_det.nameStr();
   dd4hep::DetElement coneDet(name, x_det.id());
@@ -21,7 +20,7 @@ createSimpleCone(dd4hep::Detector& lcdd, xml_h e, dd4hep::SensitiveDetector sens
   if (x_det.isSensitive()) {
     dd4hep::xml::Dimension sdType(x_det.child(_U(sensitive)));
     coneVol.setSensitiveDetector(sensDet);
-    sensDet.setType(sdType.typeStr());  
+    sensDet.setType(sdType.typeStr());
   }
 
   dd4hep::PlacedVolume conePhys;
@@ -32,11 +31,10 @@ createSimpleCone(dd4hep::Detector& lcdd, xml_h e, dd4hep::SensitiveDetector sens
     if (coneDim.hasAttr(_Unicode(reflect))) {
       if (coneDim.reflect()) {
         reflectionAngle = M_PI;
-        }
+      }
     }
     dd4hep::Position trans(0., 0., zoff);
-    conePhys =
-        experimentalHall.placeVolume(coneVol, dd4hep::Transform3D(dd4hep::RotationX(reflectionAngle), trans));
+    conePhys = experimentalHall.placeVolume(coneVol, dd4hep::Transform3D(dd4hep::RotationX(reflectionAngle), trans));
   } else
     conePhys = experimentalHall.placeVolume(coneVol);
 
@@ -47,6 +45,6 @@ createSimpleCone(dd4hep::Detector& lcdd, xml_h e, dd4hep::SensitiveDetector sens
   coneDet.setVisAttributes(lcdd, x_det.visStr(), coneVol);
   return coneDet;
 }
-}
+} // namespace det
 
 DECLARE_DETELEMENT(SimpleCone_o1_v01, det::createSimpleCone)

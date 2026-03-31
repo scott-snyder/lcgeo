@@ -1,17 +1,16 @@
 
 #include "DD4hep/DetFactoryHelper.h"
 
-using dd4hep::Volume;
 using dd4hep::DetElement;
-using dd4hep::xml::Dimension;
-using dd4hep::xml::Component;
 using dd4hep::PlacedVolume;
+using dd4hep::Volume;
+using dd4hep::xml::Component;
+using dd4hep::xml::Dimension;
 
 namespace det {
 
 
-static dd4hep::Ref_t createTkLayoutTrackerEndcap(dd4hep::Detector& lcdd,
-                                                 dd4hep::xml::Handle_t xmlElement,
+static dd4hep::Ref_t createTkLayoutTrackerEndcap(dd4hep::Detector& lcdd, dd4hep::xml::Handle_t xmlElement,
                                                  dd4hep::SensitiveDetector sensDet) {
   // shorthands
   dd4hep::xml::DetElement xmlDet = static_cast<dd4hep::xml::DetElement>(xmlElement);
@@ -24,8 +23,6 @@ static dd4hep::Ref_t createTkLayoutTrackerEndcap(dd4hep::Detector& lcdd,
   std::string detName = xmlDet.nameStr();
   DetElement worldDetElement(detName, xmlDet.id());
   DetElement posEcapDetElement(worldDetElement, "posEndcap", 0);
-
-
 
   dd4hep::Assembly envelopeVolume("endcapEnvelope");
   envelopeVolume.setVisAttributes(lcdd.invisible());
@@ -48,9 +45,10 @@ static dd4hep::Ref_t createTkLayoutTrackerEndcap(dd4hep::Detector& lcdd,
     // create disc volume
     double discThickness = 0.5 * (xDisc.zmax() - xDisc.zmin());
     currentZ = xDisc.z() - dimensions.zmin() - envelopeThickness;
-    if (xCurrentRings.hasChild(_Unicode(ring))) {  // we have information to construct a new volume
-      dd4hep::Tube discShape(
-          xDisc.rmin() - l_overlapMargin, xDisc.rmax() + l_overlapMargin, discThickness + l_overlapMargin);
+    if (xCurrentRings.hasChild(_Unicode(ring))) { // we have information to construct a new volume
+      dd4hep::Tube discShape(xDisc.rmin() - l_overlapMargin,
+                             xDisc.rmax() + l_overlapMargin,
+                             discThickness + l_overlapMargin);
 
       discVolumeVec.emplace_back("disc", discShape, lcdd.air());
       discDetElementVec.emplace_back(posEcapDetElement, "disc" + std::to_string(discCounter), discCounter);
@@ -65,7 +63,6 @@ static dd4hep::Ref_t createTkLayoutTrackerEndcap(dd4hep::Detector& lcdd,
         Component xModulePropertiesComp = xModuleProperties.child(_Unicode(components));
         Component xSensorProperties = xRing.child(_Unicode(sensorProperties));
 
-
         // place components in module
         double integratedCompThickness = 0.;
         for (dd4hep::xml::Collection_t xCompColl(xModulePropertiesComp, _U(component)); nullptr != xCompColl;
@@ -77,8 +74,7 @@ static dd4hep::Ref_t createTkLayoutTrackerEndcap(dd4hep::Detector& lcdd,
           double compThickness = 0.5 * xComp.thickness();
           double compLength = 0.5 * xSensorProperties.attr<double>("sensorLength");
           Volume componentVolume(
-              "component",
-              dd4hep::Trapezoid(compMinWidth, compMaxWidth, compThickness, compThickness, compLength),
+              "component", dd4hep::Trapezoid(compMinWidth, compMaxWidth, compThickness, compThickness, compLength),
               lcdd.material(xComp.materialStr()));
           componentVolume.setVisAttributes(lcdd.invisible());
           unsigned int nPhi = xRing.attr<int>("nModules");
@@ -111,7 +107,7 @@ static dd4hep::Ref_t createTkLayoutTrackerEndcap(dd4hep::Detector& lcdd,
             dd4hep::RotationX lRotation2(M_PI * 0.5 + phiTilt);
             // align radially
             double componentOffset = integratedCompThickness - 0.5 * xModuleProperties.attr<double>("modThickness") +
-                0.5 * xComp.thickness();
+                                     0.5 * xComp.thickness();
             dd4hep::RotationZ lRotation3(atan2(lY, lX));
             // theta tilt, if any -- note the different convention between
             // tklayout and here, thus the subtraction of pi / 2
@@ -167,6 +163,6 @@ static dd4hep::Ref_t createTkLayoutTrackerEndcap(dd4hep::Detector& lcdd,
   mplv.addPhysVolID("system", xmlDet.id());
   return worldDetElement;
 }
-}  // namespace det
+} // namespace det
 
 DECLARE_DETELEMENT(TkLayoutTrackerEndcap_o1_v01, det::createTkLayoutTrackerEndcap)

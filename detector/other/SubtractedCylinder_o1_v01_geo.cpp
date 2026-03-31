@@ -7,9 +7,8 @@ rmin1, rmax1, z1 dimensions of the enveloping cylinder
 rmin2, rmax2, z2 dimensions of the cylinder to be subtracted
 @author: Joschka Lingemann
 */
-static dd4hep::Ref_t createSubtractedCylinder(dd4hep::Detector& lcdd,
-                                                        dd4hep::xml::Handle_t xmlElement,
-                                                        dd4hep::SensitiveDetector /*sensDet*/) {
+static dd4hep::Ref_t createSubtractedCylinder(dd4hep::Detector& lcdd, dd4hep::xml::Handle_t xmlElement,
+                                              dd4hep::SensitiveDetector /*sensDet*/) {
   dd4hep::xml::DetElement xmlDet = static_cast<dd4hep::xml::DetElement>(xmlElement);
   std::string name = xmlDet.nameStr();
   dd4hep::DetElement detElement(name, xmlDet.id());
@@ -32,6 +31,6 @@ static dd4hep::Ref_t createSubtractedCylinder(dd4hep::Detector& lcdd,
 
   return detElement;
 }
-}
+} // namespace det
 
 DECLARE_DETELEMENT(SubtractedCylinder_o1_v01, det::createSubtractedCylinder)

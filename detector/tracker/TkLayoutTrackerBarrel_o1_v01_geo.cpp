@@ -3,16 +3,15 @@
 
 #include "DD4hep/DetFactoryHelper.h"
 
-using dd4hep::Volume;
 using dd4hep::DetElement;
-using dd4hep::xml::Dimension;
 using dd4hep::PlacedVolume;
+using dd4hep::Volume;
+using dd4hep::xml::Dimension;
 
 namespace det {
 
 
-static dd4hep::Ref_t createTkLayoutTrackerBarrel(dd4hep::Detector& lcdd,
-                                                 dd4hep::xml::Handle_t xmlElement,
+static dd4hep::Ref_t createTkLayoutTrackerBarrel(dd4hep::Detector& lcdd, dd4hep::xml::Handle_t xmlElement,
                                                  dd4hep::SensitiveDetector sensDet) {
   // shorthands
   dd4hep::xml::DetElement xmlDet = static_cast<dd4hep::xml::DetElement>(xmlElement);
@@ -56,15 +55,13 @@ static dd4hep::Ref_t createTkLayoutTrackerBarrel(dd4hep::Detector& lcdd,
     Volume moduleVolume;
 
     for (dd4hep::xml::Collection_t xModuleComponentOddColl(xModuleComponentsOdd, _U(component));
-         nullptr != xModuleComponentOddColl;
-         ++xModuleComponentOddColl) {
+         nullptr != xModuleComponentOddColl; ++xModuleComponentOddColl) {
       dd4hep::xml::Component xModuleComponentOdd = static_cast<dd4hep::xml::Component>(xModuleComponentOddColl);
       double moduleWidth = 0.5 * xModulePropertiesOdd.attr<double>("modWidth");
       double moduleThickness = 0.5 * xModuleComponentOdd.thickness();
       double moduleLength = 0.5 * xModulePropertiesOdd.attr<double>("modLength");
 
-      moduleVolume = Volume("module",
-                            dd4hep::Box(moduleWidth, moduleThickness, moduleLength),
+      moduleVolume = Volume("module", dd4hep::Box(moduleWidth, moduleThickness, moduleLength),
                             lcdd.material(xModuleComponentOdd.materialStr()));
 
       moduleVolume.setVisAttributes(lcdd.invisible());
@@ -77,12 +74,12 @@ static dd4hep::Ref_t createTkLayoutTrackerBarrel(dd4hep::Detector& lcdd,
           if (currentComp.ptr()) {
             phi = 2 * M_PI * static_cast<double>(phiIndex) / static_cast<double>(nPhi);
             for (dd4hep::xml::Collection_t xModuleColl(currentComp.child(_Unicode(modules)), _U(module));
-                 nullptr != xModuleColl;
-                 ++xModuleColl) {
+                 nullptr != xModuleColl; ++xModuleColl) {
               dd4hep::xml::Component xModule = static_cast<dd4hep::xml::Component>(xModuleColl);
               double currentPhi = atan2(xModule.Y(), xModule.X());
               double componentOffset = integratedModuleComponentThickness -
-                  0.5 * xModulePropertiesOdd.attr<double>("modThickness") + 0.5 * xModuleComponentOdd.thickness();
+                                       0.5 * xModulePropertiesOdd.attr<double>("modThickness") +
+                                       0.5 * xModuleComponentOdd.thickness();
               dd4hep::Translation3D offsetOnly(cos(currentPhi) * componentOffset, sin(currentPhi) * componentOffset, 0);
               lX = xModule.X();
               lY = xModule.Y();
@@ -115,6 +112,6 @@ static dd4hep::Ref_t createTkLayoutTrackerBarrel(dd4hep::Detector& lcdd,
   topDetElement.setPlacement(placedGenericTrackerBarrel);
   return topDetElement;
 }
-}  // namespace det
+} // namespace det
 
 DECLARE_DETELEMENT(TkLayoutTrackerBarrel_o1_v01, det::createTkLayoutTrackerBarrel)
