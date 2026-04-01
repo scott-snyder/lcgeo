@@ -1,5 +1,6 @@
 // DD4hep
 #include "DD4hep/DetFactoryHelper.h"
+#include "XML/Utilities.h"
 
 // todo: remove gaudi logging and properly capture output
 #define endmsg std::endl
@@ -330,6 +331,10 @@ static dd4hep::Ref_t createHCalEB(dd4hep::Detector& lcdd, xml_h xmlElement, dd4h
   PlacedVolume placedHCal = motherVol.placeVolume(envelopeVolume);
   placedHCal.addPhysVolID("system", xmlDet.id());
   hCalEB.setPlacement(placedHCal);
+
+  // Set type flags
+  dd4hep::xml::DetElement xmlDetElem = xmlElement;
+  dd4hep::xml::setDetectorTypeFlag(xmlDetElem, hCalEB);
 
   return hCalEB;
 }
