@@ -1,10 +1,9 @@
 {
   "version": 5,
-  "prev": "b60b77fcece6ef6a38fa395fb6a603ac16b5febb",
-  "head": "fd0ebbfd592c54fb44aeebebe214f435105eba02",
+  "prev": "4acd9ea5d676c94468f59ab21e01eba371908b07",
+  "head": "2b308eb7f2b593d985c1fa91575a7aa3828d0620",
   "applied": [
     "nosystem",
-    "hcalEndcapEdges",
     "rowxml",
     "ecal-subdet-volman",
     "FCChh",
@@ -22,43 +21,40 @@
   ],
   "patches": {
     "FCChh": {
-      "oid": "0f6d09317d6c8ba50e757141e3dc91b67080206f"
+      "oid": "f57a44d3abf66c93145039b06f686be5e765a6fa"
     },
     "ci": {
       "oid": "2035cf538df3a67f1048050d0a6c9a3daae5173a"
     },
     "drparamCleanup1": {
-      "oid": "fd0ebbfd592c54fb44aeebebe214f435105eba02"
+      "oid": "2b308eb7f2b593d985c1fa91575a7aa3828d0620"
     },
     "ecal-subdet-volman": {
-      "oid": "8a14687de4173c7d0f4031d8ff056bcde1649f9b"
+      "oid": "c205293a81d424b3b1bb1dcb3fa9f0b91f28b469"
     },
     "hcal-row-pos": {
-      "oid": "a9b330785573adeb709c55e7bc6b8d770cd80723"
+      "oid": "442e220d2b872804c563fd567d36ec904b7ecb65"
     },
     "hcal-row-pos-debugprint": {
-      "oid": "5318b144e10c91d80f62d296e627b07ebca49a3c"
+      "oid": "fa8fe13376ad85490d0aab28c98bfaaef5958249"
     },
     "hcal-theta-pos": {
-      "oid": "b043f353f716c7b5560fb72e1953b2de141c7627"
+      "oid": "5cd3d8d33942cfc60756d8ab8655695f2096cd96"
     },
     "hcal-theta-pos-debugprint": {
-      "oid": "30156c6f2df18b9ab3c39569eccb498df184bba5"
-    },
-    "hcalEndcapEdges": {
-      "oid": "3513954941c08efdfea734fda7fd1e6236b1795c"
+      "oid": "2025c60d5e08018a6036093993a98f96b83182d9"
     },
     "neighbor-dump-wip": {
-      "oid": "b1742a9cb5ae1d5c29c3c17ee719082d708e0385"
+      "oid": "e930453a737cc46ea9ea79a774409c70229f9b50"
     },
     "nosystem": {
       "oid": "366c319a5689ad5dd4d86de71beb9b97a1e3f9fa"
     },
     "rowxml": {
-      "oid": "41af3e3377e8070659925a106e17792e3b30356f"
+      "oid": "41f8795543e26f60abbe9fd87b38bdd93ff5105b"
     },
     "timeout": {
-      "oid": "727cc06126233a6a27ee17c768b3b821463b4d9c"
+      "oid": "e2756593c06159cdf286c6f555d9b24f2a67cafd"
     }
   }
 }
