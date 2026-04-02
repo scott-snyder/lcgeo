@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4acd9ea5d676c94468f59ab21e01eba371908b07",
-  "head": "2b308eb7f2b593d985c1fa91575a7aa3828d0620",
+  "prev": "a61e3a5f87af4e39b15444275e8ef34fa955f97b",
+  "head": "442e220d2b872804c563fd567d36ec904b7ecb65",
   "applied": [
     "nosystem",
     "rowxml",
@@ -9,13 +9,14 @@
     "FCChh",
     "timeout",
     "hcal-theta-pos",
-    "hcal-row-pos",
+    "hcal-row-pos"
+  ],
+  "unapplied": [
     "neighbor-dump-wip",
     "hcal-theta-pos-debugprint",
     "hcal-row-pos-debugprint",
     "drparamCleanup1"
   ],
-  "unapplied": [],
   "hidden": [
     "ci"
   ],
