@@ -1,18 +1,18 @@
 {
   "version": 5,
-  "prev": "6dfefbc6f7c34aa826c687f22bd29789370d088b",
-  "head": "a82b6ec4c25839562e18f3f4c717427c25fea0aa",
+  "prev": "3ab704c20ef3ba1d2f856eceadb0920581cddf5e",
+  "head": "3ae4b579f1d8d2936d73d128d3e5a0503a19606c",
   "applied": [
     "nosystem",
     "rowxml",
     "ecal-subdet-volman",
     "FCChh",
     "timeout",
-    "clang-odr"
+    "clang-odr",
+    "hcal-theta-pos",
+    "hcal-row-pos"
   ],
   "unapplied": [
-    "hcal-theta-pos",
-    "hcal-row-pos",
     "neighbor-dump-wip",
     "hcal-theta-pos-debugprint",
     "hcal-row-pos-debugprint",
@@ -38,13 +38,13 @@
       "oid": "c205293a81d424b3b1bb1dcb3fa9f0b91f28b469"
     },
     "hcal-row-pos": {
-      "oid": "442e220d2b872804c563fd567d36ec904b7ecb65"
+      "oid": "3ae4b579f1d8d2936d73d128d3e5a0503a19606c"
     },
     "hcal-row-pos-debugprint": {
       "oid": "fa8fe13376ad85490d0aab28c98bfaaef5958249"
     },
     "hcal-theta-pos": {
-      "oid": "5cd3d8d33942cfc60756d8ab8655695f2096cd96"
+      "oid": "6ed98b6d0f036a9f0a097c5c1c89683ae05667be"
     },
     "hcal-theta-pos-debugprint": {
       "oid": "2025c60d5e08018a6036093993a98f96b83182d9"
