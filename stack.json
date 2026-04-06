@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "867c1d030aa7c7d54c0be3356fcd50b7fa3a276e",
-  "head": "03e8393cd039dd9844f7e68162007e6d998b5a3c",
+  "prev": "fc072e1d31a4416d3ffa264447802a737ad9f876",
+  "head": "ac25a288a45f10f469939e050e6ec9546dac7968",
   "applied": [
     "nosystem",
     "rowxml",
@@ -9,11 +9,11 @@
     "timeout",
     "FCChh",
     "clang-odr",
-    "hcal-theta-pos",
-    "hcal-row-pos",
     "fcchhdoc"
   ],
   "unapplied": [
+    "hcal-theta-pos",
+    "hcal-row-pos",
     "neighbor-dump-wip",
     "hcal-theta-pos-debugprint",
     "hcal-row-pos-debugprint",
@@ -39,7 +39,7 @@
       "oid": "c205293a81d424b3b1bb1dcb3fa9f0b91f28b469"
     },
     "fcchhdoc": {
-      "oid": "03e8393cd039dd9844f7e68162007e6d998b5a3c"
+      "oid": "ac25a288a45f10f469939e050e6ec9546dac7968"
     },
     "hcal-row-pos": {
       "oid": "82975366c6a93ac76ad15b681dc8324e4960b4e4"
