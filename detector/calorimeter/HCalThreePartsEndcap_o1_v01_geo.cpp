@@ -127,8 +127,7 @@ void buildEC(dd4hep::Detector& aLcdd, dd4hep::SensitiveDetector& aSensDet, dd4he
   double dzDetector2 = (numSequencesZ2 * dzSequence) / 2;
   lLog << INFO << "dz second part EC:" << dzDetector2 * 2 << endmsg;
   lLog << INFO << "width second part EC:" << dimensions.dz() * 2 << endmsg;
-  lLog << INFO
-       << "correction of dz (negative = size reduced) second part EB:" << dzDetector2 * 2 - dimensions.dz() * 2
+  lLog << INFO << "correction of dz (negative = size reduced) second part EB:" << dzDetector2 * 2 - dimensions.dz() * 2
        << endmsg;
 
   double dzDetector3 = (numSequencesZ3 * dzSequence) / 2 + 2 * dZEndPlate + space;
@@ -426,11 +425,9 @@ static dd4hep::Ref_t createHCalEC(dd4hep::Detector& lcdd, xml_h xmlElement, dd4h
   Volume envelopeVolume(detName + "_volume", envelopeShape, lcdd.air());
   envelopeVolume.setVisAttributes(lcdd, dimensions.visStr());
 
-  lLog << DEBUG << "Placing detector on the positive side: (cm) " << (dimensions.offset() + dimensions.dz())
-       << endmsg;
+  lLog << DEBUG << "Placing detector on the positive side: (cm) " << (dimensions.offset() + dimensions.dz()) << endmsg;
   buildEC(lcdd, sensDet, envelopeVolume, hCalEC, xmlElement, 1);
-  lLog << DEBUG << "Placing detector on the negative side: (cm) " << -(dimensions.offset() + dimensions.dz())
-       << endmsg;
+  lLog << DEBUG << "Placing detector on the negative side: (cm) " << -(dimensions.offset() + dimensions.dz()) << endmsg;
   buildEC(lcdd, sensDet, envelopeVolume, hCalEC, xmlElement, -1);
 
   // Place envelope volume

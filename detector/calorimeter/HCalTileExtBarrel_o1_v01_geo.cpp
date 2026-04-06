@@ -107,8 +107,7 @@ static void buildEB(dd4hep::Detector& aLcdd, dd4hep::SensitiveDetector& aSensDet
   double dzDetector2 = (numSequencesZ2 * dzSequence) / 2 + 2 * dZEndPlate + space;
   lLog << INFO << "dz second part EB:" << dzDetector2 * 2 << endmsg;
   lLog << INFO << "width second part EB:" << dimensions.dz() * 2 << endmsg;
-  lLog << INFO
-       << "correction of dz (negative = size reduced) second part EB:" << dzDetector2 * 2 - dimensions.dz() * 2
+  lLog << INFO << "correction of dz (negative = size reduced) second part EB:" << dzDetector2 * 2 - dimensions.dz() * 2
        << endmsg;
 
   // Add structural support made of steel inside of HCal
@@ -317,11 +316,9 @@ static dd4hep::Ref_t createHCalEB(dd4hep::Detector& lcdd, xml_h xmlElement, dd4h
   Volume envelopeVolume(detName + "_volume", envelopeShape, lcdd.air());
   envelopeVolume.setVisAttributes(lcdd, dimensions.visStr());
 
-  lLog << DEBUG << "Placing detector on the positive side: (cm) " << (dimensions.offset() + dimensions.dz())
-       << endmsg;
+  lLog << DEBUG << "Placing detector on the positive side: (cm) " << (dimensions.offset() + dimensions.dz()) << endmsg;
   buildEB(lcdd, sensDet, envelopeVolume, hCalEB, xmlElement, 1);
-  lLog << DEBUG << "Placing detector on the negative side: (cm) " << -(dimensions.offset() + dimensions.dz())
-       << endmsg;
+  lLog << DEBUG << "Placing detector on the negative side: (cm) " << -(dimensions.offset() + dimensions.dz()) << endmsg;
   buildEB(lcdd, sensDet, envelopeVolume, hCalEB, xmlElement, -1);
 
   // Place envelope volume
