@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "418cf99567857577bf22ae3028f93866e50139e8",
-  "head": "9f74ac07410c2cd186986f9c84e559817aecd554",
+  "prev": "867c1d030aa7c7d54c0be3356fcd50b7fa3a276e",
+  "head": "03e8393cd039dd9844f7e68162007e6d998b5a3c",
   "applied": [
     "nosystem",
     "rowxml",
@@ -11,8 +11,7 @@
     "clang-odr",
     "hcal-theta-pos",
     "hcal-row-pos",
-    "fcchhdoc",
-    "refresh-temp"
+    "fcchhdoc"
   ],
   "unapplied": [
     "neighbor-dump-wip",
@@ -40,7 +39,7 @@
       "oid": "c205293a81d424b3b1bb1dcb3fa9f0b91f28b469"
     },
     "fcchhdoc": {
-      "oid": "580cdad23a53ffe7251d9ad0b86eeadba5cb77f5"
+      "oid": "03e8393cd039dd9844f7e68162007e6d998b5a3c"
     },
     "hcal-row-pos": {
       "oid": "82975366c6a93ac76ad15b681dc8324e4960b4e4"
@@ -59,9 +58,6 @@
     },
     "nosystem": {
       "oid": "366c319a5689ad5dd4d86de71beb9b97a1e3f9fa"
-    },
-    "refresh-temp": {
-      "oid": "9f74ac07410c2cd186986f9c84e559817aecd554"
     },
     "rowxml": {
       "oid": "41f8795543e26f60abbe9fd87b38bdd93ff5105b"
