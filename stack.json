@@ -1,15 +1,12 @@
 {
   "version": 5,
-  "prev": "eee2c25b92ce1b0b94e32e4be190cc49872bb350",
-  "head": "04c18c3103f01905a0b706b1abc7edecb79bd1c2",
+  "prev": "79f1b3e1a1300c9ad2a6f1bc62c04975d7cb28f5",
+  "head": "1856cb4931f2e056b024b23a6d201ceea2888e9f",
   "applied": [
     "nosystem",
     "rowxml",
     "ecal-subdet-volman",
     "timeout",
-    "FCChh",
-    "clang-odr",
-    "fcchhdoc",
     "hcal-theta-pos",
     "hcal-row-pos",
     "neighbor-dump-wip",
@@ -22,38 +19,29 @@
     "ci"
   ],
   "patches": {
-    "FCChh": {
-      "oid": "4bc219662be85b2b28b922708626f7a0e5cb6715"
-    },
     "ci": {
       "oid": "2035cf538df3a67f1048050d0a6c9a3daae5173a"
     },
-    "clang-odr": {
-      "oid": "bdc9a8ad33b7e1a15a5c0df6aad0b9223d8fd5f8"
-    },
     "drparamCleanup1": {
-      "oid": "04c18c3103f01905a0b706b1abc7edecb79bd1c2"
+      "oid": "1856cb4931f2e056b024b23a6d201ceea2888e9f"
     },
     "ecal-subdet-volman": {
       "oid": "e04a1f0844cf08f295a2699a8f5d1af1eade54ca"
     },
-    "fcchhdoc": {
-      "oid": "68f673ea9b9f289540ab2995ac79325c5954bcfe"
-    },
     "hcal-row-pos": {
-      "oid": "b2e698b0c26cf7fa0d2a2918b373554f24319c88"
+      "oid": "9d1f7e4a27ed4919d5fb19946c184b8def82e4c3"
     },
     "hcal-row-pos-debugprint": {
-      "oid": "4e48bd68cd5db5910720874478392969f448e053"
+      "oid": "f43eecc0943e92a5499c6beb8f1ae896f7beb56d"
     },
     "hcal-theta-pos": {
-      "oid": "709dad3eb516a4a6153890a743d06b8be80f111e"
+      "oid": "fa9a6f42fd7148ce55b9c99e77a2e49a6a1b6e06"
     },
     "hcal-theta-pos-debugprint": {
-      "oid": "e387fb5ec1a9a3994fbe155235fded202286c94e"
+      "oid": "bbbe01ee9911bfeb532237b2e7ae10789d2dc375"
     },
     "neighbor-dump-wip": {
-      "oid": "58ece03ea859f5b5fe5872aa8fc0293a14e9a9ea"
+      "oid": "dc7834511c2c473ff31728c9dfaac217cd2f9af0"
     },
     "nosystem": {
       "oid": "a1874d7d9a78ec7f07326069bfd3fb8bfb4a73c9"
