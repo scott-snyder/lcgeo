@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "f43be4b6b122ee9bc668f3af37e354edffe605c7",
+  "prev": "b00e86861fd28d8dc93d188415d4d6f2bebfbd08",
   "head": "9d1f7e4a27ed4919d5fb19946c184b8def82e4c3",
   "applied": [
     "nosystem",
@@ -14,11 +14,10 @@
     "neighbor-dump-wip",
     "hcal-theta-pos-debugprint",
     "hcal-row-pos-debugprint",
-    "drparamCleanup1"
-  ],
-  "hidden": [
+    "drparamCleanup1",
     "ci"
   ],
+  "hidden": [],
   "patches": {
     "ci": {
       "oid": "2035cf538df3a67f1048050d0a6c9a3daae5173a"
