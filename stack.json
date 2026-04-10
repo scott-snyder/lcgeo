@@ -1,13 +1,13 @@
 {
   "version": 5,
-  "prev": "a680705b6badf471dabd95f29628b07a3e91a402",
-  "head": "e59a12d8410b23b95e37532b62dafdf00433ef31",
+  "prev": "9fa77c67652d6ba5f684d84113014bab4f131036",
+  "head": "4837cbb6f7996c8c3f5a4ffe2d90eacf7805b6ea",
   "applied": [
     "ecal-subdet-volman",
-    "timeout"
+    "timeout",
+    "hcalEndcapEdges"
   ],
   "unapplied": [
-    "hcalEndcapEdges",
     "hcal-theta-pos",
     "hcal-row-pos"
   ],
@@ -20,7 +20,7 @@
       "oid": "e59a12d8410b23b95e37532b62dafdf00433ef31"
     },
     "hcalEndcapEdges": {
-      "oid": "357a3c6f1941808449e82966bd1128048af6097f"
+      "oid": "4837cbb6f7996c8c3f5a4ffe2d90eacf7805b6ea"
     },
     "hcal-theta-pos": {
       "oid": "2016a06de61a47f6b5c90a8f902f4daec643f6de"
