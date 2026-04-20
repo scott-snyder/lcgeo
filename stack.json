@@ -1,13 +1,12 @@
 {
   "version": 5,
-  "prev": "a67f0efd0aca8563bf704ea4b98f38d800447886",
-  "head": "d26b1fd8c07511d0af7100210b32eae2db887597",
+  "prev": "ca839ac0abf75aabf984da0e9d8c357b5dfef812",
+  "head": "2fb6ee6018017bed2b6dbb762ae95faf7daab989",
   "applied": [
     "ecal-subdet-volman",
     "timeout",
     "hcal-theta-pos",
-    "hcal-row-pos",
-    "refresh-temp"
+    "hcal-row-pos"
   ],
   "unapplied": [],
   "hidden": [],
@@ -16,16 +15,13 @@
       "oid": "a94588b936fa7e07e85f32dcba430a88032b65b3"
     },
     "timeout": {
-      "oid": "6ffabcb74b013468889e0185515baf69977f8c59"
+      "oid": "6ea2626f5768df1320cae3c2bb9aec218b7239d0"
     },
     "hcal-theta-pos": {
-      "oid": "25b2c5461ad68c1ad83e2cc62b0f64aa24ec2dbf"
+      "oid": "efdedd2f35e0b178be1a5220ac80c937247e5d23"
     },
     "hcal-row-pos": {
-      "oid": "c77fd425451dd99b381eaa1629222925c816a1b7"
-    },
-    "refresh-temp": {
-      "oid": "d26b1fd8c07511d0af7100210b32eae2db887597"
+      "oid": "2fb6ee6018017bed2b6dbb762ae95faf7daab989"
     }
   }
 }
