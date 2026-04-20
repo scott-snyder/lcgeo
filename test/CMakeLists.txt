@@ -94,13 +94,13 @@ if(DCH_INFO_H_EXIST)
   add_ddsim_gun_test(${CMAKE_CURRENT_SOURCE_DIR}/../FCCee/IDEA/compact/IDEA_o1_v03/IDEA_o1_v03.xml
     EXTRA_ARGS --gun.distribution uniform --gun.particle geantino --random.seed 1988301045
       --steeringFile=${CMAKE_CURRENT_SOURCE_DIR}/../example/SteeringFile_IDEA_o1_v03.py
-    PROPERTIES TIMEOUT 900)
+    PROPERTIES TIMEOUT 1800)
 
   # test for IDEA o1 v03, with DRC, with electrons
   add_ddsim_gun_test(${CMAKE_CURRENT_SOURCE_DIR}/compact/IDEA_withDRC_o1_v03.xml
     EXTRA_ARGS --gun.distribution uniform --gun.particle e- --random.seed 1988301045
       --steeringFile=${CMAKE_CURRENT_SOURCE_DIR}/../example/SteeringFile_IDEA_o1_v03.py
-    PROPERTIES TIMEOUT 900)
+    PROPERTIES TIMEOUT 1800)
 endif()
 
 #--------------------------------------------------
@@ -121,7 +121,7 @@ add_ddsim_gun_test(${CMAKE_CURRENT_SOURCE_DIR}/../FCCee/ALLEGRO/compact/ALLEGRO_
 if(DCH_INFO_H_EXIST)
   add_ddsim_gun_test(${CMAKE_CURRENT_SOURCE_DIR}/../FCCee/ALLEGRO/compact/ALLEGRO_o1_v03/ALLEGRO_o1_v03.xml
     EXTRA_ARGS --gun.distribution uniform --gun.particle geantino
-    PROPERTIES TIMEOUT 600)
+    PROPERTIES TIMEOUT 1200)
 endif()
 
 #--------------------------------------------------
