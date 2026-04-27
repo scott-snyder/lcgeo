@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "fb7dc382e685afa0b4d946ca591adee63919c18e",
-  "head": "2c44efff40fedac96f9f281b2662114f8da77429",
+  "prev": "7a205be8e36d342569e6d36242e72a4134ec6b10",
+  "head": "bb13581ddc4b7e10b6b9b1409c6db6ec1671323b",
   "applied": [
     "nosystem",
     "rowxml",
     "timeout",
     "ecal-subdet-volman",
-    "warn",
-    "refresh-temp"
+    "warn"
   ],
   "unapplied": [
     "hcal-theta-pos",
@@ -49,9 +48,6 @@
     "nosystem": {
       "oid": "c6ca9e4063e6d7c9b950c1c1352ffa0dab2d7a3c"
     },
-    "refresh-temp": {
-      "oid": "2c44efff40fedac96f9f281b2662114f8da77429"
-    },
     "rowxml": {
       "oid": "d9986de7d57a6657aabbd3a87b4a2c77376b0cce"
     },
@@ -59,7 +55,7 @@
       "oid": "15c53c0fd40b9f78cd3e070b69e1a71078f55839"
     },
     "warn": {
-      "oid": "3eaada4b435387b597905674dfd0705b17971c4a"
+      "oid": "bb13581ddc4b7e10b6b9b1409c6db6ec1671323b"
     }
   }
 }
