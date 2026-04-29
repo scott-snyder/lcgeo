@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "cbe24d1f12c398e70a91b2018221598b60bf6b9b",
-  "head": "d9147d3c9f09abae46fe3430ab55ede66e298b8e",
+  "prev": "064e437e8a200d1a7f2742a63297f451e6b152d8",
+  "head": "a9616eadbbbafd7a89a7778cc20d8011c482beca",
   "applied": [
     "nosystem",
     "rowxml",
     "timeout",
     "ecal-subdet-volman",
-    "warn",
-    "refresh-temp"
+    "warn"
   ],
   "unapplied": [
     "hcal-theta-pos",
@@ -29,7 +28,7 @@
       "oid": "3cbf064dc478308ad6a75263261f68dc384a74c7"
     },
     "ecal-subdet-volman": {
-      "oid": "4e8cdcd1a50cb0441b61e707330ac003e6f7bba6"
+      "oid": "c71bf95196cf379021f6667181f8f5a4070e8b42"
     },
     "hcal-row-pos": {
       "oid": "9e17c55355e4c4a85873ead5add18fbbd7543c5c"
@@ -49,17 +48,14 @@
     "nosystem": {
       "oid": "c6ca9e4063e6d7c9b950c1c1352ffa0dab2d7a3c"
     },
-    "refresh-temp": {
-      "oid": "d9147d3c9f09abae46fe3430ab55ede66e298b8e"
-    },
     "rowxml": {
       "oid": "d9986de7d57a6657aabbd3a87b4a2c77376b0cce"
     },
     "timeout": {
-      "oid": "15c53c0fd40b9f78cd3e070b69e1a71078f55839"
+      "oid": "88d40c6a32fc7425f1e2908e69b8177559a659f2"
     },
     "warn": {
-      "oid": "bb13581ddc4b7e10b6b9b1409c6db6ec1671323b"
+      "oid": "a9616eadbbbafd7a89a7778cc20d8011c482beca"
     }
   }
 }
