@@ -1,15 +1,14 @@
 {
   "version": 5,
-  "prev": "f727bd3ce9abc6cec1969e235dd33b20227ffe6b",
-  "head": "856032a316b6e14f440b7fe481274c4e7b957868",
+  "prev": "256685fdbc023239b4dad78a23cbdddb8ac7e4a2",
+  "head": "18041a54aadc60c53b104d0d33748d20106f421c",
   "applied": [
     "nosystem",
     "rowxml",
     "timeout",
     "ecal-subdet-volman",
     "warn",
-    "ci",
-    "refresh-temp"
+    "ci"
   ],
   "unapplied": [
     "hcal-theta-pos",
@@ -22,13 +21,13 @@
   "hidden": [],
   "patches": {
     "ci": {
-      "oid": "77dc61955d0e0688670d9ecc5c83f3ea1a4ff0bc"
+      "oid": "18041a54aadc60c53b104d0d33748d20106f421c"
     },
     "drparamCleanup1": {
       "oid": "3cbf064dc478308ad6a75263261f68dc384a74c7"
     },
     "ecal-subdet-volman": {
-      "oid": "c71bf95196cf379021f6667181f8f5a4070e8b42"
+      "oid": "e42a37605f2d34e398fb9d8d17eef223f79d33d5"
     },
     "hcal-row-pos": {
       "oid": "b050f95f99dc210101a681149dcfb9ec17107ca5"
@@ -48,17 +47,14 @@
     "nosystem": {
       "oid": "c6ca9e4063e6d7c9b950c1c1352ffa0dab2d7a3c"
     },
-    "refresh-temp": {
-      "oid": "856032a316b6e14f440b7fe481274c4e7b957868"
-    },
     "rowxml": {
-      "oid": "d9986de7d57a6657aabbd3a87b4a2c77376b0cce"
+      "oid": "f7153168c3693c798cbeca85fd557361c76b6cce"
     },
     "timeout": {
-      "oid": "88d40c6a32fc7425f1e2908e69b8177559a659f2"
+      "oid": "bac23e6b817916ce59af7dad1bbdd6ab1b9675e0"
     },
     "warn": {
-      "oid": "a9616eadbbbafd7a89a7778cc20d8011c482beca"
+      "oid": "41465f7931080db8d8f14dd524a91ae5219fcf02"
     }
   }
 }
