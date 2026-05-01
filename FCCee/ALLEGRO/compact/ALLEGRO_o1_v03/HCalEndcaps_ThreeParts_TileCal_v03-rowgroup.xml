@@ -49,7 +49,7 @@
 
   <readouts>
     <!-- Default readout of DetailedWedge geometry -->
-    <readout name="HCalEndcapReadoutPhiRow">
+    <readout name="HCalEndcapReadout">
       <!-- Description of the variables:
            detLayout - variable to determine if it's a Barrel(=0) or Endcap(=1).
            offset_z - takes three numbers: middle position in z of each section of the Endcap.
@@ -100,6 +100,9 @@
            dz_row - size of the row consisting of 2 * Master plate + 1 * Spacer plate + 1 * Scintillator + Air.
            phi_bins - number of bins in phi
            offset_phi - center of the first phi bin.
+           [even,odd]_vol_offset - offset in z of the center of the sensitive
+             volume within a row, for even (sequence_b) and odd (sequence_a)
+             layers
       -->
       <segmentation type="FCCSWHCalPhiRow_k4geo" 
          detLayout="1"
@@ -112,7 +115,10 @@
          grouped_rows= "3 3 3 6 6 6   6 6 6 9 0 0   10 10 10 15 15 25"
          dz_row="2*EndcapHCal_master_plate_thickness + EndcapHCal_spacer_plate_thickness + EndcapHCal_scintillator_thickness + 2*EndcapHCal_air_space_thickness" 
          phi_bins="EndcapHCal_n_phi_modules" 
-         offset_phi="-pi+(pi/EndcapHCal_n_phi_modules)"/>
+         offset_phi="-pi+(pi/EndcapHCal_n_phi_modules)"
+         even_vol_offset="EndcapHCal_master_plate_thickness + EndcapHCal_air_space_thickness + EndcapHCal_scintillator_thickness/2"
+         odd_vol_offset="2*EndcapHCal_master_plate_thickness + EndcapHCal_spacer_plate_thickness + EndcapHCal_air_space_thickness + EndcapHCal_scintillator_thickness/2"
+         />
       <id>system:4,type:3,layer:6,pseudoLayer:8,row:-8,phi:10</id>
     </readout>
   </readouts>
@@ -122,7 +128,7 @@
        nPads is the number of radial layers in the third part --> 
 
   <detectors>
-    <detector id="DetID_HCAL_Endcap" name="HCalThreePartsEndcap" type="CaloThreePartsEndcap_o1_v02" readout="HCalEndcapReadout" >
+    <detector id="DetID_HCAL_Endcap" name="HCalThreePartsEndcap" type="CaloThreePartsEndcap_o1_v02" readout="HCalEndcapReadoutPhiRow" >
       <type_flags type="DetType_CALORIMETER + DetType_HADRONIC + DetType_ENDCAP"/>
       <!-- vis="endcapHcal_envelope"> -->
       <sensitive type="calorimeter"/>
