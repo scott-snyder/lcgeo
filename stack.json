@@ -1,13 +1,12 @@
 {
   "version": 5,
-  "prev": "0ccc973e8280ad37aeecc58077ac00809af6286a",
-  "head": "1f32bc7f1efc1bd54e9801a0cbb8c483870ef743",
+  "prev": "1a8caa1ab021d0a5003b5a06c26319e3658ac072",
+  "head": "89fbabc7fd727541b2173b5bc62d7a541cb16bd8",
   "applied": [
     "nosystem",
     "rowxml",
     "timeout",
-    "clang",
-    "refresh-temp"
+    "clang"
   ],
   "unapplied": [
     "ecal-subdet-volman",
@@ -25,7 +24,7 @@
       "oid": "6faa55dafcb3d551a3c715648fcbc21b6f538dbe"
     },
     "clang": {
-      "oid": "87ee46baadb517b330134dc1fde12212905fb596"
+      "oid": "89fbabc7fd727541b2173b5bc62d7a541cb16bd8"
     },
     "drparamCleanup1": {
       "oid": "cbcbbccbff93725dd52ede34401f976624e5f1fd"
@@ -50,9 +49,6 @@
     },
     "nosystem": {
       "oid": "e190d113c6b33130e5f1d958b59ddec8a6eeb690"
-    },
-    "refresh-temp": {
-      "oid": "1f32bc7f1efc1bd54e9801a0cbb8c483870ef743"
     },
     "rowxml": {
       "oid": "51509c988bf1176bd8760cd885a2d61a25eb9775"
