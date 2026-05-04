@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "aef7cb7eac37dad9d58c7609c5ddcdcfbcbbe2b1",
-  "head": "8928ebbc6985e32ac10e7443c997152353147d09",
+  "prev": "eaffe3582b40fc603948017eab9b3b02cc08d472",
+  "head": "87ee46baadb517b330134dc1fde12212905fb596",
   "applied": [
     "nosystem",
     "rowxml",
-    "timeout"
+    "timeout",
+    "clang"
   ],
   "unapplied": [
     "ecal-subdet-volman",
@@ -21,6 +22,9 @@
   "patches": {
     "ci": {
       "oid": "6faa55dafcb3d551a3c715648fcbc21b6f538dbe"
+    },
+    "clang": {
+      "oid": "87ee46baadb517b330134dc1fde12212905fb596"
     },
     "drparamCleanup1": {
       "oid": "cbcbbccbff93725dd52ede34401f976624e5f1fd"
