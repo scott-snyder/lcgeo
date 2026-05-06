@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "db6ad809a351c4d244141f4420d76af4fd6b1ad9",
-  "head": "e84bd77346b3453f993b7350f99e12e605796cf6",
+  "prev": "1523fca502d4956dcc5730afeb6a910814f323a1",
+  "head": "8e18581f8ca5b5ee53a7bab7dad8706ce857865b",
   "applied": [
     "nosystem",
     "rowxml",
     "timeout",
-    "ci",
     "hcal-theta-pos",
-    "hcal-row-pos"
+    "hcal-row-pos",
+    "ci"
   ],
   "unapplied": [
     "clang",
@@ -21,7 +21,7 @@
   "hidden": [],
   "patches": {
     "ci": {
-      "oid": "d1aab6b4603ab5e495bb6c25711abfd0ddc5acdf"
+      "oid": "8e18581f8ca5b5ee53a7bab7dad8706ce857865b"
     },
     "clang": {
       "oid": "389f91e569a773bbbf07fb4852e2a71daa6a7f7f"
@@ -33,13 +33,13 @@
       "oid": "19fe9362112350e73334723f89987c352c458ebc"
     },
     "hcal-row-pos": {
-      "oid": "e84bd77346b3453f993b7350f99e12e605796cf6"
+      "oid": "8500db3b4faba0136826ddf53807c86ccf1bc4a4"
     },
     "hcal-row-pos-debugprint": {
       "oid": "8cf8411b07a1bd492cd40f1c25d3bb95035f1f2c"
     },
     "hcal-theta-pos": {
-      "oid": "8bc0ed3897bcf0f1942695788198b5cc90f6d1b6"
+      "oid": "c1e407e6ea9286b99b8c7f2ca1b63021f392c759"
     },
     "hcal-theta-pos-debugprint": {
       "oid": "3a686d1d468ca7bf89b1a1cab1935de9f7bfaba6"
