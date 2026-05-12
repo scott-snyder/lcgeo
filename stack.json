@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "9653de5a15e5aa6c766e2d998bc61a31d2ac7dab",
-  "head": "4c3dbecc3470fc7360375eef3d16242b5b069f98",
+  "prev": "249919e8beae27997094ef76e1e5ddebac737938",
+  "head": "61253c51a796fc02260600b0fad331b3623fa848",
   "applied": [
     "nosystem",
     "rowxml",
@@ -9,7 +9,6 @@
     "hcal-theta-pos",
     "hcal-row-pos",
     "ci",
-    "clang",
     "ecal-subdet-volman",
     "neighbor-dump-wip",
     "hcal-theta-pos-debugprint",
@@ -22,29 +21,26 @@
     "ci": {
       "oid": "b156abcb8aeb749ab772937d5e0ca68de92c7c31"
     },
-    "clang": {
-      "oid": "7f130f178a5b44e896bcb31d6d5beeed64fce2fe"
-    },
     "drparamCleanup1": {
-      "oid": "4c3dbecc3470fc7360375eef3d16242b5b069f98"
+      "oid": "61253c51a796fc02260600b0fad331b3623fa848"
     },
     "ecal-subdet-volman": {
-      "oid": "2cb0ae14854b9105dc471abfb208f6371ed539cd"
+      "oid": "f9233ff8a5b651f729e56229abc93713b2e74090"
     },
     "hcal-row-pos": {
       "oid": "8be5b524f7ce81d9dd2655cf989ae0b76a3fe17b"
     },
     "hcal-row-pos-debugprint": {
-      "oid": "c4ceb605397d4897911576de0c4a81a1041e08b3"
+      "oid": "e035c1e2fa2e0a3fc0d5ab321fe7f9b489266b4c"
     },
     "hcal-theta-pos": {
       "oid": "50d8eb3b5d38c1d6852c94619a1c853aec867668"
     },
     "hcal-theta-pos-debugprint": {
-      "oid": "c09c422cc4362ae2c983d52c11e26f7650c1ff31"
+      "oid": "ba9104b8b78db8e8ac23f2406ba32970b2cc6f97"
     },
     "neighbor-dump-wip": {
-      "oid": "e4490b1c6a23f14a05204793ccfd3b09d01da57c"
+      "oid": "e39d62623d0603df90bd3c92653346ac5e8c1806"
     },
     "nosystem": {
       "oid": "570db258d86b7ad06e4433c982161b53596555a6"

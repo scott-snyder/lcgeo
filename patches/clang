@@ -1,8 +1,0 @@
-Bottom: 7f99b7dcc234338c134429de70d3b1a749fc19d0
-Top:    7f99b7dcc234338c134429de70d3b1a749fc19d0
-Author: sss <sss@karma>
-Date:   2026-05-12 13:23:54 -0400
-
-Fix warnings seen compiling with clang.
-
-Unused variables / members.
