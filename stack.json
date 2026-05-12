@@ -1,13 +1,15 @@
 {
   "version": 5,
-  "prev": "249919e8beae27997094ef76e1e5ddebac737938",
-  "head": "61253c51a796fc02260600b0fad331b3623fa848",
+  "prev": "ad1a119b4021d4cedfb9b0dd3db69f0e1b463422",
+  "head": "8be5b524f7ce81d9dd2655cf989ae0b76a3fe17b",
   "applied": [
     "nosystem",
     "rowxml",
     "timeout",
     "hcal-theta-pos",
-    "hcal-row-pos",
+    "hcal-row-pos"
+  ],
+  "unapplied": [
     "ci",
     "ecal-subdet-volman",
     "neighbor-dump-wip",
@@ -15,7 +17,6 @@
     "hcal-row-pos-debugprint",
     "drparamCleanup1"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "ci": {
