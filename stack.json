@@ -1,16 +1,16 @@
 {
   "version": 5,
-  "prev": "e31f4a43c0d20d37b7aaee46e2abe878d906b25a",
-  "head": "d50a0a2d922428a9bfd61f78cfb8e03d41215a1d",
+  "prev": "7e7d70274b3babd1cfca08797925590b2a953a97",
+  "head": "79d60c8498c6f7162c3c758ccc95e8eb1a078a44",
   "applied": [
     "nosystem",
     "rowxml",
     "timeout",
-    "fix-position-calculation-for"
+    "fix-position-calculation-for",
+    "hcal-row-pos",
+    "hcal-row-pos-1"
   ],
   "unapplied": [
-    "hcal-row-pos",
-    "hcal-row-pos-1",
     "ci",
     "ecal-subdet-volman",
     "neighbor-dump-wip",
@@ -33,10 +33,10 @@
       "oid": "d50a0a2d922428a9bfd61f78cfb8e03d41215a1d"
     },
     "hcal-row-pos": {
-      "oid": "8be5b524f7ce81d9dd2655cf989ae0b76a3fe17b"
+      "oid": "0b82720002fa6e07a82ec057907b4a8adf0622b5"
     },
     "hcal-row-pos-1": {
-      "oid": "03cf54e2d9f3a8c925c9158d422c7908de7756a2"
+      "oid": "79d60c8498c6f7162c3c758ccc95e8eb1a078a44"
     },
     "hcal-row-pos-debugprint": {
       "oid": "e035c1e2fa2e0a3fc0d5ab321fe7f9b489266b4c"
