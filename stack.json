@@ -1,15 +1,14 @@
 {
   "version": 5,
-  "prev": "34905202f2579909582d0bdb13f5c0e3a802003b",
-  "head": "d5338140f4a6c07c718c1cae8d6cb152ecfb5b21",
+  "prev": "a2c4a931d8536c1b96e25d13383d47ec334bc692",
+  "head": "c056af6a2f59df262218706dfc15d2273ecedfdb",
   "applied": [
     "nosystem",
     "rowxml",
     "timeout",
     "hcal-theta-pos",
     "hcal-row-pos",
-    "hcal-theta-pos-1",
-    "refresh-temp"
+    "hcal-theta-pos-1"
   ],
   "unapplied": [
     "ci",
@@ -40,7 +39,7 @@
       "oid": "50d8eb3b5d38c1d6852c94619a1c853aec867668"
     },
     "hcal-theta-pos-1": {
-      "oid": "52d8dd0a97ea8459b681a9b04b16aa5c0812c9af"
+      "oid": "c056af6a2f59df262218706dfc15d2273ecedfdb"
     },
     "hcal-theta-pos-debugprint": {
       "oid": "ba9104b8b78db8e8ac23f2406ba32970b2cc6f97"
@@ -50,9 +49,6 @@
     },
     "nosystem": {
       "oid": "570db258d86b7ad06e4433c982161b53596555a6"
-    },
-    "refresh-temp": {
-      "oid": "d5338140f4a6c07c718c1cae8d6cb152ecfb5b21"
     },
     "rowxml": {
       "oid": "6d9d052a0ae202a8b968004d86bd7d6a7ad27f4c"
