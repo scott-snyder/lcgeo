@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "66523086ec71f122a6b54c87f13c282d078d7bf7",
-  "head": "126d8750799b7a0acb0e2e79b7b4701b2c452387",
+  "prev": "fd9d6c4bca094113e8e32959461c33011c3d8575",
+  "head": "03cf54e2d9f3a8c925c9158d422c7908de7756a2",
   "applied": [
     "nosystem",
     "rowxml",
@@ -9,8 +9,7 @@
     "hcal-theta-pos",
     "hcal-row-pos",
     "hcal-theta-pos-1",
-    "hcal-row-pos-1",
-    "refresh-temp"
+    "hcal-row-pos-1"
   ],
   "unapplied": [
     "ci",
@@ -35,7 +34,7 @@
       "oid": "8be5b524f7ce81d9dd2655cf989ae0b76a3fe17b"
     },
     "hcal-row-pos-1": {
-      "oid": "fe475571cbb565d49a9e76faadfc0008970ccedc"
+      "oid": "03cf54e2d9f3a8c925c9158d422c7908de7756a2"
     },
     "hcal-row-pos-debugprint": {
       "oid": "e035c1e2fa2e0a3fc0d5ab321fe7f9b489266b4c"
@@ -54,9 +53,6 @@
     },
     "nosystem": {
       "oid": "570db258d86b7ad06e4433c982161b53596555a6"
-    },
-    "refresh-temp": {
-      "oid": "126d8750799b7a0acb0e2e79b7b4701b2c452387"
     },
     "rowxml": {
       "oid": "6d9d052a0ae202a8b968004d86bd7d6a7ad27f4c"
