@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "373aff68ec718e429a6e40432aafca724bc3bfe8",
-  "head": "becf91549dff0aeb0d2eed89c4e06af393f1fb0f",
+  "prev": "dce40136fa381e222f8e635c95bbb9ea30a14a7a",
+  "head": "38d5ad92e9d497faa99e19d3b6c0412751025252",
   "applied": [
     "ecal-subdet-volman",
-    "timeout"
+    "timeout",
+    "hcal-theta-pos"
   ],
   "unapplied": [],
   "hidden": [],
@@ -14,6 +15,9 @@
     },
     "timeout": {
       "oid": "becf91549dff0aeb0d2eed89c4e06af393f1fb0f"
+    },
+    "hcal-theta-pos": {
+      "oid": "38d5ad92e9d497faa99e19d3b6c0412751025252"
     }
   }
 }
