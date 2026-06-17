@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "abbbae5eb73fae2f4c0bfdcfd505b68da2c0b729",
+  "prev": "759aaea48b5667fbbd78453ddaf6fc37a2c5eaa9",
   "head": "ec16e16289bd98654168da5fec170923c69e3b03",
   "applied": [
     "nosystem",
@@ -9,10 +9,9 @@
     "ecal-subdet-volman",
     "drparamCleanup1"
   ],
-  "unapplied": [
-    "ci"
-  ],
+  "unapplied": [],
   "hidden": [
+    "ci",
     "neighbor-dump-wip",
     "hcal-theta-pos-debugprint",
     "hcal-row-pos-debugprint"
