@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "a2fa30d8690a1aa0b6cabf8b0591dadf6d1af78b",
+  "prev": "5f6fb158b2ae8c1d0e472fbf46fd8fd5086736fd",
   "head": "1717908791fee504873d15e19ade9284d6b3b2ce",
   "applied": [
     "nosystem",
@@ -10,12 +10,12 @@
     "ecal-subdet-volman",
     "drparamCleanup1"
   ],
-  "unapplied": [
+  "unapplied": [],
+  "hidden": [
     "neighbor-dump-wip",
     "hcal-theta-pos-debugprint",
     "hcal-row-pos-debugprint"
   ],
-  "hidden": [],
   "patches": {
     "ci": {
       "oid": "da2515a25e1273ea10ad945a2c604047b2973035"
