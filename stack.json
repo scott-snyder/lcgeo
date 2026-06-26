@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "f008bb17f20fd38f53bada08d15c98e72b3a225f",
+  "prev": "324d7b78e489220734824512d281a6c3530879a6",
   "head": "74d1956291a6475a59ea8caadd2e9aae27ee51aa",
   "applied": [
     "timeout"
@@ -14,7 +14,7 @@
       "oid": "74d1956291a6475a59ea8caadd2e9aae27ee51aa"
     },
     "ecal-subdet-volman": {
-      "oid": "5597933c582edf2ba957b1ef956cafcf3f3ee727"
+      "oid": "b3ea288d2287f5d33a1aa03d62327ea9be964b7f"
     }
   }
 }

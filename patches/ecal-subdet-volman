@@ -5,6 +5,8 @@ Date:   2026-01-12 13:04:32 -0500
 
 Use subdetector-specific VolumeManager in FCCSWGridModuleThetaMerged_k4geo.
 
+xxx This breaks the resegmentation case!
+
 Different subsystems use different bit-widths for the system field of
 identifiers.  This implies that volume IDs are not necessarily globally
 unique.  For example, volume IDs for the ALLEGRO HCAL barrel
